@@ -1,0 +1,42 @@
+ .row * {
+    background-color: gainsboro;
+    height: 2000px;
+}
+
+.container-fluid{
+    background-color: gainsboro;
+}
+.custom-container{
+    margin-top: 65px;
+}
+@media (min-width: 1200px) {
+    .custom-container{
+        max-width: 1199px;
+    }
+}
+.classWithPad { 
+    margin:-5px; 
+       background-color: whitesmoke;
+    padding:10px; 
+}
+
+/* Navigation header START*/
+.logo{
+ margin-top: -13px;
+}
+.userHeader{
+    border-radius: 50%;
+    height: auto;
+    width: 50px; 
+}
+
+.user{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+/* Navigation header END*/
+
+
+/* Navigation main START*/
+
+/* Navigation main END*/

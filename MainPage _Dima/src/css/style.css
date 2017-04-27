@@ -1,23 +1,20 @@
  .row * {
-    background-color: gainsboro;
-    height: 2000px;
+    /*background-color: gainsboro;*/
+    /*height: 2000px;*/
 }
 
 .container-fluid{
     background-color: gainsboro;
+    
 }
 .custom-container{
     margin-top: 65px;
 }
-@media (min-width: 1200px) {
-    .custom-container{
-        max-width: 1199px;
-    }
-}
+
 .classWithPad { 
     margin:-5px; 
-       background-color: whitesmoke;
-    padding:10px; 
+    background-color: whitesmoke;
+    /*padding:1px; */
 }
 
 /* Navigation header START*/
@@ -34,9 +31,59 @@
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
+
+.mineNavbar{
+    margin: 7.5px 0px !important;
+}
 /* Navigation header END*/
 
 
 /* Navigation main START*/
-
+.userSideBar{
+    min-height: 500px;
+}
+.asideNavbar li:hover {
+    background-color: gainsboro;
+    width: 100%;   
+}
+.asideNavbar li {
+    background-color: whitesmoke;
+    width: 100%;
+}
+.asideNavbar ul {
+    /*background-color: whitesmoke;*/
+    width: 100px;
+}
+.userNavbar {
+    box-shadow: none !important;
+    border-color: whitesmoke !important;
+}
 /* Navigation main END*/
+/*Main body START*/
+.userMainBody{
+    min-height: 500px;
+}
+/*Main body END*/
+
+/*Media queries*/
+
+@media (min-width: 1200px) {
+    .custom-container{
+        max-width: 1199px;
+    }
+    .MobileUserSideBar{
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .MobileUserSideBar{
+        display: none;
+    }
+}
+
+@media (max-width: 767px) { 
+    .userSideBar{
+        display:none;
+    }
+    
+}

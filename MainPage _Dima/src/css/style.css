@@ -1,22 +1,15 @@
- .row * {
-    /*background-color: gainsboro;*/
-    /*height: 2000px;*/
-}
-
+ 
 .container-fluid{
-    background-color: gainsboro;
-    
+    background-color: gainsboro;   
 }
 .custom-container{
     margin-top: 65px;
 }
-
 .classWithPad { 
     margin:-5px; 
     background-color: whitesmoke;
     /*padding:1px; */
 }
-
 /* Navigation header START*/
 .logo{
  margin-top: -13px;
@@ -26,18 +19,14 @@
     height: auto;
     width: 50px; 
 }
-
 .user{
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
-
 .mineNavbar{
     margin: 7.5px 0px !important;
 }
 /* Navigation header END*/
-
-
 /* Navigation main START*/
 .userSideBar{
     min-height: 500px;
@@ -63,27 +52,53 @@
 .userMainBody{
     min-height: 500px;
 }
+/*Background*/
+.Background{
+    height: 175px;
+}
+.backgroundImage{
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    height: 175px;
+}
+/*Update Background*/
+.updateBg{
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 200px;    
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.updateBg:hover{
+  border: 1px double white;
+    background-color: slategrey;
+    cursor: pointer;
+}
+.changeBgImage{
+    background-image: url("../img/bgChange.png");
+    background-size: cover;
+    width: 35px;
+    height: 25px;
+}
+.updateBg:hover .changeBgImage{
+    background-image: url("../img/bgChange_hover.png");
+}
+.changeBgText{
+    color: white;
+    font-size: 11.5px;
+    padding-top:5px;
+    display: none;
+}
+.updateBg:hover .changeBgText{
+    display: block;
+}
+/*Edit mainPage*/
+.editProfile{
+margin-top: 120px;
+margin-right: 20px;
+}
+.editBtnWidth{
+width: 20px;
+}
 /*Main body END*/
 
-/*Media queries*/
-
-@media (min-width: 1200px) {
-    .custom-container{
-        max-width: 1199px;
-    }
-    .MobileUserSideBar{
-        display: none;
-    }
-}
-@media (min-width: 768px) {
-    .MobileUserSideBar{
-        display: none;
-    }
-}
-
-@media (max-width: 767px) { 
-    .userSideBar{
-        display:none;
-    }
-    
-}

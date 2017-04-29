@@ -1,0 +1,20 @@
+// Mode: Tablet
+@tablet: ~"(max-width: 767px)";
+// Mode: Desktop
+@desktop: ~"(min-width: 768px)";
+
+
+.mediaGenerator(@className){
+
+}
+
+  @media @tablet {
+    .userSideBar{
+        display:none;
+    }  
+  } 
+  @media @desktop {
+  .MobileUserSideBar{
+        display: none;
+    }
+  }

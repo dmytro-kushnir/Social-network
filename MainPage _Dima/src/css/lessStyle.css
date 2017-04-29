@@ -1,0 +1,10 @@
+@media (max-width: 767px) {
+  .userSideBar {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .MobileUserSideBar {
+    display: none;
+  }
+}

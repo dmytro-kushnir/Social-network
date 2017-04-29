@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="src/css/style.css">
-  <link rel="stylesheet/less" href="src/css/style.less">
+  <link rel="stylesheet" href="src/css/lessStyle.css">
   <link rel="stylesheet" href="src/css/bootstrap.css">
   <link rel="stylesheet" href="src/css/bootstrap-theme.css">
-
-  <title>Document</title>
+  <title>MainPage</title>
 </head>
 <body>
   <!--Header START-->
-  <div class="navbar navbar-inverse navbar-fixed-top">
+  <header class="navbar navbar-inverse navbar-fixed-top">
     <div class="container containerHeader">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
@@ -35,47 +34,76 @@
               <li><a href="#">Вийти</a></li>
             </ul>
             <div class="MobileUserSideBar">
-        <ul class="nav navbar-nav mineNavbar">
-            <li><a href="#">Мій профіль</a></li>
-            <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
-            <li><a href="#">Галерея</a></li>
-          </ul>
-    </div>
+              <ul class="nav navbar-nav mineNavbar">
+                <li><a href="#">Мій профіль</a></li>
+                <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
+                <li><a href="#">Галерея</a></li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-  </div>
+  </header>
   <!--Header END-->
   <div class="container-fluid">
-  <div class="container custom-container">
-    <div class="row">
-      <!--Navigation START-->
-      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-0">
-<div class="classWithPad">
-  <div class="sidebar-nav userSideBar">
-    <div class="navbar navbar-default userNavbar">
-      <div class="navbar-header">
-        <ul class="nav navbar-nav asideNavbar">
-            <li><a href="#">Мій профіль</a></li>
-            <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
-            <li><a href="#">Галерея</a></li>
-          </ul>
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
+    <div class="container custom-container">
+      <div class="row">
+        <!--Navigation START-->
+        <nav class="col-lg-2 col-md-3 col-sm-3 col-xs-0">
+          <div class="classWithPad">
+            <div class="sidebar-nav userSideBar">
+              <div class="navbar navbar-default userNavbar">
+                <div class="navbar-header">
+                  <ul class="nav navbar-nav asideNavbar">
+                    <li><a href="#">Мій профіль</a></li>
+                    <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
+                    <li><a href="#">Галерея</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
         <!--Navigation END-->
-      <!--Main body START-->
-      <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12 ">
-        <div class="classWithPad userMainBody">Main body</div>
+        <!--Main body START-->
+        <main class="col-lg-10 col-md-9 col-sm-9 col-xs-12 ">
+          <div class="classWithPad userMainBody">
+            <!--Background-->
+            <section class="Background row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <figure class="backgroundImage">
+                  <!--editing background end page-->
+                  <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                      <div class="updateBg pull-left">
+                        <span class="media-left">
+                        <figure class="changeBgImage"></figure>
+                        </span>
+                        <span class="media-body">
+                          <p class="changeBgText">Оновити фото обкладинки</p>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                       <button class="editProfile btn btn-default pull-right">Редагувати сторінку</button>
+                    </div>     
+                    </div>
+                  </figure>
+              </div>
+            </section>
+          <!--rest page-->
+          <section class="row">
+
+          </section>
+          </div>
+        </main>
       </div>
       <!--Main body END-->
     </div>
   </div>
-    </div>
-  <script src="src/libs/Less/less.min.js"></script>
+  </div>
+  <!--<script src="src/libs/Less/less.min.js"></script>-->
   <script src="src/libs/jQuery/jquery-3.2.1.js"></script>
   <script src="src/js/bootstrap.min.js"></script>
 </body>

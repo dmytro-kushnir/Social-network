@@ -3,18 +3,93 @@
 // Mode: Desktop
 @desktop: ~"(min-width: 768px)";
 
+@medium: ~"(min-width: 768px) and (max-width: 992px)";
 
-.mediaGenerator(@className){
+@small: ~"(max-width: 570px)";
 
-}
+
+@extraSmall: ~"(max-width: 460px)";
+
+@extraLarge: ~"(min-width: 999px)";
+
+
+  ///////////////////////// 
 
   @media @tablet {
     .userSideBar{
         display:none;
     }  
-  } 
+    .infoName{
+        margin-top: -135px;
+        margin-left: 180px;
+    }
+    .infoValue{
+      padding-left: 30px;
+    }
+    .profilePhoto{
+     margin-top: 20px;
+     height: 150px;
+     width: 150px;
+    }
+    .editProfile{
+      margin-right: 20px;
+      // margin-top: 150px;
+
+    }
+  }
+  /////////////////////////  
   @media @desktop {
   .MobileUserSideBar{
         display: none;
     }
+    .infoName{
+      margin-left: 65px
+    }
+  }
+  ///////////////////////// 
+  @media @extraSmall {
+    .userName{
+      margin-left: 60px;
+    }
+  }
+  //////////////////////////
+   ///////////////////////// 
+  @media @small {
+    .infoName{
+      margin-top: 20px;
+      margin-left: 5%;   
+    }
+     .profilePhoto{
+      height: 200px;
+      width: 200px;
+      margin-left: 20%;
+      margin-top: 40px;
+    }
+    .userName{
+      margin-left: 60px;
+    }
+  }
+  
+    ////////
+    @media @extraLarge {
+    .infoName{
+      margin-left: 20%;   
+    }
+    .infoName > p > label {
+    width: 200px;
+    padding-right: 60px;
+}
+.infoName > p{
+  width: 500px;
+  
+
+}
+  }
+  /////
+
+  @media @medium {
+       .infoName > p > label {
+    width: auto;
+    padding-right: 0;
+}
   }

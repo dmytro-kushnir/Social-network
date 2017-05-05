@@ -38,7 +38,8 @@ $RECYCLE.BIN/
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
-
+gulpfile.js
+.gulpfile.js
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop

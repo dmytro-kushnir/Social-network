@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="src/css/reset_style.css">
   <link rel="stylesheet" href="src/css/style.css">
   <link rel="stylesheet" href="src/css/lessStyle.css">
   <link rel="stylesheet" href="src/css/bootstrap.css">
@@ -67,13 +68,13 @@
         </nav>
         <!--Navigation END-->
         <!--Main body START-->
-        <main class="col-lg-10 col-md-9 col-sm-9 col-xs-12 ">
+        <main class="col-lg-9 col-md-9 col-sm-9 col-xs-12 ">
           <div class="classWithPad userMainBody">
             <!--Background-->
             <section class="Background row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <figure class="backgroundImage">
-                  <!--editing background end page-->
+                  <!--editing background and page-->
                   <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                       <div class="updateBg pull-left">
@@ -86,16 +87,62 @@
                       </div>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                       <button class="editProfile btn btn-default pull-right">Редагувати сторінку</button>
-                    </div>     
+                      <button class="editProfile btn btn-default pull-right">Редагувати сторінку</button>
                     </div>
-                  </figure>
+                  </div>
+                </figure>
               </div>
             </section>
-          <!--rest page-->
-          <section class="row">
+            <!--rest page-->
+            <section class="row">
+              <!--Left part START-->
+              <div class="col-lg-2 col-md-3 col-sm-3 col-xs-0">
+                <figure class="profilePhoto img-rounded" >
+                </figure>
+                <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
+        
+              </div>
+              <!--Left part END-->
+              <!--Right part START-->
+              <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+                <!--Main infromation about user-->
+                <div class="row">
+                <div class="mascRight col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <div class="infoName">
+                      <h3 class="userName">Доктор Стрендж</h3>
+                      <p><label>День народження:</label> <span>12 лютого 1982 р.</span> </p> 
+                      <p><label>Рідне місто:</label> <span>Нью-Йорк</span></p> 
+                      <p><label>Освіта:</label> <span>Нанотехнологічний інститут</span></p> 
+                      <p><label>Моб. телефон:</label> <span>0665784212</span></p> 
+                    </div>
 
-          </section>
+                </div>
+                </div>
+                <div class="row friendsPhoto">
+                        <div class="mascRight col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <article class="leftUserInf">
+                    <div >
+                      <p>480</p>
+                      <p>Друзів</p>
+                    </div>
+                  </article>
+                </div>
+                <!--user friends and photo count-->
+                <div class="mascLeft col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <article class="rightUserInf ">
+                    <div>
+                      <p>583</p>
+                      <p>Фогографії</p>
+                    </div>
+                </article>
+                </div>
+                </div>
+              </div>
+              <!--Right part END-->
+            </section>
+            <section class="col-lg-4 col-md-4 col-sm-4 col-xs-0">
+              
+            </section>
           </div>
         </main>
       </div>
@@ -107,4 +154,5 @@
   <script src="src/libs/jQuery/jquery-3.2.1.js"></script>
   <script src="src/js/bootstrap.min.js"></script>
 </body>
+
 </html>

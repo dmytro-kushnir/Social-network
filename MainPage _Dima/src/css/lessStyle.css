@@ -2,9 +2,65 @@
   .userSideBar {
     display: none;
   }
+  .infoName {
+    margin-top: -135px;
+    margin-left: 180px;
+  }
+  .infoValue {
+    padding-left: 30px;
+  }
+  .profilePhoto {
+    margin-top: 20px;
+    height: 150px;
+    width: 150px;
+  }
+  .editProfile {
+    margin-right: 20px;
+  }
 }
 @media (min-width: 768px) {
   .MobileUserSideBar {
     display: none;
+  }
+  .infoName {
+    margin-left: 65px;
+  }
+}
+@media (max-width: 460px) {
+  .userName {
+    margin-left: 60px;
+  }
+}
+@media (max-width: 570px) {
+  .infoName {
+    margin-top: 20px;
+    margin-left: 5%;
+  }
+  .profilePhoto {
+    height: 200px;
+    width: 200px;
+    margin-left: 20%;
+    margin-top: 40px;
+  }
+  .userName {
+    margin-left: 60px;
+  }
+}
+@media (min-width: 999px) {
+  .infoName {
+    margin-left: 20%;
+  }
+  .infoName > p > label {
+    width: 200px;
+    padding-right: 60px;
+  }
+  .infoName > p {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .infoName > p > label {
+    width: auto;
+    padding-right: 0;
   }
 }

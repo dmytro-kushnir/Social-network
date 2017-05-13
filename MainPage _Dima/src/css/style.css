@@ -1,139 +1,259 @@
-body{
+body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
-    } 
-.container-fluid{
-    background-color: gainsboro;   
 }
-.custom-container{
+body {overflow-x: hidden;}
+.container-fluid {
+    background-color: gainsboro;
+}
+
+.custom-container {
     margin-top: 65px;
 }
-.classWithPad { 
-    margin:-5px; 
+
+.classWithPad {
+    margin: -5px;
     background-color: whitesmoke;
     /*padding:1px; */
 }
+
 /* Navigation header START*/
-.logo{
- margin-top: -13px;
+
+.logo {
+    margin-top: -13px;
 }
-.userHeader{
+
+.navbarTop{
+background: rgb(17, 17, 17);
+background: -moz-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
+background: -webkit-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
+background: -o-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
+background: -ms-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
+background: linear-gradient(0deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
+}
+
+.userHeader {
     border-radius: 50%;
     height: auto;
-    width: 50px; 
+    width: 50px;
 }
-.user{
+
+.user {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
-.mineNavbar{
+
+.mineNavbar {
     margin: 7.5px 0px !important;
 }
+
+
 /* Navigation header END*/
+
+
 /* Navigation main START*/
-.userSideBar{
-    min-height: 500px;
+
+.userSideBar {
+   height:100vh;
 }
+
 .asideNavbar li:hover {
     background-color: gainsboro;
-    width: 100%;   
+    width: 100%;
 }
+
 .asideNavbar li {
     background-color: whitesmoke;
     width: 100%;
 }
+
+.asideNavbar li * {
+    font-size: 14px;
+}
+
 .asideNavbar ul {
     /*background-color: whitesmoke;*/
     width: 100px;
 }
+
 .userNavbar {
     box-shadow: none !important;
     border-color: whitesmoke !important;
 }
+
+
 /* Navigation main END*/
+
+
 /*Main body START*/
-.userMainBody{
+
+.userMainBody {
     min-height: 500px;
 }
+
+
 /*Background*/
-.Background{
+
+.Background {
     height: 175px;
 }
-.backgroundImage{
+
+.backgroundImage {
     background-image: url("../img/bg.jpg");
     background-size: cover;
     height: 225px;
 }
+
+
 /*Update Background*/
-.updateBg{
+
+.updateBg {
     margin-top: 20px;
     margin-left: 10px;
-    width: 200px;    
+    width: 200px;
     padding-left: 5px;
     padding-top: 5px;
 }
-.updateBg:hover{
-  border: 1px double white;
+
+.updateBg:hover {
+    border: 1px double white;
     background-color: slategrey;
     cursor: pointer;
 }
-.changeBgImage{
+
+.changeBgImage {
     background-image: url("../img/bgChange.png");
     background-size: cover;
     width: 35px;
     height: 25px;
 }
-.updateBg:hover .changeBgImage{
+
+.updateBg:hover .changeBgImage {
     background-image: url("../img/bgChange_hover.png");
 }
-.changeBgText{
+
+.changeBgText {
     color: white;
     font-size: 11.5px;
-    padding-top:5px;
+    padding-top: 5px;
     display: none;
 }
-.updateBg:hover .changeBgText{
+
+.updateBg:hover .changeBgText {
     display: block;
 }
+
 /*Edit mainPage*/
 
-.editProfile{
-margin-top: 175px;
-margin-right: 20px;
+.editProfile {
+    margin-top: 175px;
+    margin-right: 20px;
 }
-.editBtnWidth{
-width: 20px;
+
+.editBtnWidth {
+    width: 20px;
 }
+
 /*user Main Infromation*/
-.mascLeft{
+
+.mascLeft {
     padding-left: 0 !important;
 }
-.userName{
+
+.userName {
     width: 300px;
 }
-  .infoName > p > label {
+
+.infoName>p>label {
     width: 200px;
-    padding-right: 60px;
-    
+    /*padding-right: 60px;*/
+    /*margin-left:40px;*/
 }
-.infoName > p{
-  width: 500px;
-  text-align: left;
+
+.infoName>p {
+    width: 500px;
+    text-align: left;
 }
-.profilePhoto{
+
+.profilePhoto {
     background-size: cover;
     background-image: url("../img/avatar.jpg");
-    height:200px;
+    height: 200px;
     width: 200px;
     margin-top: -40px;
 }
+
 /*Friends and photo count*/
-.friendsPhoto *{
+
+.friendsAndPhoto * {
     font-size: 20px;
     font-weight: 400;
 }
-.friendsPhoto {
-    margin-top: 30px;
-}
-/*Main body END*/
 
+.friendsAndPhoto {
+    margin-top: 10px;
+}
+
+/*Comment START*/
+
+.commentImage {
+    background-image: url("../img/bgChange_hover.png");
+    background-size: cover;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.commentImage:hover{
+    background-image: url("../img/bgChange.png");
+}
+.post {
+    margin: 5px;
+}
+
+/*Comment END*/
+
+
+/*POST START*/
+
+.posters {
+    background-color: #a6e1ec;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.posters div {
+    padding: 10px;
+    background-color: #2aabd2;
+      border-radius: 5px;
+}
+
+.posters p {
+    padding: 10px;
+    font-size: 16pt;
+    margin: 0 !important;
+}
+.otherUserPhoto{
+    background-image: url("../img/users/user1/avatar.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+}
+.otherUserPhotoComment{
+     background-image: url("../img/users/user1/photo/photo.jpg");
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    margin-left: 20px;
+    border: 1px solid gray;
+}
+/*POST END*/
+
+
+/*Main body END*/

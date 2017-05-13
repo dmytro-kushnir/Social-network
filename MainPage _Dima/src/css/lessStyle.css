@@ -14,8 +14,18 @@
     height: 150px;
     width: 150px;
   }
+  .profilePhoto {
+    text-align: center;
+  }
+  .photoCnt {
+    margin-left: 20px;
+  }
   .editProfile {
     margin-right: 20px;
+  }
+  .infoName > p > label {
+    width: auto;
+    padding-right: 0px;
   }
 }
 @media (min-width: 768px) {
@@ -23,12 +33,21 @@
     display: none;
   }
   .infoName {
-    margin-left: 65px;
+    margin-left: 40px;
   }
 }
 @media (max-width: 460px) {
   .userName {
     margin-left: 60px;
+  }
+  .infoName > p > label {
+    width: auto;
+    padding-right: 0px;
+  }
+  .otherUserPhotoComment {
+    margin-top: -25px;
+    width: 100px;
+    height: 100px;
   }
 }
 @media (max-width: 570px) {
@@ -47,9 +66,6 @@
   }
 }
 @media (min-width: 999px) {
-  .infoName {
-    margin-left: 20%;
-  }
   .infoName > p > label {
     width: 200px;
     padding-right: 60px;
@@ -60,7 +76,6 @@
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .infoName > p > label {
-    width: auto;
-    padding-right: 0;
+    padding-right: 40px;
   }
 }

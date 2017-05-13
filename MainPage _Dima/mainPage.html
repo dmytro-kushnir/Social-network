@@ -96,52 +96,82 @@
             <!--rest page-->
             <section class="row">
               <!--Left part START-->
-              <div class="col-lg-2 col-md-3 col-sm-3 col-xs-0">
-                <figure class="profilePhoto img-rounded" >
+              <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+                <figure class="profilePhoto img-rounded">
                 </figure>
                 <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
-        
               </div>
               <!--Left part END-->
               <!--Right part START-->
-              <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <!--Main infromation about user-->
                 <div class="row">
-                <div class="mascRight col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="infoName">
                       <h3 class="userName">Доктор Стрендж</h3>
-                      <p><label>День народження:</label> <span>12 лютого 1982 р.</span> </p> 
-                      <p><label>Рідне місто:</label> <span>Нью-Йорк</span></p> 
-                      <p><label>Освіта:</label> <span>Нанотехнологічний інститут</span></p> 
-                      <p><label>Моб. телефон:</label> <span>0665784212</span></p> 
+                      <p><label>День народження:</label> <span>12 лютого 1982 р.</span> </p>
+                      <p><label>Рідне місто:</label> <span>Нью-Йорк</span></p>
+                      <p><label>Освіта:</label> <span>Нанотехнологічний інститут</span></p>
+                      <p><label>Моб. телефон:</label> <span>0665784212</span></p>
                     </div>
-
+                  </div>
                 </div>
-                </div>
-                <div class="row friendsPhoto">
-                        <div class="mascRight col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <article class="leftUserInf">
-                    <div >
+                <div style="margin-left:20px;" class="row">
+                  <article class="friendsAndPhoto">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
                       <p>480</p>
                       <p>Друзів</p>
                     </div>
-                  </article>
-                </div>
-                <!--user friends and photo count-->
-                <div class="mascLeft col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                  <article class="rightUserInf ">
-                    <div>
+                    <!--user friends and photo count-->
+                    <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
                       <p>583</p>
                       <p>Фогографії</p>
                     </div>
-                </article>
+                  </article>
                 </div>
+                <!--write letter-->
+                <div class="row " style="margin-bottom: 30px !important; "  >
+                  <form role="form " style=" margin:10px 50px;">
+                    <div class="form-group">
+                      <textarea placeholder="Що у вас нового?" class="form-control " rows="5 " id="comment "></textarea>
+                        <figure class="commentImage pull-left"></figure>
+                      <button type="button " class="btn  btn-default post pull-right" ng-click="main.addPost() ">Відправити</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="row">
+                  <div class="posters" style=" margin:10px 50px; " ng-repeat="x in main.model.postes ">
+                    <div>
+                      <figure class="otherUserPhoto"></figure>
+                      <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
+                      <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
+                      <a class='label label-danger' ng-click="main.changeElement($index) ">змінити</a>
+                      <a class='label label-primary' id='remove' ng-click="main.deleteElement($index) ">видалити</a>
+                    </div>       
+                    <p style="font-size: 14px;">Я думаю тобі сподобається мій новий фільм ;-)
+                       <br><br>  
+                      <a href="https://my-hit.org/film/415353"> https://my-hit.org/film/415353/</a>
+                    </p>
+                  </div>
+                </div>
+                <!---->
+                <div class="row">
+                  <div class="posters" style=" margin:10px 50px; " ng-repeat="x in main.model.postes ">
+                    <div>
+                      <figure class="otherUserPhoto"></figure>
+                      <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
+                      <h5><span class='glyphicon glyphicon-time'></span>10.05.17 15:11</h5>
+                      <a class='label label-danger' ng-click="main.changeElement($index) ">змінити</a>
+                      <a class='label label-primary' id='remove' ng-click="main.deleteElement($index) ">видалити</a>
+                    </div>
+                    <p style="font-size: 14px;">Докторе, скидую обіцяне фото :-)
+                       <br><br>  
+                      <figure class="otherUserPhotoComment"></figure>
+                    </p>
+                  </div>
                 </div>
               </div>
               <!--Right part END-->
-            </section>
-            <section class="col-lg-4 col-md-4 col-sm-4 col-xs-0">
-              
             </section>
           </div>
         </main>
@@ -150,9 +180,9 @@
     </div>
   </div>
   </div>
-  <!--<script src="src/libs/Less/less.min.js"></script>-->
-  <script src="src/libs/jQuery/jquery-3.2.1.js"></script>
-  <script src="src/js/bootstrap.min.js"></script>
+  <!--<script src="src/libs/Less/less.min.js "></script>-->
+  <script src="src/libs/jQuery/jquery-3.2.1.js "></script>
+  <script src="src/js/bootstrap.min.js "></script>
 </body>
 
 </html>

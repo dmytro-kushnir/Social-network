@@ -7,14 +7,10 @@
 
 @small: ~"(max-width: 570px)";
 
-
 @extraSmall: ~"(max-width: 460px)";
 
 @extraLarge: ~"(min-width: 999px)";
-
-
   ///////////////////////// 
-
   @media @tablet {
     .userSideBar{
         display:none;
@@ -31,11 +27,20 @@
      height: 150px;
      width: 150px;
     }
+  .profilePhoto {
+    text-align: center;
+  }
+  .photoCnt{
+    margin-left: 20px;
+  }
     .editProfile{
       margin-right: 20px;
       // margin-top: 150px;
-
     }
+        .infoName > p > label {
+     width: auto;
+    padding-right: 0px;
+}
   }
   /////////////////////////  
   @media @desktop {
@@ -43,13 +48,22 @@
         display: none;
     }
     .infoName{
-      margin-left: 65px
+      margin-left: 40px
     }
   }
   ///////////////////////// 
   @media @extraSmall {
     .userName{
       margin-left: 60px;
+    }
+       .infoName > p > label {
+     width: auto;
+    padding-right: 0px;
+}
+  .otherUserPhotoComment{
+    margin-top: -25px;
+      width: 100px;
+      height: 100px;
     }
   }
   //////////////////////////
@@ -69,11 +83,10 @@
       margin-left: 60px;
     }
   }
-  
     ////////
     @media @extraLarge {
     .infoName{
-      margin-left: 20%;   
+      // margin-left: 20%;   
     }
     .infoName > p > label {
     width: 200px;
@@ -81,15 +94,13 @@
 }
 .infoName > p{
   width: 500px;
-  
-
 }
   }
   /////
 
   @media @medium {
        .infoName > p > label {
-    width: auto;
-    padding-right: 0;
+    // width: auto;
+    padding-right: 40px;
 }
   }

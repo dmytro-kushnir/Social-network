@@ -27,19 +27,22 @@
     width: auto;
     padding-right: 0px;
   }
+  .friendsGalleryBlock {
+    display: none;
+  }
+  #myCarousel {
+    display: block;
+  }
 }
 @media (min-width: 768px) {
   .MobileUserSideBar {
     display: none;
   }
   .infoName {
-    margin-left: 40px;
+    margin-left: 20px;
   }
 }
 @media (max-width: 460px) {
-  .userName {
-    margin-left: 60px;
-  }
   .infoName > p > label {
     width: auto;
     padding-right: 0px;
@@ -61,9 +64,6 @@
     margin-left: 20%;
     margin-top: 40px;
   }
-  .userName {
-    margin-left: 60px;
-  }
 }
 @media (min-width: 999px) {
   .infoName > p > label {
@@ -77,5 +77,8 @@
 @media (min-width: 768px) and (max-width: 992px) {
   .infoName > p > label {
     padding-right: 40px;
+  }
+  .friendsGalleryBlock {
+    display: none;
   }
 }

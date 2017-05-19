@@ -1,178 +1,84 @@
-// generated on 2017-04-20 using generator-webapp 2.4.1
-const gulp = require('gulp');
-const gulpLoadPlugins = require('gulp-load-plugins');
-const browserSync = require('browser-sync').create();
-const del = require('del');
-const wiredep = require('wiredep').stream;
-const runSequence = require('run-sequence');
+// Less configuration
+var gulp = require('gulp'),
+    less = require('gulp-less'),
+    uglify = require('gulp-uglify'),
+    cssmin = require('gulp-clean-css'),
+    prefixer = require('gulp-autoprefixer'),
+    imagemin = require('gulp-imagemin'),
+    rigger = require('gulp-rigger'),
+    watch = require('gulp-watch'),
+    sourcemaps = require('gulp-sourcemaps');
 
-const $ = gulpLoadPlugins();
-const reload = browserSync.reload;
 
-var dev = true;
+var path = {
+    build: { //Тут мы укажем куда складывать готовые после сборки файлы
+        html: 'build/',
+        js: 'build/js/',
+        css: 'build/css/',
+        img: 'build/img/',
+        fonts: 'build/fonts/'
+    },
+    src: { //Пути откуда брать исходники
+        html: '*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        js: 'src/js/main.js', //В стилях и скриптах нам понадобятся только main файлы
+        style: 'src/css/**/style.css',
+        img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        less: 'src/css/**/lessStyle.less'
+    },
+    watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
+        html: 'src/**/*.html',
+        js: 'src/js/**/*.js',
+        style: 'src/css/**/*.css',
+        img: 'src/img/**/*.*',
+        less: 'src/css/**/*.less'
+    },
+    clean: './build'
+};
 
-gulp.task('styles', () => {
-  return gulp.src('app/styles/*.scss')
-    .pipe($.plumber())
-    .pipe($.if(dev, $.sourcemaps.init()))
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
-    .pipe($.if(dev, $.sourcemaps.write()))
-    .pipe(gulp.dest('.tmp/styles'))
-    .pipe(reload({stream: true}));
+// var config = {
+//     server: {
+//         baseDir: "./build"
+//     },
+//     tunnel: true,
+//     host: 'localhost',
+//     port: 9000,
+//     logPrefix: "Frontend_Devil"
+// };
+
+/////////////git rm --cached FILENAME
+gulp.task('less:build', function () {
+    gulp.src(path.src.less) // Gets all files ending with .scss in src/css and children dirs
+        .pipe(less())
+        .pipe(gulp.dest(function (f) {
+            return f.base;
+        }))
+        .pipe(cssmin()) //Сожмем
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(path.build.css)) //И в build
 });
 
-gulp.task('scripts', () => {
-  return gulp.src('app/scripts/**/*.js')
-    .pipe($.plumber())
-    .pipe($.if(dev, $.sourcemaps.init()))
-    .pipe($.babel())
-    .pipe($.if(dev, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
+gulp.task('style:build', function () {
+    gulp.src(path.src.style) //Выберем наш main.scss
+        .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(prefixer()) //Добавим вендорные префиксы
+        .pipe(cssmin()) //Сожмем
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(path.build.css)) //И в build
 });
 
-function lint(files) {
-  return gulp.src(files)
-    .pipe($.eslint({ fix: true }))
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.eslint.format())
-    .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
-}
+gulp.task('watch', function () {
 
-gulp.task('lint', () => {
-  return lint('app/scripts/**/*.js')
-    .pipe(gulp.dest('app/scripts'));
-});
-gulp.task('lint:test', () => {
-  return lint('test/spec/**/*.js')
-    .pipe(gulp.dest('test/spec'));
-});
-
-gulp.task('html', ['styles', 'scripts'], () => {
-  return gulp.src('app/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
-    .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
-    .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
-    .pipe($.if(/\.html$/, $.htmlmin({
-      collapseWhitespace: true,
-      minifyCSS: true,
-      minifyJS: {compress: {drop_console: true}},
-      processConditionalComments: true,
-      removeComments: true,
-      removeEmptyAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true
-    })))
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin()))
-    .pipe(gulp.dest('dist/images'));
-});
-
-gulp.task('fonts', () => {
-  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
-    .concat('app/fonts/**/*'))
-    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
-});
-
-gulp.task('extras', () => {
-  return gulp.src([
-    'app/*',
-    '!app/*.html'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
-});
-
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
-
-gulp.task('serve', () => {
-  runSequence(['clean', 'wiredep'], ['styles', 'scripts', 'fonts'], () => {
-    browserSync.init({
-      notify: false,
-      port: 9000,
-      server: {
-        baseDir: ['.tmp', 'app'],
-        routes: {
-          '/bower_components': 'bower_components'
-        }
-      }
+    watch([path.watch.less], function (event, cb) {
+        gulp.start('less:build');
     });
-
-    gulp.watch([
-      'app/*.html',
-      'app/images/**/*',
-      '.tmp/fonts/**/*'
-    ]).on('change', reload);
-
-    gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
-    gulp.watch('app/fonts/**/*', ['fonts']);
-    gulp.watch('bower.json', ['wiredep', 'fonts']);
-  });
+    watch([path.watch.style], function (event, cb) {
+        gulp.start('style:build');
+    });
 });
 
-gulp.task('serve:dist', ['default'], () => {
-  browserSync.init({
-    notify: false,
-    port: 9000,
-    server: {
-      baseDir: ['dist']
-    }
-  });
-});
+gulp.task('build', [
+    'style:build',
+    'less:build'
+]);
 
-gulp.task('serve:test', ['scripts'], () => {
-  browserSync.init({
-    notify: false,
-    port: 9000,
-    ui: false,
-    server: {
-      baseDir: 'test',
-      routes: {
-        '/scripts': '.tmp/scripts',
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
-
-  gulp.watch('app/scripts/**/*.js', ['scripts']);
-  gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
-  gulp.watch('test/spec/**/*.js', ['lint:test']);
-});
-
-// inject bower components
-gulp.task('wiredep', () => {
-  gulp.src('app/styles/*.scss')
-    .pipe($.filter(file => file.stat && file.stat.size))
-    .pipe(wiredep({
-      ignorePath: /^(\.\.\/)+/
-    }))
-    .pipe(gulp.dest('app/styles'));
-
-  gulp.src('app/*.html')
-    .pipe(wiredep({
-      exclude: ['bootstrap-sass'],
-      ignorePath: /^(\.\.\/)*\.\./
-    }))
-    .pipe(gulp.dest('app'));
-});
-
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
-});
-
-gulp.task('default', () => {
-  return new Promise(resolve => {
-    dev = false;
-    runSequence(['clean', 'wiredep'], 'build', resolve);
-  });
-});
+gulp.task('default', ['build', 'watch']);

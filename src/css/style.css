@@ -19,17 +19,13 @@ body {
 .classWithPad {
     margin: -5px;
     background-color: white;
-    /*padding:1px; */
-}
-
-
+    /*padding:1px; *
 /* Navigation header START*/
-
+}
 .logo {
     height: 30px;
     width: auto;
 }
-
 .navbarTop {
     background: rgb(17, 17, 17);
     background: -moz-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);

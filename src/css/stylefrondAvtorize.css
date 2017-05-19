@@ -5,7 +5,7 @@
 /*header*/
 .header{
 	font-family: Helvetica;
-    background: rgb(17, 17, 17);
+    background: rgb(17, 17, 18);
     height: 50px; 
     display: flex;
     flex-direction: row;   

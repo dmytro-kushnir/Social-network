@@ -1,12 +1,13 @@
-
-#wrapper{
-  overflow-x: hidden;
-   position: fixed;
+#wrapper {
+    overflow-x: hidden;
+    position: fixed;
 }
+
 body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
 }
+
 .container-fluid {
     background-color: gainsboro;
 }
@@ -17,7 +18,7 @@ body {
 
 .classWithPad {
     margin: -5px;
-    background-color: whitesmoke;
+    background-color: white;
     /*padding:1px; */
 }
 
@@ -25,8 +26,8 @@ body {
 /* Navigation header START*/
 
 .logo {
-    margin-top: -40px;
-     background-size: cover;
+    margin-top: -42px;
+    background-size: cover;
     height: 120px;
     width: auto;
 }
@@ -63,7 +64,6 @@ body {
 
 .userSideBar {
     /*height: 100vh;*/
-  
 }
 
 .asideNavbar li:hover {
@@ -72,9 +72,8 @@ body {
 }
 
 .asideNavbar li {
-    background-color: gainsboro;
+    background-color: white;
     width: 100%;
-   
 }
 
 .asideNavbar>li>a {
@@ -111,7 +110,10 @@ body {
 }
 
 .friend:hover {
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
+    -webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .friend1 {
@@ -136,10 +138,11 @@ body {
 }
 
 .friend>figcaption:hover {
-    font-weight: 700;
+    color: gray;
 }
 
-.myFriends, .myGallery {
+.myFriends,
+.myGallery {
     margin-left: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -150,40 +153,64 @@ body {
     color: gray;
 }
 
-.gallery{
+.gallery {
     display: flex;
-    margin-left: 20px;  
+    margin-left: 20px;
     flex-direction: column;
     width: 300px;
 }
-.galleryRow{
+
+.galleryRow {
     display: flex;
 }
-.galleryItem{
-    background-size: cover;
+
+.galleryItem {
+    /*background-size: cover;*/
+    object-fit: cover;
     height: 115px;
     width: 115px;
     cursor: pointer;
     margin: 5px;
 }
-.item1{
+
+.no-gutter>[class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-bottom: 0px !important;
+    background-image: none !important;
+    filter: none !important;
+    padding: 40px !important;
+}
+
+.item1 {
     background-image: url("../img/gallery/1.jpg");
 }
-.item2{
+
+.item2 {
     background-image: url("../img/gallery/2.jpg");
 }
-.item3{
+
+.item3 {
     background-image: url("../img/gallery/3.jpg");
 }
-.item4{
+
+.item4 {
     background-image: url("../img/gallery/4.jpg");
 }
-.item5{
+
+.item5 {
     background-image: url("../img/gallery/5.jpg");
 }
-.item6{
+
+.item6 {
     background-image: url("../img/gallery/6.jpg");
 }
+
+
 /*left part END*/
 
 .userMainBody {
@@ -207,8 +234,8 @@ body {
 /*Update Background*/
 
 .updateBg {
-    margin-top: 20px;
-    margin-left: 10px;
+    margin-top: 30px;
+    margin-left: 40px;
     width: 200px;
     padding-left: 5px;
     padding-top: 5px;
@@ -261,13 +288,16 @@ body {
     padding-left: 0 !important;
 }
 
-.userName {  
+.userName {
+    padding-bottom: 15px;
 }
-.infoName{
+
+.infoName {
     padding-left: 15px;
 }
+
 .infoName>p>label {
-    width: 200px;
+    width: 150px;
     /*padding-right: 60px;*/
     /*margin-left:40px;*/
 }
@@ -277,11 +307,13 @@ body {
 }
 
 .profilePhoto {
-    background-size: cover;
-    background-image: url("../img/avatar.jpg");
+    /*background-size: cover;*/
+    /*background-image: url("../img/avatar.jpg");*/
+    object-fit: cover;
     height: 200px;
     width: 200px;
     margin-top: -40px;
+    border-radius: 0px !important;
     cursor: pointer;
 }
 
@@ -294,7 +326,7 @@ body {
 }
 
 .friendsAndPhoto {
-    margin-top: 10px; 
+    margin-top: 10px;
     padding-left: 15px;
 }
 
@@ -302,36 +334,43 @@ body {
     cursor: pointer;
     width: 20px;
 }
-.friendsAndPhoto>div{
-    display:flex;  
-    justify-content:flex-start;
+
+.friendsAndPhoto>div {
+    display: flex;
+    justify-content: flex-start;
     padding: 0 !important;
 }
-.friendsAndPhotoIcon{
+
+.friendsAndPhotoIcon {
     background-size: cover;
     width: 25px;
     height: 25px;
-    cursor: pointer;  
-}
-.friendsIco{
-  background-image: url("../img/friends.png");
-  margin-left: 80px;  
-}
-.galleryIco{
-  background-image: url("../img/gallery.png");
-  margin-left: 70px;  
+    cursor: pointer;
 }
 
-.carouselItem{
+.friendsIco {
+    background-image: url("../img/friends.png");
+    margin-left: 80px;
+}
+
+.galleryIco {
+    background-image: url("../img/gallery.png");
+    margin-left: 70px;
+}
+
+.carouselItem {
     background-size: cover;
     height: 200px;
     width: 100%;
     cursor: pointer;
     margin: 5px;
 }
-#myCarousel{
+
+#myCarousel {
     display: none;
 }
+
+
 /*Comment START*/
 
 .commentImage {
@@ -359,15 +398,13 @@ body {
 /*POST START*/
 
 .posters {
-    background-color: #a6e1ec;
-    border-radius: 5px;
+    background-color: #f2f2f2;
     margin: 10px;
 }
 
 .posters div {
     padding: 10px;
-    background-color: #2aabd2;
-    border-radius: 5px;
+    background-color: gainsboro;
 }
 
 .posters p {
@@ -388,8 +425,9 @@ body {
 }
 
 .otherUserPhotoComment {
-    background-image: url("../img/users/user1/photo/photo.jpg");
-    background-size: cover;
+    /*background-image: url("../img/users/user1/photo/photo.jpg");*/
+    /*background-size: cover;*/
+    object-fit: cover;
     height: 300px;
     width: 300px;
     cursor: pointer;

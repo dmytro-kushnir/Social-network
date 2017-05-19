@@ -41,6 +41,19 @@
   .infoName {
     margin-left: 20px;
   }
+  .modal-lg {
+    width: 1000px !important;
+    height: 900px;
+    /* control height here */
+  }
+  .img-responsive {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .modalImgWrapper {
+    height: 450px;
+    width: auto;
+  }
 }
 @media (max-width: 460px) {
   .infoName > p > label {
@@ -48,9 +61,20 @@
     padding-right: 0px;
   }
   .otherUserPhotoComment {
-    margin-top: -25px;
+    margin-top: -15px;
     width: 100px;
     height: 100px;
+  }
+  #myCarousel {
+    margin-left: -3px !important;
+  }
+  .img-responsive {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .modalImgWrapper {
+    height: 450px;
+    width: auto;
   }
 }
 @media (max-width: 570px) {
@@ -66,19 +90,27 @@
   }
 }
 @media (min-width: 999px) {
-  .infoName > p > label {
-    width: 200px;
-    padding-right: 60px;
-  }
   .infoName > p {
-    width: 500px;
+    width: 400px;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
-  .infoName > p > label {
-    padding-right: 40px;
-  }
   .friendsGalleryBlock {
     display: none;
+  }
+  #myCarousel {
+    display: block;
+    margin-left: 3px !important;
+  }
+  .img-responsive {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .modalImgWrapper {
+    height: 450px;
+    width: auto;
+  }
+  .modal-lg {
+    width: 700px !important;
   }
 }

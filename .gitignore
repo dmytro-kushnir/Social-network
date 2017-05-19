@@ -58,3 +58,5 @@ node_modules/
 .editorconfig
 .gitattributes
 bower.json
+package.json
+package

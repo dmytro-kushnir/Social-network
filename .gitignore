@@ -50,4 +50,10 @@ Temporary Items
 #Directories
 node_modules/
 .vscode/
+.vscode
+.vs
 .vs/
+.yo-rc.json
+.editorconfig
+.gitattributes
+bower.json

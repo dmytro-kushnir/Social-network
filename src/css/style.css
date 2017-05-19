@@ -26,9 +26,7 @@ body {
 /* Navigation header START*/
 
 .logo {
-    margin-top: -42px;
-    background-size: cover;
-    height: 120px;
+    height: 30px;
     width: auto;
 }
 

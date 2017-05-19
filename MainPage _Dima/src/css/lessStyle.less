@@ -1,0 +1,159 @@
+// Mode: Tablet
+@tablet: ~"(max-width: 767px)";
+// Mode: Desktop
+@desktop: ~"(min-width: 768px)";
+
+@medium: ~"(min-width: 768px) and (max-width: 992px)";
+
+@small: ~"(max-width: 570px)";
+
+@extraSmall: ~"(max-width: 460px)";
+
+@extraLarge: ~"(min-width: 999px)";
+  ///////////////////////// 
+  @media @tablet {
+    .userSideBar{
+        display:none;
+    }  
+    .infoName{
+        margin-top: -135px;
+        margin-left: 180px;
+    }
+    .infoValue{
+      padding-left: 30px;
+    }
+    .profilePhoto{
+     margin-top: 20px;
+     height: 150px;
+     width: 150px;
+    }
+  .profilePhoto {
+    text-align: center;
+  }
+  .photoCnt{
+    margin-left: 20px;
+  }
+    .editProfile{
+      margin-right: 20px;
+      // margin-top: 150px;
+    }
+        .infoName > p > label {
+     width: auto;
+    padding-right: 0px;
+}
+.friendsGalleryBlock{
+  display: none;
+}
+#myCarousel{
+  display: block;
+ 
+}
+  }
+  /////////////////////////  
+  @media @desktop {
+  .MobileUserSideBar{
+        display: none;
+    }
+    .infoName{
+      margin-left: 20px
+    }
+      .modal-lg {
+        width: 1000px !important;
+        height: 900px; /* control height here */
+    }
+    .img-responsive{
+    max-width: 100%;
+    max-height: 100%;
+}
+.modalImgWrapper{
+   height: 450px;
+  width: auto;
+}
+    
+  }
+  ///////////////////////// 
+  @media @extraSmall {
+    .userName{
+      // margin-left: 20px;
+    }
+       .infoName > p > label {
+     width: auto;
+    padding-right: 0px;
+}
+  .otherUserPhotoComment{
+    margin-top: -15px;
+      width: 100px;
+      height: 100px;
+    }
+
+    #myCarousel{
+  
+   margin-left: -3px !important;
+}
+
+.img-responsive{
+    max-width: 100%;
+    max-height: 100%;
+}
+.modalImgWrapper{
+  height: 450px;
+  width: auto;
+}
+    
+  }
+  //////////////////////////
+   ///////////////////////// 
+  @media @small {
+    .infoName{
+      margin-top: 20px;
+      margin-left: 5%;   
+    }
+     .profilePhoto{
+      height: 200px;
+      width: 200px;
+      margin-left: 20%;
+      margin-top: 40px;
+    }
+    .userName{
+      // margin-left: 50px;
+    }
+  }
+    ////////
+    @media @extraLarge {
+    .infoName{
+      // margin-left: 20%;   
+    }
+    .infoName > p > label {
+    // padding-right: 60px;
+}
+.infoName > p{
+  width: 400px;
+}
+  }
+  /////
+
+  @media @medium {
+       .infoName > p > label {
+    // width: auto;
+    // padding-right: 40px;
+}
+.friendsGalleryBlock{
+  display: none;
+}
+#myCarousel{
+  display: block;
+   margin-left: 3px !important;
+}
+
+   .img-responsive{
+    max-width: 100%;
+    max-height: 100%;
+}
+.modalImgWrapper{
+   height: 450px;
+  width: auto;
+}
+.modal-lg{
+  width: 700px !important;
+}
+  }

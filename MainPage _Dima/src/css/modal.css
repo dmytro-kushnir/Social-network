@@ -1,0 +1,217 @@
+/*.modal-open {
+}
+.modal-dialog {
+}
+.modal-content {
+
+}*/
+
+
+/*modal Header START*/
+
+.modal-header {}
+
+
+/*modal Header END*/
+
+.img-responsive {
+  /*max-width: 100%;
+    max-height: 100%;*/
+}
+
+.modalImgWrapper {
+  /*height: 450px;
+  width: auto;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  /*max-height: 450px;*/
+  background-color: #f2f2f2;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.modal-body img {
+  /*max-height: 69vh;*/
+}
+
+.RightBodyModal {
+  overflow-y: scroll;
+  max-height: 450px;
+}
+
+.LightBodyModal {
+  background-color: #313131;
+}
+
+
+/*USER PHOTO AND OTHER START*/
+
+.modalUser {
+  padding-top: 5px;
+  background-color: gainsboro;
+  min-height: 70px;
+  border-bottom: 1px solid gray;
+}
+
+.modalUserName {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modalOtherUserPhoto {
+  margin-left: 20px;
+}
+
+
+/*USER PHOTO AND OTHER END*/
+
+
+/*LIKE START*/
+
+.modalHeart {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url("../img/heart.png");
+  float: left;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.modalLike {
+  padding-top: 25px;
+  padding-left: 25px;
+  min-height: 70px;
+  border-bottom: 1px solid gray;
+}
+
+.modalLikeText {
+  cursor: pointer;
+}
+
+.modalLikeText>span {
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.modalLike>div {
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  width: 180px;
+}
+
+.modalLike>div:hover .modalHeart {
+  background-image: url("../img/heart_hover.png");
+}
+
+
+/*LIKE END*/
+
+
+/*Post START*/
+
+.modalPost {
+  border-bottom: 1px solid gray;
+}
+
+.modalOtherUserPhotoPost {
+  background-image: url("../img/avatar.jpg");
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+}
+
+.modalPhotoPost {
+  /*background-image: url("../img/photoPost.jpg");*/
+  /*background-size: cover;*/
+  object-fit: cover;
+  /*width: 100px;
+  height: 150px;*/
+  max-width: 200px;
+  max-height: auto;
+  /*margin-left: 70px;*/
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.modalPostUser {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modalPostDate {
+  margin-top: 10px;
+  margin-left: 70px;
+  color: gray;
+}
+
+
+/*Post END*/
+
+
+/*Footer START*/
+
+.modal-footer {
+  /*background-color:#514e4e;*/
+  padding: 10px !important;
+  
+}
+
+.leftFotterModal {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modalComment {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-image: url("../img/comment.png");
+  cursor: pointer;
+}
+
+.modalHeartFooter {
+  width: 30px;
+  height: 30px;
+}
+
+.modalHeartFooter>span {
+  position: relative;
+  top: 5px;
+  left: 25px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modalRecycleBin {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-image: url("../img/recycleBin.png");
+  cursor: pointer;
+}
+
+.modalHeartFooter:hover {
+  background-image: url("../img/heart_hover.png");
+}
+
+.modalComment:hover {
+  background-image: url("../img/comment_hover.png");
+}
+
+.rightFotterModal {}
+
+.modalMakeComment{
+  margin-top: 5px;
+  cursor: default; 
+  width:240px;
+  font-size: 16px;
+  margin-left: -20px;
+}
+
+/*Footer END*/

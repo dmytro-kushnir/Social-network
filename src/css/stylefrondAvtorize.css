@@ -1,0 +1,181 @@
+@font-face{
+    font-family: Helvetica, Arial;
+    src: url("./fonts/HelveticaBlack/HelveticaBlack.ttf");
+}
+/*header*/
+.header{
+	font-family: Helvetica;
+    background: rgb(17, 17, 17);
+    height: 50px; 
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between;
+}
+.header_logo{
+    width: auto;
+    height: 30px;
+    margin: 8px auto 100px;
+}
+.header_enter{
+    display: none;
+}
+.email, .password{
+	font-family: Helvetica;
+    margin: 5px;
+}
+.enter_button{
+	font-family: Helvetica;
+    width: 95px;
+    color: white;
+    border:1px solid rgb(61, 61, 61);
+    background: rgb(17, 17, 17);
+    /*background: rgb(81, 81, 81);*/
+}
+.enter_button:hover{
+    background: rgb(81, 81, 81);
+    transition: 1s;
+}
+/*main*/
+.main{
+    padding: 50px 0 50px;
+    background: #c3cbe0;
+}
+.main_enter{
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 325px;
+    margin: 0 auto 25px;
+    padding: 25px 10px 20px;
+}
+.main_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 275px;
+    height: 170px;
+    margin: 0 auto 15px;
+}
+.registration{
+	font-family: Helvetica;
+    background: white;
+    width: 325px;
+    height: 325px;
+    padding: 50px 10px 20px;
+    margin: auto;
+}
+.registration_header, .enter_header{
+    text-align: center;
+    font-size: 25px;
+    margin: 0 0 15px;
+}
+.registration_secondheader{
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+.partOfForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 275px;
+    height: 215px;
+    margin: auto;
+}
+.form_button, .mainenter_button{
+    margin-top: 10px;
+    height: 50px;
+    background: white;
+    border: 1px solid rgb(204,204,204);
+}
+.form_button:hover, .mainenter_button:hover{
+    background: rgb(204,204,204);
+    transition: 1s;
+}
+/*footer*/
+.footer{
+	font-family: Helvetica;
+    background: rgb(17, 17, 17);
+    height: 50px; 
+    color: #fff;
+    text-align: center;
+    padding: 25px 0 0;
+}
+.footer_text{
+    margin: 0;
+}
+/*адаптивність*/
+@media  screen and (min-width: 768px){
+    .header_logo{
+        margin: 8px 0 0 50px;
+    }
+    .header_enter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: white;
+        height: 30px;
+        width: 600px;
+        margin: 10px 10px 0;
+    }
+    .main{
+        padding: 50px 0 50px;
+        background: #c3cbe0;
+    }
+    .main_enter{
+        display: none;
+    }
+    .registration{
+        height: 400px;
+        width: 400px;
+        margin: auto;
+    }
+    .email_input, .password_input{
+        width: 150px;
+    }
+    .enter_button{
+        margin: 0 0 0 5px;
+    }
+    .partOfForm{
+        margin: 20px auto 0;
+        width: 350px;
+        height: 275px;
+    }
+    
+}
+@media  screen and (min-width: 992px){
+    .registration{
+        width: 430px;
+        height: 375px;
+    }
+    .header_logo{
+        margin: 8px 0 0 80px;
+    }
+    .main_enter{
+        display: none;
+    }
+    .partOfForm{
+        margin: 20px auto 0;
+        width: 375px;
+        height: 250px;
+    }
+}
+@media  screen and (min-width: 1200px){
+    .header_logo{
+        width: auto;
+        height: 30px;
+        margin: 8px 0 0 150px;
+        }
+    .main{
+        background: url("../img/avtorizbackground.jpg");
+        background-size: auto;
+        padding: 120px 0 150px 100px;
+        }
+    .main_enter{
+        display: none;
+        }
+    .registration{
+        margin: 0 0 0 50px;
+    }
+}

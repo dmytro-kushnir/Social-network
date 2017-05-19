@@ -40,6 +40,7 @@ $RECYCLE.BIN/
 .VolumeIcon.icns
 gulpfile.js
 .gulpfile.js
+gulpfile
 package.json
 # Directories potentially created on remote AFP share
 .AppleDB

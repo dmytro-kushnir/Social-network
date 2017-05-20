@@ -26,61 +26,67 @@
             <!--<div class="modal-title">Перегляд зображення</div>-->
           </div>
           <div class="modal-body">
-        
             <div class="row no-gutter ">
               <div class="col-lg-7 col-md-7 col-sm-12 col-xs-0">
-                 <div class="LightBodyModal">
-                   <div class="modalImgWrapper">
-                <img class="img-responsive center-block modalImg"   src="" alt=""></div>
-                <a id="prev" class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                <a id="next" class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-                 </div>
+                <div class="LightBodyModal">
+                  <div class="modalImgWrapper">
+                    <img class="img-responsive center-block modalImg" src="" alt=""></div>
+                  <a id="prev" class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                  <a id="next" class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                </div>
               </div>
               <div class="col-lg-5 col-md-5 hidden-sm hidden-xs">
                 <div class="RightBodyModal">
                   <article class="modalUser">
-                      <figure class="otherUserPhoto modalOtherUserPhoto"></figure>
-                      <h4 class="modalUserName">Дженніфер Лоуренс</h4>
-                      <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
-                </article>
-                <article class="modalLike">
-                  <div>
-                  <figure class="modalHeart"></figure>
-                  <p class="modalLikeText">Мені подобається<span>56</span></p>
-                  </div>
-                </article>
-                <article class="modalPost">
-                      <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
-                      <h5 class="modalPostUser">Доктор Стрендж</h5>
-                       <a class="galleryLink"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
-                      <p class="modalPostDate">16 тра о 17:45</p>
-                </article>
-                    <article class="modalPost">
-                      <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
-                      <h5 class="modalPostUser">Доктор Стрендж</h5>
-                      <!--<figure class="modalPhotoPost"></figure>-->
-                      <a class="galleryLink"><img class="modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
-                      <p class="modalPostDate">16 тра о 17:45</p>
-                </article>
-                
+                    <figure class="otherUserPhoto modalOtherUserPhoto"></figure>
+                    <h4 class="modalUserName">Дженніфер Лоуренс</h4>
+                    <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
+                  </article>
+                  <article class="modalLike">
+                    <div>
+                      <figure class="modalHeart"></figure>
+                      <p class="modalLikeText">Мені подобається<span>56</span></p>
+                    </div>
+                  </article>
+                  <article class="modalPost">
+                    <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
+                    <h5 class="modalPostUser">Доктор Стрендж</h5>
+                    <a class="galleryLink"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
+                    <p class="modalPostDate">16 тра о 17:45</p>
+                  </article>
+                  <article class="modalPost">
+                    <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
+                    <h5 class="modalPostUser">Доктор Стрендж</h5>
+                    <a class="galleryLink"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
+                    <p class="modalPostDate">16 тра о 17:45</p>
+                  </article>
+                  
+                  <textarea class="modalTextArea"></textarea>
+                  <figure class="otherUserPhoto modalOtherUserPhotoComment" ></figure>
                 </div>
               </div>
             </div>
-          
           </div>
-          <div class="modal-footer">/
+          <div class="modal-footer">
             <div class="row no-gutter ">
               <div class="  col-lg-7 col-md-7 col-sm-12 col-xs-12">
                 <div class="leftFotterModal">
-                <figure class="modalHeart modalHeartFooter"><span>56</span></figure>
-                <figure class="modalComment"></figure>
-                <figure class="modalRecycleBin"></figure>
+                  <figure class="modalHeart modalHeartFooter"><span>56</span></figure>
+                  <figure class="modalComment ModalCommentAction"></figure>
+                  <figure class="modalRecycleBin"></figure>
                 </div>
               </div>
               <div class=" RightFotterModal col-lg-5 col-md-5 hidden-sm hidden-xs">
-                
-                 <figure class="otherUserPhoto modalOtherUserPhotoPost" style="width:30px; height:30px;"></figure>
-                  <p class="modalMakeComment">Написати коментар...</p>
+                <div>
+                  <!--<figure class="otherUserPhoto modalOtherUserPhotoPost" style="width:30px; height:30px;"></figure>-->
+                  <p class="modalMakeComment ModalCommentAction">Написати коментар...</p>
+                  <div class="modalSendBlock">
+                    <figure class="commentImage pull-left"></figure>
+                    <button type="button " class="btn  btn-default post pull-right" ng-click="main.addPost()" style="margin-left:20px; margin-right:30px;">Відправити</button>
+                    <button type="button " class="btn  btn-default post pull-right">Відміна</button>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -179,7 +185,7 @@
               <!--Left part START-->
               <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
                 <a class="galleryLink"><img class="profilePhoto img-rounded" data-img="src/img/avatar.jpg" src="src/img/avatar.jpg" alt="profile photo"></a>
-                
+
                 <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
                 <section class="friendsGalleryBlock">
                   <h3 class="myFriends">Мої друзі <span>480</span></h3>
@@ -239,7 +245,7 @@
                 </div>
                 <div style="margin-left:0;" class="row">
                   <div id="myCarousel" class="carousel slide" data-interval="0" data-ride="carousel" style="width: 96%; margin-left: 0px">
-                    <!-- Indicators -->
+
                     <ol class="carousel-indicators">
                       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                       <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -249,7 +255,7 @@
                       <li data-target="#myCarousel" data-slide-to="5"></li>
                     </ol>
 
-                    <!-- Wrapper for slides -->
+
                     <div class="carousel-inner">
                       <figure class="item carouselItem item1 active"></figure>
                       <figure class="item carouselItem item2"></figure>
@@ -259,7 +265,7 @@
                       <figure class="item carouselItem item6"> </figure>
                     </div>
 
-                    <!-- Left and right controls -->
+
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                       <span class="glyphicon glyphicon-chevron-left"></span>
                       <span class="sr-only">Previous</span>

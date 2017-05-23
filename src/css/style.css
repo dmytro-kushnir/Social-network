@@ -27,14 +27,8 @@ body {
     height: 30px;
     width: auto;
 }
-
-.navbarTop {
-    background: rgb(17, 17, 17);
-    background: -moz-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
-    background: -webkit-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
-    background: -o-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
-    background: -ms-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
-    background: linear-gradient(0deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
+.navbar {
+    background: rgb(17, 17, 17)!important;
 }
 
 .userHeader {

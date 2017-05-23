@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="src/css/reset_style.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/modal.css">
+  <link rel="stylesheet" href="src/css/lessStyle.css">
+  <link rel="stylesheet" href="src/css/lightBoxGallery.css">
+  <link rel="stylesheet" href="src/css/bootstrap.css">
+  <link rel="stylesheet" href="src/css/bootstrap-theme.css">
+  <title>Gallery</title>
+</head>
+
+<body>
+  <div id="wrappper">
+    <!-- Modal gallry window-->
+    <div class="modal fade" id="image-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <!--<div class="modal-title">Перегляд зображення</div>-->
+          </div>
+          <div class="modal-body">
+            <div class="row no-gutter ">
+              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-0">
+                <div class="LightBodyModal">
+                  <div class="modalImgWrapper">
+                    <img class="img-responsive center-block modalImg" src="" alt=""></div>
+                  <a id="prev" class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                  <a id="next" class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                </div>
+              </div>
+              <div class="col-lg-5 col-md-5 hidden-sm hidden-xs">
+                <div class="RightBodyModal">
+                  <article class="modalUser">
+                    <figure class="otherUserPhoto modalOtherUserPhoto"></figure>
+                    <h4 class="modalUserName">Дженніфер Лоуренс</h4>
+                    <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
+                  </article>
+                  <article class="modalLike">
+                    <div>
+                      <figure class="modalHeart"></figure>
+                      <p class="modalLikeText">Мені подобається<span>56</span></p>
+                    </div>
+                  </article>
+                  <article class="modalPost">
+                    <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
+                    <h5 class="modalPostUser">Доктор Стрендж</h5>
+                    <a class="galleryLink"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
+                    <p class="modalPostDate">16 тра о 17:45</p>
+                  </article>
+                  <article class="modalPost">
+                    <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
+                    <h5 class="modalPostUser">Доктор Стрендж</h5>
+                    <a class="galleryLink"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
+                    <p class="modalPostDate">16 тра о 17:45</p>
+                  </article>
+                  <textarea class="modalTextArea"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">/
+            <div class="row no-gutter ">
+              <div class="  col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="leftFotterModal">
+                  <figure class="modalHeart modalHeartFooter"><span>56</span></figure>
+                  <figure class="modalComment"></figure>
+                  <figure class="modalRecycleBin"></figure>
+                </div>
+              </div>
+              <div class=" RightFotterModal col-lg-5 col-md-5 hidden-sm hidden-xs">
+
+                <figure class="otherUserPhoto modalOtherUserPhotoPost" style="width:30px; height:30px;"></figure>
+                <p class="modalMakeComment">Написати коментар...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <!---->
+  <!--Header START-->
+  <header class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container containerHeader">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                    <span class="sr-only">Open navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+        <a href="#" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="responsive-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="user dropdown-toggle" data-toggle="dropdown">Доктор<b class="caret"></b>
+                <img class="userHeader" src="src/img/avatar.jpg" alt="user"></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Моя сторінка</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Вийти</a></li>
+            </ul>
+            <div class="MobileUserSideBar">
+              <ul class="nav navbar-nav mineNavbar">
+                <li><a href="#">Мій профіль</a></li>
+                <li><a href="#">Мої друзі</a></li>
+                <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
+                <li><a href="#">Галерея</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!--Header END-->
+  <div class="container-fluid">
+    <div class="container custom-container">
+      <div class="row">
+        <!--Navigation START-->
+        <nav class="col-lg-2 col-md-3 col-sm-3 col-xs-0">
+          <div class="classWithPad">
+            <div class="sidebar-nav userSideBar">
+              <div class="navbar navbar-default userNavbar">
+                <div class="navbar-header">
+                  <ul class="nav navbar-nav asideNavbar">
+                    <li><a href="#">Мій профіль</a></li>
+                    <li><a href="#">Мої друзі</a></li>
+                    <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
+                    <li><a href="#">Галерея</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!--Navigation END-->
+        <!--Main body START-->
+        <main class="col-lg-9 col-md-9 col-sm-9 col-xs-12 ">
+          <div class="classWithPad userMainBody">
+            <div class="row no-gutter">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/1.jpg"
+                      alt="image1">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/2.jpg"
+                      alt="image2">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/3.jpg"
+                      alt="image3">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/4.jpg"
+                      alt="image4">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/5.jpg"
+                      alt="image5">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/6.jpg"
+                      alt="image6">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/7.jpg"
+                      alt="image7">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/8.jpg"
+                      alt="image8">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/9.jpg"
+                      alt="image9">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/10.jpg"
+                      alt="image10">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/11.jpg"
+                      alt="image11">
+                  </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <a href="#" class="thumbnail">
+                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/12.jpg"
+                      alt="image12">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <!--Main body END-->
+    </div>
+  </div>
+  </div>
+  <!--<script src="src/libs/Less/less.min.js "></script>-->
+  <script src="src/libs/jQuery/jquery-3.2.1.js "></script>
+  <script src="src/js/touchswipe.min.js"></script>
+  <script src="src/js/swipeMobile.js"></script>
+  <script src="src/js//lightBoxGallery.js"></script>
+  <script src="src/js/bootstrap.min.js "></script>
+
+  </div>
+</body>
+
+</html>

@@ -22,10 +22,12 @@ body {
     /*padding:1px; *
 /* Navigation header START*/
 }
+
 .logo {
     height: 30px;
     width: auto;
 }
+
 .navbarTop {
     background: rgb(17, 17, 17);
     background: -moz-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
@@ -364,7 +366,6 @@ body {
     display: none;
 }
 
-
 /*Comment START*/
 
 .commentImage {
@@ -385,9 +386,7 @@ body {
     margin: 5px;
 }
 
-
 /*Comment END*/
-
 
 /*POST START*/
 
@@ -429,8 +428,12 @@ body {
     border: 1px solid gray;
 }
 
-
 /*POST END*/
 
-
 /*Main body END*/
+
+/*GALLERY PAGE START*/
+.galleryItemGallery{
+}
+
+/*GALLERY PAGE END*/

@@ -10,10 +10,24 @@
      $("#image-modal").modal('show');
    });
 
-   $(".modalMakeComment").click(function(){
-       $(".text-hidden").toggleClass("text");
+   $(".ModalCommentAction").click(function(){
+  
+       $(".RightBodyModal").toggleClass("rightBodyModalToggle");
+       $(".modalTextArea").toggleClass("text");
+       $(".modalSendBlock").toggleClass("modalSendBlockToogle");
+       $(".modalMakeComment").toggleClass("modalMakeCommentToogle");
+
+      //  $(".modalTextArea").css({display: "block"});
+      // $(".RightBodyModal").css({height: "380px"});
    });
 
+ $(".post").click(function(){
+ 
+     $(".modalTextArea").toggleClass("text");
+   $(".RightBodyModal").toggleClass("rightBodyModalToggle");
+        $(".modalSendBlock").toggleClass("modalSendBlockToogle");
+            $(".modalMakeComment").toggleClass("modalMakeCommentToogle");
+});
   //  $('#image-modal .modal-body img').on('click', function () {
   //    $("#image-modal").modal('hide')
   //  });

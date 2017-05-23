@@ -51,6 +51,9 @@ Temporary Items
 #Directories
 bower_components/
 node_modules/
+bower_components/
+.babelrc
+.bowerrc
 .vscode/
 .vscode
 .babelrc

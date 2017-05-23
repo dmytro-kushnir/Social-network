@@ -1,0 +1,434 @@
+#wrapper {
+    overflow-x: hidden;
+    position: fixed;
+}
+
+body {
+    background: #f2f2f2;
+    -webkit-overflow-scrolling: touch;
+}
+
+.container-fluid {
+    background-color: gainsboro;
+}
+
+.custom-container {
+    margin-top: 65px;
+}
+
+.classWithPad {
+    margin: -5px;
+    background-color: white;
+    /*padding:1px; *
+/* Navigation header START*/
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+}
+
+.navbar {
+    background: rgb(17, 17, 17)!important;
+}
+
+.userHeader {
+    border-radius: 50%;
+    height: auto;
+    width: 50px;
+}
+
+.user {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.mineNavbar {
+    margin: 7.5px 0px !important;
+}
+
+
+/* Navigation header END*/
+
+
+/* Navigation main START*/
+
+.userSideBar {
+    /*height: 100vh;*/
+}
+
+.asideNavbar li:hover {
+    background-color: gainsboro;
+    width: 100%;
+}
+
+.asideNavbar li {
+    background-color: white;
+    width: 100%;
+}
+
+.asideNavbar>li>a {
+    font-size: 14px;
+}
+
+.asideNavbar ul {
+    /*background-color: whitesmoke;*/
+    width: 100px;
+}
+
+.userNavbar {
+    box-shadow: none !important;
+    border-color: whitesmoke !important;
+}
+
+
+/* Navigation main END*/
+
+
+/*Main body START*/
+
+
+/*left part START*/
+
+.friend {
+    background-size: cover;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.friend:hover {
+    /*border: 1px solid gray;*/
+    -webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.friend1 {
+    background-image: url("../img/users/user1/avatar.jpg");
+}
+
+.friend2 {
+    background-image: url("../img/users/user2/hqdefault.jpg");
+}
+
+.friend3 {
+    background-image: url("../img/users/user3/Rachel_McAdams_5.jpg");
+}
+
+.friend4 {
+    background-image: url("../img/users/user4/d93361ffaed234.jpg");
+}
+
+.friend>figcaption {
+    padding-left: 85px;
+    padding-top: 17px;
+}
+
+.friend>figcaption:hover {
+    color: gray;
+}
+
+.myFriends,
+.myGallery {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.myFriends>span {
+    font-size: 18px;
+    color: gray;
+}
+
+.gallery {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    width: 300px;
+}
+
+.galleryRow {
+    display: flex;
+}
+
+.galleryItem {
+    /*background-size: cover;*/
+    object-fit: cover;
+    height: 115px;
+    width: 115px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.no-gutter>[class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-bottom: 0px !important;
+    background-image: none !important;
+    filter: none !important;
+    padding: 40px !important;
+}
+
+.item1 {
+    background-image: url("../img/gallery/1.jpg");
+}
+
+.item2 {
+    background-image: url("../img/gallery/2.jpg");
+}
+
+.item3 {
+    background-image: url("../img/gallery/3.jpg");
+}
+
+.item4 {
+    background-image: url("../img/gallery/4.jpg");
+}
+
+.item5 {
+    background-image: url("../img/gallery/5.jpg");
+}
+
+.item6 {
+    background-image: url("../img/gallery/6.jpg");
+}
+
+
+/*left part END*/
+
+.userMainBody {
+    min-height: 500px;
+}
+
+
+/*Background*/
+
+.Background {
+    height: 175px;
+}
+
+.backgroundImage {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    height: 225px;
+}
+
+
+/*Update Background*/
+
+.updateBg {
+    margin-top: 30px;
+    margin-left: 40px;
+    width: 200px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.updateBg:hover {
+    border: 1px double white;
+    background-color: slategrey;
+    cursor: pointer;
+}
+
+.changeBgImage {
+    background-image: url("../img/bgChange.png");
+    background-size: cover;
+    width: 35px;
+    height: 25px;
+}
+
+.updateBg:hover .changeBgImage {
+    background-image: url("../img/bgChange_hover.png");
+}
+
+.changeBgText {
+    color: white;
+    font-size: 11.5px;
+    padding-top: 5px;
+    display: none;
+}
+
+.updateBg:hover .changeBgText {
+    display: block;
+}
+
+
+/*Edit mainPage*/
+
+.editProfile {
+    margin-top: 175px;
+    margin-right: 20px;
+}
+
+.editBtnWidth {
+    width: 20px;
+}
+
+
+/*user Main Infromation*/
+
+.mascLeft {
+    padding-left: 0 !important;
+}
+
+.userName {
+    padding-bottom: 15px;
+}
+
+.infoName {
+    padding-left: 15px;
+}
+
+.infoName>p>label {
+    width: 150px;
+    /*padding-right: 60px;*/
+    /*margin-left:40px;*/
+}
+
+.infoName>p {
+    text-align: left;
+}
+
+.profilePhoto {
+    /*background-size: cover;*/
+    /*background-image: url("../img/avatar.jpg");*/
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    margin-top: -40px;
+    border-radius: 0px !important;
+    cursor: pointer;
+}
+
+
+/*Friends and photo count*/
+
+.friendsAndPhoto * {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.friendsAndPhoto {
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.friendsAndPhoto>div>p {
+    cursor: pointer;
+    width: 20px;
+}
+
+.friendsAndPhoto>div {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 !important;
+}
+
+.friendsAndPhotoIcon {
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.friendsIco {
+    background-image: url("../img/friends.png");
+    margin-left: 80px;
+}
+
+.galleryIco {
+    background-image: url("../img/gallery.png");
+    margin-left: 70px;
+}
+
+.carouselItem {
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#myCarousel {
+    display: none;
+}
+
+/*Comment START*/
+
+.commentImage {
+    background-image: url("../img/bgChange_hover.png");
+    background-size: cover;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.commentImage:hover {
+    background-image: url("../img/bgChange.png");
+}
+
+.post {
+    margin: 5px;
+}
+
+/*Comment END*/
+
+/*POST START*/
+
+.posters {
+    background-color: #f2f2f2;
+    margin: 10px;
+}
+
+.posters div {
+    padding: 10px;
+    background-color: gainsboro;
+}
+
+.posters p {
+    padding: 10px;
+    font-size: 16pt;
+    margin: 0 !important;
+}
+
+.otherUserPhoto {
+    background-image: url("../img/users/user1/avatar.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+}
+
+.otherUserPhotoComment {
+    /*background-image: url("../img/users/user1/photo/photo.jpg");*/
+    /*background-size: cover;*/
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    margin-left: 20px;
+    border: 1px solid gray;
+}
+
+/*POST END*/
+
+/*Main body END*/
+
+/*GALLERY PAGE START*/
+.galleryItemGallery{
+}
+
+/*GALLERY PAGE END*/

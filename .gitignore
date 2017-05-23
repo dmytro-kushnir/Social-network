@@ -50,6 +50,9 @@ Temporary Items
 .apdisk
 #Directories
 node_modules/
+bower_components/
+.babelrc
+.bowerrc
 .vscode/
 .vscode
 .vs

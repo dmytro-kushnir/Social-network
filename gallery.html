@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="src/css/modal.css">
   <link rel="stylesheet" href="src/css/lessStyle.css">
   <link rel="stylesheet" href="src/css/lightBoxGallery.css">
+  <link rel="stylesheet" href="src/css/measonryQueries.css">
   <link rel="stylesheet" href="src/css/bootstrap.css">
   <link rel="stylesheet" href="src/css/bootstrap-theme.css">
   <title>Gallery</title>
 </head>
-
 <body>
   <div id="wrappper">
-    <!-- Modal gallry window-->
+     <!-- Modal gallry window-->
     <div class="modal fade" id="image-modal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg ">
         <div class="modal-content">
@@ -27,7 +27,7 @@
           </div>
           <div class="modal-body">
             <div class="row no-gutter ">
-              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-0">
+              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                 <div class="LightBodyModal">
                   <div class="modalImgWrapper">
                     <img class="img-responsive center-block modalImg" src="" alt=""></div>
@@ -35,7 +35,7 @@
                   <a id="next" class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
               </div>
-              <div class="col-lg-5 col-md-5 hidden-sm hidden-xs">
+              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 modalMasc">
                 <div class="RightBodyModal">
                   <article class="modalUser">
                     <figure class="otherUserPhoto modalOtherUserPhoto"></figure>
@@ -51,33 +51,54 @@
                   <article class="modalPost">
                     <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
                     <h5 class="modalPostUser">Доктор Стрендж</h5>
-                    <a class="galleryLink"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
+                    <figure class="modalCancel pull-right"></figure>
+                    <a class="galleryLinkdddddddddddddddddddddddd"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
                     <p class="modalPostDate">16 тра о 17:45</p>
+                    <figure class="modalHeart modalHeartComm pull-right"><span>4</span></figure>
                   </article>
                   <article class="modalPost">
                     <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
                     <h5 class="modalPostUser">Доктор Стрендж</h5>
-                    <a class="galleryLink"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
+                    <figure class="modalCancel pull-right"></figure>
+                    <a class="galleryLinkdddddddddddddddddd"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
                     <p class="modalPostDate">16 тра о 17:45</p>
+                    <figure class="modalHeart modalHeartComm pull-right"><span>2</span></figure>
                   </article>
                   <textarea class="modalTextArea"></textarea>
+                  <figure class="otherUserPhoto modalOtherUserPhotoComment"></figure>
+                  <!--<figure class="commentImage postTablet"></figure>
+                  <button type="button " class="btn  btn-default post postTablet" ng-click="main.addPost()" style="margin-left:20px; margin-right:30px;">Відміна</button>
+                  <button type="button " class="btn  btn-default post postTablet">Відправити</button>-->
                 </div>
               </div>
             </div>
           </div>
-          <div class="modal-footer">/
+          <div class="modal-footer">
             <div class="row no-gutter ">
               <div class="  col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="TabletComment" style="margin-bottom:20px;">
+                  <figure class="commentImage" style="margin-top:5px;"></figure>
+                  <textarea class="TabletTextArea"></textarea>
+                  <button type="button " class="btn  btn-default " style="margin-top:-1px;">Відпр</button>
+                </div>
                 <div class="leftFotterModal">
-                  <figure class="modalHeart modalHeartFooter"><span>56</span></figure>
-                  <figure class="modalComment"></figure>
+                  <figure class="modalHeart modalHeartFooter modalHeartFooters"><span>56</span></figure>
+                  <figure class="modalComment ModalCommentAction"></figure>
                   <figure class="modalRecycleBin"></figure>
                 </div>
+
               </div>
               <div class=" RightFotterModal col-lg-5 col-md-5 hidden-sm hidden-xs">
+                <div>
+                  <!--<figure class="otherUserPhoto modalOtherUserPhotoPost" style="width:30px; height:30px;"></figure>-->
+                  <p class="modalMakeComment ModalCommentAction">Написати коментар...</p>
+                  <div class="modalSendBlock">
+                    <figure class="commentImage pull-left"></figure>
+                    <button type="button " class="btn  btn-default post pull-right" ng-click="main.addPost()" style="margin-left:20px; margin-right:30px;">Відправити</button>
+                    <button type="button " class="btn  btn-default post pull-right">Відміна</button>
+                  </div>
+                </div>
 
-                <figure class="otherUserPhoto modalOtherUserPhotoPost" style="width:30px; height:30px;"></figure>
-                <p class="modalMakeComment">Написати коментар...</p>
               </div>
             </div>
           </div>
@@ -85,8 +106,6 @@
 
       </div>
     </div>
-  </div>
-  </div>
   <!---->
   <!--Header START-->
   <header class="navbar navbar-inverse navbar-fixed-top">
@@ -98,7 +117,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <a href="#" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+        <a href="mainPage.html" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
       </div>
       <div class="collapse navbar-collapse" id="responsive-menu">
         <ul class="nav navbar-nav navbar-right">
@@ -112,10 +131,10 @@
             </ul>
             <div class="MobileUserSideBar">
               <ul class="nav navbar-nav mineNavbar">
-                <li><a href="#">Мій профіль</a></li>
-                <li><a href="#">Мої друзі</a></li>
+                <li><a href="mainPage.html">Мій профіль</a></li>
+                <li><a href="">Мої друзі</a></li>
                 <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
-                <li><a href="#">Галерея</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
               </ul>
             </div>
           </li>
@@ -134,7 +153,7 @@
               <div class="navbar navbar-default userNavbar">
                 <div class="navbar-header">
                   <ul class="nav navbar-nav asideNavbar">
-                    <li><a href="#">Мій профіль</a></li>
+                    <li><a href="mainPage.html">Мій профіль</a></li>
                     <li><a href="#">Мої друзі</a></li>
                     <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
                     <li><a href="#">Галерея</a></li>
@@ -148,88 +167,105 @@
         <!--Main body START-->
         <main class="col-lg-9 col-md-9 col-sm-9 col-xs-12 ">
           <div class="classWithPad userMainBody">
-            <div class="row no-gutter">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/1.jpg"
-                      alt="image1">
-                  </a>
+            <div class="row masonry" data-columns>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/1.jpg" alt="" class="img-responsive">
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/2.jpg"
-                      alt="image2">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/2.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/3.jpg"
-                      alt="image3">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/3.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/4.jpg"
-                      alt="image4">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/4.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/5.jpg"
-                      alt="image5">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/5.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/6.jpg"
-                      alt="image6">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/6.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/7.jpg"
-                      alt="image7">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/7.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/8.jpg"
-                      alt="image8">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/8.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/9.jpg"
-                      alt="image9">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/9.jpg" alt="" class="img-responsive">
+
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/10.jpg"
-                      alt="image10">
-                  </a>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/10.jpg" alt="" class="img-responsive">
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/11.jpg"
-                      alt="image11">
-                  </a>
+              </div>
+              
+               <div class="item">
+                <div class="thumbnail">
+                  <iframe src="https://www.youtube.com/embed/AFShDQEDpwA" class="img-responsive"></iframe>
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <a href="#" class="thumbnail">
-                    <img class="img-responsive center-block galleryItemGallery" data-img="src/img/gallery/1.jpg" src="src/img/gallery/12.jpg"
-                      alt="image12">
-                  </a>
+              </div>
+              
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/11.jpg" alt="" class="img-responsive">
+
+                </div>
+              </div>
+              <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/12.jpg" alt="" class="img-responsive">
+
+                </div>
+              </div>
+              
+              
+              <div class="item">
+                <div class="thumbnail">
+                  <iframe src="https://www.youtube.com/embed/JGQLSObiTEQ" class="img-responsive"></iframe>
+                </div>
+              </div>
+                 
+                  <div class="item">
+                <div class="thumbnail galleryLink">
+                  <img src="src/img/gallery/13.jpg" alt="" class="img-responsive">
+
                 </div>
               </div>
             </div>
-          </div>
+             </div>
         </main>
+       
+        <!--Main body END-->
       </div>
-      <!--Main body END-->
     </div>
-  </div>
   </div>
   <!--<script src="src/libs/Less/less.min.js "></script>-->
   <script src="src/libs/jQuery/jquery-3.2.1.js "></script>
@@ -237,7 +273,7 @@
   <script src="src/js/swipeMobile.js"></script>
   <script src="src/js//lightBoxGallery.js"></script>
   <script src="src/js/bootstrap.min.js "></script>
-
+  <script src="src/js/salvattore.min.js"></script>
   </div>
 </body>
 

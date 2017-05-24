@@ -205,7 +205,9 @@ body {
 .item6 {
     background-image: url("../img/gallery/6.jpg");
 }
-
+.item{
+    cursor: pointer;
+}
 
 /*left part END*/
 
@@ -431,9 +433,3 @@ body {
 /*POST END*/
 
 /*Main body END*/
-
-/*GALLERY PAGE START*/
-.galleryItemGallery{
-}
-
-/*GALLERY PAGE END*/

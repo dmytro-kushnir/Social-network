@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="src/css/modal.css">
   <link rel="stylesheet" href="src/css/lessStyle.css">
   <link rel="stylesheet" href="src/css/lightBoxGallery.css">
+  <link rel="stylesheet" href="src/css/measonryQueries.css">
   <link rel="stylesheet" href="src/css/bootstrap.css">
   <link rel="stylesheet" href="src/css/bootstrap-theme.css">
   <title>MainPage</title>
@@ -27,7 +28,7 @@
           </div>
           <div class="modal-body">
             <div class="row no-gutter ">
-              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-0">
+              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                 <div class="LightBodyModal">
                   <div class="modalImgWrapper">
                     <img class="img-responsive center-block modalImg" src="" alt=""></div>
@@ -35,7 +36,7 @@
                   <a id="next" class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
               </div>
-              <div class="col-lg-5 col-md-5 hidden-sm hidden-xs">
+              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 modalMasc">
                 <div class="RightBodyModal">
                   <article class="modalUser">
                     <figure class="otherUserPhoto modalOtherUserPhoto"></figure>
@@ -51,18 +52,24 @@
                   <article class="modalPost">
                     <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
                     <h5 class="modalPostUser">Доктор Стрендж</h5>
-                    <a class="galleryLink"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
+                    <figure class="modalCancel pull-right"></figure>
+                    <a class="galleryLinkdddddddddddd"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
                     <p class="modalPostDate">16 тра о 17:45</p>
+                    <figure class="modalHeart modalHeartComm pull-right"><span>4</span></figure>
                   </article>
                   <article class="modalPost">
                     <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
                     <h5 class="modalPostUser">Доктор Стрендж</h5>
-                    <a class="galleryLink"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
+                    <figure class="modalCancel pull-right"></figure>
+                    <a class="galleryLinkddddddddddddddddd"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
                     <p class="modalPostDate">16 тра о 17:45</p>
+                    <figure class="modalHeart modalHeartComm pull-right"><span>2</span></figure>
                   </article>
-                  
                   <textarea class="modalTextArea"></textarea>
-                  <figure class="otherUserPhoto modalOtherUserPhotoComment" ></figure>
+                  <figure class="otherUserPhoto modalOtherUserPhotoComment"></figure>
+                  <!--<figure class="commentImage postTablet"></figure>
+                  <button type="button " class="btn  btn-default post postTablet" ng-click="main.addPost()" style="margin-left:20px; margin-right:30px;">Відміна</button>
+                  <button type="button " class="btn  btn-default post postTablet">Відправити</button>-->
                 </div>
               </div>
             </div>
@@ -70,11 +77,17 @@
           <div class="modal-footer">
             <div class="row no-gutter ">
               <div class="  col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="TabletComment" style="margin-bottom:20px;">
+                  <figure class="commentImage" style="margin-top:5px;"></figure>
+                  <textarea class="TabletTextArea"></textarea>
+                  <button type="button " class="btn  btn-default " style="margin-top:-1px;">Відпр</button>
+                </div>
                 <div class="leftFotterModal">
-                  <figure class="modalHeart modalHeartFooter"><span>56</span></figure>
+                  <figure class="modalHeart modalHeartFooter modalHeartFooters"><span>56</span></figure>
                   <figure class="modalComment ModalCommentAction"></figure>
                   <figure class="modalRecycleBin"></figure>
                 </div>
+
               </div>
               <div class=" RightFotterModal col-lg-5 col-md-5 hidden-sm hidden-xs">
                 <div>
@@ -94,26 +107,24 @@
 
       </div>
     </div>
-  </div>
-  </div>
   <!---->
   <!--Header START-->
   <header class="navbar navbar-inverse navbar-fixed-top">
     <div class="container containerHeader">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                    <span class="sr-only">Open navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-        <a href="#" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+                      <span class="sr-only">Open navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+        <a href="mainPage.html" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
       </div>
       <div class="collapse navbar-collapse" id="responsive-menu">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="user dropdown-toggle" data-toggle="dropdown">Доктор<b class="caret"></b>
-                <img class="userHeader" src="src/img/avatar.jpg" alt="user"></a>
+                  <img class="userHeader" src="src/img/avatar.jpg" alt="user"></a>
             <ul class="dropdown-menu">
               <li><a href="#">Моя сторінка</a></li>
               <li class="divider"></li>
@@ -121,10 +132,10 @@
             </ul>
             <div class="MobileUserSideBar">
               <ul class="nav navbar-nav mineNavbar">
-                <li><a href="#">Мій профіль</a></li>
+                <li><a href="mainPage.html">Мій профіль</a></li>
                 <li><a href="#">Мої друзі</a></li>
                 <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
-                <li><a href="#">Галерея</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
               </ul>
             </div>
           </li>
@@ -146,7 +157,7 @@
                     <li><a href="#">Мій профіль</a></li>
                     <li><a href="#">Мої друзі</a></li>
                     <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
-                    <li><a href="#">Галерея</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
                   </ul>
                 </div>
               </div>
@@ -166,11 +177,11 @@
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                       <div class="updateBg pull-left">
                         <span class="media-left">
-                        <figure class="changeBgImage"></figure>
-                        </span>
+                          <figure class="changeBgImage"></figure>
+                          </span>
                         <span class="media-body">
-                          <p class="changeBgText">Оновити обкладинку</p>
-                        </span>
+                            <p class="changeBgText">Оновити обкладинку</p>
+                          </span>
                       </div>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
@@ -224,8 +235,7 @@
                       </div>
 
                     </div>
-                    </-->
-                    <article>
+                    </article>
                 </section>
               </div>
               <!--Left part END-->
@@ -335,7 +345,6 @@
         </main>
       </div>
       <!--Main body END-->
-    </div>
   </div>
   </div>
   <!--<script src="src/libs/Less/less.min.js "></script>-->
@@ -344,7 +353,6 @@
   <script src="src/js/swipeMobile.js"></script>
   <script src="src/js//lightBoxGallery.js"></script>
   <script src="src/js/bootstrap.min.js "></script>
-
   </div>
 </body>
 

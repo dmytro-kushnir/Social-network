@@ -31,6 +31,7 @@ body {
     width: auto;
 }
 
+
 .navbar {
     background: rgb(17, 17, 17) !important;
 }
@@ -51,6 +52,8 @@ body {
 }
 .label-primary{
  background: #201d1d !important;
+
+
 }
 
 .userHeader {

@@ -6,8 +6,13 @@
 body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
+    font-family: HelveticaBlack;
 }
 
+@font-face{
+    font-family: HelveticaBlack;
+    src: local("../fonts/HelveticaBlack/HelveticaBlack.ttf");
+}
 .container-fluid {
     background-color: gainsboro;
 }
@@ -15,20 +20,40 @@ body {
 .custom-container {
     margin-top: 65px;
 }
-
 .classWithPad {
     margin: -5px;
     background-color: white;
     /*padding:1px; *
 /* Navigation header START*/
 }
-
 .logo {
     height: 30px;
     width: auto;
 }
+
+
 .navbar {
-    background: rgb(17, 17, 17)!important;
+    background: rgb(17, 17, 17) !important;
+}
+
+.btn-default{
+	font-family: Helvetica !important;
+    color: black !important;
+    background: gainsboro !important;
+    border-radius: 0 !important;
+}
+.btn-default:hover{
+    background: white !important;
+    transition: 1s !important;
+    border:1px solid rgb(61, 61, 61) !important;
+}
+.label-danger{
+ background: gray !important;
+}
+.label-primary{
+ background: #201d1d !important;
+
+
 }
 
 .userHeader {

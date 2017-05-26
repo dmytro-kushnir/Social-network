@@ -54,6 +54,7 @@
   }
   .modal-dialog {
     margin: 0px !important;
+    margin-top: 35px !important;
   }
   .modal-body {
     height: 100% !important;
@@ -68,6 +69,7 @@
   .TabletTextArea {
     height: 35px;
     width: 60%;
+    font-size: 16px;
   }
   .TabletComment {
     display: none;
@@ -201,5 +203,3 @@
     width: 700px !important;
   }
 }
-
-

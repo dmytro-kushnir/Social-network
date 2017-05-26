@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="src/css/reset_style.css">
+  <link rel="stylesheet" href="src/css/normalize.css">
   <link rel="stylesheet" href="src/css/style.css">
   <link rel="stylesheet" href="src/css/modal.css">
   <link rel="stylesheet" href="src/css/lessStyle.css">
@@ -20,12 +20,10 @@
   <div id="wrappper">
     <!-- Modal gallry window-->
     <div class="modal fade" id="image-modal" tabindex="-1" role="dialog">
+            <figure class="crossModal pull-right" data-dismiss="modal" aria-label="Close"></figure>
       <div class="modal-dialog modal-lg ">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            <!--<div class="modal-title">Перегляд зображення</div>-->
-          </div>
+        
           <div class="modal-body">
             <div class="row no-gutter ">
               <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
@@ -53,7 +51,7 @@
                     <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
                     <h5 class="modalPostUser">Доктор Стрендж</h5>
                     <figure class="modalCancel pull-right"></figure>
-                    <a class="galleryLinkdddddddddddd"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
+                    <a class="galleryLinkdddddddddddddddddddddddd"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
                     <p class="modalPostDate">16 тра о 17:45</p>
                     <figure class="modalHeart modalHeartComm pull-right"><span>4</span></figure>
                   </article>
@@ -61,7 +59,7 @@
                     <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
                     <h5 class="modalPostUser">Доктор Стрендж</h5>
                     <figure class="modalCancel pull-right"></figure>
-                    <a class="galleryLinkddddddddddddddddd"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
+                    <a class="galleryLinkdddddddddddddddddd"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
                     <p class="modalPostDate">16 тра о 17:45</p>
                     <figure class="modalHeart modalHeartComm pull-right"><span>2</span></figure>
                   </article>
@@ -109,7 +107,7 @@
     </div>
   <!---->
   <!--Header START-->
-  <header class="navbar navbar-inverse navbar-fixed-top">
+  <header class="navbar navbar-inverse navbarTop navbar-fixed-top">
     <div class="container containerHeader">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
@@ -120,7 +118,7 @@
                   </button>
         <a href="mainPage.html" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
       </div>
-      <div class="collapse navbar-collapse" id="responsive-menu">
+      <div class="collapse navbar-collapse " id="responsive-menu">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="user dropdown-toggle" data-toggle="dropdown">Доктор<b class="caret"></b>
@@ -185,7 +183,7 @@
                       </div>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                      <button class="editProfile btn btn-default pull-right">Редагувати сторінку</button>
+                      <button class="editProfile btn btn-default  pull-right">Редагувати сторінку</button>
                     </div>
                   </div>
                 </figure>
@@ -303,7 +301,7 @@
                     <div class="form-group">
                       <textarea placeholder="Що у вас нового?" class="form-control " rows="5 " id="comment "></textarea>
                       <figure class="commentImage pull-left"></figure>
-                      <button type="button " class="btn  btn-default post pull-right" ng-click="main.addPost() ">Відправити</button>
+                      <button type="button " class="btn btn-default   post pull-right" ng-click="main.addPost() ">Відправити</button>
                     </div>
                   </form>
                 </div>

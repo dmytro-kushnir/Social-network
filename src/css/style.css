@@ -13,8 +13,6 @@ body {
     font-family: HelveticaBlack;
     src: local("../fonts/HelveticaBlack/HelveticaBlack.ttf");
 }
-
-
 .container-fluid {
     background-color: gainsboro;
 }
@@ -22,26 +20,37 @@ body {
 .custom-container {
     margin-top: 65px;
 }
-
 .classWithPad {
     margin: -5px;
     background-color: white;
     /*padding:1px; *
 /* Navigation header START*/
 }
-
 .logo {
     height: 30px;
     width: auto;
 }
 
-.navbarTop {
+.navbar {
     background: rgb(17, 17, 17) !important;
-    background: -moz-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%) !important;
-    background: -webkit-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%) !important;
-    background: -o-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%) !important;
-    background: -ms-linear-gradient(270deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%);
-    background: linear-gradient(0deg, rgb(17, 17, 17) 18%, rgb(34, 34, 34) 57%) !important;
+}
+
+.btn-default{
+	font-family: Helvetica !important;
+    color: black !important;
+    background: gainsboro !important;
+    border-radius: 0 !important;
+}
+.btn-default:hover{
+    background: white !important;
+    transition: 1s !important;
+    border:1px solid rgb(61, 61, 61) !important;
+}
+.label-danger{
+ background: gray !important;
+}
+.label-primary{
+ background: #201d1d !important;
 }
 
 .userHeader {

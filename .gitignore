@@ -49,9 +49,16 @@ Network Trash Folder
 Temporary Items
 .apdisk
 #Directories
+bower_components/
 node_modules/
+bower_components/
+.babelrc
+.bowerrc
 .vscode/
 .vscode
+.babelrc
+.bowerrc
+.editorconfig.editorconfig
 .vs
 .vs/
 .yo-rc.json

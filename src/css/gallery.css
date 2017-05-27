@@ -1,0 +1,18 @@
+.userMainBody{
+    padding-bottom: 40px;
+}
+.navbarGallery{
+    background-color: white !important;
+}
+.btnGallery{
+    font-size: 18px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.galleryInput{
+    display: flex;
+    justify-content: center;
+}
+.ImageGallery{
+    margin-top: 20px;
+}

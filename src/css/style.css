@@ -1,3 +1,4 @@
+/*GENERAL START*/
 #wrapper {
     overflow-x: hidden;
     position: fixed;
@@ -26,11 +27,11 @@ body {
     /*padding:1px; *
 /* Navigation header START*/
 }
+/*GENERAL END*/
 .logo {
     height: 30px;
     width: auto;
 }
-
 
 .navbar {
     background: rgb(17, 17, 17) !important;

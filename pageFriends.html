@@ -5,84 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/lessStyle.css">
     <link rel="stylesheet" href="src/css/normalize.css">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/lessStyle.css">
     <link rel="stylesheet" href="src/css/pageFriendsStyle.css">
-    <link rel="stylesheet" href="src/css/bootstrap.css">
-    <link rel="stylesheet" href="src/css/bootstrap-theme.css">
 </head>
 <body>
-    <!--Header START-->
-    <header class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container containerHeader">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                    <span class="sr-only">Open navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-        <a href="#" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+  <!--Header START-->
+     <header class="header">
+        <img src="src/img/log.png" alt="logo" class="header_logo">
+        <div class="header_enter">
+           <ul class="header_nav">
+             <li>
+               <a href="#" class="nav_a">Доктор
+                <ul class="header_nav-hiden">
+                  <li><a href="#" class="nav_a">Моя сторінка</a></li>
+                  <li><a href="#" class="nav_a">Вийти</a></li>
+                </ul>
+               </a>
+             </li>
+           </ul>
+           <div id="triangle-down"></div>
+           <img src="src/img/avatar.jpg" alt="avatar" class="user_header">
+        </div>
+        <div class="sendvich">
+          <div class="partOfSendvich"></div>
+          <div class="partOfSendvich"></div>
+          <div class="partOfSendvich"></div>
+        </div>
+        <div class="header_enter2">
+           <ul class="header_nav">
+             <li>
+               <a href="#" class="nav_a">Доктор
+                <ul class="header_nav-hiden">
+                  <li><a href="#" class="nav_a">Моя сторінка</a></li>
+                  <li><a href="#" class="nav_a">Вийти</a></li>
+                </ul>
+               </a>
+             </li>
+           </ul>
+           <div id="triangle-down"></div>
+           <img src="src/img/avatar.jpg" alt="avatar" class="user_header">
+           <ul>
+             <li>Мій профіль</li>
+             <li>Мої друзі</li>
+             <li>Повідомлення</li>
+             <li>Галерея</li>
+           </ul>
+        </div>
+    </header>
+    <!--Header END-->
+    <main class="wrapper">
+      <div class="wrapper_main">
+      <ul class="menu">
+        <li><a href="#" class="nav_a">Мій профіль</a></li>
+        <li><a href="#" class="nav_a">Мої друзі</a></li>
+        <li><a href="#" class="nav_a">Повідомлення</a></li>
+        <li><a href="#" class="nav_a">Галерея</a></li>
+      </ul>
       </div>
-      <div class="collapse navbar-collapse" id="responsive-menu">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="user dropdown-toggle" data-toggle="dropdown">Доктор<b class="caret"></b>
-                <img class="userHeader" src="src/img/avatar.jpg" alt="user"></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Моя сторінка</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Вийти</a></li>
-            </ul>
-            <div class="MobileUserSideBar">
-              <ul class="nav navbar-nav mineNavbar">
-                <li><a href="#">Мій профіль</a></li>
-                <li><a href="#">Мої друзі</a></li>
-                <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
-                <li><a href="#">Галерея</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <!--Header END-->
-  <div class="container-fluid">
-    <div class="container custom-container">
-      <div class="row">
-        <!--Navigation START-->
-        <nav class="col-lg-2 col-md-3 col-sm-3 col-xs-0">
-          <div class="classWithPad">
-            <div class="sidebar-nav userSideBar">
-              <div class="navbar navbar-default userNavbar">
-                <div class="navbar-header">
-                  <ul class="nav navbar-nav asideNavbar">
-                    <li><a href="#">Мій профіль</a></li>
-                    <li><a href="#">Мої друзі</a></li>
-                    <li><a href="#">Повідомлення  <span class="badge"> 2</span></a></li>
-                    <li><a href="#">Галерея</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <!--Navigation END-->
-        <!--Main body START-->
-        <main class="col-lg-9 col-md-9 col-sm-9 col-xs-12 ">
-
-          <div class="classWithPad userMainBody">
-          </div>
-        </main>
-            <div class="classWithPad userMainBody">
-            </div>
-        </main>
-      <!--Main body END-->
-    </div>
-  </div>
+    </main>
 </body>
 </html>

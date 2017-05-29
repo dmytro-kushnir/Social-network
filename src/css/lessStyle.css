@@ -33,8 +33,57 @@
   #myCarousel {
     display: block;
   }
+  .modalTextArea {
+    display: none;
+  }
+  .modalMasc {
+    display: none !important;
+  }
+  .modalMascToogle {
+    display: block !important;
+  }
+  .RightBodyModal {
+    overflow-y: hidden;
+  }
+  .rightBodyModalToggle {
+    height: auto;
+  }
+  .modalOtherUserPhotoComment {
+    bottom: 60px;
+    display: none;
+  }
+  .modal-dialog {
+    margin: 0px !important;
+    margin-top: 35px !important;
+  }
+  .modal-body {
+    height: 100% !important;
+  }
+  .postTablet {
+    position: absolute;
+    bottom: -40px;
+  }
+  .postTabletTrigger {
+    display: block !important;
+  }
+  .TabletTextArea {
+    height: 35px;
+    width: 60%;
+    font-size: 16px;
+  }
+  .TabletComment {
+    display: none;
+    margin-bottom: 40px !important;
+  }
+  .TabletCommentTrigger {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 @media (min-width: 768px) {
+  .TabletComment {
+    display: none ;
+  }
   .MobileUserSideBar {
     display: none;
   }
@@ -95,6 +144,46 @@
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
+  .modalTextArea {
+    display: none;
+  }
+  .modalMasc {
+    display: none !important;
+  }
+  .modalMascToogle {
+    display: block !important;
+  }
+  .RightBodyModal {
+    overflow-y: hidden;
+  }
+  .rightBodyModalToggle {
+    height: auto;
+  }
+  .modalOtherUserPhotoComment {
+    bottom: 60px;
+    display: none;
+  }
+  .modal-body {
+    height: 100% !important;
+  }
+  .postTablet {
+    position: absolute;
+    bottom: -40px;
+  }
+  .postTabletTrigger {
+    display: block !important;
+  }
+  .TabletTextArea {
+    height: 35px;
+    width: 60%;
+  }
+  .TabletComment {
+    display: none;
+  }
+  .TabletCommentTrigger {
+    display: flex;
+    justify-content: space-around;
+  }
   .friendsGalleryBlock {
     display: none;
   }

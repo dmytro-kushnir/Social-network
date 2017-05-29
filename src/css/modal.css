@@ -1,18 +1,21 @@
-/*.modal-open {
+/*modal Cancel cross ----------------NOT USED!!!*/
+.crossModal{
+  background-image: url("../img/cancelModal.png");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
 }
-.modal-dialog {
+
+.modal-header{
+  opacity: 0.5;
+   color: rgba(255,255,255,.1);
 }
-.modal-content {
+/*modal Cancel cross ----------------NOT USED!!! END*/
 
-}*/
-
-
-/*modal Header START*/
-
-.modal-header {}
-
-
-/*modal Header END*/
+/*modal cancel cross*/
 
 .img-responsive {
   /*max-width: 100%;
@@ -35,7 +38,7 @@
 }
 
 .modal-body img {
-  /*max-height: 69vh;*/
+  /*max-height: 70vh;*/
 }
 
 .RightBodyModal {
@@ -65,7 +68,6 @@
 .modalOtherUserPhoto {
   margin-left: 20px;
 }
-
 
 /*USER PHOTO AND OTHER END*/
 
@@ -107,7 +109,9 @@
 .modalLike>div:hover .modalHeart {
   background-image: url("../img/heart_hover.png");
 }
-
+.modalHeart:hover{
+    background-image: url("../img/heart_hover.png");
+}
 
 /*LIKE END*/
 
@@ -129,11 +133,17 @@
     height: 30px;
     width: 30px;
      position: absolute;
-  bottom: -40px;
-  left:20px;
+    bottom: -40px;
+    left:20px;
 }
-
-
+.modalHeartComm{
+margin-top:-30px;
+margin-right: 20px;
+}
+.modalHeartComm>span{
+   padding-left: 20px;
+  font-weight: 600;
+}
 
 .modalPhotoPost {
   /*background-image: url("../img/photoPost.jpg");*/
@@ -147,16 +157,27 @@
   margin-top: 15px;
   cursor: pointer;
 }
+.modalCancel{
+  background-image: url("../img/cancel.png");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  margin-top: -25px;
+  cursor: pointer;
+}
+
+
 
 .modalPostUser {
-  cursor: pointer;
+  cursor: default;
   font-size: 16px;
   font-weight: 600;
 }
 
 .modalPostDate {
   margin-top: 10px;
-  margin-left: 70px;
+  margin-left: 60px;
   color: gray;
 }
 

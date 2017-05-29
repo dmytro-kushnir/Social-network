@@ -4,7 +4,6 @@
 }
 /*header*/
 .header{
-    position: fixed;
 	font-family: Helvetica;
     background: rgb(17, 17, 17);
     height: 50px; 

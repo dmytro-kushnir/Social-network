@@ -82,7 +82,7 @@
 }
 @media (min-width: 768px) {
   .TabletComment {
-    display: none ;
+    display: none;
   }
   .MobileUserSideBar {
     display: none;
@@ -102,6 +102,23 @@
   .modalImgWrapper {
     height: 450px;
     width: auto;
+  }
+  .modal {
+    overflow-y: hidden !important;
+  }
+  .modal-dialog {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .modal.fade .modal-dialog {
+    transform: translate(0, -100%);
+  }
+  .modal.in .modal-dialog {
+    transform: translate(0, 0);
   }
 }
 @media (max-width: 460px) {
@@ -201,5 +218,8 @@
   }
   .modal-lg {
     width: 700px !important;
+  }
+  .modal {
+    overflow-y: auto !important;
   }
 }

@@ -1,0 +1,106 @@
+<section class="modal fade" id="image-modal" tabindex="-1" role="dialog" ng-controller="ModalCtrl">
+    <figure class="crossModal pull-right" data-dismiss="modal" aria-label="Close"></figure>
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="row no-gutter ">
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                        <div class="LightBodyModal">
+                            <div class="modalImgWrapper">
+                                <img class="img-responsive center-block modalImg" src="" alt=""></div>
+                            <a id="prev" class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                            <a id="next" class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 modalMasc" ng-class="{'special' : modalMasc }">
+                        <div class="rightBodyModal" ng-class="{'special' : rightBodyModal}">
+                            <article class="modalUser">
+                                <figure class="otherUserPhoto modalOtherUserPhoto"></figure>
+                                <h4 class="modalUserName">Дженніфер Лоуренс</h4>
+                                <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
+                            </article>
+                            <article class="modalLike">
+                                <div>
+                                    <figure class="modalHeart"></figure>
+                                    <p class="modalLikeText">Мені подобається<span>56</span></p>
+                                </div>
+                            </article>
+                            <article class="modalPost">
+                                <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
+                                <h5 class="modalPostUser">Доктор Стрендж</h5>
+                                <figure class="modalCancel pull-right"></figure>
+                                <a class="galleryLinkdddddddddddddddddddddddd"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
+                                <p class="modalPostDate">16 тра о 17:45</p>
+                                <figure class="modalHeart modalHeartComm pull-right"><span>4</span></figure>
+                            </article>
+                            <article class="modalPost">
+                                <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
+                                <h5 class="modalPostUser">Доктор Стрендж</h5>
+                                <figure class="modalCancel pull-right"></figure>
+                                <a class="galleryLinkdddddddddddddddddd"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
+                                <p class="modalPostDate">16 тра о 17:45</p>
+                                <figure class="modalHeart modalHeartComm pull-right"><span>2</span></figure>
+                            </article>
+                            <textarea class="modalTextArea" ng-class="{'special' : modalTextArea}"></textarea>
+                            <figure class="otherUserPhoto modalOtherUserPhotoComment"></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row no-gutter ">
+                    <div class="  col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                        <div class="TabletComment" style="margin-bottom:20px;" ng-class="{'special' : TabletComment }">
+                            <figure class="commentImage" style="margin-top:5px;"></figure>
+                            <textarea class="TabletTextArea"></textarea>
+                            <button type="button " 
+                            class="btn  btn-default " style="margin-top:-1px;">Відпр</button>
+                        </div>
+                        <div class="leftFotterModal">
+                            <figure class="modalHeart modalHeartFooter modalHeartFooters"><span>56</span></figure>
+                            <figure ng-click="
+                           
+                            toogleClass('rightBodyModal');
+                            toogleClass('modalMakeComment');
+                            toogleClass('modalSendBlock');
+                            toogleClass('modalTextArea');
+                            toogleClass('modalMasc');
+                            toogleClass('TabletComment')"
+                                
+                             class="modalComment ModalCommentAction"></figure>
+                            <figure class="modalRecycleBin"></figure>
+                        </div>
+                    </div>
+                    <div class=" RightFotterModal col-lg-5 col-md-5 hidden-sm hidden-xs">
+                        <div>
+                            <p ng-click="
+                           
+                            toogleClass('rightBodyModal');
+                            toogleClass('modalMakeComment');
+                            toogleClass('modalSendBlock');
+                            toogleClass('modalTextArea')" class="modalMakeComment ModalCommentAction" ng-class="{'special' : modalMakeComment }">Написати коментар...</p>
+                            <div class="modalSendBlock" ng-class="{'special' : modalSendBlock }">
+                                <figure class="commentImage pull-left"></figure>
+                                <button type="button" ng-click="
+                           
+                            toogleClass('rightBodyModal');
+                            toogleClass('modalMakeComment');
+                            toogleClass('modalSendBlock');
+                            toogleClass('modalTextArea')" class="btn  btn-default post pull-right" style="margin-left:20px; margin-right:30px;">Відправити</button>
+                                <button type="button " ng-click="
+                           
+                            toogleClass('rightBodyModal');
+                            toogleClass('modalMakeComment');
+                            toogleClass('modalSendBlock');
+                            toogleClass('modalTextArea')" class="btn  btn-default post pull-right">Відміна</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

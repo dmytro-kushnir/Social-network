@@ -39,6 +39,15 @@
   .modalMasc {
     display: none !important;
   }
+<<<<<<< HEAD
+  .modalMasc.special {
+    display: block !important;
+  }
+  .rightBodyModal {
+    overflow-y: hidden;
+  }
+  .rightBodyModal.special {
+=======
   .modalMascToogle {
     display: block !important;
   }
@@ -46,6 +55,7 @@
     overflow-y: hidden;
   }
   .rightBodyModalToggle {
+>>>>>>> origin/AnnaBranch
     height: auto;
   }
   .modalOtherUserPhotoComment {
@@ -63,7 +73,11 @@
     position: absolute;
     bottom: -40px;
   }
+<<<<<<< HEAD
+  .postTablet.special {
+=======
   .postTabletTrigger {
+>>>>>>> origin/AnnaBranch
     display: block !important;
   }
   .TabletTextArea {
@@ -75,14 +89,22 @@
     display: none;
     margin-bottom: 40px !important;
   }
+<<<<<<< HEAD
+  .TabletComment.special {
+=======
   .TabletCommentTrigger {
+>>>>>>> origin/AnnaBranch
     display: flex;
     justify-content: space-around;
   }
 }
 @media (min-width: 768px) {
   .TabletComment {
+<<<<<<< HEAD
+    display: none;
+=======
     display: none ;
+>>>>>>> origin/AnnaBranch
   }
   .MobileUserSideBar {
     display: none;
@@ -102,6 +124,23 @@
   .modalImgWrapper {
     height: 450px;
     width: auto;
+  }
+  .modal {
+    overflow-y: hidden !important;
+  }
+  .modal-dialog {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .modal.fade .modal-dialog {
+    transform: translate(0, -100%);
+  }
+  .modal.in .modal-dialog {
+    transform: translate(0, 0);
   }
 }
 @media (max-width: 460px) {
@@ -150,6 +189,15 @@
   .modalMasc {
     display: none !important;
   }
+<<<<<<< HEAD
+  .modalMasc.special {
+    display: block !important;
+  }
+  .rightBodyModal {
+    overflow-y: hidden;
+  }
+  .rightBodyModal.special {
+=======
   .modalMascToogle {
     display: block !important;
   }
@@ -157,6 +205,7 @@
     overflow-y: hidden;
   }
   .rightBodyModalToggle {
+>>>>>>> origin/AnnaBranch
     height: auto;
   }
   .modalOtherUserPhotoComment {
@@ -170,7 +219,11 @@
     position: absolute;
     bottom: -40px;
   }
+<<<<<<< HEAD
+  .postTablet.special {
+=======
   .postTabletTrigger {
+>>>>>>> origin/AnnaBranch
     display: block !important;
   }
   .TabletTextArea {
@@ -180,7 +233,11 @@
   .TabletComment {
     display: none;
   }
+<<<<<<< HEAD
+  .TabletComment.special {
+=======
   .TabletCommentTrigger {
+>>>>>>> origin/AnnaBranch
     display: flex;
     justify-content: space-around;
   }
@@ -201,5 +258,8 @@
   }
   .modal-lg {
     width: 700px !important;
+  }
+  .modal {
+    overflow-y: auto !important;
   }
 }

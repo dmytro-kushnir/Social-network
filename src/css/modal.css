@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+
+/*modal Cancel cross ----------------*/
+
+=======
 /*modal Cancel cross ----------------NOT USED!!!*/
+>>>>>>> origin/AnnaBranch
 .crossModal{
   background-image: url("../img/cancelModal.png");
   background-size: cover;
@@ -8,6 +14,15 @@
   margin-right: 10px;
   margin-top: 10px;
 }
+<<<<<<< HEAD
+
+.modal-header{
+  opacity: 0.5;
+   color: rgba(255,255,255,.1);
+}
+/*modal Cancel cross ----------------END*/
+=======
+>>>>>>> origin/AnnaBranch
 
 .modal-header{
   opacity: 0.5;
@@ -38,10 +53,14 @@
 }
 
 .modal-body img {
+<<<<<<< HEAD
+/*  max-height: 70vh;*/
+=======
   /*max-height: 70vh;*/
+>>>>>>> origin/AnnaBranch
 }
 
-.RightBodyModal {
+.rightBodyModal {
   overflow-y: scroll;
   height: 450px;
 }
@@ -49,6 +68,7 @@
 .LightBodyModal {
   background-color: #313131;
 }
+
 
 
 /*USER PHOTO AND OTHER START*/
@@ -59,6 +79,7 @@
   min-height: 70px;
   border-bottom: 1px solid gray;
 }
+
 
 .modalUserName {
   cursor: pointer;
@@ -71,7 +92,6 @@
 
 /*USER PHOTO AND OTHER END*/
 
-
 /*LIKE START*/
 
 .modalHeart {
@@ -83,6 +103,7 @@
   cursor: pointer;
   margin-right: 10px;
 }
+
 
 .modalLike {
   padding-top: 25px;
@@ -132,7 +153,11 @@
     background-image: url("../img/avatar.jpg");
     height: 30px;
     width: 30px;
+<<<<<<< HEAD
+    position: absolute;
+=======
      position: absolute;
+>>>>>>> origin/AnnaBranch
     bottom: -40px;
     left:20px;
 }
@@ -260,26 +285,41 @@ margin-right: 20px;
   font-size: 16px;
 }
 
-.text {
+.modalTextArea.special {
   transform: scaleX(1);
 }
 
+/*
 .rightBodyModalToggle{
   height: 380px;
+}
+*/
+.rightBodyModal.special{
+     height: 380px;
 }
 
 .modalSendBlock{
   display: none;
 }
+.modalSendBlock.special{
+     display: block; 
+}
+
+/*
 .modalSendBlockToogle{
   display: block;
 }
+*/
 
+
+/*
 .modalMakeCommentToogle{
   display: none;
 }
-/*.otherUserPhotoToogle{
-  display: none;
-}*/
+*/
+.modalMakeComment.special {
+    display: none;
+}
+
 
 /*Footer END*/

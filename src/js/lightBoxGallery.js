@@ -9,7 +9,25 @@
       console.log($(this).find('img').attr('src'));
      $("#image-modal").modal('show');
    });
+     
+     /////// OLD START
 
+<<<<<<< HEAD
+//   $(".ModalCommentAction").click(function(){
+//  
+//       $(".RightBodyModal").toggleClass("rightBodyModalToggle");
+//       $(".modalTextArea").toggleClass("text"); 
+//       $(".modalSendBlock").toggleClass("modalSendBlockToogle");
+//       $(".modalMakeComment").toggleClass("modalMakeCommentToogle");
+     
+//       $(".modalMasc").toggleClass("modalMascToogle");
+//       $(".TabletComment").toggleClass("TabletCommentTrigger");
+//       $(".postTablet").toggleClass("postTabletTrigger");
+//
+//      //  $(".modalTextArea").css({display: "block"});
+//      // $(".RightBodyModal").css({height: "380px"});
+//   });
+=======
    $(".ModalCommentAction").click(function(){
   
        $(".RightBodyModal").toggleClass("rightBodyModalToggle");
@@ -23,18 +41,18 @@
       //  $(".modalTextArea").css({display: "block"});
       // $(".RightBodyModal").css({height: "380px"});
    });
+>>>>>>> origin/AnnaBranch
 
- $(".post").click(function(){
- 
-     $(".modalTextArea").toggleClass("text");
-   $(".RightBodyModal").toggleClass("rightBodyModalToggle");
-        $(".modalSendBlock").toggleClass("modalSendBlockToogle");
-            $(".modalMakeComment").toggleClass("modalMakeCommentToogle");
-});
-  //  $('#image-modal .modal-body img').on('click', function () {
-  //    $("#image-modal").modal('hide')
-  //  });
+// $(".post").click(function(){
+// 
+//     $(".modalTextArea").toggleClass("text");
+//   $(".RightBodyModal").toggleClass("rightBodyModalToggle");
+//        $(".modalSendBlock").toggleClass("modalSendBlockToogle");
+//            $(".modalMakeComment").toggleClass("modalMakeCommentToogle");
+//});
 
+     ///// OLD END
+     
    $('#prev,#next').click(function () {
 
      var src = $('#image-modal .modal-body .modalImg ').attr('src');

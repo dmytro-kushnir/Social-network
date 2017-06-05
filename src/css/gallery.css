@@ -2,11 +2,7 @@
     padding-bottom: 40px;
 }
 .navbarGallery{
-<<<<<<< HEAD
     background-color: gainsboro !important;
-=======
-    background-color: white !important;
->>>>>>> origin/AnnaBranch
 }
 .btnGallery{
     font-size: 18px !important;
@@ -17,12 +13,7 @@
     display: flex;
     justify-content: center;
 }
-<<<<<<< HEAD
 
 .ImageGallery{
     margin-top: 17px;
-=======
-.ImageGallery{
-    margin-top: 20px;
->>>>>>> origin/AnnaBranch
 }

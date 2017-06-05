@@ -12,7 +12,6 @@
      
      /////// OLD START
 
-<<<<<<< HEAD
 //   $(".ModalCommentAction").click(function(){
 //  
 //       $(".RightBodyModal").toggleClass("rightBodyModalToggle");
@@ -27,21 +26,6 @@
 //      //  $(".modalTextArea").css({display: "block"});
 //      // $(".RightBodyModal").css({height: "380px"});
 //   });
-=======
-   $(".ModalCommentAction").click(function(){
-  
-       $(".RightBodyModal").toggleClass("rightBodyModalToggle");
-       $(".modalTextArea").toggleClass("text");
-       $(".modalSendBlock").toggleClass("modalSendBlockToogle");
-       $(".modalMakeComment").toggleClass("modalMakeCommentToogle");
-       $(".modalMasc").toggleClass("modalMascToogle");
-       $(".TabletComment").toggleClass("TabletCommentTrigger");
-       $(".postTablet").toggleClass("postTabletTrigger");
-
-      //  $(".modalTextArea").css({display: "block"});
-      // $(".RightBodyModal").css({height: "380px"});
-   });
->>>>>>> origin/AnnaBranch
 
 // $(".post").click(function(){
 // 

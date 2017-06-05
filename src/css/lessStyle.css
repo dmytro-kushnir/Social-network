@@ -39,7 +39,6 @@
   .modalMasc {
     display: none !important;
   }
-<<<<<<< HEAD
   .modalMasc.special {
     display: block !important;
   }
@@ -47,15 +46,6 @@
     overflow-y: hidden;
   }
   .rightBodyModal.special {
-=======
-  .modalMascToogle {
-    display: block !important;
-  }
-  .RightBodyModal {
-    overflow-y: hidden;
-  }
-  .rightBodyModalToggle {
->>>>>>> origin/AnnaBranch
     height: auto;
   }
   .modalOtherUserPhotoComment {
@@ -73,11 +63,7 @@
     position: absolute;
     bottom: -40px;
   }
-<<<<<<< HEAD
   .postTablet.special {
-=======
-  .postTabletTrigger {
->>>>>>> origin/AnnaBranch
     display: block !important;
   }
   .TabletTextArea {
@@ -89,22 +75,14 @@
     display: none;
     margin-bottom: 40px !important;
   }
-<<<<<<< HEAD
   .TabletComment.special {
-=======
-  .TabletCommentTrigger {
->>>>>>> origin/AnnaBranch
     display: flex;
     justify-content: space-around;
   }
 }
 @media (min-width: 768px) {
   .TabletComment {
-<<<<<<< HEAD
     display: none;
-=======
-    display: none ;
->>>>>>> origin/AnnaBranch
   }
   .MobileUserSideBar {
     display: none;
@@ -189,7 +167,6 @@
   .modalMasc {
     display: none !important;
   }
-<<<<<<< HEAD
   .modalMasc.special {
     display: block !important;
   }
@@ -197,15 +174,6 @@
     overflow-y: hidden;
   }
   .rightBodyModal.special {
-=======
-  .modalMascToogle {
-    display: block !important;
-  }
-  .RightBodyModal {
-    overflow-y: hidden;
-  }
-  .rightBodyModalToggle {
->>>>>>> origin/AnnaBranch
     height: auto;
   }
   .modalOtherUserPhotoComment {
@@ -219,11 +187,7 @@
     position: absolute;
     bottom: -40px;
   }
-<<<<<<< HEAD
   .postTablet.special {
-=======
-  .postTabletTrigger {
->>>>>>> origin/AnnaBranch
     display: block !important;
   }
   .TabletTextArea {
@@ -233,11 +197,7 @@
   .TabletComment {
     display: none;
   }
-<<<<<<< HEAD
   .TabletComment.special {
-=======
-  .TabletCommentTrigger {
->>>>>>> origin/AnnaBranch
     display: flex;
     justify-content: space-around;
   }

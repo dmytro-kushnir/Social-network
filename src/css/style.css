@@ -1,8 +1,5 @@
 /*GENERAL START*/
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/AnnaBranch
 #wrapper {
     overflow-x: hidden;
     position: fixed;
@@ -12,20 +9,13 @@ body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
     font-family: HelveticaBlack;
-<<<<<<< HEAD
 }
 
 @font-face {
     font-family: HelveticaBlack;
     src: local("../fonts/HelveticaBlack/HelveticaBlack.ttf");
-=======
->>>>>>> origin/AnnaBranch
 }
 
-@font-face{
-    font-family: HelveticaBlack;
-    src: local("../fonts/HelveticaBlack/HelveticaBlack.ttf");
-}
 .container-fluid {
     background-color: gainsboro;
 }
@@ -33,20 +23,17 @@ body {
 .custom-container {
     margin-top: 65px;
 }
+
 .classWithPad {
     margin: -5px;
     background-color: white;
     /*padding:1px; *
 /* Navigation header START*/
 }
-<<<<<<< HEAD
 
 
 /*GENERAL END*/
 
-=======
-/*GENERAL END*/
->>>>>>> origin/AnnaBranch
 .logo {
     height: 30px;
     width: auto;
@@ -56,22 +43,16 @@ body {
     background: rgb(17, 17, 17) !important;
 }
 
-<<<<<<< HEAD
 .navbarToggleMasc {
     border-radius: 0px !important;
 }
 
 .btn-default {
     font-family: Helvetica !important;
-=======
-.btn-default{
-	font-family: Helvetica !important;
->>>>>>> origin/AnnaBranch
     color: black !important;
     background: gainsboro !important;
     border-radius: 0 !important;
 }
-<<<<<<< HEAD
 
 .btn-default:hover {
     background: white !important;
@@ -85,20 +66,6 @@ body {
 
 .label-primary {
     background: #201d1d !important;
-=======
-.btn-default:hover{
-    background: white !important;
-    transition: 1s !important;
-    border:1px solid rgb(61, 61, 61) !important;
-}
-.label-danger{
- background: gray !important;
-}
-.label-primary{
- background: #201d1d !important;
-
-
->>>>>>> origin/AnnaBranch
 }
 
 .userHeader {
@@ -269,17 +236,11 @@ body {
 .item6 {
     background-image: url("../img/gallery/6.jpg");
 }
-<<<<<<< HEAD
 
 .item {
     cursor: pointer;
 }
 
-=======
-.item{
-    cursor: pointer;
-}
->>>>>>> origin/AnnaBranch
 
 /*left part END*/
 
@@ -507,11 +468,7 @@ body {
 }
 
 
-<<<<<<< HEAD
 /*POST END*/
 
 
 /*Main body END*/
-=======
-/*Main body END*/
->>>>>>> origin/AnnaBranch

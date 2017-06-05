@@ -25,19 +25,62 @@
            templateUrl: "/app/templates/router.html"
        } 
     });
+  
+    // Collapsing directive for mobile
     
+    app.directive('navCollapse', function () {
+    return {
+        restrict: 'AE',
+        link: function (scope, element, attrs) {
+            var visible = false;
+
+            element.on('show.bs.collapse', function () {
+                visible = true;
+            });
+
+            element.on("hide.bs.collapse", function () {
+                visible = false;
+            });
+
+            element.on('click', function(event) {
+                if (visible && 'auto' == element.css('overflow-y')) {
+                    element.collapse('hide');
+                }
+            });
+        }
+    };
+});
     
-    angular.module("socialNetwork").config(function($routeProvider){
+  // Routing START  
+    
+   var app2 = angular.module("socialNetwork").config(function($routeProvider){
         $routeProvider
         .when("/", {
-            templateUrl: "/app/templates/mainPage.html"
+            templateUrl: "/app/templates/mainPage.html",
+            title: 'Головна сторінка'
         })
         .when("/controller-friends", {
-            templateUrl: "app/templates/friends.html"
+            templateUrl: "app/templates/friends.html",
+            title: 'Мої друзі'
         })
         .when("/controller-gallery", {
-            templateUrl: "app/templates/gallery.html"
+            templateUrl: "app/templates/gallery.html",
+            title: 'Галерея'
         });
+//       .when("/controller-autorize", {
+//           templateUrl: "app/templates/autorize.html",
+//           title: 'Реєструйся'     
+//        });
         $routeProvider.otherwise("/");
     });
+    
+// Title routing
+    app2.run(['$rootScope', function($rootScope){
+        $rootScope.$on('$routeChangeSuccess', function(event , current, previous){
+           $rootScope.title = current.$$route.title; 
+            console.log($rootScope.title);
+        });
+    }]);
+    
+    
 })();

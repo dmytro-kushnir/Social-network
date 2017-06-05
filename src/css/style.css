@@ -1,4 +1,5 @@
 /*GENERAL START*/
+
 #wrapper {
     overflow-x: hidden;
     position: fixed;
@@ -10,10 +11,11 @@ body {
     font-family: HelveticaBlack;
 }
 
-@font-face{
+@font-face {
     font-family: HelveticaBlack;
     src: local("../fonts/HelveticaBlack/HelveticaBlack.ttf");
 }
+
 .container-fluid {
     background-color: gainsboro;
 }
@@ -21,13 +23,17 @@ body {
 .custom-container {
     margin-top: 65px;
 }
+
 .classWithPad {
     margin: -5px;
     background-color: white;
     /*padding:1px; *
 /* Navigation header START*/
 }
+
+
 /*GENERAL END*/
+
 .logo {
     height: 30px;
     width: auto;
@@ -37,24 +43,29 @@ body {
     background: rgb(17, 17, 17) !important;
 }
 
-.btn-default{
-	font-family: Helvetica !important;
+.navbarToggleMasc {
+    border-radius: 0px !important;
+}
+
+.btn-default {
+    font-family: Helvetica !important;
     color: black !important;
     background: gainsboro !important;
     border-radius: 0 !important;
 }
-.btn-default:hover{
+
+.btn-default:hover {
     background: white !important;
     transition: 1s !important;
-    border:1px solid rgb(61, 61, 61) !important;
+    border: 1px solid rgb(61, 61, 61) !important;
 }
-.label-danger{
- background: gray !important;
+
+.label-danger {
+    background: gray !important;
 }
-.label-primary{
- background: #201d1d !important;
 
-
+.label-primary {
+    background: #201d1d !important;
 }
 
 .userHeader {
@@ -225,9 +236,11 @@ body {
 .item6 {
     background-image: url("../img/gallery/6.jpg");
 }
-.item{
+
+.item {
     cursor: pointer;
 }
+
 
 /*left part END*/
 
@@ -368,7 +381,7 @@ body {
 
 .friendsIco {
     background-image: url("../img/friends.png");
-    margin-left: 80px;
+    margin-left: 10px;
 }
 
 .galleryIco {
@@ -387,6 +400,7 @@ body {
 #myCarousel {
     display: none;
 }
+
 
 /*Comment START*/
 
@@ -408,9 +422,12 @@ body {
     margin: 5px;
 }
 
+
 /*Comment END*/
 
+
 /*POST START*/
+
 
 .posters {
     background-color: #f2f2f2;
@@ -450,6 +467,8 @@ body {
     border: 1px solid gray;
 }
 
+
 /*POST END*/
+
 
 /*Main body END*/

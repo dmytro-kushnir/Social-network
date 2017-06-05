@@ -42,7 +42,7 @@
                     <figure class="friend friend4">
                       <figcaption>Тільда Суїнтон</figcaption>
                     </figure>
-                    <h3 class="myGallery">Галерея </h3>
+                    <h3 class="myGallery"><a style="text-decoration:none; color:black;" ng-href="#/controller-gallery">Галерея</a></h3>
                     <article class="gallery">
                       <div class="row no-gutter">
                         <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
@@ -113,15 +113,15 @@
                         <span class="sr-only">Next</span>
                       </a>
                     </div>
-                    <article class="friendsAndPhoto">
+                    <article class="friendsAndPhoto" >
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
-                        <p class="myFriends">Друзі<span style="padding-left:10px;">480</span></p>
-                        <figure class="friendsAndPhotoIcon friendsIco"></figure>
+                          <a style="text-decoration:none; color:black;" ng-href="#/controller-friends"><p class="myFriends">Друзі<span style="padding-left:10px;">480</span></p></a>
+                          <a ng-href="#/controller-friends"><figure class="friendsAndPhotoIcon friendsIco"></figure></a>
                       </div>
                       <!--user friends and photo count-->
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
-                        <p>Галерея</p>
-                        <figure class="friendsAndPhotoIcon galleryIco"></figure>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " >
+                        <p ><a style="text-decoration:none; color:black;" ng-href="#/controller-gallery">Галерея</a></p>
+                       <a ng-href="#/controller-gallery"><figure class="friendsAndPhotoIcon galleryIco"></figure></a> 
                       </div>
                     </article>
                   </div>
@@ -172,3 +172,4 @@
               </section>
               
                    <script src="src/js//lightBoxGallery.js"></script>
+                   

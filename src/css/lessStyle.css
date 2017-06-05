@@ -39,13 +39,13 @@
   .modalMasc {
     display: none !important;
   }
-  .modalMascToogle {
+  .modalMasc.special {
     display: block !important;
   }
-  .RightBodyModal {
+  .rightBodyModal {
     overflow-y: hidden;
   }
-  .rightBodyModalToggle {
+  .rightBodyModal.special {
     height: auto;
   }
   .modalOtherUserPhotoComment {
@@ -63,7 +63,7 @@
     position: absolute;
     bottom: -40px;
   }
-  .postTabletTrigger {
+  .postTablet.special {
     display: block !important;
   }
   .TabletTextArea {
@@ -75,7 +75,7 @@
     display: none;
     margin-bottom: 40px !important;
   }
-  .TabletCommentTrigger {
+  .TabletComment.special {
     display: flex;
     justify-content: space-around;
   }
@@ -167,13 +167,13 @@
   .modalMasc {
     display: none !important;
   }
-  .modalMascToogle {
+  .modalMasc.special {
     display: block !important;
   }
-  .RightBodyModal {
+  .rightBodyModal {
     overflow-y: hidden;
   }
-  .rightBodyModalToggle {
+  .rightBodyModal.special {
     height: auto;
   }
   .modalOtherUserPhotoComment {
@@ -187,7 +187,7 @@
     position: absolute;
     bottom: -40px;
   }
-  .postTabletTrigger {
+  .postTablet.special {
     display: block !important;
   }
   .TabletTextArea {
@@ -197,7 +197,7 @@
   .TabletComment {
     display: none;
   }
-  .TabletCommentTrigger {
+  .TabletComment.special {
     display: flex;
     justify-content: space-around;
   }

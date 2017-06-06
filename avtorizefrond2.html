@@ -14,10 +14,10 @@
         <img src="src/img/log.png" alt="logo" class="header_logo">
         <div class="header_enter">
             <p class="email">E-mail:</p>
-            <input type="text" class="email_input">
+            <input type="email" class="email_input" require>
             <p class="password">Пароль:</p>
-            <input type="text" class="password_input">
-            <a href="mainPage.html"><button type="button" class="enter_button">Увійти</button></a>
+            <input type="password" class="password_input" require>
+            <a href="index.html"><button type="button" class="enter_button">Увійти</button></a>
         </div>
     </header>
     <!--main-->
@@ -26,10 +26,10 @@
             <p class="enter_header">Заходь!:)</p>
             <div class="main_login">
                 <p class="email">E-mail:</p>
-                <input type="text" class="email_input">
+                <input type="email" class="email_input" require>
                 <p class="password">Пароль:</p>
-                <input type="text" class="password_input">
-                <a href="mainPage.html"><button type="button" class="mainenter_button">Увійти</button></a>
+                <input type="password" class="password_input" require>
+                <a href="index.html"><button type="button" class="mainenter_button">Увійти</button></a>
             </div>
         </article>
         <article class="registration">
@@ -37,10 +37,10 @@
             <p class="registration_secondheader">Реєструйся!</p>
             <form action="#">
                 <div class="partOfForm">
-                    <label>Прізвище</label><input type="text">
-                    <label>Ім’я</label><input type="text">
-                    <label>E-mail</label><input type="text">
-                    <label>Пароль</label><input type="text">
+                    <label>Прізвище</label><input class="inputsPartOfForm" type="text" require>
+                    <label>Ім’я</label><input class="inputsPartOfForm" type="text" require>
+                    <label>E-mail</label><input class="inputsPartOfForm" type="email" require>
+                    <label>Пароль</label><input class="inputsPartOfForm" type="password" require>
                     <button type="button" class="form_button">Приєднуйся!</button>
                 </div>
             </form>

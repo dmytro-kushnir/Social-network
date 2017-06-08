@@ -18,7 +18,3 @@ app.controller('RouterCtrl' , [function(){
 //      }
 //    ];
 }]);
-
-app.controller('RouterAutoriz', [function(){
-    
-}]);

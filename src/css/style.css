@@ -128,8 +128,8 @@ body {
 
 .friend {
     background-size: cover;
-    height: 70px;
-    width: 70px;
+    height: 70px!important;
+    width: 70px!important;
     border-radius: 50%;
     cursor: pointer;
     margin-left: 20px;

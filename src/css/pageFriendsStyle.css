@@ -2,129 +2,135 @@
     font-family: Helvetica, Arial;
     src: url("./fonts/HelveticaBlack/HelveticaBlack.ttf");
 }
-/*header START*/
-.header{
-	font-family: Helvetica;
-    background: rgb(17, 17, 17);
-    height: 50px; 
+.logo{
+	margin: auto;
+}
+.friends{
+    width: 289px;
+    height: 130px;
+    border: 1px solid rgb(204,204,204);
+    margin: 0 10px 10px;
     display: flex;
-    flex-direction: row;   
-    justify-content: space-between;
-}
-.header_logo{
-    width: auto;
-    height: 30px;
-    margin: 9px 0 0 25px;
-}
-.nav_a, .header_nav-hiden{
-    color: rgb(163, 159, 150);
-    text-decoration: none;
-    list-style: none;
-}
-.header_enter, .header_enter2{
-    display: none;
     flex-direction: row;
-    justify-content: space-between;
-    width: 149px;
-    margin-right: 90px;
 }
-.header_nav-hiden{
-    display: none;
+.friendPhoto{
+    margin: 15px;
+    width: 80px;
+    height: 100px;
+    background-image: url('../img/users/user1/avatar.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-#triangle-down {
-	width: 0;
-	height: 0;
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-top: 4px solid rgb(163, 159, 150);
-    margin-top: 22px;
-    display: none;
+
+.firstSecondName{
+    color: #333;
+    margin: 35px 15px 10px;
+    font-weight: bold;
 }
-.user_header {
-    border-radius: 50%;
-    height: auto;
-    width: 50px;
-    display: none;
+.friendFirstName{
+    margin: 0 5px 0 0;
+}
+.countFriends{
+    margin: 0 0 0 15px;
+    color: rgb(127, 122, 146);
+}
+.pFriend{
+    margin: 0 0 0 5px;
+}
+.buttons{
+    width: 30px;
+   display: none;
 }
 .sendvich{
     width: 42px;
     height: 30px;
     padding: 3px 0 0;
-    border: 1px solid rgb(51, 51, 51);
-    margin: 8px 10px 0 0;
-    
+    margin: 10px 10px 0 0;
     display: flex;
     flex-direction: column;
 }
-.sendvich:hover{
-    background: rgb(51, 51, 51);
-}
 .partOfSendvich{
     height: 2px;
-    width: 25px;
+    width: 15px;
     margin: 5px 0 0 9px;
-    background: white;
+    background: rgb(204,204,204);
 }
-/*Header END*/
-/*Main START*/
-.wrapper{
-    font-family: Helvetica, Arial;
-    background: rgb(220, 220, 220);
-    width: 100%;
-    height: 100%;
-    padding: 10px 0 0 10px;
+
+.write:hover, .del:hover{
+    background: rgb(204,204,204);
+    transition: 1s;
 }
-.wrapper_main{
-    width: 1150px;
-    margin: 0 auto 0 90px;
-}
-.menu{
-    font-size: 14px;
-    width: 175px;
-    height: auto;
-    background: white;
-    margin: 0;
-    /*padding: 20px;*/
-    padding: 0;
-    list-style: none;
-    border: 1px solid rgb(245, 245, 245);
-}
-.nav_a{
-    display: block;
-    padding: 15px;
-    
-    color: rgb(127, 122, 146);
-}
-.nav_a:hover{
-    color: #333;
-    background-color:rgb(220, 220, 220);
-}
+/*Friends Box end*/
 /*Main END*/
 /*адаптивність*/
+@media screen and (min-width: 320px){
+	.friends{
+		width: 250px;
+	}
+	.friendPhoto{
+		margin: 15px 5px;
+	}
+}
+@media screen and (min-width: 375px){
+	.friends{
+		width: 305px;
+	}
+	.friendPhoto{
+		margin: 15px 10px;
+	}
+}
+@media screen and (min-width: 412px){
+	.friends{
+		width: 340px;
+	}
+}
+@media screen and (min-width: 480px){
+	.friends{
+		width: 620px;
+	}
+	.aboutFriend{
+		width: 450px;
+	}
+}
 @media  screen and (min-width: 768px){
-    .header_enter{
-        display: flex;
-        margin-right: 25px;
-        font-size: 14px;
-    }
-    #triangle-down{
-        display: flex;
-    }
-    .user_header{
-        display: flex;
-    }
-    .sendvich{
-        display: none;
-    }
+	.friends{
+		width: 520px;
+	}
+	.buttons{
+		display: block;
+		padding-top: 3px;
+	}
+	.write, .del{
+    background: white;
+    height: 40px;
+    width: 180px;
+    margin: 15px 10px 0;
+    margin: 15px 10px 0;
+    border: 1px solid rgb(204,204,204);
+	}
+	.sendvich{
+		display: none;
+	}
+}
 
 @media  screen and (min-width: 992px){
-    .header_enter{
-        margin-right: 90px;
-    }
-    .header_logo{
-        margin: 9px 0 0 103px;
-    }
+	.friends{
+		width: 685px;
+		display: flex;
+		flex-direction: row;
+	}
+	.aboutFriend{
+		width: 350px;
+	}
 }
 @media  screen and (min-width: 1200px){
-
+	.friends{
+		width: 835px;
+		
+	}
+	.aboutFriend{
+		width: 500px;
+		
+	}
+	
 }

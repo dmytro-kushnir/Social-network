@@ -26,6 +26,7 @@
 .enter_button{
 	font-family: Helvetica;
     width: 95px;
+	height: 30px;
     color: white;
     border:1px solid rgb(61, 61, 61);
     background: rgb(17, 17, 17);
@@ -54,21 +55,27 @@
     flex-direction: column;
     justify-content: space-between;
     width: 275px;
-    height: 170px;
+    height: 180px;
     margin: 0 auto 15px;
+}
+.mainenter_button{
+	width: 275px;
+}
+.email_input, .password_input{
+	height: 30px;
 }
 .registration{
 	font-family: Helvetica;
     background: white;
     width: 325px;
-    height: 325px;
-    padding: 50px 10px 20px;
+    height: 338px;
+    padding: 25px 10px;
     margin: auto;
 }
 .registration_header, .enter_header{
     text-align: center;
     font-size: 25px;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
 }
 .registration_secondheader{
     text-align: center;
@@ -80,8 +87,11 @@
     flex-direction: column;
     justify-content: space-between;
     width: 275px;
-    height: 215px;
+    height: 235px;
     margin: auto;
+}
+.inputsPartOfForm{
+	height: 30px;
 }
 .form_button, .mainenter_button{
     margin-top: 10px;
@@ -107,6 +117,9 @@
 }
 /*адаптивність*/
 @media  screen and (min-width: 768px){
+	.header{
+		height: 40px;
+	}
     .header_logo{
         margin: 8px 0 0 50px;
     }
@@ -117,7 +130,7 @@
         color: white;
         height: 30px;
         width: 600px;
-        margin: 10px 10px 0;
+        margin: 5px 10px 0;
     }
     .main{
         padding: 50px 0 50px;
@@ -133,6 +146,7 @@
     }
     .email_input, .password_input{
         width: 150px;
+		height: 25px;
     }
     .enter_button{
         margin: 0 0 0 5px;
@@ -170,12 +184,13 @@
     .main{
         background: url("../img/avtorizbackground.jpg");
         background-size: auto;
-        padding: 120px 0 150px 100px;
+        padding: 120px 0 170px 100px;
         }
     .main_enter{
         display: none;
         }
     .registration{
+		padding: 45px 0 0 0;
         margin: 0 0 0 50px;
     }
 }

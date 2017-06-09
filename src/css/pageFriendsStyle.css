@@ -71,13 +71,19 @@
 		margin: 15px 5px;
 	}
 }
-@media screen and (min-width: 375px){
+@media screen and (min-width: 360px){
 	.friends{
-		width: 305px;
+		width: 290px;
 	}
 	.friendPhoto{
 		margin: 15px 10px;
 	}
+}
+@media screen and (min-width: 375px){
+	.friends{
+		width: 305px;
+	}
+	
 }
 @media screen and (min-width: 412px){
 	.friends{
@@ -110,6 +116,9 @@
 	}
 	.sendvich{
 		display: none;
+	}
+	.aboutFriend{
+		width: 180px;
 	}
 }
 

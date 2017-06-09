@@ -8,8 +8,10 @@
 
     app.controller('ModalCtrl', function ($scope) {
         $scope.toogleClass = function (class1) {
-            console.log(class1);
             $scope[class1] = !$scope[class1];
         };
+         
+     
     });
+    
 })();

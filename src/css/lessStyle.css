@@ -142,6 +142,10 @@
     height: 450px;
     width: auto;
   }
+  .container-fluid {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
 }
 @media (max-width: 570px) {
   .infoName {
@@ -156,6 +160,10 @@
   }
 }
 @media (min-width: 999px) {
+  .infoName > p > label {
+    -moz-box-shadow: 0px 4px 4px -4px gray;
+    box-shadow: 0px 4px 4px -4px gray;
+  }
   .infoName > p {
     width: 400px;
   }

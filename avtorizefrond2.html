@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="singupApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,38 +10,42 @@
 </head>
 <body>
     <!--header-->
-    <header class="header">
+    <header class="header" >
         <img src="src/img/log.png" alt="logo" class="header_logo">
-        <div class="header_enter">
-            <p class="email">E-mail:</p>
-            <input type="email" class="email_input" require>
-            <p class="password">Пароль:</p>
-            <input type="password" class="password_input" require>
+        <form class="header_enter" name="headerEnter" novalidate>
+            <label class="email">E-mail:</label>
+            <input type="email" class="email_input" require $invalid>
+            <label class="password">Пароль:</label>
+            <input type="password" class="password_input" require $invalid>
             <a href="index.html"><button type="button" class="enter_button">Увійти</button></a>
-        </div>
+        </form>
     </header>
     <!--main-->
-    <main class="main">
+    <main class="main" >
         <article class="main_enter">
             <p class="enter_header">Заходь!:)</p>
-            <div class="main_login">
-                <p class="email">E-mail:</p>
-                <input type="email" class="email_input" require>
-                <p class="password">Пароль:</p>
-                <input type="password" class="password_input" require>
+            <form class="main_login" name="mainLogin" novalidate>
+                <label class="email">E-mail:</label>
+                <input type="email" class="email_input" require $invalid>
+                <label class="password">Пароль:</label>
+                <input type="password" class="password_input" require $invalid>
                 <a href="index.html"><button type="button" class="mainenter_button">Увійти</button></a>
-            </div>
+            </form>
         </article>
-        <article class="registration">
+        <article class="registration" ng-controller="singUpController as singUp">
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
             <p class="registration_secondheader">Реєструйся!</p>
-            <form action="#">
+            <form action="#" name="registration" novalidate>
                 <div class="partOfForm">
-                    <label>Прізвище</label><input class="inputsPartOfForm" type="text" require>
-                    <label>Ім’я</label><input class="inputsPartOfForm" type="text" require>
-                    <label>E-mail</label><input class="inputsPartOfForm" type="email" require>
-                    <label>Пароль</label><input class="inputsPartOfForm" type="password" require>
-                    <button type="button" class="form_button">Приєднуйся!</button>
+                    <label for="surname">Прізвище</label>
+                    <input class="inputsPartOfForm" ng-model="registration.Surname" type="text" id="surname" require $invalid>
+                    <label for="name">Ім’я</label>
+                    <input class="inputsPartOfForm" ng-model="registration.Name" type="text" id="name" require $invalid>
+                    <label for="email">E-mail</label>
+                    <input class="inputsPartOfForm" ng-model="registration.Email" type="email" id="email" require $invalid>
+                    <label for="password">Пароль</label>
+                    <input class="inputsPartOfForm" ng-model="registration.Password" type="password" id="password" require $invalid>
+                    <button type="button" ng-click="singUp()" ng-disabled="isProcessing" class="form_button">Приєднуйся!</button>
                 </div>
             </form>
         </article>
@@ -49,5 +53,9 @@
     <footer class="footer">
         <p class="footer_text">Friends © 2017</p>
     </footer>
+
+   
+        
+        
 </body>
 </html>

@@ -128,8 +128,6 @@
   }
   .otherUserPhotoComment {
     margin-top: -15px;
-    width: 100px;
-    height: 100px;
   }
   #myCarousel {
     margin-left: -3px !important;
@@ -146,6 +144,13 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .userChatBlock {
+    padding: 30px 10px 10px 10px;
+  }
 }
 @media (max-width: 570px) {
   .infoName {
@@ -153,17 +158,29 @@
     margin-left: 5%;
   }
   .profilePhoto {
-    height: 200px;
     width: 200px;
-    margin-left: 20%;
-    margin-top: 40px;
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 5px;
+  }
+  .userName {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 5px;
+  }
+  .textareaMainPage {
+    margin: 10px 30px !important;
   }
 }
 @media (min-width: 999px) {
-  .infoName > p > label {
-    -moz-box-shadow: 0px 4px 4px -4px gray;
-    box-shadow: 0px 4px 4px -4px gray;
-  }
   .infoName > p {
     width: 400px;
   }

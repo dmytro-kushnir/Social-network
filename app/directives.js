@@ -65,7 +65,8 @@
             })
             .when("/controller-gallery", {
                 templateUrl: "app/templates/gallery.html",
-                title: 'Галерея'
+                title: 'Галерея',
+                css: ['../src/css/gallery.css']
             })
             .when("/controller-chat", {
                 templateUrl: "app/templates/chat.html",

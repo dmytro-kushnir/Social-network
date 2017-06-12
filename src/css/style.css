@@ -321,6 +321,7 @@ body {
 
 .userName {
     padding-bottom: 15px;
+    /*white-space: nowrap;*/
 }
 
 .infoName {

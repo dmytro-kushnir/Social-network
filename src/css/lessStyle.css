@@ -168,11 +168,7 @@
     padding: 5px;
   }
   .userName {
-    width: 240px;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
     display: block;
     padding: 5px;
   }

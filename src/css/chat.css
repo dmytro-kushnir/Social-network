@@ -38,47 +38,57 @@
 .userChatBlock{
     display: flex;
     justify-content: space-between;
+    /*flex-wrap: wrap;*/
     padding: 30px 30px 10px 30px;
        border-bottom-width: 1px ;
   -webkit-box-shadow: 0px 4px 4px -4px gray;
        -moz-box-shadow: 0px 4px 4px -4px gray;
             box-shadow: 0px 4px 4px -4px gray;
+
 }
 .userChatPhoto{
-    background-image: url("../img/users/user1/avatar.jpg");
-    background-size: cover;
+    object-fit: cover;
     border-radius: 50%;
     height: 60px;
     width: 60px;
     cursor: pointer;
+    display: block;
 }
-.userChatPhoto > label{
-    margin-left: 80px;
-    white-space: nowrap;
+.userNameChat{
     cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    top:-63px;
+    left:60px;
 }
 .chatDate{
     cursor: default;
+    white-space: nowrap;
 }
 
 .userLast{
     position: relative;
-    bottom: 30px;
-  margin-left: 70px;
-/*    margin-top: 40px;*/
-   
+    bottom: 50px;
+    left: 70px;
+    display: flex;
+ 
 }
 .userLastPhoto{
-    background-image: url("../img/avatar.jpg");
-    background-size: cover;
+    object-fit: cover;
     border-radius: 50%;
     height: 30px;
     width: 30px;
+    display: block;
 }
-.userLastPhoto>p{
-    white-space: nowrap;
-    margin-left: 35px;
+.userLastComment{
     cursor: default;
-  
+    font-size:15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 240px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 /*..........USER END............*/

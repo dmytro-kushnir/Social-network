@@ -8,6 +8,9 @@
 @extraLarge: ~"(min-width: 999px)";
 ///////////////////////// 
 @media @tablet {
+    // .userChatName, .arrowLeft{
+    //     display: none;
+    // }
     .userSideBar {
         display: none;
     }
@@ -97,8 +100,8 @@
         margin-bottom: 40px !important;
     }
     .TabletComment.special {
-        display: flex;
-        justify-content: space-around;
+        // display: flex;
+        // justify-content: space-around;
     }
     // MODAL END
      .user{
@@ -107,10 +110,22 @@
     .userMenu{
         display: none !important;
     }
+    .navbar-brand, .panel-primary{
+        display: none !important;
+    }
+    .panel-body{
+        height: 82vh;
+    }
 }
 
 /////////////////////////  
 @media @desktop {
+    .arrowLeftMobile{
+        display: none;
+    }
+    .headerName{
+        display: none;
+    }
     .TabletComment {
         display: none;
     }

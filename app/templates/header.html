@@ -1,14 +1,20 @@
 
     <header class="navbar navbar-inverse navbarTop navbar-fixed-top">
       <div class="container containerHeader">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle navbarToggleMasc" data-toggle="collapse" ng-click="collapsed = true"   data-target="#responsive-menu">
+        <div class="navbar-header nabvarHeaderMine">
+           <button type="button" class="navbar-toggle navbarToggleMasc" data-toggle="collapse" ng-click="collapsed = true"   data-target="#responsive-menu">
                       <span class="sr-only">Open navigation</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-          <a ng-href="#/" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+              <a ng-href="#/" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+
+                <a ng-href="#/controller-chat"><figure class="arrowLeftMobile"></figure></a>
+
+                <a class="headerName" ng-href="#/controller-mainPage">Повідомлення</a>
+     
+          
         </div>
         <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
           <ul class="nav navbar-nav navbar-right">
@@ -22,7 +28,7 @@
               </ul>
               <div class="MobileUserSideBar">
                 <ul class="nav navbar-nav mineNavbar">
-                  <li><a  ng-href="#/" >Мій профіль</a></li>
+                  <li><a  ng-href="#/">Мій профіль</a></li>
                   <li><a  ng-href="#/controller-friends" >Мої друзі</a></li>
                   <li><a  ng-href="#/controller-chat" >Повідомлення  <span class="badge"> 2</span></a></li>
                   <li> <a ng-href="#/controller-gallery" >Галерея</a></li>

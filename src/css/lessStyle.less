@@ -8,6 +8,16 @@
 @extraLarge: ~"(min-width: 999px)";
 ///////////////////////// 
 @media @tablet {
+    .userChatPanel{
+        display: none;
+    }
+    .rightChat{
+    margin-left: 100px;
+}
+.leftChat{
+    margin-right: 100px;
+}
+
     // .userChatName, .arrowLeft{
     //     display: none;
     // }
@@ -110,16 +120,26 @@
     .userMenu{
         display: none !important;
     }
-    .navbar-brand, .panel-primary{
-        display: none !important;
-    }
+    // .navbar-brand, .panel-primary{
+    //     display: none !important;
+    // }
     .panel-body{
         height: 82vh;
     }
+    .navbar-brand {
+    display: block  ;
+}
 }
 
 /////////////////////////  
 @media @desktop {
+    .navbar-brand {
+    display: block !important ;
+    }
+    .headerName, .arrowLeftMobile{
+    display: none !important;
+}
+
     .arrowLeftMobile{
         display: none;
     }
@@ -169,6 +189,12 @@
 
 ///////////////////////// 
 @media @extraSmall {
+      .rightChat{
+    margin-left: 30px;
+}
+.leftChat{
+    margin-right: 30px;
+}
     .userName {
         // margin-left: 20px;
     }

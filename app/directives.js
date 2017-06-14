@@ -65,8 +65,8 @@
             })
             .when("/controller-gallery", {
                 templateUrl: "app/templates/gallery.html",
-                title: 'Галерея',
-                css: ['../src/css/gallery.css']
+                title: 'Галерея'
+                // css: ['../src/css/gallery.css']
             })
             .when("/controller-chat", {
                 templateUrl: "app/templates/chat.html",
@@ -74,7 +74,7 @@
             })
             .when("/controller-chatUser", {
                 templateUrl: "app/templates/chatUser.html",
-                title: "Доктор Стрендж"
+                title: "Дженніфер Лоуренс"
             });
         $routeProvider.otherwise("/");
     });

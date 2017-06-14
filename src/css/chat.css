@@ -1,34 +1,34 @@
 /*-----------SEARCH START----------*/
 .searchBlock {
-    padding: 15px 30px 20px 30px;
+    padding: 15px 20px 15px 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom-width: 1px ;
      -webkit-box-shadow: 0px 4px 4px -4px gray;
        -moz-box-shadow: 0px 4px 4px -4px gray;
             box-shadow: 0px 4px 4px -4px gray;
 }
 
-.searchIcon,
-.addIcon {
+.searchIcon {
     background-size: cover;
     height: 35px;
     width: 35px;
     cursor: pointer;
+ 
 }
 
 .searchIcon {
     background-image: url("../img/search.png");
 }
 
-.addIcon {
+/*.addIcon {
     background-image: url("../img/add.png");
-}
+}*/
 
-.searchIcon>label {
+.searchText {
     margin-top: 10px;
-    margin-left: 40px;
     cursor: pointer;
+       font-size: 16px;
 }
 /*-----------SEARCH END----------*/
 /*..........USER START............*/
@@ -37,7 +37,10 @@
 }
 .userChatBlock{
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
+    text-decoration: none;
+    color: black;
     /*flex-wrap: wrap;*/
     padding: 30px 30px 10px 30px;
        border-bottom-width: 1px ;
@@ -46,24 +49,29 @@
             box-shadow: 0px 4px 4px -4px gray;
 
 }
+.userChatBlock:hover{
+    background-color: #f2f2f2;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
 .userChatPhoto{
     object-fit: cover;
     border-radius: 50%;
     height: 60px;
     width: 60px;
-    cursor: pointer;
     display: block;
 }
+
 .userNameChat{
-    cursor: pointer;
     position: relative;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     top:-63px;
     left:60px;
 }
 .chatDate{
-    cursor: default;
     white-space: nowrap;
 }
 
@@ -82,7 +90,6 @@
     display: block;
 }
 .userLastComment{
-    cursor: default;
     font-size:15px;
     margin-top: 5px;
     margin-left: 5px;
@@ -92,3 +99,39 @@
     white-space: nowrap;
 }
 /*..........USER END............*/
+
+/*ChatUSER page start!!*/
+.userChatPanel{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 35px;
+     border-bottom-width: 1px ;
+  -webkit-box-shadow: 0px 4px 4px -4px gray;
+       -moz-box-shadow: 0px 4px 4px -4px gray;
+            box-shadow: 0px 4px 4px -4px gray;
+position: fixed;
+width: inherit;
+width: 60%;
+}
+.arrowLeft{
+    background-image: url("../../src/img/arrowLeft.png");
+    background-size: cover;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+.userChatName{
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-top: 5px;
+}
+.userChatName:hover{
+        text-decoration: none;
+    color: black;
+}
+
+
+
+/*ChatUSER page END!!*/

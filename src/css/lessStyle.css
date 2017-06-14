@@ -79,6 +79,12 @@
     display: flex;
     justify-content: space-around;
   }
+  .user {
+    display: none !important;
+  }
+  .userMenu {
+    display: none !important;
+  }
 }
 @media (min-width: 768px) {
   .TabletComment {
@@ -149,7 +155,7 @@
     padding-right: 10px !important;
   }
   .userChatBlock {
-    padding: 30px 10px 10px 10px;
+    padding: 30px 10px 10px 2px;
   }
 }
 @media (max-width: 570px) {
@@ -174,6 +180,9 @@
   }
   .textareaMainPage {
     margin: 10px 30px !important;
+  }
+  .user {
+    display: none !important;
   }
 }
 @media (min-width: 999px) {

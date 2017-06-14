@@ -75,18 +75,27 @@
     display: none;
     margin-bottom: 40px !important;
   }
-  .TabletComment.special {
-    display: flex;
-    justify-content: space-around;
-  }
   .user {
     display: none !important;
   }
   .userMenu {
     display: none !important;
   }
+  .navbar-brand,
+  .panel-primary {
+    display: none !important;
+  }
+  .panel-body {
+    height: 82vh;
+  }
 }
 @media (min-width: 768px) {
+  .arrowLeftMobile {
+    display: none;
+  }
+  .headerName {
+    display: none;
+  }
   .TabletComment {
     display: none;
   }

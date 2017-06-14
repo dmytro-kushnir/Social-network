@@ -1,144 +1,105 @@
+<link rel="stylesheet" href="src/css/chatAdditional.css">
 
-<div class="userChatPanel " >
-    <a ng-href="#/controller-chat"><figure class="arrowLeft"></figure></a>
-    <a class="userChatName" ng-href="#/controller-mainPage">Дженніфер Лоуренс</a>
-    <figure class="searchIcon searchIconUserChat"></figure> 
+<div class="panel panel-primary">
+    <div class="panel-heading userChatPanel">
+        <a ng-href="#/controller-chat">
+            <figure class="arrowLeft"></figure>
+        </a>
+        <a class="userChatName" ng-href="#/controller-mainPage">Дженніфер Лоуренс</a>
+        <figure class="searchIcon searchIconUserChat"></figure>
+    </div>
 </div>
+<div class="panel-body">
+    <ul class="chat">
 
-
-   <a class="userChatBlock" ng-href="#/controller-chatUser">
-        <div class="chatWrapper">
-            <img class="userChatPhoto" src="../../src/img/users/user1/avatar.jpg">
-            <span class="userNameChat">Дженніфер Лоуренс</span>
-            <div class="userLast">
-                <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-                <span class="userLastComment">Це просто неймовірно!</span>
+        <li class="rightChat clearfix pull-right" >
+            <div class="chat-body bubbleRight ">
+                <p>
+                    Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем
+                    я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить
+                </p>
+                <div class="msgTime">
+                    <small class="pull-right ">
+                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                    </small>
+                </div>
             </div>
-        </div>
-        <p class="chatDate">Вчора</p>
-    </a>
+            <span class="chat-img pull-right">
+                <img class="userChatPhoto" src="../../src/img/avatar.jpg" alt="Mine Avatar" />
+            </span>
+        </li>
 
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user3/Rachel_McAdams_5.jpg">
-        <span class="userNameChat">Рейчел МакАдамс</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/users/user3/Rachel_McAdams_5.jpg">
-            <span class="userLastComment">Докторе, це просто неперевершенно! ^-)</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
 
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
-   <a class="userChatBlock" ng-href="#/controller-chatUser">
-        <div class="chatWrapper">
-            <img class="userChatPhoto" src="../../src/img/users/user1/avatar.jpg">
-            <span class="userNameChat">Дженніфер Лоуренс</span>
-            <div class="userLast">
-                <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-                <span class="userLastComment">Це просто неймовірно!</span>
+        <li class="leftChat clearfix pull-left">
+            <span class="chat-img pull-left">
+                <img class="userChatPhoto" src="../../src/img/users/user1/avatar.jpg" alt="User Avatar"/>
+            </span>
+            <div class="chat-body bubbleLeft">
+
+                <p>
+                    Це просто неймовріно!
+                </p>
+                <div class="msgTime">
+                    <small class="pull-right ">
+                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                    </small>
+                </div>
             </div>
-        </div>
-        <p class="chatDate">Вчора</p>
-    </a>
+        </li>
 
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user3/Rachel_McAdams_5.jpg">
-        <span class="userNameChat">Рейчел МакАдамс</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/users/user3/Rachel_McAdams_5.jpg">
-            <span class="userLastComment">Докторе, це просто неперевершенно! ^-)</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
 
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
+
+
+        <li class="rightChat clearfix pull-right" >
+            <div class="chat-body bubbleRight ">
+                <p>
+                          Знаєш приспів?
+                </p>
+                <div class="msgTime">
+                    <small class="pull-right ">
+                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                    </small>
+                </div>
+            </div>
+            <span class="chat-img pull-right">
+                <img class="userChatPhoto" src="../../src/img/avatar.jpg" alt="Mine Avatar" />
+            </span>
+        </li>
+
+        
+        <li class="leftChat clearfix pull-left">
+            <span class="chat-img pull-left">
+                <img class="userChatPhoto" src="../../src/img/users/user1/avatar.jpg" alt="User Avatar"/>
+            </span>
+            <div class="chat-body bubbleLeft">
+                <p>
+                    Знаю<br>
+                    Я хочу улететь, <br>
+                    Чтобы высоко и вниз не смотреть,<br>
+                    И за руку тебя милый мой,<br>
+                    Заберу я с собой...<br>
+                    Ты оставил мне след,<br>
+                    По которому, я буду лететь.<br>
+                    И за руку тебя, мой родной,<br>
+                    Заберу я с собой...
+                </p>
+                <div class="msgTime">
+                    <small class="pull-right ">
+                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                    </small>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</div>
+<div class="panel-footer">
+    <div class="input-group">
+        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Напишіть повідомлення..." />
+        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Відправити</button>
+                        </span>
     </div>
-    <p class="chatDate">17 Кві</p>
-</a>
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
-<a class="userChatBlock" ng-href="#/controller-chatUser">
-    <div class="chatWrapper">
-        <img class="userChatPhoto" src="../../src/img/users/user2/hqdefault.jpg">
-        <span class="userNameChat">Дормаму Непереможний</span>
-        <div class="userLast">
-            <img class="userLastPhoto" src="../../src/img/avatar.jpg">
-            <span class="userLastComment">Дормамму, я прийшов домовитись</span>
-        </div>
-    </div>
-    <p class="chatDate">17 Кві</p>
-</a>
+</div>
+</div>

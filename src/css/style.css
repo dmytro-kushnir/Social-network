@@ -478,3 +478,13 @@ body {
 
 
 /*Main body END*/
+
+.headerName{
+    display: none;
+}
+.arrowLeftMobile{
+    display: none;
+}
+.navbar-brand, .panel-primary{
+    display: block !important;
+}

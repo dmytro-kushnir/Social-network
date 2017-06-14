@@ -1,4 +1,13 @@
 @media (max-width: 767px) {
+  .userChatPanel {
+    display: none;
+  }
+  .rightChat {
+    margin-left: 100px;
+  }
+  .leftChat {
+    margin-right: 100px;
+  }
   .userSideBar {
     display: none;
   }
@@ -81,15 +90,21 @@
   .userMenu {
     display: none !important;
   }
-  .navbar-brand,
-  .panel-primary {
-    display: none !important;
-  }
   .panel-body {
     height: 82vh;
   }
+  .navbar-brand {
+    display: block  ;
+  }
 }
 @media (min-width: 768px) {
+  .navbar-brand {
+    display: block !important ;
+  }
+  .headerName,
+  .arrowLeftMobile {
+    display: none !important;
+  }
   .arrowLeftMobile {
     display: none;
   }
@@ -137,6 +152,12 @@
   }
 }
 @media (max-width: 460px) {
+  .rightChat {
+    margin-left: 30px;
+  }
+  .leftChat {
+    margin-right: 30px;
+  }
   .infoName > p > label {
     width: auto;
     padding-right: 0px;

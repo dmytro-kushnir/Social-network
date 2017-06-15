@@ -57,7 +57,7 @@
         $routeProvider
             .when("/", {
                 templateUrl: "/app/templates/mainPage.html",
-                title: 'Головна сторінка'
+                title: 'Доктор Стрендж'
             })
             .when("/controller-friends", {
                 templateUrl: "app/templates/friends.html",

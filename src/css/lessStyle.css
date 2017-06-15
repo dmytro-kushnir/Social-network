@@ -84,6 +84,10 @@
     display: none;
     margin-bottom: 40px !important;
   }
+  .TabletComment.special {
+    display: flex;
+    justify-content: space-around;
+  }
   .user {
     display: none !important;
   }
@@ -94,7 +98,10 @@
     height: 82vh;
   }
   .navbar-brand {
-    display: block  ;
+    display: none !important ;
+  }
+  .headerName {
+    display: inline;
   }
 }
 @media (min-width: 768px) {

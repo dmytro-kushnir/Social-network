@@ -41,6 +41,9 @@
     width: 30px;
    display: none;
 }
+.icon{
+	color: black!important;
+}
 .icons{
     width: 20px;
     height: 60px;
@@ -106,23 +109,21 @@
 		width: 245px;
 	}
 }
-/*@media screen and (min-width: 480px){
+@media screen and (min-width: 600px){
 	.friends{
-		width: 620px;
+		width: 530px;
 	}
 	.aboutFriend{
-		width: 450px;
+		width: 215px;
 	}
-}*/
-@media  screen and (min-width: 768px){
-	.friends{
-		width: 520px;
+	.icons{
+		display: none;
 	}
 	.buttons{
-		display: block;
-		padding-top: 3px;
-	}
-	.write{
+    width: 30px;
+   display: block;
+   }
+   .write{
 	background: rgb(169, 109, 163);
     border: 1px solid rgb(204,204,204);
     color: white;
@@ -138,6 +139,15 @@
 	background: white;
 	border: 1px solid rgb(204,204,204);
 	color: rgb(169, 109, 163);;
+	}
+}
+@media  screen and (min-width: 768px){
+	.friends{
+		width: 520px;
+	}
+	.buttons{
+		display: block;
+		padding-top: 3px;
 	}
 	.icons{
 		display: none;

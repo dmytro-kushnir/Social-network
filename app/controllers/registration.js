@@ -1,4 +1,4 @@
-var singupApp = angular.module("singUpApp", ["singUpController"]);
+var singupApp = angular.module("singUpApp", []);
 
 singupApp.controller("singUpController", ['singupService', function($scope, $window, singupService){
 

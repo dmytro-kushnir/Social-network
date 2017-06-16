@@ -9,7 +9,7 @@
     width: 289px;
     height: 130px;
     border: 1px solid rgb(204,204,204);
-    margin: 0 10px 10px;
+     margin: 0 0 10px 10px;
     display: flex;
     flex-direction: row;
 }
@@ -24,7 +24,7 @@
 
 .firstSecondName{
     color: #333;
-    margin: 35px 15px 10px;
+    margin: 15px 20px 10px 5px;
     font-weight: bold;
 }
 .friendFirstName{
@@ -41,11 +41,11 @@
     width: 30px;
    display: none;
 }
-.sendvich{
-    width: 42px;
-    height: 30px;
+.icons{
+    width: 20px;
+    height: 60px;
     padding: 3px 0 0;
-    margin: 10px 10px 0 0;
+    margin: 25px 0 0 12px;
     display: flex;
     flex-direction: column;
 }
@@ -57,7 +57,8 @@
 }
 
 .write:hover, .del:hover{
-    background: rgb(204,204,204);
+	color: white;
+     background: rgb(100, 57, 96);
     transition: 1s;
 }
 /*Friends Box end*/
@@ -65,30 +66,41 @@
 /*адаптивність*/
 @media screen and (min-width: 320px){
 	.friends{
-		width: 278px;
+		width: 290px;
 	}
 	.friendPhoto{
+		
 		margin: 15px 5px;
+	}
+	.icons{
+		flex-direction: column;
+		margin: 15px 0 0 0;
 	}
 }
 @media screen and (min-width: 360px){
 	.friends{
-		width: 318px;
+		width: 329px;
 		
 	}
 	.friendPhoto{
 		margin: 15px 10px;
 	}
+	.aboutFriend{
+		width: 180px;
+	}
 }
 @media screen and (min-width: 375px){
 	.friends{
-		width: 333px;
+		width: 345px;
 	}
 	
 }
 @media screen and (min-width: 412px){
 	.friends{
-		width: 370px;
+		width: 379px;
+	}
+	.aboutFriend{
+		width: 255px;
 	}
 }
 @media screen and (min-width: 480px){
@@ -107,19 +119,28 @@
 		display: block;
 		padding-top: 3px;
 	}
-	.write, .del{
-    background: white;
+	.write{
+	background: rgb(169, 109, 163);
+    border: 1px solid rgb(204,204,204);
+    color: white;
     height: 40px;
     width: 180px;
     margin: 15px 10px 0;
-    margin: 15px 10px 0;
-    border: 1px solid rgb(204,204,204);
+    
 	}
-	.sendvich{
+	.del{
+		height: 40px;
+    width: 180px;
+    margin: 15px 10px 0;
+	background: white;
+	border: 1px solid rgb(204,204,204);
+	color: rgb(169, 109, 163);;
+	}
+	.icons{
 		display: none;
 	}
 	.aboutFriend{
-		width: 180px;
+		width: 200px;
 	}
 }
 

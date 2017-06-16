@@ -65,7 +65,7 @@
 /*адаптивність*/
 @media screen and (min-width: 320px){
 	.friends{
-		width: 250px;
+		width: 278px;
 	}
 	.friendPhoto{
 		margin: 15px 5px;
@@ -73,7 +73,8 @@
 }
 @media screen and (min-width: 360px){
 	.friends{
-		width: 290px;
+		width: 318px;
+		
 	}
 	.friendPhoto{
 		margin: 15px 10px;
@@ -81,13 +82,13 @@
 }
 @media screen and (min-width: 375px){
 	.friends{
-		width: 305px;
+		width: 333px;
 	}
 	
 }
 @media screen and (min-width: 412px){
 	.friends{
-		width: 340px;
+		width: 370px;
 	}
 }
 @media screen and (min-width: 480px){

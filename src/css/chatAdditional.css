@@ -1,0 +1,17 @@
+body {
+    overflow-y: hidden;
+}
+
+.headerName {
+    display: inline;
+}
+
+.arrowLeftMobile {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        display: none !important;
+    }
+}

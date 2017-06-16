@@ -1,16 +1,16 @@
 /*-----------SEARCH START----------*/
+
 .searchBlock {
-    padding: 15px 30px 20px 30px;
+    padding: 10px 20px 10px 30px;
     display: flex;
-    justify-content: space-between;
-    border-bottom-width: 1px ;
-     -webkit-box-shadow: 0px 4px 4px -4px gray;
-       -moz-box-shadow: 0px 4px 4px -4px gray;
-            box-shadow: 0px 4px 4px -4px gray;
+    justify-content: center;
+    border-bottom-width: 1px;
+    -webkit-box-shadow: 0px 4px 4px -4px gray;
+    -moz-box-shadow: 0px 4px 4px -4px gray;
+    box-shadow: 0px 4px 4px -4px gray;
 }
 
-.searchIcon,
-.addIcon {
+.searchIcon {
     background-size: cover;
     height: 35px;
     width: 35px;
@@ -21,64 +21,322 @@
     background-image: url("../img/search.png");
 }
 
-.addIcon {
+
+/*.addIcon {
     background-image: url("../img/add.png");
+}*/
+
+.searchText {
+    margin-top: 8px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.searchIcon>label {
-    margin-top: 10px;
-    margin-left: 40px;
-    cursor: pointer;
-}
+
 /*-----------SEARCH END----------*/
+
+
 /*..........USER START............*/
-.chatWrapper{
+
+.chatWrapper {
     height: 70px;
 }
-.userChatBlock{
+
+.userChatBlock {
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    /*flex-wrap: wrap;*/
     padding: 30px 30px 10px 30px;
-       border-bottom-width: 1px ;
-  -webkit-box-shadow: 0px 4px 4px -4px gray;
-       -moz-box-shadow: 0px 4px 4px -4px gray;
-            box-shadow: 0px 4px 4px -4px gray;
+    border-bottom-width: 1px;
+    -webkit-box-shadow: 0px 4px 4px -4px gray;
+    -moz-box-shadow: 0px 4px 4px -4px gray;
+    box-shadow: 0px 4px 4px -4px gray;
 }
-.userChatPhoto{
-    background-image: url("../img/users/user1/avatar.jpg");
-    background-size: cover;
+
+.userChatBlock:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.userChatPhoto {
+    object-fit: cover;
     border-radius: 50%;
     height: 60px;
     width: 60px;
-    cursor: pointer;
-}
-.userChatPhoto > label{
-    margin-left: 80px;
-    white-space: nowrap;
-    cursor: pointer;
-}
-.chatDate{
-    cursor: default;
+    display: block;
 }
 
-.userLast{
+.userNameChat {
     position: relative;
-    bottom: 30px;
-  margin-left: 70px;
-/*    margin-top: 40px;*/
-   
+    font-weight: 600;
+    font-size: 16px;
+    top: -63px;
+    left: 60px;
 }
-.userLastPhoto{
-    background-image: url("../img/avatar.jpg");
-    background-size: cover;
+
+.chatDate {
+    white-space: nowrap;
+}
+
+.userLast {
+    position: relative;
+    bottom: 50px;
+    left: 70px;
+    display: flex;
+}
+
+.userLastPhoto {
+    object-fit: cover;
     border-radius: 50%;
     height: 30px;
     width: 30px;
+    display: block;
 }
-.userLastPhoto>p{
+
+.userLastComment {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 240px;
+    text-overflow: ellipsis;
+    overflow: hidden;
     white-space: nowrap;
-    margin-left: 35px;
-    cursor: default;
-  
 }
+
+
 /*..........USER END............*/
+
+
+/*ChatUSER page start!!*/
+
+.userChatPanel {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 35px;
+    border-color: gray !important;
+    border-bottom-width: 1px;
+    -webkit-box-shadow: 0px 4px 4px -4px gray;
+    -moz-box-shadow: 0px 4px 4px -4px gray;
+    box-shadow: 0px 4px 4px -4px gray;
+    background-color: white !important;
+    background-image: none !important;
+    border: none !important;
+    /*position: fixed;*/
+    /*width: inherit;*/
+    /*width: 60%;*/
+}
+
+.arrowLeft {
+    background-image: url("../../src/img/arrowLeft.png");
+    background-size: cover;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.userChatName {
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-top: 5px;
+}
+
+.userChatName:hover {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*ChatUSER page END!!*/
+
+
+/*HEADER styles start*/
+
+.nabvarHeaderMine {
+    text-align: center;
+}
+
+.headerName {
+    position: absolute;
+    top: 15px;
+    color: white;
+    margin-left: -60px;
+    font-weight: 600;
+}
+
+.headerName:hover,
+.headerName:focus {
+    color: white;
+    text-decoration: none;
+}
+
+.arrowLeftMobile {
+    background-image: url("../../src/img/arrowLeftWhite.png");
+    background-size: cover;
+    width: 45px;
+    height: 45px;
+    margin-top: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+/*HEADER styles END*/
+
+
+/*CHAT START (partially Third-party!!)*/
+
+.chatMasc {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+}
+
+.chat li.leftChat .chat-body {
+    margin-left: 10px;
+}
+
+.chat li.rightChat .chat-body {
+    margin-right: 10px;
+}
+
+.leftChat, .rightChat{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.rightChat{
+    margin-left: 150px;
+}
+.leftChat{
+    margin-right: 150px;
+}
+.chat li .chat-body p {
+    margin: 0;
+    color: black;
+}
+
+.panel {
+    margin-bottom: 0px !important;
+}
+
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+    margin-right: 5px;
+}
+
+.panel-body {
+    overflow-y: scroll;
+    height: 72vh;
+}
+
+.panel-primary {
+    border: none !important;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #999;
+}
+
+
+/*CHAT END (prtially Third-party!!)*/
+
+.bubbleLeft,
+.bubbleRight {
+    position: relative;
+    max-width: 320px;
+    min-width: 200px;
+    height: auto;
+    padding: 20px;
+  display: inline-block;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.bubbleLeft,
+.bubbleRight *{
+    white-space: normal;
+}
+.bubbleLeft{
+  background: #f2f2f2;
+}
+.bubbleRight{
+    background: #5987d1
+}
+
+.bubbleLeft:after,
+.bubbleRight::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: 5%;
+}
+
+
+.bubbleLeft:after {
+    border-width: 9px 18px 9px 0;
+    left: -15px;
+    border-color: transparent #f2f2f2;
+}
+
+.bubbleRight:after {
+    border-width: 9px 0 9px 18px;
+    right: -15px;
+     border-color: transparent #5987d1;
+}
+
+.msgTime{
+    padding: 5px;
+}
+
+/*UserChat footer START*/
+.chatInput{
+font-size: 16px !important;
+margin-left: 10px !important;
+}
+.chatButton{
+font-size: 16px !important;
+padding:  3px 10px !important;
+margin-left: 10px !important;
+}
+.addFileChat {
+    background-image: url("../img/clip.png");
+    background-size: cover;
+    width: 33px;
+    cursor: pointer;
+    display: table-cell;
+}
+
+
+/*UserChat footer END*/

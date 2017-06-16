@@ -1,28 +1,35 @@
 
     <header class="navbar navbar-inverse navbarTop navbar-fixed-top">
       <div class="container containerHeader">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle navbarToggleMasc" data-toggle="collapse" ng-click="collapsed = true"   data-target="#responsive-menu">
+        <div class="navbar-header nabvarHeaderMine">
+           <button type="button" class="navbar-toggle navbarToggleMasc" data-toggle="collapse" ng-click="collapsed = true"   data-target="#responsive-menu">
                       <span class="sr-only">Open navigation</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-          <a ng-href="#/" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+              <a ng-href="#/" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+
+                <a ng-href="#/controller-chat"><figure class="arrowLeftMobile"></figure></a>
+
+                <a class="headerName" ng-bind="title" ng-href="#/controller-mainPage"></a>
+     
+          
         </div>
         <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a  class="user dropdown-toggle" href="#" data-toggle="dropdown">Доктор<b class="caret"></b>
+              <a  class="user dropdown-toggle" href="" data-toggle="dropdown">Доктор<b class="caret"></b>
                   <img class="userHeader" src="src/img/avatar.jpg" alt="user"></a>
-              <ul class="dropdown-menu">
+                  
+              <ul class="dropdown-menu userMenu">
                 <li><a ng-href="#/" href="#">Моя сторінка</a></li>
                 <li class="divider"></li>
                 <li><a href="../../avtorizefrond2.html">Вийти</a></li>
               </ul>
               <div class="MobileUserSideBar">
                 <ul class="nav navbar-nav mineNavbar">
-                  <li><a  ng-href="#/" >Мій профіль</a></li>
+                  <li><a  ng-href="#/">Мій профіль</a></li>
                   <li><a  ng-href="#/controller-friends" >Мої друзі</a></li>
                   <li><a  ng-href="#/controller-chat" >Повідомлення  <span class="badge"> 2</span></a></li>
                   <li> <a ng-href="#/controller-gallery" >Галерея</a></li>

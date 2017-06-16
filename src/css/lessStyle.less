@@ -8,6 +8,19 @@
 @extraLarge: ~"(min-width: 999px)";
 ///////////////////////// 
 @media @tablet {
+    .userChatPanel{
+        display: none;
+    }
+    .rightChat{
+    margin-left: 100px;
+}
+.leftChat{
+    margin-right: 100px;
+}
+
+    // .userChatName, .arrowLeft{
+    //     display: none;
+    // }
     .userSideBar {
         display: none;
     }
@@ -101,10 +114,41 @@
         justify-content: space-around;
     }
     // MODAL END
+     .user{
+        display: none !important;
+    }
+    .userMenu{
+        display: none !important;
+    }
+    // .navbar-brand, .panel-primary{
+    //     display: none !important;
+    // }
+    .panel-body{
+        height: 82vh;
+    }
+    .navbar-brand {
+    display: none !important ;
+}
+.headerName{
+    display: inline;
+}
 }
 
 /////////////////////////  
 @media @desktop {
+    .navbar-brand {
+    display: block !important ;
+    }
+    .headerName, .arrowLeftMobile{
+    display: none !important;
+}
+
+    .arrowLeftMobile{
+        display: none;
+    }
+    .headerName{
+        display: none;
+    }
     .TabletComment {
         display: none;
     }
@@ -148,6 +192,12 @@
 
 ///////////////////////// 
 @media @extraSmall {
+      .rightChat{
+    margin-left: 30px;
+}
+.leftChat{
+    margin-right: 30px;
+}
     .userName {
         // margin-left: 20px;
     }
@@ -157,8 +207,6 @@
     }
     .otherUserPhotoComment {
         margin-top: -15px;
-        width: 100px;
-        height: 100px;
     }
     #myCarousel {
         margin-left: -3px !important;
@@ -175,6 +223,14 @@
         padding-left: 0px !important; 
         padding-right: 0px !important; 
     }
+    .container{
+       padding-left: 10px !important; 
+        padding-right: 10px !important;   
+    }
+    .userChatBlock{
+        padding: 30px 10px 10px 2px;
+    }
+
 }
 
 //////////////////////////
@@ -183,15 +239,35 @@
     .infoName {
         margin-top: 20px;
         margin-left: 5%;
+
     }
     .profilePhoto {
-        height: 200px;
         width: 200px;
-        margin-left: 20%;
-        margin-top: 40px;
+        max-width: 100%;
+        height: auto;
+        width: auto\9; //IE 8
+         margin-left:auto;
+   margin-right:auto;
+   display:block;
+   padding: 5px;
     }
     .userName {
         // margin-left: 50px;
+        // width: 240px;
+        // max-width: 100%;
+        // height: auto;
+        // margin-left:auto;
+        // margin-left:auto;
+        // margin-right:auto
+        text-align: center;
+        display:block;
+        padding: 5px;
+    }
+    .textareaMainPage{
+        margin: 10px 30px !important;
+    }
+    .user{
+        display: none !important;
     }
 }
 
@@ -200,11 +276,7 @@
     .infoName {
         // margin-left: 20%;   
     }
-    .infoName>p>label {
-        // padding-  -webkit-box-shadow: 0px 4px 4px -4px gray;
-       -moz-box-shadow: 0px 4px 4px -4px gray;
-            box-shadow: 0px 4px 4px -4px gray;
-    }
+    
     .infoName>p {
         width: 400px;
     }

@@ -9,6 +9,7 @@ body {
     background: #f2f2f2;
     -webkit-overflow-scrolling: touch;
     font-family: HelveticaBlack;
+    overflow-y: scroll;
 }
 
 @font-face {
@@ -321,6 +322,7 @@ body {
 
 .userName {
     padding-bottom: 15px;
+    /*white-space: nowrap;*/
 }
 
 .infoName {
@@ -359,6 +361,9 @@ body {
 .friendsAndPhoto {
     margin-top: 10px;
     padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .friendsAndPhoto>div>p {
@@ -460,11 +465,12 @@ body {
     /*background-image: url("../img/users/user1/photo/photo.jpg");*/
     /*background-size: cover;*/
     object-fit: cover;
-    height: 300px;
-    width: 300px;
-    cursor: pointer;
-    margin-left: 20px;
-    border: 1px solid gray;
+    cursor: pointer;    
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    display:block;
+    padding: 5px;
 }
 
 
@@ -472,3 +478,13 @@ body {
 
 
 /*Main body END*/
+
+.headerName{
+    display: none;
+}
+.arrowLeftMobile{
+    display: none;
+}
+.navbar-brand, .panel-primary{
+    display: block !important;
+}

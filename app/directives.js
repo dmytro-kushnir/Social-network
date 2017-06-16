@@ -57,7 +57,7 @@
         $routeProvider
             .when("/", {
                 templateUrl: "/app/templates/mainPage.html",
-                title: 'Головна сторінка'
+                title: 'Доктор Стрендж'
             })
             .when("/controller-friends", {
                 templateUrl: "app/templates/friends.html",
@@ -66,6 +66,7 @@
             .when("/controller-gallery", {
                 templateUrl: "app/templates/gallery.html",
                 title: 'Галерея'
+                // css: ['../src/css/gallery.css']
             })
             .when("/controller-chat", {
                 templateUrl: "app/templates/chat.html",
@@ -73,7 +74,7 @@
             })
             .when("/controller-chatUser", {
                 templateUrl: "app/templates/chatUser.html",
-                title: "Доктор Стрендж"
+                title: "Дженніфер Лоуренс"
             });
         $routeProvider.otherwise("/");
     });

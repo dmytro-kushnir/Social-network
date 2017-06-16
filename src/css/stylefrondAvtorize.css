@@ -11,11 +11,16 @@
     flex-direction: row;   
     justify-content: space-between;
 }
-.header_logo{
-    width: auto;
+.navbar-brand{
+    width: 125px;
+    display: block;
     height: 30px;
-    margin: 8px auto 100px;
+    margin: 8px 0 0 30px;
 }
+.header_logo{
+        width: 125px;
+        height: 30px;
+    }
 .header_enter{
     display: none;
 }
@@ -29,11 +34,11 @@
 	height: 30px;
     color: white;
     border:1px solid rgb(61, 61, 61);
-    background: rgb(17, 17, 17);
+    background: rgb(169, 109, 163);
     /*background: rgb(81, 81, 81);*/
 }
 .enter_button:hover{
-    background: rgb(81, 81, 81);
+    background: rgb(100, 57, 96);
     transition: 1s;
 }
 /*main*/
@@ -48,7 +53,7 @@
     background: white;
     width: 325px;
     margin: 0 auto 25px;
-    padding: 25px 10px 20px;
+    padding: 15px 5px;
 }
 .main_login{
     display: flex;
@@ -57,6 +62,9 @@
     width: 275px;
     height: 180px;
     margin: 0 auto 15px;
+}
+form{
+    display: flex;
 }
 .mainenter_button{
 	width: 275px;
@@ -68,8 +76,9 @@
 	font-family: Helvetica;
     background: white;
     width: 325px;
-    height: 338px;
-    padding: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 5px;
     margin: auto;
 }
 .registration_header, .enter_header{
@@ -78,6 +87,7 @@
     margin: 0 0 10px;
 }
 .registration_secondheader{
+    text-transform: uppercase;
     text-align: center;
     font-size: 30px;
     margin: 0 0 10px 0;
@@ -87,20 +97,22 @@
     flex-direction: column;
     justify-content: space-between;
     width: 275px;
-    height: 235px;
+    
     margin: auto;
 }
 .inputsPartOfForm{
-	height: 30px;
+    margin: 5px 0;
+	height: 25px;
 }
 .form_button, .mainenter_button{
-    margin-top: 10px;
+    margin: 5px 0 10px 0;
     height: 50px;
-    background: white;
+    color: white;
+    background: rgb(169, 109, 163);;
     border: 1px solid rgb(204,204,204);
 }
 .form_button:hover, .mainenter_button:hover{
-    background: rgb(204,204,204);
+    background: rgb(100, 57, 96);
     transition: 1s;
 }
 /*footer*/
@@ -116,12 +128,17 @@
     margin: 0;
 }
 /*адаптивність*/
+
 @media  screen and (min-width: 768px){
 	.header{
 		height: 40px;
 	}
+    .navbar-brand{
+        margin: 8px 0 0 30px;
+    }
     .header_logo{
-        margin: 8px 0 0 50px;
+        width: 125px;
+        height: 30px;
     }
     .header_enter{
         display: flex;
@@ -140,9 +157,10 @@
         display: none;
     }
     .registration{
-        height: 400px;
-        width: 400px;
+        /*height: 400px;*/
+        width: 300px;
         margin: auto;
+
     }
     .email_input, .password_input{
         width: 150px;
@@ -153,34 +171,40 @@
     }
     .partOfForm{
         margin: 20px auto 0;
-        width: 350px;
-        height: 275px;
+        width: 275px;
+        /*height: 275px;*/
     }
     
 }
 @media  screen and (min-width: 992px){
     .registration{
         width: 430px;
-        height: 375px;
+        /*height: 375px;*/
     }
-    .header_logo{
+    /*.header_logo{
         margin: 8px 0 0 80px;
-    }
+    }*/
     .main_enter{
         display: none;
     }
     .partOfForm{
         margin: 20px auto 0;
         width: 375px;
-        height: 250px;
+        /*height: 250px;*/
     }
 }
 @media  screen and (min-width: 1200px){
     .header_logo{
         width: auto;
         height: 30px;
-        margin: 8px 0 0 150px;
+        /*margin: 8px 0 0 150px;*/
         }
+        .navbar-brand{
+    width: 125px;
+    display: block;
+    height: 30px;
+    margin: 8px 0 0 145px;
+}
     .main{
         background: url("../img/avtorizbackground.jpg");
         background-size: auto;
@@ -190,7 +214,7 @@
         display: none;
         }
     .registration{
-		padding: 45px 0 0 0;
+		padding: 40px 0 0 0;
         margin: 0 0 0 50px;
     }
 }

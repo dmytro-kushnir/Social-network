@@ -86,31 +86,34 @@
 		margin: 15px 10px;
 	}
 	.aboutFriend{
-		width: 180px;
+		width: 190px;
 	}
+	
 }
 @media screen and (min-width: 375px){
 	.friends{
 		width: 345px;
 	}
-	
+	.aboutFriend{
+		width: 205px;
+	}
 }
 @media screen and (min-width: 412px){
 	.friends{
 		width: 379px;
 	}
 	.aboutFriend{
-		width: 255px;
+		width: 245px;
 	}
 }
-@media screen and (min-width: 480px){
+/*@media screen and (min-width: 480px){
 	.friends{
 		width: 620px;
 	}
 	.aboutFriend{
 		width: 450px;
 	}
-}
+}*/
 @media  screen and (min-width: 768px){
 	.friends{
 		width: 520px;

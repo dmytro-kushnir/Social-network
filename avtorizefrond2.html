@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="singupApp">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/css/normalize.css">
     <link rel="stylesheet" href="src/css/stylefrondAvtorize.css">
 </head>
-<body>
+<body ng-app="singupApp">
     <!--header-->
     <header class="header" >
         <a href="avtorizefrond2.html" class="navbar-brand"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
@@ -35,27 +35,36 @@
         <article class="registration" ng-controller="singUpController as singUp">
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
             <p class="registration_secondheader">реєструйся!</p>
-            <form action="#" name="registration" novalidate>
+            <form action="#" name="registration" novalidate ng-submit="singUp.addNewUser(newUser)">
                 <div class="partOfForm">
                     <label for="surname">Прізвище</label>
-                    <input class="inputsPartOfForm" ng-model="registration.Surname" type="text" id="surname" require $invalid>
+                    <input class="inputsPartOfForm" name="userSurname" ng-model="singUp.newUser.surname" type="text" id="surname" require>
                     <label for="name">Ім’я</label>
-                    <input class="inputsPartOfForm" ng-model="registration.Name" type="text" id="name" require $invalid>
+                    <input class="inputsPartOfForm" name="userName" ng-model="singUp.newUser.name" type="text" id="name" require>
                     <label for="email">E-mail</label>
-                    <input class="inputsPartOfForm" ng-model="registration.Email" type="email" id="email" require $invalid>
+                    <input class="inputsPartOfForm" name="userEmail" ng-model="singUp.newUser.email" type="email" id="email" require>
                     <label for="password">Пароль</label>
-                    <input class="inputsPartOfForm" ng-model="registration.Password" type="password" id="password" require $invalid>
-                    <button type="button" ng-click="singUp()" ng-disabled="isProcessing" class="form_button">Приєднуйся!</button>
+                    <input class="inputsPartOfForm" name="userPassword" ng-model="singUp.newUser.password" type="password" id="password" require>
+                    <button type="submit" ng-disabled="registration.$invalid" class="form_button">Приєднуйся!</button>
                 </div>
             </form>
+
+            <div class="well">
+                message: {{singUp.message}}
+                <div>
+                    valid: {{singUp.registration.$valid}}
+                </div>
+            </div>
         </article>
     </main>
     <footer class="footer">
         <p class="footer_text">Friends © 2017</p>
     </footer>
 
-   
-        
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+       <script src="app/app.js"></script>
+      	<script src="src/libs/angular/angular-route.min.js"></script>
+        <script src="app/controllers/registration.js"></script>
+          
 </body>
 </html>

@@ -72,6 +72,9 @@
                 templateUrl: "app/templates/chat.html",
                 title: "Мої повідомлення"
             })
+            .when("/controller-avtorize", {
+                templateUrl: "avtorizefrond2.html"
+            })
             .when("/controller-chatUser", {
                 templateUrl: "app/templates/chatUser.html",
                 title: "Дженніфер Лоуренс"

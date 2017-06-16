@@ -158,9 +158,12 @@ form{
     }
     .registration{
         /*height: 400px;*/
-        width: 300px;
+        width: 400px;
         margin: auto;
 
+    }
+    .registration_header, .enter_header{
+        margin: 15px 0 10px;
     }
     .email_input, .password_input{
         width: 150px;
@@ -171,7 +174,7 @@ form{
     }
     .partOfForm{
         margin: 20px auto 0;
-        width: 275px;
+        width: 375px;
         /*height: 275px;*/
     }
     
@@ -214,7 +217,7 @@ form{
         display: none;
         }
     .registration{
-		padding: 40px 0 0 0;
+		padding: 15px 0 10px 0;
         margin: 0 0 0 50px;
     }
 }

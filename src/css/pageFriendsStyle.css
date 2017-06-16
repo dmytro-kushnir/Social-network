@@ -43,6 +43,7 @@
 }
 .icon{
 	color: black!important;
+	margin: 0 0 10px 0;
 }
 .icons{
     width: 20px;
@@ -75,6 +76,10 @@
 		
 		margin: 15px 5px;
 	}
+
+	.aboutFriend{
+		width: 150px;
+	}
 	.icons{
 		flex-direction: column;
 		margin: 15px 0 0 0;
@@ -106,7 +111,7 @@
 		width: 379px;
 	}
 	.aboutFriend{
-		width: 245px;
+		width: 230px;
 	}
 }
 @media screen and (min-width: 600px){

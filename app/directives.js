@@ -53,34 +53,45 @@
 
     // Routing START  
 
-    var app2 = angular.module("socialNetwork").config(function ($routeProvider) {
-        $routeProvider
-            .when("/", {
-                templateUrl: "/app/templates/mainPage.html",
+    var app2 = angular.module("socialNetwork").config(['$stateProvider', '$urlRouterProvider', 
+        function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state("mainPage", {
+                url: '/mainPage',
+                templateUrl: "app/templates/mainPage.html",
                 title: 'Доктор Стрендж'
             })
-            .when("/controller-friends", {
+            .state("friends", {
+                url: '/friends',
                 templateUrl: "app/templates/friends.html",
-                title: 'Мої друзі'
+                title: 'Мої друзі',
+                controller: "RouterCtrl"
             })
-            .when("/controller-gallery", {
+            .state("gallery", {
+                url: '/gallery',
                 templateUrl: "app/templates/gallery.html",
                 title: 'Галерея'
                 // css: ['../src/css/gallery.css']
             })
-            .when("/controller-chat", {
-                templateUrl: "app/templates/chat.html",
+            .state("chat", {
+                url: '/chat',
+                templateUrl: "/app/templates/chat.html",
                 title: "Мої повідомлення"
             })
-            .when("/controller-avtorize", {
+            .state("/controller-avtorize", {
+                url: 'Hi there',
                 templateUrl: "avtorizefrond2.html"
             })
-            .when("/controller-chatUser", {
+            .state("chatUser", {
+                url: '/chatUser',
                 templateUrl: "app/templates/chatUser.html",
                 title: "Дженніфер Лоуренс"
             });
-        $routeProvider.otherwise("/");
-    });
+        // catch all route
+        // send users to the home page
+        $urlRouterProvider.otherwise('/mainPage');
+    }]);
+
 
     // Title routing
     app2.run(['$rootScope', function ($rootScope) {

@@ -289,7 +289,7 @@
   background: #f2f2f2;
 }
 .bubbleRight{
-    background: #5987d1
+    background: #5987E9
 }
 
 .bubbleLeft:after,
@@ -331,12 +331,25 @@ padding:  3px 10px !important;
 margin-left: 10px !important;
 }
 .addFileChat {
-    background-image: url("../img/clip.png");
-    background-size: cover;
-    width: 33px;
+    object-fit: cover;
+    height: 30px;
     cursor: pointer;
     display: table-cell;
 }
-
-
+.panel-footer{
+    display: flex;
+}
+.chatGalleryIco{
+    object-fit: cover;
+    margin-left: 5px;
+    height: 30px;
+    cursor: pointer;
+}
 /*UserChat footer END*/
+
+/*SEND ICO (for modal and chatUser)*/
+.sendIcon{
+    object-fit: cover;
+    height: 30px;
+        cursor: pointer;
+}

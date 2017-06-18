@@ -50,15 +50,17 @@ body {
 
 .btn-default {
     font-family: Helvetica !important;
-    color: black !important;
-    background: gainsboro !important;
+    color: white !important;
+    background: rgb(169, 109, 163)!important;
+       border: none !important;
     border-radius: 0 !important;
+    /*font-size: 12px !important;*/
 }
 
 .btn-default:hover {
-    background: white !important;
+    background: rgb(100, 57, 96) !important;
     transition: 1s !important;
-    border: 1px solid rgb(61, 61, 61) !important;
+    border: none !important;
 }
 
 .label-danger {
@@ -449,6 +451,8 @@ body {
     font-size: 16pt;
     margin: 0 !important;
 }
+
+
 
 .otherUserPhoto {
     background-image: url("../img/users/user1/avatar.jpg");

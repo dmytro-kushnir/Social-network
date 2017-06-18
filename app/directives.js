@@ -59,24 +59,40 @@
             .state("mainPage", {
                 url: '/mainPage',
                 templateUrl: "app/templates/mainPage.html",
-                title: 'Доктор Стрендж'
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Доктор Стрендж";
+                }],
+              }
             })
             .state("friends", {
                 url: '/friends',
                 templateUrl: "app/templates/friends.html",
-                title: 'Мої друзі',
-                controller: "RouterCtrl"
+                controller: "RouterCtrl",
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Мої друзі";
+                }],
+              }
             })
             .state("gallery", {
                 url: '/gallery',
                 templateUrl: "app/templates/gallery.html",
-                title: 'Галерея'
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Галерея";
+                }],
+              }
                 // css: ['../src/css/gallery.css']
             })
             .state("chat", {
                 url: '/chat',
                 templateUrl: "/app/templates/chat.html",
-                title: "Мої повідомлення"
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Мої повідомлення";
+                }],
+              }
             })
             .state("/controller-avtorize", {
                 url: 'Hi there',
@@ -85,21 +101,29 @@
             .state("chatUser", {
                 url: '/chatUser',
                 templateUrl: "app/templates/chatUser.html",
-                title: "Дженніфер Лоуренс"
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Дженніфер Лоуренс";
+                }],
+              }
             });
-        // catch all route
-        // send users to the home page
         $urlRouterProvider.otherwise('/mainPage');
-    }]);
+    }])
+    .run(['$rootScope', '$state', '$stateParams',
+  function ($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+}]);
 
 
-    // Title routing
-    app2.run(['$rootScope', function ($rootScope) {
-        $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-            $rootScope.title = current.$$route.title;
-            console.log($rootScope.title);
-        });
-    }]);
+    // // Title routing
+    // app2.run(['$rootScope', function ($rootScope) {
+        
+    //     $rootScope.$on('$stateChangeSuccess', function (event, current, previous) {
+    //         $rootScope.title = current.$$route.title;
+    //         console.log($rootScope.title);
+    //     });
+    // }]);
 
 
 })();

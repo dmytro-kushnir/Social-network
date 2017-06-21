@@ -1,6 +1,6 @@
 (function () {
     var app = angular.module("socialNetwork", 
-        ["social-directives", "ngRoute", "angularCSS", "Controllers", 'ui.router', 'ngAnimate']);
+        ["social-directives", "angularCSS", "Controllers", 'ui.router', 'ngAnimate', 'monospaced.elastic']);
     
     var app2 = angular.module("singupApp", []);
     

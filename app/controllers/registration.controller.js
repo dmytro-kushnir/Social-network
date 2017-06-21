@@ -1,6 +1,7 @@
-angular.module("singupApp").controller("singUpController", function($scope, $http){
-    $scope.addNewUser = function(userDetails){
-        $scope.massage = userDetails.surname + userDetails.name + "("+userDetails.email+")" + "("+userDetails.password+")";
-    }
-    $scope.massage = "Ready";
+var app = angular.module("singupApp", []);
+
+app.controller("singUpController", function($scope){
+	$scope.register = function(newUser){
+		$scope.msg = 'Welcome' +$scope.user.firstname+'! You have singed in =)';
+	}
 });

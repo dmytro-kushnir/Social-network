@@ -163,10 +163,9 @@
 }
 
 .headerName {
-    position: absolute;
+    position: relative;
     top: 15px;
     color: white;
-    margin-left: -60px;
     font-weight: 600;
 }
 
@@ -328,7 +327,7 @@ margin-left: 10px !important;
 .chatButton{
 font-size: 16px !important;
 padding:  3px 10px !important;
-margin-left: 10px !important;
+/*margin-left: 10px !important;*/
 }
 .addFileChat {
     object-fit: cover;
@@ -352,4 +351,7 @@ margin-left: 10px !important;
     object-fit: cover;
     height: 30px;
         cursor: pointer;
+}
+.nabvarHeaderMine{
+    height: 50px;
 }

@@ -53,6 +53,9 @@
 
     // Routing START  
 
+
+    // Routing START  
+
     var app2 = angular.module("socialNetwork").config(['$stateProvider', '$urlRouterProvider', 
         function ($stateProvider, $urlRouterProvider) {
         $stateProvider

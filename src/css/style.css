@@ -54,6 +54,7 @@ body {
     background: rgb(169, 109, 163)!important;
        border: none !important;
     border-radius: 0 !important;
+    text-shadow: none !important;
     /*font-size: 12px !important;*/
 }
 

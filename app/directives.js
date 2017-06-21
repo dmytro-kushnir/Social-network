@@ -53,42 +53,80 @@
 
     // Routing START  
 
-    var app2 = angular.module("socialNetwork").config(function ($routeProvider) {
-        $routeProvider
-            .when("/", {
-                templateUrl: "/app/templates/mainPage.html",
-                title: 'Доктор Стрендж'
+
+    // Routing START  
+
+    var app2 = angular.module("socialNetwork").config(['$stateProvider', '$urlRouterProvider', 
+        function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state("mainPage", {
+                url: '/mainPage',
+                templateUrl: "app/templates/mainPage.html",
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Доктор Стрендж";
+                }],
+              }
             })
-            .when("/controller-friends", {
+            .state("friends", {
+                url: '/friends',
                 templateUrl: "app/templates/friends.html",
-                title: 'Мої друзі'
+                controller: "RouterCtrl",
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Мої друзі";
+                }],
+              }
             })
-            .when("/controller-gallery", {
+            .state("gallery", {
+                url: '/gallery',
                 templateUrl: "app/templates/gallery.html",
-                title: 'Галерея'
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Галерея";
+                }],
+              }
                 // css: ['../src/css/gallery.css']
             })
-            .when("/controller-chat", {
-                templateUrl: "app/templates/chat.html",
-                title: "Мої повідомлення"
+            .state("chat", {
+                url: '/chat',
+                templateUrl: "/app/templates/chat.html",
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Мої повідомлення";
+                }],
+              }
             })
-            .when("/controller-avtorize", {
+            .state("/controller-avtorize", {
+                url: 'Hi there',
                 templateUrl: "avtorizefrond2.html"
             })
-            .when("/controller-chatUser", {
+            .state("chatUser", {
+                url: '/chatUser',
                 templateUrl: "app/templates/chatUser.html",
-                title: "Дженніфер Лоуренс"
+                 resolve: {
+                'title': ['$rootScope', function($rootScope){
+                  $rootScope.title = "Дженніфер Лоуренс";
+                }],
+              }
             });
-        $routeProvider.otherwise("/");
-    });
+        $urlRouterProvider.otherwise('/mainPage');
+    }])
+    .run(['$rootScope', '$state', '$stateParams',
+  function ($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+}]);
 
-    // Title routing
-    app2.run(['$rootScope', function ($rootScope) {
-        $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-            $rootScope.title = current.$$route.title;
-            console.log($rootScope.title);
-        });
-    }]);
+
+    // // Title routing
+    // app2.run(['$rootScope', function ($rootScope) {
+        
+    //     $rootScope.$on('$stateChangeSuccess', function (event, current, previous) {
+    //         $rootScope.title = current.$$route.title;
+    //         console.log($rootScope.title);
+    //     });
+    // }]);
 
 
 })();

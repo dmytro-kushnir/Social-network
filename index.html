@@ -5,35 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Normalize.css-->
     <link rel="stylesheet" href="src/css/normalize.css">
-
+    <!--User styles-->
     <link rel="stylesheet" href="src/build/style.css">
     <link rel="stylesheet" href="src/build/modal.css">
     <link rel="stylesheet" href="src/build/gallery.css">
     <link rel="stylesheet" href="src/css/pageFriendsStyle.css">
-    <link rel="stylesheet" href="src/css/chat.css">
+    <link rel="stylesheet" href="src/build/chat.css">
     <link rel="stylesheet" href="src/build/lessStyle.css">
     <link rel="stylesheet" href="src/css/font-awesome.css">
-
-
-
-    <!--
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/modal.css">
-    <link rel="stylesheet" href="src/css/gallery.css">
-     <link rel="stylesheet" href="src/css/lessStyle.css">
--->
-
+    <!--Styles libs-->
     <link rel="stylesheet" href="src/css/lightBoxGallery.css">
     <link rel="stylesheet" href="src/css/measonryQueries.css">
-    <link rel="stylesheet" href="src/css/bootstrap.css">
-    <link rel="stylesheet" href="src/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css">
+    <!--Title-->
     <title ng-bind="title"></title>
+    <!--Libs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="src/js/touchswipe.min.js"></script>
+    <script src="src/js/swipeMobile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-animate.min.js"></script>
+    <script src="src/libs/angular/elastic.js"></script>
+    <!--App-->
+    <script src="app/app.js"></script>
+    <!--Controllers/Directives-->
+    <script src="app/controllers/navigation.controller.js"></script>
+    <script src="app/controllers/modal.controller.js"></script>
+    <script src="app/directives.js"></script>
 </head>
-
 <body ng-controller="MainCtrl as mainPage" ng-cloak>
     <div id="wrappper">
-
         <!-- Modal gallery window-->
         <social-modal></social-modal>
         <div class="container-fluid">
@@ -48,25 +56,6 @@
                 </div>
             </div>
         </div>
-        <!--<script src="src/libs/Less/less.min.js "></script>-->
-        <script src="src/libs/jQuery/jquery-3.2.1.js "></script>
-        <script src="src/js/touchswipe.min.js"></script>
-        <script src="src/js/swipeMobile.js"></script>
-        <script src="src/js/bootstrap.min.js "></script>
-
-        <script src="src/libs/angular/angular.min.js"></script>
-        
-        <script src="src/libs/angular//angular-css.min.js"></script>
-        <script src="src/libs/angular/angular-route.min.js"></script>
-        <script src="src/libs/angular/angular-ui-router.min.js"></script>
-
-
-        <script src="app/app.js"></script>
-        <script src="app/controllers/navigation.controller.js"></script>
-        <script src="app/controllers/modal.controller.js"></script>
-        
-        <script src="app/directives.js"></script>
-
     </div>
 </body>
 

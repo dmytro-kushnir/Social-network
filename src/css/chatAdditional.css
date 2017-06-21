@@ -9,7 +9,9 @@ body {
 .arrowLeftMobile {
     display: block;
 }
-
+.headerName{
+    top: -35px;
+}
 @media (max-width: 767px) {
     .navbar-brand {
         display: none !important;

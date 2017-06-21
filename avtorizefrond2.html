@@ -32,35 +32,56 @@
                 <a href="index.html"><button type="button" class="mainenter_button">Увійти</button></a>
             </form>
         </article>
-        <article class="registration" ng-controller="singUpController as singUp">
+        <article class="registration" >
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
             <p class="registration_secondheader">реєструйся!</p>
-            <form action="#" name="registration" novalidate ng-submit="singUp.addNewUser(newUser)">
-                <div class="partOfForm">
-                    <label for="surname">Прізвище</label>
-                    <input class="inputsPartOfForm" name="userSurname" ng-model="singUp.newUser.surname" type="text" id="surname" require>
+            <form name="registration" ng-submit="register()">
+                <div class="partOfForm" ng-controller="singUpController">
+                    <label for="firstname">Прізвище</label>
+                    <input class="inputsPartOfForm" 
+                    	   name="firstname" 
+                    	   type="text"
+                    	   id="firstname"
+                    	   ng-model="user.firstname" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.firstname.$invalid && registration.firstname.$touched">Поле не може бути пустим!</p>
                     <label for="name">Ім’я</label>
-                    <input class="inputsPartOfForm" name="userName" ng-model="singUp.newUser.name" type="text" id="name" require>
+                    <input class="inputsPartOfForm" 
+                    	   name="secondname"
+                    	   type="text"
+                    	   id="name"
+                    	   ng-model="user.secondname" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.secondname.$invalid && registration.secondname.$touched">Поле не може бути пустим!</p>
                     <label for="email">E-mail</label>
-                    <input class="inputsPartOfForm" name="userEmail" ng-model="singUp.newUser.email" type="email" id="email" require>
+                    <input class="inputsPartOfForm" 
+                    	   name="email"
+                    	   type="email"
+                    	   id="name" 
+                    	   ng-model="user.email" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.email.$invalid && registration.email.$touched">Введіть правильний емейл</p>
                     <label for="password">Пароль</label>
-                    <input class="inputsPartOfForm" name="userPassword" ng-model="singUp.newUser.password" type="password" id="password" require>
-                    <button type="submit" ng-disabled="registration.$invalid" class="form_button">Приєднуйся!</button>
+                    <input class="inputsPartOfForm" 
+                    	   name="password"
+                    	   type="password" 
+                    	   id="password"
+                    	   ng-model="user.password" 
+                    	   ng-minlength="6" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.password.$invalid && registration.password.$touched">Пароль має містити мінімум 6 символів</p>
+					<button type="submit" class="form_button" ng-disabled="registration.$invalid">Приєднуйся!</button>
                 </div>
             </form>
-
-            <div class="well">
-                message: {{singUp.message}}
-                <div>
-                    valid: {{singUp.registration.$valid}}
-                </div>
-            </div>
+            <p ng-show="msg">{{msg}}</p>
         </article>
     </main>
     <footer class="footer">
         <p class="footer_text">Friends © 2017</p>
     </footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
+
        <script src="app/app.js"></script>
         <script src="app/controllers/registration.controller.js"></script>
           

@@ -1,38 +1,49 @@
 <!--header-->
-    <header class="header">
-        <img src="src/img/log.png" alt="logo" class="header_logo">
-        <div class="header_enter">
-            <p class="email">E-mail:</p>
-            <input type="text" class="email_input">
-            <p class="password">Пароль:</p>
-            <input type="text" class="password_input">
-            <a href="mainPage.html"><button type="button" class="enter_button">Увійти</button></a>
-        </div>
+    <header class="header" >
+        <a href="avtorizefrond2.html" class="navbar-brand"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
+        <form class="header_enter" name="headerEnter" novalidate>
+            <label class="email">E-mail:</label>
+            <input type="email" class="email_input" require $invalid>
+            <label class="password">Пароль:</label>
+            <input type="password" class="password_input" require $invalid>
+            <a ui-sref="app.mainContainer"><button type="button" class="enter_button">Увійти</button></a>
+        </form>
     </header>
     <!--main-->
-    <main class="main">
+    <main class="main" >
         <article class="main_enter">
             <p class="enter_header">Заходь!:)</p>
-            <div class="main_login">
-                <p class="email">E-mail:</p>
-                <input type="text" class="email_input">
-                <p class="password">Пароль:</p>
-                <input type="text" class="password_input">
-                <a href="mainPage.html"><button type="button" class="mainenter_button">Увійти</button></a>
-            </div>
+            <form class="main_login" name="mainLogin" novalidate>
+                <label class="email">E-mail:</label>
+                <input type="email" class="email_input" require $invalid>
+                <label class="password">Пароль:</label>
+                <input type="password" class="password_input" require $invalid>
+                <a href="index.html"><button type="button" class="mainenter_button">Увійти</button></a>
+            </form>
         </article>
-        <article class="registration">
+        <article class="registration" ng-controller="singUpController as singUp">
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
-            <p class="registration_secondheader">Реєструйся!</p>
-            <form action="#">
+            <p class="registration_secondheader">реєструйся!</p>
+            <form action="#" name="registration" novalidate ng-submit="singUp.addNewUser(newUser)">
                 <div class="partOfForm">
-                    <label>Прізвище</label><input type="text">
-                    <label>Ім’я</label><input type="text">
-                    <label>E-mail</label><input type="text">
-                    <label>Пароль</label><input type="text">
-                    <button type="button" class="form_button">Приєднуйся!</button>
+                    <label for="surname">Прізвище</label>
+                    <input class="inputsPartOfForm" name="userSurname" ng-model="singUp.newUser.surname" type="text" id="surname" require>
+                    <label for="name">Ім’я</label>
+                    <input class="inputsPartOfForm" name="userName" ng-model="singUp.newUser.name" type="text" id="name" require>
+                    <label for="email">E-mail</label>
+                    <input class="inputsPartOfForm" name="userEmail" ng-model="singUp.newUser.email" type="email" id="email" require>
+                    <label for="password">Пароль</label>
+                    <input class="inputsPartOfForm" name="userPassword" ng-model="singUp.newUser.password" type="password" id="password" require>
+                    <button type="submit" ng-disabled="registration.$invalid" class="form_button">Приєднуйся!</button>
                 </div>
             </form>
+
+            <div class="well">
+                message: {{singUp.message}}
+                <div>
+                    valid: {{singUp.registration.$valid}}
+                </div>
+            </div>
         </article>
     </main>
     <footer class="footer">

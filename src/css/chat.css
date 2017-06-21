@@ -330,28 +330,54 @@ padding:  3px 10px !important;
 /*margin-left: 10px !important;*/
 }
 .addFileChat {
-    object-fit: cover;
+    background-image: url("../../src/img/clip.png");
+    background-size: cover;
     height: 30px;
+    width: 30px;
     cursor: pointer;
-    display: table-cell;
+     display: inline-table;
+    position: relative;
 }
 .panel-footer{
     display: flex;
+        margin-bottom: 15px;
 }
 .chatGalleryIco{
-    object-fit: cover;
+    background-image: url("../../src/img/gallery.png");
+    background-size: cover;
     margin-left: 5px;
     height: 30px;
+    width: 30px;
     cursor: pointer;
+    display: inline-table;
+    position: relative;
 }
 /*UserChat footer END*/
 
 /*SEND ICO (for modal and chatUser)*/
 .sendIcon{
-    object-fit: cover;
+    background-image: url("../../src/img/send.png");
+    background-size: cover;
     height: 30px;
-        cursor: pointer;
+    width: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 3px;
+    margin-right: 10px;
+     display: inline-table;
 }
 .nabvarHeaderMine{
     height: 50px;
+}
+
+
+
+#scrollArea {
+  /*height: 280px;*/
+  overflow: auto;
+}
+
+#bottom {
+  /*display: block;*/
+  /*margin-top: 2000px;*/
 }

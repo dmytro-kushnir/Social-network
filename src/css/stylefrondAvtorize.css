@@ -3,6 +3,10 @@
     src: url("./fonts/HelveticaBlack/HelveticaBlack.ttf");
 }
 /*header*/
+input[disabled="disabled"]{
+	opacity: 0.4;
+	cursor: not-allowed !important;
+}
 .header{
 	font-family: Helvetica;
     background: rgb(17, 17, 17);
@@ -72,6 +76,10 @@ form{
 .email_input, .password_input{
 	height: 30px;
 }
+.error{
+	color: red;
+	margin-top: 0px;
+}
 .registration{
 	font-family: Helvetica;
     background: white;
@@ -115,6 +123,7 @@ form{
     background: rgb(100, 57, 96);
     transition: 1s;
 }
+
 /*footer*/
 .footer{
 	font-family: Helvetica;

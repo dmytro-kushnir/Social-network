@@ -35,8 +35,9 @@
         <article class="registration"  ng-controller="singUpController">
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
             <p class="registration_secondheader">реєструйся!</p>
-            <form name="registration" ng-submit="register()">
-                <div class="partOfForm" >
+
+            <form name="registration" class="formRegistration" ng-submit="register()">
+               <div class="partOfForm" >
                     <label for="firstname">Прізвище</label>
                     <input class="inputsPartOfForm" 
                     	   name="firstname" 
@@ -53,6 +54,15 @@
                     	   ng-model="user.secondname" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.secondname.$invalid && registration.secondname.$touched">Поле не може бути пустим!</p>
+                    <label for="firstname">Прізвище</label>
+                    <input class="inputsPartOfForm" 
+                    	   name="firstname" 
+                    	   type="text"
+                    	   id="firstname"
+                    	   ng-model="user.firstname" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.firstname.$invalid && registration.firstname.$touched">Поле не може бути пустим!</p>
+                    
                     <label for="email">E-mail</label>
                     <input class="inputsPartOfForm" 
                     	   name="email"

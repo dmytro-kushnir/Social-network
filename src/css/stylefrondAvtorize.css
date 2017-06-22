@@ -123,6 +123,7 @@ input[disabled="disabled"]{
     color: white;
     background: rgb(169, 109, 163);;
     border: 1px solid rgb(204,204,204);
+    width: 100%;
 }
 .form_button:hover, .mainenter_button:hover{
     background: rgb(100, 57, 96);

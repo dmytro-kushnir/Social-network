@@ -5,3 +5,4 @@ app.controller("singUpController", function($scope){
 		$scope.msg = 'Welcome ' +$scope.user.secondname+'! You have singed in =)';
 	}
 });
+

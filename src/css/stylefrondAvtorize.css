@@ -68,8 +68,13 @@ input[disabled="disabled"]{
     margin: 0 auto 15px;
 }
 .formRegistration{
+<<<<<<< HEAD
       display: flex;
   }
+=======
+    display: flex;
+}
+>>>>>>> refs/remotes/origin/master
 .mainenter_button{
 	width: 275px;
 }

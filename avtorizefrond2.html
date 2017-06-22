@@ -35,8 +35,17 @@
         <article class="registration"  ng-controller="singUpController">
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
             <p class="registration_secondheader">реєструйся!</p>
+
             <form name="registration" class="formRegistration" ng-submit="register()">
-                <div class="partOfForm" >
+               <div class="partOfForm" >
+                    <label for="firstname">Прізвище</label>
+                    <input class="inputsPartOfForm" 
+                    	   name="firstname" 
+                    	   type="text"
+                    	   id="firstname"
+                    	   ng-model="user.firstname" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.firstname.$invalid && registration.firstname.$touched">Поле не може бути пустим!</p>
                     <label for="name">Ім’я</label>
                     <input class="inputsPartOfForm" 
                     	   name="secondname"
@@ -80,9 +89,7 @@
     <footer class="footer">
         <p class="footer_text">Friends © 2017</p>
     </footer>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
-
        <script src="app/app.js"></script>
         <script src="app/controllers/registration.controller.js"></script>
           

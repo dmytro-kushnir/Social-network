@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="socialNetwork">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,10 +29,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-animate.min.js"></script>
     <script src="src/libs/angular/elastic.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ui-router-extras/0.1.3/ct-ui-router-extras.min.js"></script>-->
     <!--App-->
     <script src="app/app.js"></script>
     <!--Controllers/Directives-->
@@ -43,24 +42,10 @@
     <script src="app/directives.js"></script>
 </head>
 <body ng-controller="MainCtrl as mainPage" ng-cloak>
+        <!--<div ui-view name="autorize"> </div>-->
+        <!--<div ui-view ="mainContainer"> </div>-->
+         <ui-view />
+<!---->
 
-    <div id="wrappper">
-        <!-- Modal gallery window-->
-        <social-modal></social-modal>
-        <div class="container-fluid">
-            <div class="container custom-container">
-                <div class="row">
-                    <!--Header-->
-                    <social-header></social-header>
-                    <!--Navigation-->
-                    <social-side-menu></social-side-menu>
-                    <!--Main body-->
-                    <social-router></social-router>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-</body>
-
+    </body>
 </html>

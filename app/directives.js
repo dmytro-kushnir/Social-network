@@ -67,63 +67,92 @@
     var app2 = angular.module("socialNetwork").config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
                 $stateProvider
-                    .state("mainPage", {
-                        url: '/mainPage',
-                        templateUrl: "app/templates/mainPage.html",
+                    .state("mainContainer", {
+
+                        url: '/mainContainer',
+                        templateUrl: "app/templates/mainContainer.html",
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Доктор Стрендж";
-                            }],
+                            }]
                         }
                     })
-                    .state("friends", {
+                    .state("autorize", {
+                        url: '/autorize',
+                        templateUrl: "app/templates/autorize.html",
+                        resolve: {
+                            'title': ['$rootScope', function ($rootScope) {
+                                $rootScope.title = "Приєднуйся!";
+                            }]
+                        }
+                    })
+                    .state("mainContainer.mainPage", {
+                        url: '/mainPage',
+                        views: {
+                            'mainPage@mainContainer': {
+                                templateUrl: 'app/templates/mainPage.html',
+                            
+                            }
+                        },
+                        resolve: {
+                            'title': ['$rootScope', function ($rootScope) {
+                                $rootScope.title = "Доктор Стрендж";
+                            }]
+                        }
+                    })
+                    .state("mainContainer.friends", {
                         url: '/friends',
-                        templateUrl: "app/templates/friends.html",
-                        controller: "RouterCtrl",
+                        views: {
+                            'friends@mainContainer': {
+                                templateUrl: 'app/templates/friends.html'
+                            }
+                        },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Мої друзі";
-                            }],
+                            }]
                         }
                     })
-                    .state("gallery", {
+                    .state("mainContainer.gallery", {
                         url: '/gallery',
-                        templateUrl: "app/templates/gallery.html",
+                        views: {
+                            'gallery@mainContainer': {
+                                templateUrl: 'app/templates/gallery.html',
+                            }
+                        },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Галерея";
-                            }],
+                            }]
                         }
-                        // css: ['../src/css/gallery.css']
                     })
-                    .state("chat", {
+                    .state("mainContainer.chat", {
                         url: '/chat',
-                        templateUrl: "/app/templates/chat.html",
+                        views: {
+                            'chat@mainContainer': {
+                                templateUrl: 'app/templates/chat.html',
+                            }
+                        },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Мої повідомлення";
-                            }],
+                            }]
                         }
                     })
-                    .state("autorization", {
-                        url: '/autorization',
-                        templateUrl: "/app/templates/autorize.html",
-                         resolve: {
-                            'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Приєднуйся";
-                            }],
-                        }
-                    })
-                    .state("chatUser", {
+                    .state("mainContainer.chatUser", {
                         url: '/chatUser',
-                        templateUrl: "app/templates/chatUser.html",
+                        views: {
+                            'chatUser@mainContainer': {
+                                templateUrl: 'app/templates/chatUser.html',
+                            }
+                        },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Дженніфер Лоуренс";
-                            }],
+                            }]
                         }
                     });
-                $urlRouterProvider.otherwise('/mainPage');
+                $urlRouterProvider.otherwise('/autorize');
             }
         ])
         .run(['$rootScope', '$state', '$stateParams',
@@ -133,24 +162,35 @@
             }
         ]);
 
-    
-// Scrolling to bottom by default
-    app2.directive('scrollToBottom', function($timeout, $window) {
-           console.log("hi");
-  return {
-    scope: {
-     
-      schrollBottom: "="
-    },
-    link: function (scope, element) {
-      scope.$watchCollection('schrollBottom', function (newValue) {
-        if (newValue)
-        {
-          $(element).scrollTop($(element)[0].scrollHeight);
-        }
-      });
-    }
-  };
+       
+app2.controller('FriendsCtrl', function() {
+  console.log("friend!");
 });
+
+
+//TODO MOVE INTO HOME MODULE FOLDER
+app2.controller('HomeController', ['$scope', function($scope) {
+	this.rootUrl = '/home/';
+	console.log('Home Ctrl');
+}]);
+
+
+    // Scrolling to bottom by default
+    app2.directive('scrollToBottom', function ($timeout, $window) {
+        console.log("hi");
+        return {
+            scope: {
+
+                schrollBottom: "="
+            },
+            link: function (scope, element) {
+                scope.$watchCollection('schrollBottom', function (newValue) {
+                    if (newValue) {
+                        $(element).scrollTop($(element)[0].scrollHeight);
+                    }
+                });
+            }
+        };
+    });
 
 })();

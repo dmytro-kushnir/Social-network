@@ -197,6 +197,16 @@
   .userChatBlock {
     padding: 30px 10px 10px 2px;
   }
+  .myFriends {
+    margin-left: 0px;
+  }
+  .friendsAndPhoto > div {
+    margin-right: 0px;
+  }
+  .friendsAndPhoto {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 @media (max-width: 570px) {
   .infoName {

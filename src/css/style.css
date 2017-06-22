@@ -38,6 +38,7 @@ body {
 .logo {
     height: 30px;
     width: auto;
+    margin-top: -10px !important;
 }
 
 .navbar {
@@ -370,11 +371,13 @@ body {
 }
 
 .friendsAndPhoto>div>p {
+  
     cursor: pointer;
     width: 20px;
 }
 
 .friendsAndPhoto>div {
+      margin-right:50px;
     display: flex;
     justify-content: flex-start;
     padding: 0 !important;

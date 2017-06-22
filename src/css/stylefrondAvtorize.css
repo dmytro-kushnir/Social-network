@@ -67,9 +67,9 @@ input[disabled="disabled"]{
     height: 180px;
     margin: 0 auto 15px;
 }
-form{
-    display: flex;
-}
+.formRegistration{
+      display: flex;
+  }
 .mainenter_button{
 	width: 275px;
 }
@@ -140,13 +140,14 @@ form{
 
 @media  screen and (min-width: 768px){
 	.header{
-		height: 40px;
+		height: 50px;
 	}
     .navbar-brand{
         margin: 8px 0 0 30px;
     }
     .header_logo{
         width: 125px;
+        margin-top: -10px;
         height: 30px;
     }
     .header_enter{
@@ -156,7 +157,7 @@ form{
         color: white;
         height: 30px;
         width: 600px;
-        margin: 5px 10px 0;
+        margin: 10px 10px 0;
     }
     .main{
         padding: 50px 0 50px;

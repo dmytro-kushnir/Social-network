@@ -24,6 +24,8 @@ input[disabled="disabled"]{
 .header_logo{
         width: 125px;
         height: 30px;
+        margin-left: 20px;
+        margin-top: 13px;   
     }
 .header_enter{
     display: none;
@@ -68,13 +70,8 @@ input[disabled="disabled"]{
     margin: 0 auto 15px;
 }
 .formRegistration{
-<<<<<<< HEAD
       display: flex;
   }
-=======
-    display: flex;
-}
->>>>>>> refs/remotes/origin/master
 .mainenter_button{
 	width: 275px;
 }
@@ -153,7 +150,7 @@ input[disabled="disabled"]{
     }
     .header_logo{
         width: 125px;
-        margin-top: -10px;
+        margin-left: 20px;
         height: 30px;
     }
     .header_enter{

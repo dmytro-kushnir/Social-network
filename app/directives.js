@@ -167,30 +167,4 @@ app2.controller('FriendsCtrl', function() {
   console.log("friend!");
 });
 
-
-//TODO MOVE INTO HOME MODULE FOLDER
-app2.controller('HomeController', ['$scope', function($scope) {
-	this.rootUrl = '/home/';
-	console.log('Home Ctrl');
-}]);
-
-
-    // Scrolling to bottom by default
-    app2.directive('scrollToBottom', function ($timeout, $window) {
-        console.log("hi");
-        return {
-            scope: {
-
-                schrollBottom: "="
-            },
-            link: function (scope, element) {
-                scope.$watchCollection('schrollBottom', function (newValue) {
-                    if (newValue) {
-                        $(element).scrollTop($(element)[0].scrollHeight);
-                    }
-                });
-            }
-        };
-    });
-
 })();

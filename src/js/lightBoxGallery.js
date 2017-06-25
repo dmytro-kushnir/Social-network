@@ -1,4 +1,3 @@
-
  $(function () {
  
    $('.galleryLink').click(function (e) {

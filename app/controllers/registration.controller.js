@@ -6,3 +6,9 @@ app.controller("singUpController", function($scope){
 	}
 });
 
+app.controller("logInController", function($scope){
+	$scope.logloginUser= function(ckeckUser){
+		
+	}
+});
+

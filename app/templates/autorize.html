@@ -1,0 +1,77 @@
+ <!--header-->
+    <header class="header" >
+        <a ui-sref="mainContainer.autorize"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
+         <form class="header_enter" name="headerEnter" ng-submit="loginUser()">
+            <div class="partFormHeder">
+            	<div class="emailAndpass">
+            		<label class="email">E-mail:</label>
+            		<input type="email" name="email" class="email_input" ng_-model="user.email" ng-required="true">
+            		<label class="password">Пароль:</label>
+            		<input type="password" name="password" class="password_input" ng_-model="user.password" ng-required="true">
+					<button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid"><a ng-href="index.html" class="header_btn">Увійти</a></button>
+            	</div>
+            	<div class="d33" ng-show="headerEnter.email.$invalid && headerEnter.email.$touched || headerEnter.password.$invalid && headerEnter.password.$touched">Не правильний е-мейл або пароль</div>
+            </div>
+        </form>
+    </header>
+    <!--main-->
+    <main class="main" >
+         <article class="main_enter"  ng-controller="logInController">
+            <p class="enter_header">Заходь!:)</p>
+            <form class="main_login" name="mainLogin" ng-submit="loginUser()">
+                <label class="email">E-mail:</label>
+                <input type="email"  name="email" class="email_input" ng_-model="user.email" ng-required="true">
+                <p class="error" ng-show="mainLogin.email.$invalid && mainLogin.email.$touched">Введіть правильний е-мейл</p>
+                <label class="password">Пароль:</label>
+                <input type="password" name="password" class="password_input" ng_-model="user.password" ng-required="true">
+                <p class="error" ng-show="mainLogin.password.$invalid && mainLogin.password.$touched">Введіть правильний пароль</p>
+                <a href="index.html"><button type="button" class="mainenter_button">Увійти</button></a>
+            </form>
+        </article>
+        <article class="registration"  ng-controller="singUpController">
+            <p class="registration_header">Хочеш приєднатись до друзів?</p>
+            <p class="registration_secondheader">реєструйся!</p>
+            <form name="registration" ng-submit="register()">
+                <div class="partOfForm" >
+                    <label for="firstname">Прізвище</label>
+                    <input class="inputsPartOfForm" 
+                    	   name="firstname" 
+                    	   type="text"
+                    	   id="firstname"
+                    	   ng-model="user.firstname" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.firstname.$invalid && registration.firstname.$touched">Поле не може бути пустим!</p>
+                    <label for="name">Ім’я</label>
+                    <input class="inputsPartOfForm" 
+                    	   name="secondname"
+                    	   type="text"
+                    	   id="name"
+                    	   ng-model="user.secondname" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.secondname.$invalid && registration.secondname.$touched">Поле не може бути пустим!</p>
+                    <label for="email">E-mail</label>
+                    <input class="inputsPartOfForm" 
+                    	   name="email"
+                    	   type="email"
+                    	   id="name" 
+                    	   ng-model="user.email" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.email.$invalid && registration.email.$touched">Введіть правильний емейл</p>
+                    <label for="password">Пароль</label>
+                    <input class="inputsPartOfForm" 
+                    	   name="password"
+                    	   type="password" 
+                    	   id="password"
+                    	   ng-model="user.password" 
+                    	   ng-minlength="6" 
+                    	   ng-required="true">
+                    <p class="error" ng-show="registration.password.$invalid && registration.password.$touched">Пароль має містити мінімум 6 символів</p>
+					<button type="submit" class="form_button" ng-disabled="registration.$invalid">Приєднуйся!</button>
+                </div>
+            </form>
+            <p ng-show="msg">{{msg}}</p>
+        </article>
+    </main>
+    <footer class="footer">
+        <p class="footer_text">Friends © 2017</p>
+    </footer>

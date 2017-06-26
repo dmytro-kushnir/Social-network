@@ -5,3 +5,6 @@
             $scope[class1] = !$scope[class1];
         };
     });
+
+
+    

@@ -1,10 +1,10 @@
 // Mode: Tablet
 @tablet: ~"(max-width: 767px)";
+@small: ~"(max-width: 570px)";
+@extraSmall: ~"(max-width: 460px)";
 // Mode: Desktop
 @desktop: ~"(min-width: 768px)";
 @medium: ~"(min-width: 768px) and (max-width: 992px)";
-@small: ~"(max-width: 570px)";
-@extraSmall: ~"(max-width: 460px)";
 @extraLarge: ~"(min-width: 999px)";
 ///////////////////////// 
 @media @tablet {
@@ -17,7 +17,6 @@
 .leftChat{
     margin-right: 100px;
 }
-
     // .userChatName, .arrowLeft{
     //     display: none;
     // }
@@ -143,8 +142,7 @@
     display: block !important ;
     }
     .headerName, .arrowLeftMobile{
-    display: none !important;
-}
+    display: none !important;}
 
     .arrowLeftMobile{
         display: none;
@@ -233,7 +231,16 @@
     .userChatBlock{
         padding: 30px 10px 10px 2px;
     }
-
+    .myFriends{
+        margin-left: 0px;
+    }
+    .friendsAndPhoto>div{
+        margin-right: 0px;
+    }
+    .friendsAndPhoto{
+        flex-direction:  column;
+        align-items: center;
+    }
 }
 
 //////////////////////////

@@ -24,6 +24,8 @@ input[disabled="disabled"]{
 .header_logo{
         width: 125px;
         height: 30px;
+        margin-left: 20px;
+        margin-top: 13px;   
     }
 .header_enter{
     display: none;
@@ -68,8 +70,8 @@ input[disabled="disabled"]{
     margin: 0 auto 15px;
 }
 .formRegistration{
-    display: flex;
-}
+      display: flex;
+  }
 .mainenter_button{
 	width: 275px;
 }
@@ -118,6 +120,7 @@ input[disabled="disabled"]{
     color: white;
     background: rgb(169, 109, 163);;
     border: 1px solid rgb(204,204,204);
+    width: 100%;
 }
 .form_button:hover, .mainenter_button:hover{
     background: rgb(100, 57, 96);
@@ -180,6 +183,7 @@ input[disabled="disabled"]{
     }
     .header_logo{
         width: 125px;
+        margin-left: 20px;
         height: 30px;
     }
     .header_enter{

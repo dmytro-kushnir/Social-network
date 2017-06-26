@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="singupApp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="src/css/normalize.css">
-    <link rel="stylesheet" href="src/css/stylefrondAvtorize.css">
-</head>
-<body >
-    <!--header-->
-    <header class="header" ng-controller="logInController">
-        <a href="avtorizefrond2.html" class="navbar-brand"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
-        <form class="header_enter" name="headerEnter" ng-submit="loginUser()">
+ <!--header-->
+    <header class="header" >
+        <a ui-sref="mainContainer.autorize"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
+         <form class="header_enter" name="headerEnter" ng-submit="loginUser()">
             <div class="partFormHeder">
             	<div class="emailAndpass">
             		<label class="email">E-mail:</label>
@@ -26,13 +15,13 @@
         </form>
     </header>
     <!--main-->
-    <main class="main" ng-controller="logInController">
-        <article class="main_enter">
+    <main class="main" >
+         <article class="main_enter"  ng-controller="logInController">
             <p class="enter_header">Заходь!:)</p>
             <form class="main_login" name="mainLogin" ng-submit="loginUser()">
                 <label class="email">E-mail:</label>
                 <input type="email"  name="email" class="email_input" ng_-model="user.email" ng-required="true">
-                <p class="error" ng-show="mainLogin.email.$invalid && mainLogin.email.$touched">Введіть правильний емейл</p>
+                <p class="error" ng-show="mainLogin.email.$invalid && mainLogin.email.$touched">Введіть правильний е-мейл</p>
                 <label class="password">Пароль:</label>
                 <input type="password" name="password" class="password_input" ng_-model="user.password" ng-required="true">
                 <p class="error" ng-show="mainLogin.password.$invalid && mainLogin.password.$touched">Введіть правильний пароль</p>
@@ -42,9 +31,8 @@
         <article class="registration"  ng-controller="singUpController">
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
             <p class="registration_secondheader">реєструйся!</p>
-
-            <form name="registration" class="formRegistration" ng-submit="register()">
-               <div class="partOfForm" >
+            <form name="registration" ng-submit="register()">
+                <div class="partOfForm" >
                     <label for="firstname">Прізвище</label>
                     <input class="inputsPartOfForm" 
                     	   name="firstname" 
@@ -87,9 +75,3 @@
     <footer class="footer">
         <p class="footer_text">Friends © 2017</p>
     </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
-       <script src="app/app.js"></script>
-        <script src="app/controllers/registration.controller.js"></script>
-          
-</body>
-</html>

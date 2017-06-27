@@ -1,22 +1,53 @@
-
-
 // open modal dialog
 angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Lightbox) {
-    $scope.images = [{
-            'url': '/src/img/avatar.jpg',
-            'thumbUrl': '/src/img/avatar.jpg' // used only for this example
+    $scope.Lightbox = Lightbox;
+
+    console.log(Lightbox);
+    $scope.avatars = [{
+        'url': '/src/img/avatar.jpg',
+        'thumbUrl': '/src/img/avatar.jpg'
+    }];
+    $scope.gallery = [{
+            'url': '/src/img/gallery/1.jpg',
+            'thumbUrl': '/src/img/gallery/1.jpg',
+        },
+        {
+            'url': '/src/img/gallery/2.jpg',
+            'thumbUrl': '/src/img/gallery/2.jpg'
+        },
+        {
+            'url': '/src/img/gallery/3.jpg',
+            'thumbUrl': '/src/img/gallery/3.jpg'
+        },
+        {
+            'url': '/src/img/gallery/4.jpg',
+            'thumbUrl': '/src/img/gallery/4.jpg'
+        },
+        {
+            'url': '/src/img/gallery/5.jpg',
+            'thumbUrl': '/src/img/gallery/5.jpg'
+        },
+        {
+            'url': '/src/img/gallery/6.jpg',
+            'thumbUrl': '/src/img/gallery/6.jpg'
+        },
+         {
+            'url': '/src/img/gallery/7.jpg',
+            'thumbUrl': '/src/img/gallery/7.jpg'
         }
+     
     ];
-
-    $scope.openLightboxModal = function (index) {
-        console.log(index);
-        Lightbox.openModal($scope.images, index);
+    $scope.openAvatar = function (index) {
+        Lightbox.openModal($scope.avatars, index);
     };
-
+     $scope.openGallery = function (index) {
+        Lightbox.openModal($scope.gallery, index);
+    };
 });
 angular.module('socialNetwork').config(function (LightboxProvider) {
-  // set a custom template
-  LightboxProvider.templateUrl = '/app/templates/modal.html';
+    LightboxProvider.templateUrl = '/app/templates/modal.html';
+
+
 });
 
 

@@ -1,5 +1,20 @@
 <link rel="stylesheet" href="src/css/galleryAdditional.css">
 
+
+
+
+
+<div ng-controller="OpenModalCtrl as openModal">
+    <div deckgrid class="deckgrid" source="gallery">
+        <div class="a-card thumbnail" >
+
+            <a  data-ng-click="mother.openGallery(card.$index)" >
+            <img  alt="gallery item {{$index}}" data-ng-src="{{card.url}}" class="img-responsive galleryImg">
+            </a>
+        </div>
+    </div>
+</div>
+<!--
 <div class="row masonry" data-columns>
     <div class="item">
         <div class="thumbnail galleryLink">
@@ -94,7 +109,7 @@
         </div>
     </div>
 
-</div>
+</div>-->
 <div class="row navbar navbarGallery navbar-fixed-bottom">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
         <div class="galleryInput">

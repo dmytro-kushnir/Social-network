@@ -7,7 +7,9 @@
         'ngAnimate', 
         'monospaced.elastic',
         'ui.bootstrap',
-        'bootstrapLightbox'
+        'bootstrapLightbox',
+        'ngTouch',
+        'akoenig.deckgrid'
         ]);
     
     app.controller('MainCtrl', function () {

@@ -1,8 +1,11 @@
 // open modal dialog
 angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Lightbox) {
+    'use strict';
     $scope.Lightbox = Lightbox;
 
     console.log(Lightbox);
+
+    console.log($scope);
     $scope.avatars = [{
         'url': '/src/img/avatar.jpg',
         'thumbUrl': '/src/img/avatar.jpg'
@@ -61,6 +64,7 @@ angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Li
         }
      
     ];
+    
     $scope.openAvatar = function (index) {
         Lightbox.openModal($scope.avatars, index);
     };

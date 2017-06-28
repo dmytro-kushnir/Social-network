@@ -3,12 +3,13 @@
     <!--<div class="modal-dialog modal-lg " >-->
         <!--<div class="modal-content">-->
             <div  ng-controller="ModalCtrl as modal">
-                <!--<figure class="crossModal pull-right" data-dismiss="modal" aria-label="Close"></figure>-->
+       
             <div class="modal-body" ng-swipe-right="Lightbox.prevImage()" ng-swipe-left="Lightbox.nextImage()">
                  
                 <div class="row no-gutter ">
                     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                         <div class="LightBodyModal">
+                                     <figure class="crossModal pull-right" aria-label="Close" ng-click="$dismiss()"></figure>
                             <a class="modalImgWrapper lightbox-image-container">
                                 <img class="img-responsive center-block modalImg" lightbox-src="{{Lightbox.imageUrl}}"/>
                                 <span class="modalImgCount">{{Lightbox.index + 1 }}/{{Lightbox.images.length}} </span>

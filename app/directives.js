@@ -25,20 +25,7 @@
             templateUrl: "/app/templates/router.html"
         }
     });
-    app.directive("autorization", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "/app/templates/autorize.html"
-        }
-    });
-    app.directive("mainContainer", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "/app/templates/mainContainer.html"
-        }
-    });
     // Collapsing directive for mobile
-
     app.directive('navCollapse', function () {
         return {
             restrict: 'AE',
@@ -63,7 +50,6 @@
     });
 
     // Routing START  
-
     var app2 = angular.module("socialNetwork").config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
                 $stateProvider
@@ -123,6 +109,7 @@
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Галерея";
+                                
                             }]
                         }
                     })
@@ -159,12 +146,7 @@
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
+                
             }
         ]);
-
-       
-app2.controller('FriendsCtrl', function() {
-  console.log("friend!");
-});
-
 })();

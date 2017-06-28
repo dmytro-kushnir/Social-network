@@ -134,6 +134,13 @@
 .sendIcon{
     margin-right: 20px;
 }
+ .modal-dialog{
+        width: auto !important ;
+    }
+    .modal-content{
+        height: auto !important;
+    }
+
 }
 
 /////////////////////////  
@@ -176,9 +183,9 @@
         overflow-y: hidden !important;
     }
     .modal-dialog {
-        margin-top: 0;
+        margin-top: 85px !important;
         margin-bottom: 0;
-        height: 100vh;
+        // height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -188,6 +195,13 @@
     }
     .modal.in .modal-dialog {
         transform: translate(0, 0);
+    }
+    
+    .modal-dialog{
+        width: 1000px !important;
+    }
+    .modal-content{
+        height: 510px !important;
     }
 }
 
@@ -241,6 +255,10 @@
         flex-direction:  column;
         align-items: center;
     }
+    .modalImg{
+        width: auto !important;
+        height: auto !important;
+    }
 }
 
 //////////////////////////
@@ -290,13 +308,17 @@
     .infoName>p {
         width: 400px;
     }
+ 
 }
 
 /////
 @media @medium {
     // MODAL START
-    .modal-dialog{
-//        margin-top: 200px !important;
+     .modal-dialog{
+        width: 700px !important ;
+    }
+    .modal-content{
+        height: auto !important;
     }
     
     .modalTextArea {

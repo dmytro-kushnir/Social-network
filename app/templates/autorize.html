@@ -8,7 +8,7 @@
             		<input type="email" name="email" class="email_input" ng_-model="user.email" ng-required="true">
             		<label class="password">Пароль:</label>
             		<input type="password" name="password" class="password_input" ng_-model="user.password" ng-required="true">
-					<button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid"><a ng-href="index.html" class="header_btn">Увійти</a></button>
+					<button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid"><a ui-sref="mainContainer.mainPage" class="header_btn">Увійти</a></button>
             	</div>
             	<div class="d33" ng-show="headerEnter.email.$invalid && headerEnter.email.$touched || headerEnter.password.$invalid && headerEnter.password.$touched">Не правильний е-мейл або пароль</div>
             </div>
@@ -25,7 +25,7 @@
                 <label class="password">Пароль:</label>
                 <input type="password" name="password" class="password_input" ng_-model="user.password" ng-required="true">
                 <p class="error" ng-show="mainLogin.password.$invalid && mainLogin.password.$touched">Введіть правильний пароль</p>
-                <a href="index.html"><button type="button" class="mainenter_button">Увійти</button></a>
+                <a ui-sref="mainContainer.mainPage"><button type="button" class="mainenter_button">Увійти</button></a>
             </form>
         </article>
         <article class="registration"  ng-controller="singUpController">

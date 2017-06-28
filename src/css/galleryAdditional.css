@@ -1,3 +1,19 @@
-.userMainBody{
-    padding-bottom: 40px;
+.userMainBody {
+    padding-bottom: 80px;
 }
+
+.thumbnail {
+    margin-bottom: 10px !important;
+}
+
+/*extraLarge*/
+@media (min-width: 960px){
+.userMainBody {
+    width: 707px;
+    padding-top: 5px;
+    padding-left: 5px;
+}   
+} 
+
+
+

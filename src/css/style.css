@@ -250,7 +250,8 @@ body {
 /*left part END*/
 
 .userMainBody {
-    min-height: 500px;
+    min-height: 610px;
+    overflow-y: scroll;
 }
 
 

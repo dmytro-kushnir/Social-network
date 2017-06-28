@@ -34,6 +34,30 @@ angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Li
          {
             'url': '/src/img/gallery/7.jpg',
             'thumbUrl': '/src/img/gallery/7.jpg'
+        },
+         {
+            'url': '/src/img/gallery/8.jpg',
+            'thumbUrl': '/src/img/gallery/8.jpg'
+        },
+         {
+            'url': '/src/img/gallery/9.jpg',
+            'thumbUrl': '/src/img/gallery/9.jpg'
+        },
+         {
+            'url': '/src/img/gallery/10.jpg',
+            'thumbUrl': '/src/img/gallery/10.jpg'
+        },
+         {
+            'url': '/src/img/gallery/11.jpg',
+            'thumbUrl': '/src/img/gallery/11.jpg'
+        },
+         {
+            'url': '/src/img/gallery/12.jpg',
+            'thumbUrl': '/src/img/gallery/12.jpg'
+        },
+         {
+            'url': '/src/img/gallery/13.jpg',
+            'thumbUrl': '/src/img/gallery/13.jpg'
         }
      
     ];

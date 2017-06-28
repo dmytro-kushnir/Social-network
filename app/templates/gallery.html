@@ -1,99 +1,21 @@
 <link rel="stylesheet" href="src/css/galleryAdditional.css">
 
-
-
-
-
-<div ng-controller="OpenModalCtrl as openModal">
+<div class="galleryContainer" ng-controller="OpenModalCtrl as openModal">
     <div deckgrid class="deckgrid" source="gallery">
-        <div class="a-card thumbnail" >
+        <div class="a-card " >
 
             <a  data-ng-click="mother.openGallery(card.$index)" >
-            <img  alt="gallery item {{$index}}" data-ng-src="{{card.url}}" class="img-responsive galleryImg">
+            <img  alt="gallery item {{card.$index}}" data-ng-src="{{card.url}}" class="img-responsive galleryImg">
             </a>
         </div>
     </div>
 </div>
 <!--
-<div class="row masonry" data-columns>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/1.jpg" alt="" class="img-responsive">
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/2.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/3.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/4.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/5.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/6.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/7.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/8.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/9.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/10.jpg" alt="" class="img-responsive">
-        </div>
-    </div>
-
     <div class="item">
         <div class="thumbnail">
             <iframe src="https://www.youtube.com/embed/AFShDQEDpwA" class="img-responsive"></iframe>
         </div>
     </div>
-
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/11.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/12.jpg" alt="" class="img-responsive">
-
-        </div>
-    </div>
-
 
     <div class="item">
         <div class="thumbnail">
@@ -103,11 +25,7 @@
         </div>
     </div>
 
-    <div class="item">
-        <div class="thumbnail galleryLink">
-            <img src="src/img/gallery/13.jpg" alt="" class="img-responsive">
-        </div>
-    </div>
+   
 
 </div>-->
 <div class="row navbar navbarGallery navbar-fixed-bottom">

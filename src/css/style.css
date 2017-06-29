@@ -28,6 +28,7 @@ body {
 .classWithPad {
     margin: -5px;
     background-color: white;
+   
     /*padding:1px; *
 /* Navigation header START*/
 }
@@ -250,7 +251,7 @@ body {
 /*left part END*/
 
 .userMainBody {
-    min-height: 610px;
+    min-height: 880px;
     overflow-y: scroll;
 }
 
@@ -490,9 +491,11 @@ body {
 
 .headerName{
     display: none;
+      top: -35px;
+      left: 18px;
 }
 .arrowLeftMobile{
-    display: none;
+    /*display: none;*/
 }
 .navbar-brand, .panel-primary{
     display: block !important;

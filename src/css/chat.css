@@ -164,7 +164,7 @@
 
 .headerName {
     position: relative;
-    top: 15px;
+    /*top: 15px;*/
     color: white;
     font-weight: 600;
 }

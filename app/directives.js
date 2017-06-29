@@ -1,4 +1,5 @@
 (function () {
+    
     var app = angular.module("social-directives", []);
 
     app.directive("socialModal", function () {

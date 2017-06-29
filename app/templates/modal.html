@@ -1,49 +1,52 @@
-<section class="modal fade" id="image-modal" tabindex="-1" role="dialog" ng-controller="ModalCtrl as modal">
-    <figure class="crossModal pull-right" data-dismiss="modal" aria-label="Close"></figure>
-    <div class="modal-dialog modal-lg ">
-        <div class="modal-content">
-
-            <div class="modal-body">
+            <div  ng-controller="ModalCtrl as modal">
+       
+            <div class="modal-body" ng-swipe-right="Lightbox.prevImage()" ng-swipe-left="Lightbox.nextImage()">
+                 
                 <div class="row no-gutter ">
                     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                         <div class="LightBodyModal">
-                            <div class="modalImgWrapper">
-                                <img class="img-responsive center-block modalImg" src="" alt=""></div>
-                            <a id="prev" class="carousel-control left"  data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                            <a id="next" class="carousel-control right"  data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                                     <figure class="crossModal pull-right" aria-label="Close" ng-click="$dismiss()"></figure>
+                            <a class="modalImgWrapper lightbox-image-container">
+                                <img class="img-responsive center-block modalImg" 
+                                    lightbox-src="{{Lightbox.imageUrl}}" alt="mainImage "{{Lightbox.index}} />
+                                <span class="modalImgCount">{{Lightbox.index + 1 }}/{{Lightbox.images.length}} </span>
+                            </a>
+                            <a  ng-click="Lightbox.prevImage()" class="carousel-control left"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                            <a  ng-click="Lightbox.nextImage()" class="carousel-control right"><i class="glyphicon glyphicon-chevron-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 modalMasc" ng-class="{'special' : modalMasc }">
                         <div class="rightBodyModal" ng-class="{'special' : rightBodyModal}">
                             <article class="modalUser">
-                                <figure class="otherUserPhoto modalOtherUserPhoto"></figure>
-                                <h4 class="modalUserName">Дженніфер Лоуренс</h4>
-                                <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
+                                <img class="modalSenderPhoto" lightbox-src="{{Lightbox.image.senderUrl}}" alt="image "{{Lightbox.index}} />
+                                <h4 class="modalUserName">{{Lightbox.image.senderName}}</h4>
+                                <h5><span class='glyphicon glyphicon-time'></span>{{Lightbox.image.date}}</h5>
                             </article>
                             <article class="modalLike">
                                 <div>
                                     <figure class="modalHeart"></figure>
-                                    <p class="modalLikeText">Мені подобається<span>56</span></p>
+                                    <p class="modalLikeText">Мені подобається<span>{{Lightbox.image.likes}}</span></p>
                                 </div>
                             </article>
-                            <article class="modalPost">
-                                <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
-                                <h5 class="modalPostUser">Доктор Стрендж</h5>
+
+
+                            <article class="modalPost"  ng-repeat="post in Lightbox.image.posts">
+                                <img class="modalSenderPhoto modalOtherUserPhotoPost"
+                                    lightbox-src="{{post.postSenderUrl}}" alt="image "{{Lightbox.index}} />
+                                <h5 class="modalPostUser">{{post.postSenderName}}</h5>
                                 <figure class="modalCancel pull-right"></figure>
-                                <a class="galleryLinkdddddddddddddddddddddddd"><img class=" modalPhotoPost" data-img="src/img/photoPost.jpg" src="src/img/photoPost.jpg" alt="..."></a>
-                                <p class="modalPostDate">16 тра о 17:45</p>
-                                <figure class="modalHeart modalHeartComm pull-right"><span>4</span></figure>
+                                <a>
+                                    <img class=" modalPhotoPost" 
+                                    lightbox-src="{{post.postImage}}" alt="image "{{Lightbox.index}}></a>
+                                <p class="modalPostDate">{{post.postDate}}</p>
+                                <figure class="modalHeart modalHeartComm pull-right"><span>{{post.postLikes}}</span></figure>
                             </article>
-                            <article class="modalPost">
-                                <figure class="otherUserPhoto modalOtherUserPhotoPost"></figure>
-                                <h5 class="modalPostUser">Доктор Стрендж</h5>
-                                <figure class="modalCancel pull-right"></figure>
-                                <a class="galleryLinkdddddddddddddddddd"><img class="modalPhotoPost" data-img="src/img/photoPost2.jpg" src="src/img/photoPost2.jpg" alt="..."></a>
-                                <p class="modalPostDate">16 тра о 17:45</p>
-                                <figure class="modalHeart modalHeartComm pull-right"><span>2</span></figure>
-                            </article>
+                            
+
+                            
                             <textarea class="modalTextArea" ng-class="{'special' : modalTextArea}"></textarea>
-                            <figure class="otherUserPhoto modalOtherUserPhotoComment"></figure>
+                            <img class="otherUserPhoto modalOtherUserPhotoComment pull-left"
+                                    lightbox-src="{{Lightbox.image.senderUrl}}" alt="image "{{Lightbox.index}} />
                         </div>
                     </div>
                 </div>
@@ -58,7 +61,7 @@
                             class="sendIcon" style="margin-top:3px;">
                         </div>
                         <div class="leftFotterModal">
-                            <figure class="modalHeart modalHeartFooter modalHeartFooters"><span>56</span></figure>
+                            <figure class="modalHeart modalHeartFooter modalHeartFooters"><span>{{Lightbox.image.likes}}</span></figure>
                             <figure ng-click="
                            
                             toogleClass('rightBodyModal');
@@ -81,7 +84,8 @@
                             toogleClass('modalSendBlock');
                             toogleClass('modalTextArea')" class="modalMakeComment ModalCommentAction" ng-class="{'special' : modalMakeComment }">Написати коментар...</p>
                             <div class="modalSendBlock" ng-class="{'special' : modalSendBlock }">
-                                <figure class="commentImage pull-left"></figure>
+                                <!--<figure class="commentImage pull-left"></figure>-->
+                                
                                 <button type="button" ng-click="
                            
                             toogleClass('rightBodyModal');
@@ -100,7 +104,4 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-    </div>
-</section>
+</div>

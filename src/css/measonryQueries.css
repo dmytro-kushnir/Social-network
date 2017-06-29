@@ -8,8 +8,6 @@ a.spoiler.collapsed:after {
 .nav-tabs {
 	margin-bottom: 15px;
 }
-
-
 @media screen and (max-width: 767px) {
 	.masonry[data-columns]::before {
 		content: '1 .col-xs-12';
@@ -33,3 +31,4 @@ a.spoiler.collapsed:after {
 		content: '3 .col-xs-4';
 	}
 }
+

@@ -27,7 +27,7 @@
   <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
     <div ng-repeat="avatar in avatars">
       <a class="galleryLink" ng-click="openAvatar($index)">
-        <img ng-src="{{avatar.url}}" ng-if="avatar.url" alt="avatar" class="profilePhoto img-rounded"  >    
+        <img ng-src="{{avatar.thumbUrl}}" ng-if="avatar.thumbUrl" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
     </div>
       <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
@@ -50,7 +50,7 @@
           <div class="row no-gutter">
             <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in gallery | limitTo : 6 : 0">
               <a ng-click="openGallery($index)" class="galleryLink">
-                <img class="galleryItem" ng-src="{{gal.url}}" ng-if="gal.url" alt="gallery item {{$index}}">
+                <img class="galleryItem" ng-src="{{gal.thumbUrl}}" ng-if="gal.thumbUrl" alt="gallery item {{$index}}">
               </a>
             </div>
           </div>

@@ -8,7 +8,7 @@
             		<input type="email" name="email" class="email_input" ng-model="user.email" ng-required="true">
             		<label class="password">Пароль:</label>
             		<input type="password" name="password" class="password_input" ng-model="user.password" ng-required="true">
-					<a ui-sref="mainContainer.mainPage" class="header_btn"><button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid">Увійти</button></a>
+					      <a ui-sref="mainContainer.mainPage" class="header_btn"><button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid">Увійти</button></a>
             	</div>
             	<div class="d33" ng-show="headerEnter.email.$invalid && headerEnter.email.$touched || headerEnter.password.$invalid && headerEnter.password.$touched">Не правильний е-мейл або пароль</div>
             </div>

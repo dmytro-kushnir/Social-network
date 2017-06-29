@@ -13,28 +13,24 @@ angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Li
         'senderUrl': '/src/img/users/user1/avatar.jpg',
         'recieverUrl': '/src/img/users/user4/d93361ffaed234.jpg',
         'date': '15.12.12 15:38',
-        'posts': {
-            'post1': {
+        'posts': [ 
+             {
                 'postSenderUrl': '/src/img/users/user2/hqdefault.jpg',
                 'postImage': '/src/img/gallery/10.jpg',
                 'postSenderName': 'Таісія Повалій',
-                'postContent': {
-
-                },
+                'postContent': '',
                 'postDate': '01.05.11 01:20',
                 'postLikes': 23
             },
-            'post2': {
+             {
                 'postSenderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
                 'postImage': '/src/img/gallery/9.jpg',
                 'postSenderName': 'Діма Монатік',
-                'postContent': {
-
-                },
+                'postContent': '',
                 'postDate': '01.07.17 15:23',
                 'postLikes': 2322
             }
-        }
+        ]
     }];
     $scope.gallery = [{
             'url': '/src/img/gallery/1.jpg',
@@ -43,28 +39,24 @@ angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Li
             'senderUrl': '/src/img/users/user1/avatar.jpg',
             'recieverUrl': '/src/img/users/user4/d93361ffaed234.jpg',
             'date': '15.12.12 15:38',
-            'posts': {
-                'post1': {
+            'posts': [
+                     {
                     'postSenderUrl': '/src/img/users/user2/hqdefault.jpg',
                     'postImage': '/src/img/gallery/8.jpg',
                     'postSenderName': 'Таісія Повалій',
-                    'postContent': {
-
-                    },
+                    'postContent': '',
                     'postDate': '01.05.11 01:20',
                     'postLikes': 23
                 },
-                'post2': {
+                 {
                     'postSenderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
                     'postImage': '/src/img/gallery/7.jpg',
                     'postSenderName': 'Діма Монатік',
-                    'postContent': {
-
-                    },
+                   'postContent': '',
                     'postDate': '01.07.17 15:23',
                     'postLikes': 2322
                 }
-            }
+            ]
         },
         {
             'url': '/src/img/gallery/2.jpg',
@@ -73,28 +65,24 @@ angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Li
             'senderUrl': '/src/img/users/user2/hqdefault.jpg',
             'recieverUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
             'date': '11.13.02 12:45',
-            'posts': {
-                'post1': {
+            'posts': [
+                     {
                     'postSenderUrl': '/src/img/users/user1/avatar.jpg',
                     'postImage': '/src/img/gallery/6.jpg',
                     'postSenderName': 'Трініті',
-                    'postContent': {
-
-                    },
+                   'postContent': '',
                     'postDate': '06.09.12 04:21',
                     'postLikes': 15
                 },
-                'post2': {
+                 {
                     'postSenderUrl': '/src/img/users/user1/avatar.jpg',
                     'postImage': '/src/img/gallery/5.jpg',
                     'postSenderName': 'Гендальф Сірий',
-                    'postContent': {
-
-                    },
+                    'postContent': '',
                     'postDate': '06.01.37 14:53',
                     'postLikes': 100
                 }
-            }
+            ]
         },
         {
             'url': '/src/img/gallery/3.jpg',
@@ -103,48 +91,196 @@ angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Li
             'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
             'recieverUrl': '/src/img/users/user1/avatar.jpg',
             'date': '11.12.13 15:11',
-            'posts': {
-                'post1': {
+            'posts': [
+                    {
                     'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
                     'postImage': '/src/img/gallery/5.jpg',
                     'postSenderName': 'Сем Уітвікі',
-                    'postContent': {
-
-                    },
+                    'postContent': '',
                     'postDate': '11.04.06 23:2',
                     'postLikes': 1
-                }
-            }
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/4.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/5.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/5.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/3.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/6.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/1.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/7.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/2.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/8.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/8.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/9.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/6.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/10.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/4.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/11.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/2.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/12.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/12.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         },
         {
             'url': '/src/img/gallery/13.jpg',
+            'likes': 1000,
+            'senderName': 'Містер Фродо',
+            'senderUrl': '/src/img/users/user3/Rachel_McAdams_5.jpg',
+            'recieverUrl': '/src/img/users/user1/avatar.jpg',
+            'date': '11.12.13 15:11',
+            'posts': [
+                    {
+                    'postSenderUrl': '/src/img/users/user4/d93361ffaed234.jpg',
+                    'postImage': '/src/img/gallery/11.jpg',
+                    'postSenderName': 'Сем Уітвікі',
+                    'postContent': '',
+                    'postDate': '11.04.06 23:2',
+                    'postLikes': 1
+                   }
+            ]
         }
 
     ];
@@ -169,3 +305,4 @@ angular.module("socialNetwork").controller('ModalCtrl', function ($scope) {
         $scope[class1] = !$scope[class1];
     };
 });
+

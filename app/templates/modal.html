@@ -1,7 +1,3 @@
-
-<!--<section class="modal fade" id="image-modal" tabindex="-1" role="dialog" >-->
-    <!--<div class="modal-dialog modal-lg " >-->
-        <!--<div class="modal-content">-->
             <div  ng-controller="ModalCtrl as modal">
        
             <div class="modal-body" ng-swipe-right="Lightbox.prevImage()" ng-swipe-left="Lightbox.nextImage()">
@@ -32,28 +28,22 @@
                                     <p class="modalLikeText">Мені подобається<span>{{Lightbox.image.likes}}</span></p>
                                 </div>
                             </article>
-                            <article class="modalPost">
+
+
+                            <article class="modalPost"  ng-repeat="post in Lightbox.image.posts">
                                 <img class="modalSenderPhoto modalOtherUserPhotoPost"
-                                    lightbox-src="{{Lightbox.image.posts.post1.postSenderUrl}}" alt="image "{{Lightbox.index}} />
-                                <h5 class="modalPostUser">{{Lightbox.image.posts.post1.postSenderName}}</h5>
+                                    lightbox-src="{{post.postSenderUrl}}" alt="image "{{Lightbox.index}} />
+                                <h5 class="modalPostUser">{{post.postSenderName}}</h5>
                                 <figure class="modalCancel pull-right"></figure>
-                                <a class="galleryLinkdddddddddddddddddddddddd">
+                                <a>
                                     <img class=" modalPhotoPost" 
-                                    lightbox-src="{{Lightbox.image.posts.post1.postImage}}" alt="image "{{Lightbox.index}}></a>
-                                <p class="modalPostDate">{{Lightbox.image.image.posts.post1.postDate}}</p>
-                                <figure class="modalHeart modalHeartComm pull-right"><span>{{Lightbox.image.posts.post1.postLikes}}</span></figure>
+                                    lightbox-src="{{post.postImage}}" alt="image "{{Lightbox.index}}></a>
+                                <p class="modalPostDate">{{post.postDate}}</p>
+                                <figure class="modalHeart modalHeartComm pull-right"><span>{{post.postLikes}}</span></figure>
                             </article>
-                            <article class="modalPost">
-                                <img class="modalSenderPhoto modalOtherUserPhotoPost" 
-                                    lightbox-src="{{Lightbox.image.posts.post2.postSenderUrl}}" alt="image "{{Lightbox.index}}/>
-                                <h5 class="modalPostUser">{{Lightbox.image.posts.post2.postSenderName}}</h5>
-                                <figure class="modalCancel pull-right"></figure>
-                                <a class="galleryLinkdddddddddddddddddddddddd">
-                                    <img class=" modalPhotoPost"
-                                     lightbox-src="{{Lightbox.image.posts.post2.postImage}}" alt="imagemage "{{Lightbox.index}}></a>
-                                <p class="modalPostDate">{{Lightbox.image.posts.post2.postDate}}</p>
-                                <figure class="modalHeart modalHeartComm pull-right"><span>{{Lightbox.image.posts.post2.postLikes}}</span></figure>
-                            </article>
+                            
+
+                            
                             <textarea class="modalTextArea" ng-class="{'special' : modalTextArea}"></textarea>
                             <img class="otherUserPhoto modalOtherUserPhotoComment pull-left"
                                     lightbox-src="{{Lightbox.image.senderUrl}}" alt="image "{{Lightbox.index}} />
@@ -114,7 +104,4 @@
                     </div>
                 </div>
             </div>
-        <!--</div>-->
 </div>
-    <!--</div>-->
-<!--</section>-->

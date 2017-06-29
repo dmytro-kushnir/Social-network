@@ -252,7 +252,7 @@ body {
 
 .userMainBody {
     min-height: 880px;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 }
 
 

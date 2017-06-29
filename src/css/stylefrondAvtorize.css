@@ -3,8 +3,8 @@
     src: url("./fonts/HelveticaBlack/HelveticaBlack.ttf");
 }
 /*header*/
-input[disabled="disabled"]{
-	opacity: 0.4;
+button[disabled="disabled"]{
+	opacity: 0.5;
 	cursor: not-allowed !important;
 }
 .header{
@@ -80,7 +80,7 @@ input[disabled="disabled"]{
 }
 .error{
 	color: red;
-	margin-top: 0px;
+	margin: 0 0 5px;
 }
 .registration{
 	font-family: Helvetica;
@@ -103,6 +103,7 @@ input[disabled="disabled"]{
     margin: 0 0 10px 0;
 }
 .partOfForm{
+	font-family: Helvetica, Arial;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -112,7 +113,7 @@ input[disabled="disabled"]{
 }
 .inputsPartOfForm{
     margin: 5px 0;
-	height: 25px;
+	height: 30px;
 }
 .form_button, .mainenter_button{
     margin: 5px 0 10px 0;
@@ -134,7 +135,7 @@ input[disabled="disabled"]{
     height: 50px; 
     color: #fff;
     text-align: center;
-    padding: 25px 0 0;
+    padding: 15px 0 0;
 }
 .footer_text{
     margin: 0;
@@ -146,9 +147,9 @@ input[disabled="disabled"]{
 	.d33 {
 		display: block;
 		color: red;
-		width: 365px; 
-		height: 20px; 
-		margin-left: 66px;
+		width: 379px; 
+		height: 40px; 
+		margin-left: 60px;
 		margin-top: 15px;
 		background: #ffffff;
 		position: relative;
@@ -183,18 +184,25 @@ input[disabled="disabled"]{
     }
     .header_logo{
         width: 125px;
-        margin-left: 20px;
+        margin-left: 70px;
         height: 30px;
     }
     .header_enter{
+		font-family: Helvetica, Arial;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         color: white;
         height: 30px;
         width: 600px;
-        margin: 10px 10px 0;
+        margin: 5px 10px 0;
     }
+	.partOfForm_label{
+		margin-bottom: 0;
+	}
+	.password_input, .email_input{
+		color: black;
+	}
     .main{
         padding: 50px 0 50px;
         background: #c3cbe0;
@@ -221,7 +229,7 @@ input[disabled="disabled"]{
     }
     .partOfForm{
         margin: 20px auto 0;
-        width: 375px;
+        width: 365px;
         /*height: 275px;*/
     }
     
@@ -247,7 +255,7 @@ input[disabled="disabled"]{
     .header_logo{
         width: auto;
         height: 30px;
-        /*margin: 8px 0 0 150px;*/
+        margin: 10px 0 0 150px;
         }
         .navbar-brand{
     width: 125px;

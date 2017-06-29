@@ -198,6 +198,7 @@ input[disabled="disabled"]{
     .main{
         padding: 50px 0 50px;
         background: #c3cbe0;
+        
     }
     .main_enter{
         display: none;

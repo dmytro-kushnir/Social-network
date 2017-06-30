@@ -141,6 +141,11 @@
 .modalPost {
   border-bottom: 1px solid gray;
 }
+.postText{
+  padding: 5px;
+  margin-left: 60px;
+  font-size: 16px;
+}
 
 .modalOtherUserPhotoPost {
   object-fit: cover;

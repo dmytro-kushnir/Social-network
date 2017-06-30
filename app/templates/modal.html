@@ -25,28 +25,29 @@
                             <article class="modalLike">
                                 <div>
                                     <figure class="modalHeart"></figure>
-                                    <p class="modalLikeText">Мені подобається<span>{{Lightbox.image.likes}}</span></p>
+                                    <p class="modalLikeText">Мені подобається<span ng-hide="Lightbox.image.likes==0">{{Lightbox.image.likes}}</span></p>
                                 </div>
                             </article>
 
 
                             <article class="modalPost"  ng-repeat="post in Lightbox.image.posts">
                                 <img class="modalSenderPhoto modalOtherUserPhotoPost"
-                                    lightbox-src="{{post.postSenderUrl}}" alt="image "{{Lightbox.index}} />
+                                    lightbox-src="{{post.postSenderUrl}}" alt="post user" />
                                 <h5 class="modalPostUser">{{post.postSenderName}}</h5>
                                 <figure class="modalCancel pull-right"></figure>
                                 <a>
                                     <img class=" modalPhotoPost" 
-                                    lightbox-src="{{post.postImage}}" alt="image "{{Lightbox.index}}></a>
+                                    lightbox-src="{{post.postImage}}" ng-hide="post.postImage==''" alt="post image"></a>
+                                    <p class="postText">{{post.postContent}}</p>
                                 <p class="modalPostDate">{{post.postDate}}</p>
-                                <figure class="modalHeart modalHeartComm pull-right"><span>{{post.postLikes}}</span></figure>
+                                <figure class="modalHeart modalHeartComm pull-right" ><span ng-hide="post.postLikes==0">{{post.postLikes}}</span></figure>
                             </article>
                             
 
                             
                             <textarea class="modalTextArea" ng-class="{'special' : modalTextArea}"></textarea>
                             <img class="otherUserPhoto modalOtherUserPhotoComment pull-left"
-                                    lightbox-src="{{Lightbox.image.senderUrl}}" alt="image "{{Lightbox.index}} />
+                                    lightbox-src="{{Lightbox.image.senderUrl}}" alt="comment user" />
                         </div>
                     </div>
                 </div>

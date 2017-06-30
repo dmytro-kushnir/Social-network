@@ -1,4 +1,4 @@
-var app = angular.module("socialNetwork");
+//var app = angular.module("socialNetwork");
 
 app.controller("singUpController", function($scope){
 	$scope.register = function(newUser){

@@ -9,6 +9,7 @@
         'ui.bootstrap',
         'bootstrapLightbox',
         'ngTouch',
+        'angular-carousel',
         'akoenig.deckgrid'
         ]);
     

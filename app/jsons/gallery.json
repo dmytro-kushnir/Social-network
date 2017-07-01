@@ -1,4 +1,5 @@
 [{
+        "id" : 1,
         "url": "/src/img/gallery/1.jpg",
         "likes": 1,
         "senderName": "Містер Сміт",
@@ -24,6 +25,7 @@
         ]
     },
     {
+        "id" : 2,
         "url": "/src/img/gallery/2.jpg",
         "likes": 5,
         "senderName": "Містер Андерсон",
@@ -49,6 +51,7 @@
         ]
     },
     {
+        "id" : 3,
         "url": "/src/img/gallery/3.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -65,6 +68,7 @@
         }]
     },
     {
+        "id" : 4,
         "url": "/src/img/gallery/4.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -81,6 +85,7 @@
         }]
     },
     {
+        "id" : 5,
         "url": "/src/img/gallery/5.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -97,6 +102,7 @@
         }]
     },
     {
+        "id" : 6,
         "url": "/src/img/gallery/6.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -113,6 +119,7 @@
         }]
     },
     {
+        "id" : 7,
         "url": "/src/img/gallery/7.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -129,6 +136,7 @@
         }]
     },
     {
+        "id" : 8,
         "url": "/src/img/gallery/8.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -145,6 +153,7 @@
         }]
     },
     {
+        "id" : 9,
         "url": "/src/img/gallery/9.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -161,6 +170,7 @@
         }]
     },
     {
+        "id" : 10,
         "url": "/src/img/gallery/10.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -177,6 +187,7 @@
         }]
     },
     {
+        "id" : 11,
         "url": "/src/img/gallery/11.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -193,6 +204,7 @@
         }]
     },
     {
+        "id" : 12,
         "url": "/src/img/gallery/12.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",
@@ -209,6 +221,7 @@
         }]
     },
     {
+        "id" : 13,
         "url": "/src/img/gallery/13.jpg",
         "likes": 1000,
         "senderName": "Містер Фродо",

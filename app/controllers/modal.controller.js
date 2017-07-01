@@ -31,6 +31,7 @@ angular.module("socialNetwork").controller('OpenModalCtrl', function ($scope, Li
     $scope.openGallery = function (index) {
         Lightbox.openModal($scope.gallery, index);
     };
+    
 });
 angular.module('socialNetwork').config(function (LightboxProvider) {
     LightboxProvider.templateUrl = '/app/templates/modal.html';

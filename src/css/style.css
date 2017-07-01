@@ -28,7 +28,6 @@ body {
 .classWithPad {
     margin: -5px;
     background-color: white;
-   
     /*padding:1px; *
 /* Navigation header START*/
 }
@@ -54,7 +53,7 @@ body {
     font-family: Helvetica !important;
     color: white !important;
     background: rgb(169, 109, 163)!important;
-       border: none !important;
+    border: none !important;
     border-radius: 0 !important;
     text-shadow: none !important;
     /*font-size: 12px !important;*/
@@ -211,30 +210,57 @@ body {
     padding-left: 0;
 }
 
-.carouselItem{
+.carouselItem {
     background-size: cover;
     height: 220px;
     width: auto;
 }
-.carouselWrapper{
-    width: 40%;
+
+.carouselWrapper {
+    /*width: 40%;*/
     height: 220px;
-
 }
+
+
+
 /*tablet*/
-@media (max-width: 767px) {
-    .carouselWrapper{
-          margin-left: 50px;
-    }
-}
-/*extraSmall*/
 
-@media (max-width: 460px) {
-    .carouselWrapper{
-    width: 60%;
-     margin-left: 0px;
+@media (max-width: 767px) {
+    .carouselWrapper {
+        /*margin-left: 50px;*/
+    }
+    ul[rn-carousel]>li { 
+        left: 10em !important;
+        right: 10em !important;
+        width: auto !important;
+    }
+    .carouselWrapperColumn{
+        /*padding-left: 30px !important;*/
+        /*padding-right: 45px !important;*/
     }
 }
+@media  (min-width: 768px) and (max-width: 992px){
+     ul[rn-carousel]>li { 
+        left: 10em !important;
+        width: auto !important;
+        right: 10em !important;
+    }
+     .carouselWrapperColumn{
+        /*padding-left: 20px !important;*/
+        /*padding-right: 20px !important;*/
+    }
+}
+
+/*extraSmall*/
+@media (max-width: 560px) {
+    ul[rn-carousel]>li {
+        left: 6em !important;
+        width: auto !important;
+        right: 7em !important;
+      
+    }
+}
+
 
 /*left part END*/
 
@@ -361,13 +387,12 @@ body {
 }
 
 .friendsAndPhoto>div>p {
-  
     cursor: pointer;
     width: 20px;
 }
 
 .friendsAndPhoto>div {
-      margin-right:50px;
+    margin-right: 50px;
     display: flex;
     justify-content: flex-start;
     padding: 0 !important;
@@ -390,13 +415,6 @@ body {
     margin-left: 70px;
 }
 
-.carouselItem {
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-    cursor: pointer;
-    margin: 5px;
-}
 
 #myCarousel {
     display: none;
@@ -429,7 +447,6 @@ body {
 
 /*POST START*/
 
-
 .posters {
     background-color: #f2f2f2;
     margin: 10px;
@@ -446,8 +463,6 @@ body {
     margin: 0 !important;
 }
 
-
-
 .otherUserPhoto {
     background-image: url("../img/users/user1/avatar.jpg");
     background-size: cover;
@@ -463,11 +478,11 @@ body {
     /*background-image: url("../img/users/user1/photo/photo.jpg");*/
     /*background-size: cover;*/
     object-fit: cover;
-    cursor: pointer;    
+    cursor: pointer;
     width: 240px;
     max-width: 100%;
     height: auto;
-    display:block;
+    display: block;
     padding: 5px;
 }
 
@@ -477,14 +492,17 @@ body {
 
 /*Main body END*/
 
-.headerName{
+.headerName {
     display: none;
-      top: -35px;
-      left: 18px;
+    top: -35px;
+    left: 18px;
 }
-.arrowLeftMobile{
+
+.arrowLeftMobile {
     /*display: none;*/
 }
-.navbar-brand, .panel-primary{
+
+.navbar-brand,
+.panel-primary {
     display: block !important;
 }

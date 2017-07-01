@@ -1,4 +1,3 @@
-
 // open modal dialog
 app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     'use strict';
@@ -11,7 +10,9 @@ app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     });
 
     JsonLoad.getGallery().then(function (res) {
+        $scope.gallery = [];
         $scope.gallery = res.data;
+        console.log($scope.gallery);
     });
 
     $scope.openAvatar = function (index) {
@@ -20,7 +21,6 @@ app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     $scope.openGallery = function (index) {
         Lightbox.openModal($scope.gallery, index);
     };
-    
 });
 angular.module('socialNetwork').config(function (LightboxProvider) {
     LightboxProvider.templateUrl = '/app/templates/modal.html';

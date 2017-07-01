@@ -91,57 +91,58 @@
           </a>
         </div>
       </article>
-
-      <div class="col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
-        <ul rn-carousel id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
-          <li ng-repeat="gal in gallery track by gal.id" ng-class="'id-' + gal.id">
-            <div ng-style="{'background-image': 'url(' + gal.url + ')'}" class="carouselItem">{{ gal.id}}/{{gallery.length}}</div>
-          </li>
-        </ul>
+      <!---->
+      <div class="row">
+        <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
+          <ul  rn-carousel id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
+            <li ng-click="openGallery(gal.id-1)"  ng-repeat="gal in gallery track by gal.id" ng-class="'id-' + gal.id">
+              <div ng-style="{'background-image': 'url(' + gal.url + ')'}" class="carouselItem">{{ gal.id}}/{{gallery.length}}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--write letter-->
+      <div class="row " style="margin-bottom: 30px !important; ">
+        <form class="textareaMainPage" role="form " style=" margin:10px 50px;">
+          <div class="form-group">
+            <textarea placeholder="Що у вас нового?" class="form-control " rows="5 " id="comment "></textarea>
+            <figure class="commentImage pull-left"></figure>
+            <button type="button " class="btn btn-default   post pull-right ">Відправити</button>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="posters" style=" margin:10px 50px; ">
+          <div>
+            <figure class="otherUserPhoto"></figure>
+            <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
+            <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
+            <a class='label label-danger'>змінити</a>
+            <a class='label label-primary' id='remove'>видалити</a>
+          </div>
+          <p style="font-size: 14px;">
+            Я думаю тобі сподобається мій новий фільм ;-)
+            <br><br>
+            <a href="https://my-hit.org/film/415353" target="_blank"> https://my-hit.org/film/415353/</a>
+          </p>
+        </div>
+      </div>
+      <!---->
+      <div class="row">
+        <div class="posters" style=" margin:10px 50px; ">
+          <div>
+            <figure class="otherUserPhoto"></figure>
+            <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
+            <h5><span class='glyphicon glyphicon-time'></span>10.05.17 15:11</h5>
+            <a class='label label-danger'>змінити</a>
+            <a class='label label-primary' id='remove'>видалити</a>
+          </div>
+          <p style="font-size: 14px;">Докторе, скидую обіцяне фото :-)
+            <br><br>
+            <a class="galleryLink"><img class="otherUserPhotoComment" src="src/img/users/user1/photo/photo.jpg" alt="..."></a>
+          </p>
+        </div>
       </div>
     </div>
-    <!--write letter-->
-    <div class="row " style="margin-bottom: 30px !important; ">
-      <form class="textareaMainPage" role="form " style=" margin:10px 50px;">
-        <div class="form-group">
-          <textarea placeholder="Що у вас нового?" class="form-control " rows="5 " id="comment "></textarea>
-          <figure class="commentImage pull-left"></figure>
-          <button type="button " class="btn btn-default   post pull-right ">Відправити</button>
-        </div>
-      </form>
-    </div>
-    <div class="row">
-      <div class="posters" style=" margin:10px 50px; ">
-        <div>
-          <figure class="otherUserPhoto"></figure>
-          <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
-          <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
-          <a class='label label-danger'>змінити</a>
-          <a class='label label-primary' id='remove'>видалити</a>
-        </div>
-        <p style="font-size: 14px;">
-          Я думаю тобі сподобається мій новий фільм ;-)
-          <br><br>
-          <a href="https://my-hit.org/film/415353" target="_blank"> https://my-hit.org/film/415353/</a>
-        </p>
-      </div>
-    </div>
-    <!---->
-    <div class="row">
-      <div class="posters" style=" margin:10px 50px; ">
-        <div>
-          <figure class="otherUserPhoto"></figure>
-          <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
-          <h5><span class='glyphicon glyphicon-time'></span>10.05.17 15:11</h5>
-          <a class='label label-danger'>змінити</a>
-          <a class='label label-primary' id='remove'>видалити</a>
-        </div>
-        <p style="font-size: 14px;">Докторе, скидую обіцяне фото :-)
-          <br><br>
-          <a class="galleryLink"><img class="otherUserPhotoComment" src="src/img/users/user1/photo/photo.jpg" alt="..."></a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <!--Right part END-->
+    <!--Right part END-->
 </section>

@@ -339,7 +339,7 @@ angular.module('akoenig.deckgrid').factory('Deckgrid', [
                 layout;
                 
    if (!content || content === '') {
-                var width = $(window).width();
+                var width = $window.innerWidth;
                 if (width > 1199) {
                     content = '5 .column.column-1-5';
                 } else if (width > 991) {

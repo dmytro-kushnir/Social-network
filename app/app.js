@@ -9,6 +9,7 @@
         'ui.bootstrap',
         'bootstrapLightbox',
         'ngTouch',
+        'angular-carousel',
         'akoenig.deckgrid'
         ]);
     
@@ -17,5 +18,19 @@
     });
 
 
-    
+    //factory for json load
+app.factory('JsonLoad', function ($http) {
+    return {
+        getGallery: function () {
+            return $http.get('/app/jsons/gallery.json');
+        },
+        getAvatars: function () {
+            return $http.get('/app/jsons/avatars.json');
+        },
+        getUsers: function(){
+            return $http.get('/app/jsons/users.json');
+        }
+    };
+});
+
 })();

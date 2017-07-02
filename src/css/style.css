@@ -24,6 +24,10 @@ body {
 .custom-container {
     margin-top: 65px;
 }
+.custom-container > .row{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
 
 .classWithPad {
     margin: -5px;
@@ -221,14 +225,15 @@ body {
     height: 220px;
 }
 
-
+  ul[rn-carousel]{
+        overflow: hidden !important;
+    }
 
 /*tablet*/
 
 @media (max-width: 767px) {
-    .carouselWrapper {
-        /*margin-left: 50px;*/
-    }
+   
+  
     ul[rn-carousel]>li { 
         left: 10em !important;
         right: 10em !important;
@@ -254,10 +259,20 @@ body {
 /*extraSmall*/
 @media (max-width: 560px) {
     ul[rn-carousel]>li {
-        left: 6em !important;
+        left: 4em !important;
         width: auto !important;
-        right: 7em !important;
+        right: 4em !important;
       
+    }
+     .carouselWrapper {
+        height: 155px;
+    }
+    .carouselItem{
+        height: 155px;
+    }
+    .restPage{
+        margin-left: 5px !important;
+        margin-right: 5px !important;
     }
 }
 
@@ -446,6 +461,22 @@ body {
 
 
 /*POST START*/
+@media(min-width: 768px){
+   .textareaMainPage{
+    margin:10px 50px;
+} 
+.posters{
+    margin:10px 50px !important; 
+}
+}
+@media (max-width: 767px) {
+.textareaMainPage{
+    margin:10px 25px;
+}
+.posters{
+    margin:10px 25px !important; 
+}
+}
 
 .posters {
     background-color: #f2f2f2;
@@ -495,7 +526,7 @@ body {
 .headerName {
     display: none;
     top: -35px;
-    left: 18px;
+    left: -4px;
 }
 
 .arrowLeftMobile {
@@ -505,4 +536,9 @@ body {
 .navbar-brand,
 .panel-primary {
     display: block !important;
+}
+
+.row{
+    /*margin-left: 5px !important;
+    margin-right: 5px !important;*/
 }

@@ -269,7 +269,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
                             transitionDuration: parseInt(iAttributes.rnCarouselDuration, 10) || 300,
                             isSequential: true,
                             autoSlideDuration: 3,
-                            bufferSize: 3,
+                            bufferSize: 5,
                             /* in container % how much we need to drag to trigger the slide change */
                             moveTreshold: 0.1,
                             defaultIndex: 0

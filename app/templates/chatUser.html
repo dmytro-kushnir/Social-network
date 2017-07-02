@@ -88,7 +88,8 @@
     </ul>
     </div>
 
-<div class="panel-footer">
+<div style="padding-bottom: 20px;" ng-controller="chatUserCtrl" class="panel-footer" 
+        ng-class="tabletMode ? 'navbar-fixed-bottom' : '' ">
         <figure  class="addFileChat"></figure>
        <figure   class="chatGalleryIco"></figure>
         <textarea type="text" msd-elastic ng-model="foo" class="form-control inputdefault chatInput" 

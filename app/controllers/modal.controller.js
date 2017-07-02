@@ -12,6 +12,7 @@ app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     JsonLoad.getGallery().then(function (res) {
         $scope.gallery = [];
         $scope.gallery = res.data;
+        $scope.carouselIndex = 1;
         console.log($scope.gallery);
     });
 

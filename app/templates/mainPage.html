@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/src/css/mainPageAdditional.css">
 <!--Background-->
 <section class="Background row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -95,7 +96,7 @@
       <!---->
       <div class="row">
         <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
-          <ul  rn-carousel id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
+          <ul  rn-carousel rn-carousel-index="carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
             <li ng-click="openGallery(gal.id-1)"  ng-repeat="gal in gallery track by gal.id" ng-class="'id-' + gal.id">
               <div ng-style="{'background-image': 'url(' + gal.url + ')'}" class="carouselItem">{{ gal.id}}/{{gallery.length}}</div>
             </li>

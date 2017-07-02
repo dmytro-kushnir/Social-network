@@ -381,6 +381,7 @@ body {
     height: 200px;
     width: 200px;
     margin-top: -40px;
+     margin-left: 15px;
     border-radius: 0px !important;
     cursor: pointer;
 }
@@ -470,11 +471,21 @@ body {
 }
 }
 @media (max-width: 767px) {
+
 .textareaMainPage{
-    margin:10px 25px;
+    margin:10px 50px;
 }
 .posters{
-    margin:10px 25px !important; 
+    margin:10px 50px !important; 
+}
+}
+@media (max-width: 460px) {
+    
+.textareaMainPage{
+    margin:10px 50px;
+}
+.posters{
+    margin:10px 15px !important; 
 }
 }
 
@@ -538,7 +549,3 @@ body {
     display: block !important;
 }
 
-.row{
-    /*margin-left: 5px !important;
-    margin-right: 5px !important;*/
-}

@@ -20,6 +20,7 @@
   }
   .profilePhoto {
     margin-top: 20px;
+    margin-left: 15px;
     height: 150px;
     width: 150px;
   }
@@ -173,6 +174,10 @@
   }
 }
 @media (max-width: 460px) {
+  .mainRouter {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
   .rightChat {
     margin-left: 30px;
   }

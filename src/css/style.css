@@ -188,7 +188,7 @@ body {
 
 .gallery {
     display: flex;
-    margin-left: 20px;
+    margin-left: 30px;
     flex-direction: column;
     width: 300px;
 }

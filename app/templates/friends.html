@@ -1,13 +1,13 @@
      <!--friends part Start-->
-      
-        <div class="friends">
-          <div class="friendPhoto"></div>
+      <div class="partOfFriends" ng-app="socialNetwork" ng-controller="FriendsCtrl as friends"> 
+        <div class="friends" ng-repeat="friend in friends">
+          <img class="friendPhoto" src="{{friend.foto}}">
           <div class="aboutFriend">
           	<div class="firstSecondName">
-          		<span class="friendFirstName">Дженніфер</span>
-          		<span class="friendSecondName">Лоуренс</span>
+          		<span class="friendFirstName">{{friend.firstname}}</span>
+          		<span class="friendSecondName">{{friend.secondname}}</span>
           	</div>
-              <p class="countFriends">123<span class="pFriend">друзів</span></p>
+              <p class="countFriends">{{friend.countFriends}}<span class="pFriend">друзів</span></p>
           </div>
            <div class="icons">
             <a ui-sref="mainContainer.chatUser" class="icon"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
@@ -18,77 +18,5 @@
             <button type="button" class="del">Видалити з друзів</button>
           </div>
         </div>
-        <div class="friends">
-          <div class="friendPhoto"></div>
-          <div class="aboutFriend">
-          	<div class="firstSecondName">
-          		<span class="friendFirstName">Дженніфер</span>
-          		<span class="friendSecondName">Лоуренс</span>
-          	</div>
-              <p class="countFriends">123<span class="pFriend">друзів</span></p>
-          </div>
-           <div class="icons">
-            <a ui-sref="mainContainer.chatUser" class="icon"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
-          	<p><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></p>
-          </div>
-          <div class="buttons">
-            <a ui-sref="mainContainer.chatUser"><button type="button" class="write">Написати повідомлення</button></a>
-            <button type="button" class="del">Видалити з друзів</button>
-          </div>
         </div>
-        <div class="friends">
-          <div class="friendPhoto"></div>
-          <div class="aboutFriend">
-          	<div class="firstSecondName">
-          		<span class="friendFirstName">Дженніфер</span>
-          		<span class="friendSecondName">Лоуренс</span>
-          	</div>
-              <p class="countFriends">123<span class="pFriend">друзів</span></p>
-          </div>
-           <div class="icons">
-            <a ui-sref="mainContainer.chatUser" class="icon"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
-          	<p><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></p>
-          </div>
-          <div class="buttons">
-            <a ui-sref="mainContainer.chatUser"><button type="button" class="write">Написати повідомлення</button></a>
-            <button type="button" class="del">Видалити з друзів</button>
-          </div>
-        </div>
-        <div class="friends">
-          <div class="friendPhoto"></div>
-          <div class="aboutFriend">
-          	<div class="firstSecondName">
-          		<span class="friendFirstName">Дженніфер</span>
-          		<span class="friendSecondName">Лоуренс</span>
-          	</div>
-              <p class="countFriends">123<span class="pFriend">друзів</span></p>
-          </div>
-          <div class="icons">
-            <a ui-sref="mainContainer.chatUser" class="icon"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
-          	<p><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></p>
-          </div>
-          <div class="buttons">
-            <a ui-sref="mainContainer.chatUser"><button type="button" class="write">Написати повідомлення</button></a>
-            <button type="button" class="del">Видалити з друзів</button>
-          </div>
-        </div>
-        <div class="friends">
-          <div class="friendPhoto"></div>
-          <div class="aboutFriend">
-          	<div class="firstSecondName">
-          		<span class="friendFirstName">Дженніфер</span>
-          		<span class="friendSecondName">Лоуренс</span>
-          	</div>
-              <p class="countFriends">123<span class="pFriend">друзів</span></p>
-          </div>
-           <div class="icons">
-            <a ui-sref="mainContainer.chatUser" class="icon"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
-          	<p><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></p>
-          </div>
-          <div class="buttons">
-            <a ui-sref="mainContainer.chatUser"><button type="button" class="write">Написати повідомлення</button></a>
-            <button type="button" class="del">Видалити з друзів</button>
-          </div>
-		  </div>
-
-      <!--friends part Start-->
+        

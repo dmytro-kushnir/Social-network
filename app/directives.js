@@ -84,8 +84,8 @@
                             }
                         },
                         resolve: {
-                            'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Доктор Стрендж";
+                            'title': ['$rootScope',  function ($rootScope) {
+                                $rootScope.title = "Моя строінка";
                             }]
                         }
                     })
@@ -139,7 +139,7 @@
                         },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = 'Переписка';
+                                $rootScope.title = $rootScope.chatTitle;
                             }]
                         }
                     });

@@ -1,5 +1,5 @@
 {
-    "id": "1",
+    "id": "100000",
     "firstName": "Doctor",
     "secondName": "Strange",
     "email": "magicBoy@gmail.com",
@@ -65,47 +65,80 @@
         }
     ],
     "backgroundUrl": "/src/img/users/user/backgrounds/bg.jpg",
-    "avatarUrl": "/src/img/avatar.jpg",
+    "avatarUrl": "/src/img//users/user/avatars/avatar.jpg",
     "avatars": [{
-        "url": "/src/img/avatar.jpg",
-        "likes": 1,
-        "senderName": "Містер Андерсон",
-        "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
-        "date": "15.12.12 15:38",
-        "posts": [{
-                "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "",
-                "postSenderName": "Містер Сміт",
-                "postContent": "Ваш час вийшов містер Андерсон",
-                "postDate": "02.06.12 01:30",
-                "postLikes": 0
+            "url": "/src/img/users/user/avatars/avatar.jpg",
+            "likes": 1,
+            "senderName": "Містер Андерсон",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "date": "15.12.12 15:38",
+            "posts": [{
+                    "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
+                    "postImage": "",
+                    "postSenderName": "Містер Сміт",
+                    "postContent": "Ваш час вийшов містер Андерсон",
+                    "postDate": "02.06.12 01:30",
+                    "postLikes": 0
             },
-            {
-                "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/10.jpg",
-                "postSenderName": "Таісія Повалій",
-                "postContent": "Я буду тебе сниться по ночам..",
-                "postDate": "01.05.11 01:20",
-                "postLikes": 23
+                {
+                    "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
+                    "postImage": "/src/img/users/user/gallery/10.jpg",
+                    "postSenderName": "Таісія Повалій",
+                    "postContent": "Я буду тебе сниться по ночам..",
+                    "postDate": "01.0 .11 01:20",
+                    "postLikes": 23
             },
-            {
-                "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/9.jpg",
-                "postSenderName": "Діма Монатік",
-                "postContent": "привіт",
-                "postDate": "01.07.17 15:23",
-                "postLikes": 2322
+                {
+                    "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
+                    "postImage": "/src/img/users/user/gallery/9.jpg",
+                    "postSenderName": "Діма Монатік",
+                    "postContent": "привіт",
+                    "postDate": "01.07.17 15:23",
+                    "postLikes": 2322
+            }
+        ]
+    },
+        {
+            "url": "/src/img/users/user/avatars/2.jpg",
+            "likes": 1,
+            "senderName": "Містер Андерсон",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "date": "15.12.12 15:38",
+            "posts": [{
+                    "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
+                    "postImage": "",
+                    "postSenderName": "Містер Сміт",
+                    "postContent": "Ваш час вийшов містер Андерсон",
+                    "postDate": "02.06.12 01:30",
+                    "postLikes": 0
+            },
+                {
+                    "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
+                    "postImage": "/src/img/users/user/gallery/10.jpg",
+                    "postSenderName": "Таісія Повалій",
+                    "postContent": "Я буду тебе сниться по ночам..",
+                    "postDate": "01.05.11 01:20",
+                    "postLikes": 23
+            },
+                {
+                    "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
+                    "postImage": "/src/img/users/user/gallery/9.jpg",
+                    "postSenderName": "Діма Монатік",
+                    "postContent": "привіт",
+                    "postDate": "01.07.17 15:23",
+                    "postLikes": 2322
             }
         ]
     }],
     "gallery": [{
             "id": 1,
-            "url": "/src/img/gallery/1.jpg",
+            "url": "/src/img/users/user/gallery/1.jpg",
             "likes": 1,
             "senderName": "Містер Сміт",
-          "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "15.12.12 15:38",
             "posts": [{
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
@@ -117,7 +150,7 @@
                 },
                 {
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                    "postImage": "/src/img/gallery/7.jpg",
+                    "postImage": "/src/img/users/user/gallery/7.jpg",
                     "postSenderName": "Діма Монатік",
                     "postContent": "моя харизма ульот",
                     "postDate": "01.07.17 15:23",
@@ -127,15 +160,15 @@
         },
         {
             "id": 2,
-            "url": "/src/img/gallery/2.jpg",
+            "url": "/src/img/users/user/gallery/2.jpg",
             "likes": 5,
             "senderName": "Містер Андерсон",
-      "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.13.02 12:45",
             "posts": [{
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                    "postImage": "/src/img/gallery/6.jpg",
+                    "postImage": "/src/img/users/user/gallery/6.jpg",
                     "postSenderName": "Трініті",
                     "postContent": "",
                     "postDate": "06.09.12 04:21",
@@ -143,7 +176,7 @@
                 },
                 {
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                    "postImage": "/src/img/gallery/5.jpg",
+                    "postImage": "/src/img/users/user/gallery/5.jpg",
                     "postSenderName": "Гендальф Сірий",
                     "postContent": "тільки істинний чаклун знає де сидить фазан",
                     "postDate": "06.01.37 14:53",
@@ -153,331 +186,335 @@
         },
         {
             "id": 3,
-            "url": "/src/img/gallery/3.jpg",
+            "url": "/src/img/users/user/gallery/3.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-             "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/5.jpg",
+                "postImage": "/src/img/users/user/gallery/5.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "Ваш час прийшов містер Андерсон",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 111
             }]
         },
         {
             "id": 4,
-            "url": "/src/img/gallery/4.jpg",
+            "url": "/src/img/users/user/gallery/4.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-         "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/5.jpg",
+                "postImage": "/src/img/users/user/gallery/5.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "вам мене не перемогти!",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 17
             }]
         },
         {
             "id": 5,
-            "url": "/src/img/gallery/5.jpg",
+            "url": "/src/img/users/user/gallery/5.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-        "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/3.jpg",
+                "postImage": "/src/img/users/user/gallery/3.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 16
             }]
         },
         {
             "id": 6,
-            "url": "/src/img/gallery/6.jpg",
+            "url": "/src/img/users/user/gallery/6.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-          "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/1.jpg",
+                "postImage": "/src/img/users/user/gallery/1.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 14
             }]
         },
         {
             "id": 7,
-            "url": "/src/img/gallery/7.jpg",
+            "url": "/src/img/users/user/gallery/7.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-          "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/2.jpg",
+                "postImage": "/src/img/users/user/gallery/2.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 13
             }]
         },
         {
             "id": 8,
-            "url": "/src/img/gallery/8.jpg",
+            "url": "/src/img/users/user/gallery/8.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-         "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/8.jpg",
+                "postImage": "/src/img/users/user/gallery/8.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 12
             }]
         },
         {
             "id": 9,
-            "url": "/src/img/gallery/9.jpg",
+            "url": "/src/img/users/user/gallery/9.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-           "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/6.jpg",
+                "postImage": "/src/img/users/user/gallery/6.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 10
             }]
         },
         {
             "id": 10,
-            "url": "/src/img/gallery/10.jpg",
+            "url": "/src/img/users/user/gallery/10.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-           "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/4.jpg",
+                "postImage": "/src/img/users/user/gallery/4.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 2
             }]
         },
         {
             "id": 11,
-            "url": "/src/img/gallery/11.jpg",
+            "url": "/src/img/users/user/gallery/11.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-             "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/2.jpg",
+                "postImage": "/src/img/users/user/gallery/2.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 3
             }]
         },
         {
             "id": 12,
-            "url": "/src/img/gallery/12.jpg",
+            "url": "/src/img/users/user/gallery/12.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-         "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/12.jpg",
+                "postImage": "/src/img/users/user/gallery/12.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 4
             }]
         },
         {
             "id": 13,
-            "url": "/src/img/gallery/13.jpg",
+            "url": "/src/img/users/user/gallery/13.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
-              "senderUrl": "/src/img/users/user/chat/sender1.jpg",
-        "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
             "date": "11.12.13 15:11",
             "posts": [{
                 "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
-                "postImage": "/src/img/gallery/11.jpg",
+                "postImage": "/src/img/users/user/gallery/11.jpg",
                 "postSenderName": "Сем Уітвікі",
                 "postContent": "Hey",
                 "postDate": "11.04.06 23:2",
-                "postLikes": 1
+                "postLikes": 5
             }]
         }
 
     ],
     "chat": [{
-            "id":0,
+            "id": 0,
             "sender": "/src/img/users/user/chat/sender1.jpg",
             "lastMsgUrl": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "lastMsgText": "Це просто неймовірно!",
             "senderName": "Нео",
             "date": "Вчора",
-            "leftImage":"/src/img/users/user/chat/sender1.jpg",
-            "rightImage":"/src/img/users/user/chat/lastMsgUrl.jpg",
-            "chatName":"Дженніфер Лоуренс",
-            "messages":[
+            "leftImage": "/src/img/users/user/chat/sender1.jpg",
+            "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
+            "chatName": "Нео",
+            "messages": [
                 {
-                    "data":"Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить",
-                    "time":"12 mins ago"
+                    "data": "Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить",
+                    "time": "12 mins ago"
                 },
                 {
-                    "data":"Це просто неймовріно!",
-                    "time":"10 mins ago"
+                    "data": "Це просто неймовріно!",
+                    "time": "10 mins ago"
                 },
                 {
-                    "data":"Знаєш приспів?",
-                    "time":"8 mins ago"
+                    "data": "Знаєш приспів?",
+                    "time": "8 mins ago"
                 },
                 {
-                    "data":"Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мне след, По которому, я буду лететь. И за руку тебя, мой родной, Заберу я с собой...",
-                    "time":"6 mins ago"
+                    "data": "Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мне след, По которому, я буду лететь. И за руку тебя, мой родной, Заберу я с собой...",
+                    "time": "6 mins ago"
                 }
             ]
         },
         {
-            "id":1,
+            "id": 1,
             "sender": "/src/img/users/user/chat/sender2.jpg",
             "lastMsgUrl": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "lastMsgText": "Це просто неймовірно!",
             "senderName": "Анна Медвідь",
             "date": "Вчора",
-            "leftImage":"/src/img/users/user/chat/sender2.jpg",
-            "rightImage":"/src/img/users/user/chat/lastMsgUrl.jpg",
-            "chatName":"Нео",
-            "messages":[
+            "leftImage": "/src/img/users/user/chat/sender2.jpg",
+            "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
+            "chatName": "Анна Медвідь",
+            "messages": [
                 {
-                    "data":"Я непереможний!",
-                    "time":"12 mins ago"
+                    "data": "Я непереможний!",
+                    "time": "12 mins ago"
                 },
                 {
-                    "data":"Це просто неймовірно!",
-                    "time":"10 mins ago"
+                    "data": "Це просто неймовірно!",
+                    "time": "10 mins ago"
                 }
             ]
 
         },
         {
-            "id":2,
+            "id": 2,
             "sender": "/src/img/users/user/chat/sender3.jpg",
             "lastMsgUrl": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "lastMsgText": "Це просто неймовірно!",
             "senderName": "Дженніфер Лоуренс",
             "date": "17 Кві",
-            "leftImage":"/src/img/users/user/chat/sender3.jpg",
-            "rightImage":"/src/img/users/user/chat/lastMsgUrl.jpg",
-            "chatName":"Анна Медвідь",
-            "messages":[
+            "leftImage": "/src/img/users/user/chat/sender3.jpg",
+            "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
+            "chatName": "Дженніфер Лоуренс",
+            "messages": [
                 {
-                    "data":"",
-                    "time":"12 mins ago"
+                    "data": "",
+                    "time": "12 mins ago"
                 },
                 {
-                    "data":"Це просто неймовріно!",
-                    "time":"10 mins ago"
+                    "data": "Це просто неймовріно!",
+                    "time": "10 mins ago"
                 },
                 {
-                    "data":"Знаєш приспів?",
-                    "time":"8 mins ago"
+                    "data": "Знаєш приспів?",
+                    "time": "8 mins ago"
                 },
                 {
-                    "data":"",
-                    "time":"6 mins ago"
+                    "data": "",
+                    "time": "6 mins ago"
                 }
             ]
 
         },
         {
-            "id":3,
+            "id": 3,
             "sender": "/src/img/users/user/chat/sender4.jpg",
             "lastMsgUrl": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "lastMsgText": "Це просто неймовірно!",
             "senderName": "Кушнір Дмитро",
             "date": "20 Тра",
-            "leftImage":"/src/img/users/user/chat/sender4.jpg",
-            "rightImage":"/src/img/users/user/chat/lastMsgUrl.jpg",
-            "chatName":"Доктор Стрендж",
-            "messages":[
+            "leftImage": "/src/img/users/user/chat/sender4.jpg",
+            "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
+            "chatName": "Кушнір Дмитро",
+            "messages": [
                 {
-                    "data":"Вийшов зайчик погулять",
-                    "time":"12 mins ago"
+                    "data": "Вийшов зайчик погулять",
+                    "time": "12 mins ago"
                 },
                 {
-                    "data":"Це просто неймовріно!",
-                    "time":"10 mins ago"
+                    "data": "Це просто неймовріно!",
+                    "time": "10 mins ago"
                 },
                 {
-                    "data":"В лісі його забули..",
-                    "time":"8 mins ago"
+                    "data": "В лісі його забули..",
+                    "time": "8 mins ago"
                 },
                 {
-                    "data":"от халепа!",
-                    "time":"6 mins ago"
+                    "data": "от халепа!",
+                    "time": "6 mins ago"
                 },
                 {
-                    "data":"лал лала",
-                    "time":"2 mins ago"
+                    "data": "лал лала",
+                    "time": "2 mins ago"
                 }
-                
+
             ]
 
         },
         {
-            "id":4,
+            "id": 4,
             "sender": "/src/img/users/user/chat/sender5.jpg",
             "lastMsgUrl": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "lastMsgText": "Це просто неймовірно!",
             "senderName": "Рейчел МакАдамс",
             "date": "22 Чер",
-            "leftImage":"/src/img/users/user/chat/sender5.jpg",
-            "rightImage":"/src/img/users/user/chat/lastMsgUrl.jpg",
-            "chatName":"Нео",
-            "messages":[
+            "leftImage": "/src/img/users/user/chat/sender5.jpg",
+            "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
+            "chatName": "Рейчел МакАдамс",
+            "messages": [
                 {
-                    "data":"Я хочу быстро качественно и нежно ",
-                    "time":"12 mins ago"
+                    "data": "Добрий день",
+                    "time": "14 mins ago"
                 },
                 {
-                    "data":"Виберіть один з варіантів",
-                    "time":"10 mins ago"
+                    "data": "Я хочу быстро качественно и нежно ",
+                    "time": "12 mins ago"
                 },
                 {
-                    "data":"Тоді нам нема про шо говорити! **плаче**",
-                    "time":"8 mins ago"
+                    "data": "Виберіть один з варіантів",
+                    "time": "10 mins ago"
+                },
+                {
+                    "data": "Тоді нам нема про шо говорити! ** плаче**",
+                    "time": "8 mins ago"
                 }
             ]
 

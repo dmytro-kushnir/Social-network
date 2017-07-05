@@ -1,6 +1,6 @@
 var app = angular.module("Controllers", []);
 
-app.controller('RouterCtrl' , [function(){
+app.controller('RouterCtrl' ,  [ function(){
 
     // console.log(this);
 //    var vm = this;

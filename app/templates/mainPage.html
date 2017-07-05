@@ -27,7 +27,7 @@
 <section class="row restPage" ng-controller="OpenModalCtrl as openModal">
   <!--Left part START-->
   <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
-    <div ng-repeat="avatar in page.avatars">
+    <div ng-repeat="avatar in page.avatars | limitTo : 1 : 0">
       <a class="galleryLink" ng-click="openAvatar($index)">
         <img ng-src="{{avatar.url}}" ng-if="avatar.url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>

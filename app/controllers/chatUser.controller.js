@@ -3,4 +3,5 @@ app.controller("chatUserCtrl",[ '$scope', '$window' , function($scope, $window){
     if(width < 767){
         $scope.tabletMode = true;
     }
+    
 }]);

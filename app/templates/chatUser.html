@@ -1,48 +1,47 @@
 <link rel="stylesheet" href="src/css/chatAdditional.css">
-
+<div ng-controller="chatUserCtrl">
 <div class="panel panel-primary">
     <div class="panel-heading userChatPanel">
         <a ui-sref="mainContainer.chat">
             <figure class="arrowLeft"></figure>
         </a>
-        <a class="userChatName" ui-sref="mainContainer.mainPage">Дженніфер Лоуренс</a>
+        <a class="userChatName" ui-sref="mainContainer.mainPage">{{page.chat[chatId].chatName}}</a>
         <figure class="searchIcon searchIconUserChat"></figure>
     </div>
 </div>
 
-    <div class="panel-body" >
-    <ul class="chat">
+    <div class="panel-body"  >
+    <ul class="chat" data-ng-repeat="chat in page.chat[chatId].messages">
 
-        <li class="rightChat clearfix pull-right">
+        <li class="rightChat clearfix pull-right" ng-if="$even">
             <div class="chat-body bubbleRight ">
                 <p>
-                    Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем
-                    я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить
+                    {{chat.data}}
                 </p>
                 <div class="msgTime">
                     <small class="pull-right ">
-                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                        <span class="glyphicon glyphicon-time"></span>  {{chat.time}}
                     </small>
                 </div>
             </div>
             <span class="chat-img pull-right">
-                <img class="userChatPhoto" src="../../src/img/avatar.jpg" alt="Mine Avatar" />
+                <img class="userChatPhoto" ng-src="{{page.chat[chatId].rightImage}}" alt="Mine Avatar" />
             </span>
         </li>
 
 
-        <li class="leftChat clearfix pull-left">
+        <li class="leftChat clearfix pull-left" ng-if="$odd">
             <span class="chat-img pull-left">
-                <img class="userChatPhoto" src="../../src/img/users/user1/avatar.jpg" alt="User Avatar"/>
+                <img class="userChatPhoto" ng-src="{{page.chat[chatId].leftImage}}" alt="User Avatar"/>
             </span>
             <div class="chat-body bubbleLeft">
 
                 <p>
-                    Це просто неймовріно!
+                      {{chat.data}}
                 </p>
                 <div class="msgTime">
                     <small class="pull-right ">
-                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                        <span class="glyphicon glyphicon-time"></span>{{chat.time}}
                     </small>
                 </div>
             </div>
@@ -50,45 +49,11 @@
 
 
 
-
-        <li class="rightChat clearfix pull-right">
-            <div class="chat-body bubbleRight ">
-                <p>
-                    Знаєш приспів?
-                </p>
-                <div class="msgTime">
-                    <small class="pull-right ">
-                        <span class="glyphicon glyphicon-time"></span>12 mins ago
-                    </small>
-                </div>
-            </div>
-            <span class="chat-img pull-right">
-                <img class="userChatPhoto" src="../../src/img/avatar.jpg" alt="Mine Avatar" />
-            </span>
-        </li>
-
-
-        <li class="leftChat clearfix pull-left">
-            <span class="chat-img pull-left">
-                <img class="userChatPhoto" src="../../src/img/users/user1/avatar.jpg" alt="User Avatar"/>
-            </span>
-            <div class="chat-body bubbleLeft">
-                <p>
-                    Знаю<br> Я хочу улететь, <br> Чтобы высоко и вниз не смотреть,<br> И за руку тебя милый мой,<br> Заберу
-                    я с собой...<br> Ты оставил мне след,<br> По которому, я буду лететь.<br> И за руку тебя, мой родной,<br>                    Заберу я с собой...
-                </p>
-                <div class="msgTime">
-                    <small class="pull-right ">
-                        <span class="glyphicon glyphicon-time"></span>12 mins ago
-                    </small>
-                </div>
-            </div>
-        </li>
 
     </ul>
     </div>
 
-<div style="padding-bottom: 20px;" ng-controller="chatUserCtrl" class="panel-footer" 
+<div style="padding-bottom: 20px;"  class="panel-footer" 
         ng-class="tabletMode ? 'navbar-fixed-bottom' : '' ">
         <figure  class="addFileChat"></figure>
        <figure   class="chatGalleryIco"></figure>
@@ -98,4 +63,4 @@
         <figure class="sendIcon chatButton" ></figure>
      
 </div>
- 
+ </div>

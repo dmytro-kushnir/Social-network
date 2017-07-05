@@ -12,4 +12,9 @@
         console.log( $scope.page.avatars);
     });
   
+$scope.chatEnter = function(taskId){
+    $scope.chatId = taskId;
+    console.log(`taskId ${$scope.chatId}`);
+    
+  };
 });

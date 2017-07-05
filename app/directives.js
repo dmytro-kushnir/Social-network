@@ -53,7 +53,7 @@
 
 
     // Routing START  
-    var app2 = angular.module("socialNetwork").config(['$stateProvider', '$urlRouterProvider',
+    var app2 = angular.module("socialNetwork").config([ '$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
                 $stateProvider
                     .state("mainContainer", {
@@ -134,11 +134,12 @@
                         views: {
                             'chatUser@mainContainer': {
                                 templateUrl: 'app/templates/chatUser.html',
-                            }
+                            },
+
                         },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Дженніфер Лоуренс";
+                                $rootScope.title = 'Переписка';
                             }]
                         }
                     });

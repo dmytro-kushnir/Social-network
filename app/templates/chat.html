@@ -5,8 +5,8 @@
     <span class="searchText">Пошук</span>
 </div>
 
-    <a class="userChatBlock" ui-sref="mainContainer.chatUser" ng-repeat="chat in page.chat">
-        <div class="chatWrapper">
+    <a class="userChatBlock" ui-sref="mainContainer.chatUser"  ng-repeat="chat in page.chat" >
+        <div class="chatWrapper" ng-click="chatEnter(chat.id);">
             <img class="userChatPhoto" ng-src="{{chat.sender}}" ng-if="chat.sender" alt="sender">
             <span class="userNameChat">{{chat.senderName}}</span>
             <div class="userLast">

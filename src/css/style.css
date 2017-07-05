@@ -133,13 +133,14 @@ body {
 /*left part START*/
 
 .friend {
-    background-size: cover;
+    object-fit: cover;
     height: 70px!important;
     width: 70px!important;
     border-radius: 50%;
     cursor: pointer;
     margin-left: 20px;
     margin-top: 10px;
+    display: inline-block;
 }
 
 .friend:hover {
@@ -149,28 +150,13 @@ body {
     box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.friend1 {
-    background-image: url("../img/users/user1/avatar.jpg");
+.friendsName {
+    padding-left: 10px;
+    /*padding-top: 17px;*/
+    display: inline-block;
 }
 
-.friend2 {
-    background-image: url("../img/users/user2/hqdefault.jpg");
-}
-
-.friend3 {
-    background-image: url("../img/users/user3/Rachel_McAdams_5.jpg");
-}
-
-.friend4 {
-    background-image: url("../img/users/user4/d93361ffaed234.jpg");
-}
-
-.friend>figcaption {
-    padding-left: 85px;
-    padding-top: 17px;
-}
-
-.friend>figcaption:hover {
+.friendsName {
     color: gray;
 }
 
@@ -188,7 +174,7 @@ body {
 
 .gallery {
     display: flex;
-    margin-left: 30px;
+    margin-left: 40px;
     flex-direction: column;
     width: 300px;
 }
@@ -289,7 +275,7 @@ body {
 }
 
 .backgroundImage {
-    background-image: url("../img/bg.jpg");
+    /*background-image: url("../img/bg.jpg");*/
     background-size: cover;
     height: 225px;
 }
@@ -489,6 +475,7 @@ body {
 .posters {
     background-color: #f2f2f2;
     margin: 10px;
+    padding-bottom: 20px;
 }
 
 .posters div {
@@ -503,8 +490,7 @@ body {
 }
 
 .otherUserPhoto {
-    background-image: url("../img/users/user1/avatar.jpg");
-    background-size: cover;
+    object-fit: cover;
     border-radius: 50%;
     height: 50px;
     width: 50px;

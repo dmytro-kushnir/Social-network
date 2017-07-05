@@ -2,7 +2,7 @@
 <!--Background-->
 <section class="Background row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <figure class="backgroundImage">
+    <figure class="backgroundImage" ng-if="banner.bg" back-img="{{banner.bg}}">
       <!--editing background and page-->
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -23,10 +23,10 @@
   </div>
 </section>
 <!--rest page-->
-<section class="row restPage" ng-controller="OpenModalCtrl as openModal">
+
 <section class="row restPage" ng-controller="OpenModalCtrl as openModal">
   <!--Left part START-->
-  <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+  <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
     <div ng-repeat="avatar in avatars">
       <a class="galleryLink" ng-click="openAvatar($index)">
         <img ng-src="{{avatar.url}}" ng-if="avatar.url" alt="avatar" class="profilePhoto img-rounded"  >    
@@ -34,19 +34,14 @@
     </div>
     <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
     <section class="friendsGalleryBlock">
-      <h3 class="myFriends">Мої друзі <span>480</span></h3>
-      <figure class="friend friend1">
-        <figcaption>Дженніфер Лоуренс</figcaption>
-      </figure>
-      <figure class="friend friend2">
-        <figcaption>Дормамму Непереможний</figcaption>
-      </figure>
-      <figure class="friend friend3">
-        <figcaption>Рейчел МакАдамс</figcaption>
-      </figure>
-      <figure class="friend friend4">
-        <figcaption>Тільда Суїнтон</figcaption>
-      </figure>
+      
+      <h3 class="myFriends">Мої друзі <span>{{page.countFriends}}</span></h3>
+      <div style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0">
+        <img class="friend" ng-src="{{pg.url}}" alt="pg.name">
+        <span class="friendsName">{{pg.name}}</span>
+      </div>
+      
+
       <h3 class="myGallery"><a style="text-decoration:none; color:black;" ui-sref="mainContainer.gallery">Галерея</a></h3>
       <article class="gallery">
         <div class="row no-gutter">
@@ -61,16 +56,16 @@
   </div>
   <!--Left part END-->
   <!--Right part START-->
-  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+  <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
     <!--Main infromation about user-->
     <div class="row">
       <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
         <div class="infoName">
-          <h2 class="userName ">Доктор Стрендж</h2>
-          <p><label>День народження:</label> <span>12 лютого 1982 р.</span> </p>
-          <p><label>Рідне місто:</label> <span>Нью-Йорк</span></p>
-          <p><label>Освіта:</label> <span>Нанотехнологічний інститут</span></p>
-          <p><label>Моб. телефон:</label> <span>0665784212</span></p>
+          <h2 class="userName ">{{page.firstName}} {{page.secondName}}</h2>
+          <p><label>День народження:</label> <span>{{page.birthday}}</span> </p>
+          <p><label>Рідне місто:</label> <span>{{page.city}}</span></p>
+          <p><label>Освіта:</label> <span>{{page.education}}</span></p>
+          <p><label>Моб. телефон:</label> <span>{{page.mobileNumber}}</span></p>
         </div>
       </div>
     </div>
@@ -79,7 +74,7 @@
       <article class="friendsAndPhoto">
         <div>
           <a style="text-decoration:none; color:black;" ui-sref="mainContainer.friends">
-            <p class="myFriends">Друзі<span style="padding-left:10px;">480</span></p>
+            <p class="myFriends">Друзі<span style="padding-left:10px;">{{page.countFriends}}</span></p>
           </a>
           <a ui-sref="mainContainer.friends">
             <figure class="friendsAndPhotoIcon friendsIco"></figure>
@@ -113,38 +108,25 @@
           </div>
         </form>
       </div>
+      <!--POST-->
       <div class="row">
-        <div class="posters">
+        <div class="posters"ng-repeat="post in page.posts">
           <div>
-            <figure class="otherUserPhoto"></figure>
-            <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
-            <h5><span class='glyphicon glyphicon-time'></span>13.05.17 14:38</h5>
+            <img class="otherUserPhoto" ng-src="{{post.senderUrl}}" ng-if="post.senderUrl" alt="sender"/>
+            <h4 style="cursor:pointer;">{{post.senderName}}</h4>
+            <h5><span class='glyphicon glyphicon-time'></span>{{post.sendDate}}</h5>
             <a class='label label-danger'>змінити</a>
             <a class='label label-primary' id='remove'>видалити</a>
           </div>
-          <p style="font-size: 14px;">
-            Я думаю тобі сподобається мій новий фільм ;-)
-            <br><br>
-            <a href="https://my-hit.org/film/415353" target="_blank"> https://my-hit.org/film/415353/</a>
-          </p>
+          <p style="font-size: 14px;">{{post.postText}}</p>
+          <a style="padding:10px;" href='{{post.postLink}}' target='_blank'>{{post.postLink}}</a>
+          <a class="galleryLink">
+            <img class="otherUserPhotoComment" ng-src="{{post.postImage}}" ng-if="post.postImage" ng-hide="post.postImage==''" alt="photo comment"></a>
+           <figure style="margin-top:10px; margin-right:20px;"class="modalHeart modalHeartComm pull-right" >
+             <span ng-hide="post.postLikes==0">{{post.postLikes}}</span></figure>
         </div>
       </div>
-      <!---->
-      <div class="row">
-        <div class="posters">
-          <div>
-            <figure class="otherUserPhoto"></figure>
-            <h4 style="cursor:pointer;">Дженніфер Лоуренс</h4>
-            <h5><span class='glyphicon glyphicon-time'></span>10.05.17 15:11</h5>
-            <a class='label label-danger'>змінити</a>
-            <a class='label label-primary' id='remove'>видалити</a>
-          </div>
-          <p style="font-size: 14px;">Докторе, скидую обіцяне фото :-)
-            <br><br>
-            <a class="galleryLink"><img class="otherUserPhotoComment" src="src/img/users/user1/photo/photo.jpg" alt="..."></a>
-          </p>
-        </div>
-      </div>
+      
     </div>
     <!--Right part END-->
 </section>

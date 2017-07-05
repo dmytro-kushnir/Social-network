@@ -13,9 +13,7 @@
         'akoenig.deckgrid'
         ]);
     
-    app.controller('MainCtrl', function () {
-        
-    });
+ 
 
 
     //factory for json load
@@ -29,6 +27,9 @@ app.factory('JsonLoad', function ($http) {
         },
         getUsers: function(){
             return $http.get('/app/jsons/users.json');
+        },
+        getPage: function(){
+            return $http.get('/app/jsons/user.json');
         }
     };
 });

@@ -1,4 +1,6 @@
+@media (max-width: 767px) {
 .custom-container > .row{
     margin-left: 5px !important;
     margin-right: 5px !important;
+}
 }

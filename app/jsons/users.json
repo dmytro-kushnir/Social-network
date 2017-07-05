@@ -1,19 +1,19 @@
 [{
-    "id": "1",
-    "firstname": "Anna",
-    "secondname": "Medvid",
-    "email": "medvidanja94@gmail.com",
-    "password": "123456",
-    "foto": "/src/img/users/user1/Anna_Medvid.jpg",
-    "countFriends": "452"
-},
-{
-    "id": "2",
-    "firstname": "Dima",
-    "secondname": "Kushnir",
-    "email": "regstarrr@ukr.net",
-    "password": "helloworld",
-    "foto": "/src/img/users/user2/Dima_Kushnir.jpg",
-    "countFriends": "622"
-}
+        "id": "1",
+        "firstname": "Anna",
+        "secondname": "Medvid",
+        "email": "medvidanja94@gmail.com",
+        "password": "123456",
+        "foto": "/src/img/users/user1/Anna_Medvid.jpg",
+        "countFriends": "452"
+    },
+    {
+        "id": "2",
+        "firstname": "Dima",
+        "secondname": "Kushnir",
+        "email": "regstarrr@ukr.net",
+        "password": "helloworld",
+        "foto": "/src/img/users/user2/Dima_Kushnir.jpg",
+        "countFriends": "622"
+    }
 ]

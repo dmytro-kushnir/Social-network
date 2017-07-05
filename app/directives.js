@@ -1,5 +1,5 @@
 (function () {
-    
+
     var app = angular.module("social-directives", []);
 
     app.directive("socialModal", function () {
@@ -50,6 +50,8 @@
         };
     });
 
+
+
     // Routing START  
     var app2 = angular.module("socialNetwork").config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
@@ -78,7 +80,7 @@
                         views: {
                             'mainPage@mainContainer': {
                                 templateUrl: 'app/templates/mainPage.html',
-                            
+
                             }
                         },
                         resolve: {
@@ -110,7 +112,7 @@
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Галерея";
-                                
+
                             }]
                         }
                     })
@@ -147,7 +149,19 @@
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
-                
+
             }
         ]);
+
+    //directive for load background-mage:url() to div
+    app2.directive('backImg', function () {
+        return function ($scope, $element, $attrs) {
+            var url = $attrs.backImg;
+            $element.css({
+                'background-image': 'url(' + url + ')',
+                'background-size': 'cover'
+            });
+        };
+    });
+
 })();

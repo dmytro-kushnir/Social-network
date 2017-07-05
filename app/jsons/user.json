@@ -1,0 +1,60 @@
+{
+    "id": "1",
+    "firstName": "Doctor",
+    "secondName": "Strange",
+    "email": "magicBoy@gmail.com",
+    "password": "1",
+    "birthday": "12 лютого 1982р.",
+    "city": "Нью-Йорк",
+    "education": "Нанотехнологічний інститут",
+    "mobileNumber": "0665654652",
+    "countFriends": 5,
+    "friends": [{
+            "name": "Дмитро Кушнір",
+            "url": "/src/img/users/user/friends/Dima_Kushnir.jpg",
+            "countFriends": 622
+        },
+        {
+            "name": "Анна Медвідь", 
+            "url": "/src/img/users/user/friends/Anna_Medvid.jpg",
+            "countFriends": 452
+        },
+        {
+            "name": "Дженнфіер Лоуренс",
+            "url": "/src/img/users/user/friends/avatar.jpg",
+            "countFriends": 423
+        },
+        {
+            "name": "Нео",
+            "url": "/src/img/users/user/friends/220px-Neo2.jpg",
+            "countFriends": 55
+        },
+        {
+            "name": "Рейчел МакАдамс",
+            "url": "/src/img/users/user/friends/Rachel_McAdams_5.jpg",
+            "countFriends": 765
+        }
+    ],
+    "posts": [
+        {
+        "senderUrl" : "/src/img/users/user/posts/post1/avatar.jpg",
+        "senderName": "Дженніфер Лоуренс",
+        "sendDate" : "13.05.17 14:38",
+        "postText": "Я думаю тобі сподобається мій новий фільм ;-)",
+        "postLink": "https://my-hit.org/film/415353",
+        "postImage": "",
+        "postLikes": 1
+    },
+     {
+        "senderUrl" : "/src/img/users/user/posts/post2/avatar.jpg",
+        "senderName": "Дженніфер Лоуренс",
+        "sendDate" : "23.05.17 14:34",
+        "postText": "Докторе, скидую обіцяне фото :-) ",
+        "postLink": "",
+        "postImage": "/src/img/users/user/posts/post2/photo.jpg",
+        "postLikes": 12
+    }
+    ],
+    "backgroundUrl": "/src/img/users/user/backgrounds/bg.jpg",
+    "avatarUrl": "/src/img/avatar.jpg"
+}

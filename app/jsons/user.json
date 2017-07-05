@@ -11,50 +11,333 @@
     "countFriends": 5,
     "friends": [{
             "name": "Дмитро Кушнір",
+            "firstName":"Дмитро",
+            "secondName":"Кушнір",
             "url": "/src/img/users/user/friends/Dima_Kushnir.jpg",
             "countFriends": 622
         },
         {
-            "name": "Анна Медвідь", 
+            "name": "Анна Медвідь",
+            "firstName":"Анна",
+            "secondName":"Медвідь",
             "url": "/src/img/users/user/friends/Anna_Medvid.jpg",
             "countFriends": 452
         },
         {
             "name": "Дженнфіер Лоуренс",
+            "firstName":"Дженнфіер",
+            "secondName":"Лоуренс",
             "url": "/src/img/users/user/friends/avatar.jpg",
             "countFriends": 423
         },
         {
             "name": "Нео",
+            "firstName":"Нео",
+            "secondName":"",
             "url": "/src/img/users/user/friends/220px-Neo2.jpg",
             "countFriends": 55
         },
         {
             "name": "Рейчел МакАдамс",
+            "firstName":"Рейчел",
+            "secondName":"МакАдамс",
             "url": "/src/img/users/user/friends/Rachel_McAdams_5.jpg",
             "countFriends": 765
         }
     ],
-    "posts": [
+    "posts": [{
+            "senderUrl": "/src/img/users/user/posts/post1/avatar.jpg",
+            "senderName": "Дженніфер Лоуренс",
+            "sendDate": "13.05.17 14:38",
+            "postText": "Я думаю тобі сподобається мій новий фільм ;-)",
+            "postLink": "https://my-hit.org/film/415353",
+            "postImage": "",
+            "postLikes": 1
+        },
         {
-        "senderUrl" : "/src/img/users/user/posts/post1/avatar.jpg",
-        "senderName": "Дженніфер Лоуренс",
-        "sendDate" : "13.05.17 14:38",
-        "postText": "Я думаю тобі сподобається мій новий фільм ;-)",
-        "postLink": "https://my-hit.org/film/415353",
-        "postImage": "",
-        "postLikes": 1
-    },
-     {
-        "senderUrl" : "/src/img/users/user/posts/post2/avatar.jpg",
-        "senderName": "Дженніфер Лоуренс",
-        "sendDate" : "23.05.17 14:34",
-        "postText": "Докторе, скидую обіцяне фото :-) ",
-        "postLink": "",
-        "postImage": "/src/img/users/user/posts/post2/photo.jpg",
-        "postLikes": 12
-    }
+            "senderUrl": "/src/img/users/user/posts/post2/avatar.jpg",
+            "senderName": "Дженніфер Лоуренс",
+            "sendDate": "23.05.17 14:34",
+            "postText": "Докторе, скидую обіцяне фото :-) ",
+            "postLink": "",
+            "postImage": "/src/img/users/user/posts/post2/photo.jpg",
+            "postLikes": 12
+        }
     ],
     "backgroundUrl": "/src/img/users/user/backgrounds/bg.jpg",
-    "avatarUrl": "/src/img/avatar.jpg"
+    "avatarUrl": "/src/img/avatar.jpg",
+    "avatars": [{
+        "url": "/src/img/avatar.jpg",
+        "likes": 1,
+        "senderName": "Містер Андерсон",
+        "senderUrl": "/src/img/users/user1/avatar.jpg",
+        "recieverUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+        "date": "15.12.12 15:38",
+        "posts": [{
+                "postSenderUrl": "/src/img/users/user2/hqdefault.jpg",
+                "postImage": "",
+                "postSenderName": "Містер Сміт",
+                "postContent": "Ваш час вийшов містер Андерсон",
+                "postDate": "02.06.12 01:30",
+                "postLikes": 0
+            },
+            {
+                "postSenderUrl": "/src/img/users/user2/hqdefault.jpg",
+                "postImage": "/src/img/gallery/10.jpg",
+                "postSenderName": "Таісія Повалій",
+                "postContent": "Я буду тебе сниться по ночам..",
+                "postDate": "01.05.11 01:20",
+                "postLikes": 23
+            },
+            {
+                "postSenderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+                "postImage": "/src/img/gallery/9.jpg",
+                "postSenderName": "Діма Монатік",
+                "postContent": "привіт",
+                "postDate": "01.07.17 15:23",
+                "postLikes": 2322
+            }
+        ]
+    }],
+    "gallery":[{
+        "id" : 1,
+        "url": "/src/img/gallery/1.jpg",
+        "likes": 1,
+        "senderName": "Містер Сміт",
+        "senderUrl": "/src/img/users/user1/avatar.jpg",
+        "recieverUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+        "date": "15.12.12 15:38",
+        "posts": [{
+                "postSenderUrl": "/src/img/users/user2/hqdefault.jpg",
+                "postImage": "",
+                "postSenderName": "Таісія Повалій",
+                "postContent": "це просто афігенно",
+                "postDate": "01.05.11 01:20",
+                "postLikes": 23
+            },
+            {
+                "postSenderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+                "postImage": "/src/img/gallery/7.jpg",
+                "postSenderName": "Діма Монатік",
+                "postContent": "моя харизма ульот",
+                "postDate": "01.07.17 15:23",
+                "postLikes": 2322
+            }
+        ]
+    },
+    {
+        "id" : 2,
+        "url": "/src/img/gallery/2.jpg",
+        "likes": 5,
+        "senderName": "Містер Андерсон",
+        "senderUrl": "/src/img/users/user2/hqdefault.jpg",
+        "recieverUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "date": "11.13.02 12:45",
+        "posts": [{
+                "postSenderUrl": "/src/img/users/user1/avatar.jpg",
+                "postImage": "/src/img/gallery/6.jpg",
+                "postSenderName": "Трініті",
+                "postContent": "",
+                "postDate": "06.09.12 04:21",
+                "postLikes": 15
+            },
+            {
+                "postSenderUrl": "/src/img/users/user1/avatar.jpg",
+                "postImage": "/src/img/gallery/5.jpg",
+                "postSenderName": "Гендальф Сірий",
+                "postContent": "тільки істинний чаклун знає де сидить фазан",
+                "postDate": "06.01.37 14:53",
+                "postLikes": 100
+            }
+        ]
+    },
+    {
+        "id" : 3,
+        "url": "/src/img/gallery/3.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/5.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "Ваш час прийшов містер Андерсон",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 4,
+        "url": "/src/img/gallery/4.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/5.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "вам мене не перемогти!",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 5,
+        "url": "/src/img/gallery/5.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/3.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 6,
+        "url": "/src/img/gallery/6.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/1.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 7,
+        "url": "/src/img/gallery/7.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/2.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 8,
+        "url": "/src/img/gallery/8.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/8.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 9,
+        "url": "/src/img/gallery/9.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/6.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 10,
+        "url": "/src/img/gallery/10.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/4.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 11,
+        "url": "/src/img/gallery/11.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/2.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 12,
+        "url": "/src/img/gallery/12.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/12.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    },
+    {
+        "id" : 13,
+        "url": "/src/img/gallery/13.jpg",
+        "likes": 1000,
+        "senderName": "Містер Фродо",
+        "senderUrl": "/src/img/users/user3/Rachel_McAdams_5.jpg",
+        "recieverUrl": "/src/img/users/user1/avatar.jpg",
+        "date": "11.12.13 15:11",
+        "posts": [{
+            "postSenderUrl": "/src/img/users/user4/d93361ffaed234.jpg",
+            "postImage": "/src/img/gallery/11.jpg",
+            "postSenderName": "Сем Уітвікі",
+            "postContent": "Hey",
+            "postDate": "11.04.06 23:2",
+            "postLikes": 1
+        }]
+    }
+
+]
 }

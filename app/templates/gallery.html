@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="src/css/galleryAdditional.css">
 
 <div ng-init="initialised=true;" class="galleryContainer" ng-controller="OpenModalCtrl as openModal">
-    <div deckgrid class="deckgrid clearfix" source="gallery " >
+    <div deckgrid class="deckgrid clearfix" source="page.gallery">
         <div class="a-card " >
             <a  data-ng-click="mother.openGallery(card.$index)" >
             <img  alt="gallery item {{card.$index}}" data-ng-src="{{card.url}}" class="img-responsive galleryImg">

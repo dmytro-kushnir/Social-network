@@ -9,7 +9,7 @@
         $scope.banner = {
             "bg": $scope.page.backgroundUrl // because background we use as a div
         };
-        console.log( $scope.page);
+        console.log( $scope.page.avatars);
     });
   
 });

@@ -1,11 +1,11 @@
      <!--friends part Start-->
-      <div class="partOfFriends" ng-app="socialNetwork" ng-controller="FriendsCtrl as friends"> 
-        <div class="friends" ng-repeat="friend in friends">
-          <img class="friendPhoto" src="{{friend.foto}}">
+      <div class="partOfFriends" ng-app="socialNetwork" > 
+        <div class="friends" ng-repeat="friend in page.friends">
+          <img class="friendPhoto" src="{{friend.url}}">
           <div class="aboutFriend">
           	<div class="firstSecondName">
-          		<span class="friendFirstName">{{friend.firstname}}</span>
-          		<span class="friendSecondName">{{friend.secondname}}</span>
+          		<span class="friendFirstName">{{friend.firstName}}</span>
+          		<span class="friendSecondName">{{friend.secondName}}</span>
           	</div>
               <p class="countFriends">{{friend.countFriends}}<span class="pFriend">друзів</span></p>
           </div>

@@ -20,8 +20,8 @@
     <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a class="user dropdown-toggle" href="" data-toggle="dropdown">Доктор<b class="caret"></b>
-                  <img class="userHeader" src="src/img/avatar.jpg" alt="user"></a>
+          <a class="user dropdown-toggle" href="" data-toggle="dropdown">{{page.firstName}}<b class="caret"></b>
+                  <img class="userHeader" ng-src="{{page.avatarUrl}}" ng-if="page.avatarUrl" alt="user"></a>
 
           <ul class="dropdown-menu userMenu">
             <li><a ui-sref="mainPage" href="#">Моя сторінка</a></li>

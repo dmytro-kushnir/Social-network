@@ -2,29 +2,16 @@
 app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     'use strict';
     $scope.Lightbox = Lightbox;
-    $scope.gallery, $scope.avatars = null;
     console.log(Lightbox);
 
-    JsonLoad.getAvatars().then(function (res) {
-        $scope.avatars = res.data;
-    });
-
-    JsonLoad.getGallery().then(function (res) {
-        $scope.gallery = [];
-        $scope.gallery = res.data;
-        $scope.carouselIndex = 1;
-        console.log($scope.gallery);
-    });
-
     $scope.openAvatar = function (index) {
-        Lightbox.openModal($scope.avatars, index);
+        Lightbox.openModal($scope.page.avatars, index);
     };
     $scope.openGallery = function (index) {
            console.log(Lightbox);
-        Lightbox.openModal($scope.gallery, index);
+        Lightbox.openModal($scope.page.gallery, index);
     };
     $scope.openPost = function (index) {
-         
         Lightbox.openModal($scope.page.posts, index);
     };
 });

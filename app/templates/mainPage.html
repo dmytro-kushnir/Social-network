@@ -27,7 +27,7 @@
 <section class="row restPage" ng-controller="OpenModalCtrl as openModal">
   <!--Left part START-->
   <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
-    <div ng-repeat="avatar in avatars">
+    <div ng-repeat="avatar in page.avatars">
       <a class="galleryLink" ng-click="openAvatar($index)">
         <img ng-src="{{avatar.url}}" ng-if="avatar.url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
@@ -45,7 +45,7 @@
       <h3 class="myGallery"><a style="text-decoration:none; color:black;" ui-sref="mainContainer.gallery">Галерея</a></h3>
       <article class="gallery">
         <div class="row no-gutter">
-          <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in gallery | limitTo : 6 : 0">
+          <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in page.gallery | limitTo : 6 : 0">
             <a ng-click="openGallery($index)" class="galleryLink">
                 <img class="galleryItem" ng-src="{{gal.url}}" ng-if="gal.url" alt="gallery item {{$index}}">
               </a>
@@ -118,12 +118,15 @@
             <a class='label label-danger'>змінити</a>
             <a class='label label-primary' id='remove'>видалити</a>
           </div>
+          <div style="background-color: #f2f2f2;">
           <p style="font-size: 14px;">{{post.postText}}</p>
           <a style="padding:10px;" href='{{post.postLink}}' target='_blank'>{{post.postLink}}</a>
-          <a class="galleryLink">
-            <img class="otherUserPhotoComment" ng-src="{{post.postImage}}" ng-if="post.postImage" ng-hide="post.postImage==''" alt="photo comment"></a>
+          <a>
+            <img class="otherUserPhotoComment" ng-src="{{post.postImage}}" ng-if="post.postImage" ng-hide="post.postImage==''" alt="photo comment"/>
+            </a>
            <figure style="margin-top:10px; margin-right:20px;"class="modalHeart modalHeartComm pull-right" >
              <span ng-hide="post.postLikes==0">{{post.postLikes}}</span></figure>
+             </div>
         </div>
       </div>
       

@@ -8,6 +8,7 @@
     -webkit-box-shadow: 0px 4px 4px -4px gray;
     -moz-box-shadow: 0px 4px 4px -4px gray;
     box-shadow: 0px 4px 4px -4px gray;
+
 }
 
 .searchIcon {
@@ -102,7 +103,7 @@
     font-size: 15px;
     margin-top: 5px;
     margin-left: 5px;
-    width: 240px;
+    width: auto;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;

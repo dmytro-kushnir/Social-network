@@ -17,7 +17,8 @@
 app.factory('JsonLoad', function ($http) {
     return {
         getPage: function(){
-            return $http.get('/app/jsons/user.json');
+           
+            return $http.get("connection.php");
         }
     };
 });

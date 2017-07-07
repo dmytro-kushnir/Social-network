@@ -4,6 +4,7 @@
    app.controller('MainCtrl', function ($rootScope, $scope, JsonLoad) {
     'use strict';
     JsonLoad.getPage().then(function(res){
+        console.log(res);
         $scope.page = [];
         $scope.page = res.data;
         $scope.carouselIndex = 1;

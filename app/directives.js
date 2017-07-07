@@ -5,25 +5,25 @@
     app.directive("socialModal", function () {
         return {
             restrict: "AE",
-            templateUrl: "/app/templates/modal.html"
+            templateUrl: "app/templates/modal.html"
         };
     });
     app.directive("socialHeader", function () {
         return {
             restrict: "AE",
-            templateUrl: "/app/templates/header.html"
+            templateUrl: "app/templates/header.html"
         };
     });
     app.directive("socialSideMenu", function () {
         return {
             restrict: "AE",
-            templateUrl: "/app/templates/sideMenu.html"
+            templateUrl: "app/templates/sideMenu.html"
         };
     });
     app.directive("socialRouter", function () {
         return {
             restrict: "AE",
-            templateUrl: "/app/templates/router.html"
+            templateUrl: "app/templates/router.html"
         }
     });
     // Collapsing directive for mobile

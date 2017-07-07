@@ -16,8 +16,7 @@
     //factory for json load
 app.factory('JsonLoad', function ($http) {
     return {
-        getPage: function(){
-           
+        getPage: function(){ 
             return $http.get("connection.php");
         }
     };

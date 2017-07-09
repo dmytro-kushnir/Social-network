@@ -36,7 +36,7 @@
     <section class="friendsGalleryBlock">
       
       <h3 class="myFriends">Мої друзі <span>{{page.countFriends}}</span></h3>
-      <div style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0">
+      <div ui-sref="mainContainer.userPage" style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0">
         <img class="friend" ng-src="{{pg.url}}" alt="pg.name">
         <span class="friendsName">{{pg.name}}</span>
       </div>

@@ -1,5 +1,5 @@
 {
-    "id": "100000",
+    "id": 100000,
     "firstName": "Doctor",
     "secondName": "Strange",
     "email": "magicBoy@gmail.com",
@@ -10,27 +10,7 @@
     "mobileNumber": "0665654652",
     "countFriends": 5,
     "friends": [{
-            "name": "Дмитро Кушнір",
-            "firstName": "Дмитро",
-            "secondName": "Кушнір",
-            "url": "/src/img/users/user/friends/Dima_Kushnir.jpg",
-            "countFriends": 622
-        },
-        {
-            "name": "Анна Медвідь",
-            "firstName": "Анна",
-            "secondName": "Медвідь",
-            "url": "/src/img/users/user/friends/Anna_Medvid.jpg",
-            "countFriends": 452
-        },
-        {
-            "name": "Дженнфіер Лоуренс",
-            "firstName": "Дженнфіер",
-            "secondName": "Лоуренс",
-            "url": "/src/img/users/user/friends/avatar.jpg",
-            "countFriends": 423
-        },
-        {
+            "id": 0,
             "name": "Нео",
             "firstName": "Нео",
             "secondName": "",
@@ -38,6 +18,31 @@
             "countFriends": 55
         },
         {
+            "id": 1,
+            "name": "Анна Медвідь",
+            "firstName": "Анна",
+            "secondName": "Медвідь",
+            "url": "/src/img/users/user/friends/Anna_Medvid.jpg",
+            "countFriends": 452
+        },
+        {
+            "id": 2,
+            "name": "Дженнфіер Лоуренс",
+            "firstName": "Дженнфіер",
+            "secondName": "Лоуренс",
+            "url": "/src/img/users/user/friends/avatar.jpg",
+            "countFriends": 423
+        }, {
+            "id": 3,
+            "name": "Дмитро Кушнір",
+            "firstName": "Дмитро",
+            "secondName": "Кушнір",
+            "url": "/src/img/users/user/friends/Dima_Kushnir.jpg",
+            "countFriends": 622
+        },
+
+        {
+            "id": 4,
             "name": "Рейчел МакАдамс",
             "firstName": "Рейчел",
             "secondName": "МакАдамс",
@@ -80,7 +85,7 @@
                     "postContent": "Ваш час вийшов містер Андерсон",
                     "postDate": "02.06.12 01:30",
                     "postLikes": 0
-            },
+                },
                 {
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
                     "postImage": "/src/img/users/user/gallery/10.jpg",
@@ -88,7 +93,7 @@
                     "postContent": "Я буду тебе сниться по ночам..",
                     "postDate": "01.0 .11 01:20",
                     "postLikes": 23
-            },
+                },
                 {
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
                     "postImage": "/src/img/users/user/gallery/9.jpg",
@@ -96,9 +101,9 @@
                     "postContent": "привіт",
                     "postDate": "01.07.17 15:23",
                     "postLikes": 2322
-            }
-        ]
-    },
+                }
+            ]
+        },
         {
             "url": "/src/img/users/user/avatars/2.jpg",
             "likes": 1,
@@ -113,7 +118,7 @@
                     "postContent": "Ваш час вийшов містер Андерсон",
                     "postDate": "02.06.12 01:30",
                     "postLikes": 0
-            },
+                },
                 {
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
                     "postImage": "/src/img/users/user/gallery/10.jpg",
@@ -121,7 +126,7 @@
                     "postContent": "Я буду тебе сниться по ночам..",
                     "postDate": "01.05.11 01:20",
                     "postLikes": 23
-            },
+                },
                 {
                     "postSenderUrl": "/src/img/users/user/chat/sender1.jpg",
                     "postImage": "/src/img/users/user/gallery/9.jpg",
@@ -129,9 +134,10 @@
                     "postContent": "привіт",
                     "postDate": "01.07.17 15:23",
                     "postLikes": 2322
-            }
-        ]
-    }],
+                }
+            ]
+        }
+    ],
     "gallery": [{
             "id": 1,
             "url": "/src/img/users/user/gallery/1.jpg",
@@ -383,8 +389,7 @@
             "leftImage": "/src/img/users/user/chat/sender1.jpg",
             "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "chatName": "Нео",
-            "messages": [
-                {
+            "messages": [{
                     "data": "Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить",
                     "time": "12 mins ago"
                 },
@@ -412,8 +417,7 @@
             "leftImage": "/src/img/users/user/chat/sender2.jpg",
             "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "chatName": "Анна Медвідь",
-            "messages": [
-                {
+            "messages": [{
                     "data": "Я непереможний!",
                     "time": "12 mins ago"
                 },
@@ -434,8 +438,7 @@
             "leftImage": "/src/img/users/user/chat/sender3.jpg",
             "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "chatName": "Дженніфер Лоуренс",
-            "messages": [
-                {
+            "messages": [{
                     "data": "",
                     "time": "12 mins ago"
                 },
@@ -464,8 +467,7 @@
             "leftImage": "/src/img/users/user/chat/sender4.jpg",
             "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "chatName": "Кушнір Дмитро",
-            "messages": [
-                {
+            "messages": [{
                     "data": "Вийшов зайчик погулять",
                     "time": "12 mins ago"
                 },
@@ -499,8 +501,7 @@
             "leftImage": "/src/img/users/user/chat/sender5.jpg",
             "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "chatName": "Рейчел МакАдамс",
-            "messages": [
-                {
+            "messages": [{
                     "data": "Добрий день",
                     "time": "14 mins ago"
                 },

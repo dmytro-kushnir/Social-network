@@ -1,10 +1,10 @@
      <!--friends part Start-->
       <div class="partOfFriends" ng-app="socialNetwork" > 
         <div  class="friends" ng-repeat="friend in page.friends">
-          <img class="friendPhoto" src="{{friend.url}}"/>
+          <img ui-sref="mainContainer.userPage"  ng-click="reqFriend(friend.id)" class="friendPhoto" src="{{friend.url}}"/>
           <div  class="aboutFriend">
             
-          	<div ui-sref="mainContainer.userPage" class="firstSecondName" ng-click="save(friend.id)" >
+          	<div ui-sref="mainContainer.userPage" class="firstSecondName" ng-click="reqFriend(friend.id)" >
           		<span class="friendFirstName">{{friend.firstName}}</span>
           		<span class="friendSecondName">{{friend.secondName}}</span>
           	</div>

@@ -18,7 +18,7 @@
             "countFriends": 55
         },
         {
-            "id": 1,
+            "id": 100002,
             "name": "Анна Медвідь",
             "firstName": "Анна",
             "secondName": "Медвідь",
@@ -26,14 +26,14 @@
             "countFriends": 452
         },
         {
-            "id": 2,
+            "id": 100003,
             "name": "Дженнфіер Лоуренс",
             "firstName": "Дженнфіер",
             "secondName": "Лоуренс",
             "url": "/src/img/users/user/friends/avatar.jpg",
             "countFriends": 423
         }, {
-            "id": 3,
+            "id": 100004,
             "name": "Дмитро Кушнір",
             "firstName": "Дмитро",
             "secondName": "Кушнір",
@@ -42,7 +42,7 @@
         },
 
         {
-            "id": 4,
+            "id": 100005,
             "name": "Рейчел МакАдамс",
             "firstName": "Рейчел",
             "secondName": "МакАдамс",

@@ -10,10 +10,11 @@
         $scope.page = [];
         $scope.page = res.data;
         $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
-        $scope.banner = {
-            "bg": $scope.page.backgroundUrl // because background we use as a div
-        };
-     
+
+
+        // $scope.banner = {
+        //     "bg": $scope.page.backgroundUrl // because background we use as a div
+        // };
         // $rootScope.mainPageTitle = $scope.page.firstName + " " + $scope.page.secondName;
         // console.log($rootScope);
     });
@@ -22,16 +23,13 @@
     //При удачной обработке ответа метод success(function (answ) 
     //отправленный сервером объект answ и устанавливает его в качестве значения $scope.response
     $scope.response={};
-    $scope.save = function (answer){
+    $scope.reqFriend = function (answer){
       $scope.friendId = answer;
       console.log(`friend index is ${$scope.friendId}`);
     JsonFriend.requestPage(answer).then(function success(response){
         
         $scope.friend = response.data;
            console.log(response.data);
-             $scope.bannerFriend = {
-            "bg": $scope.friend.backgroundUrl // because background we use as a div
-        };
         $rootScope.friendName - $scope.friend.firstName;
     });
 

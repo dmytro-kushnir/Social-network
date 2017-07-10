@@ -17,8 +17,15 @@
 app.factory('JsonLoad', function ($http) {
     return {
         getPage: function(){
-           
             return $http.get("connection.php");
+        }
+    };
+});
+
+app.factory('JsonFriend', function($http){
+    return{
+        requestPage: function(request){
+            return $http.post("friendReq.php", request);
         }
     };
 });

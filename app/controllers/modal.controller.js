@@ -4,15 +4,12 @@ app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     $scope.Lightbox = Lightbox;
     console.log(Lightbox);
 
-    $scope.openAvatar = function (index) {
-        Lightbox.openModal($scope.page.avatars, index);
+    $scope.openAvatar = function (index, nameSpace) {
+        Lightbox.openModal($scope[nameSpace].avatars, index);
     };
-    $scope.openGallery = function (index) {
+    $scope.openGallery = function (index, nameSpace) {
            console.log(Lightbox);
-        Lightbox.openModal($scope.page.gallery, index);
-    };
-    $scope.openPost = function (index) {
-        Lightbox.openModal($scope.page.posts, index);
+        Lightbox.openModal($scope[nameSpace].gallery, index);
     };
 });
 angular.module('socialNetwork').config(function (LightboxProvider) {

@@ -153,19 +153,21 @@
                         },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = $rootScope.chatTitle;
+                                console.log($rootScope.friendName);
+                                $rootScope.title =  $rootScope.friendName;
                             }]
                         }
                     });
                 $urlRouterProvider.otherwise('/autorize');
+                
             }
         ])
         .run(['$rootScope', '$state', '$stateParams',
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
-
             }
+       
         ]);
 
     //directive for load background-mage:url() to div

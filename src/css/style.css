@@ -397,6 +397,17 @@ body {
     padding: 0 !important;
 }
 
+
+@media (max-width: 499px){
+  .friendsAndPhoto{
+        flex-direction:  column;
+        align-items: center;
+    }
+      .friendsAndPhoto>div{
+        margin-right: 0px;
+    }
+}
+
 .friendsAndPhotoIcon {
     background-size: cover;
     width: 25px;

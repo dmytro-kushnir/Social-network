@@ -384,11 +384,11 @@
             "sender": "/src/img/users/user/chat/sender1.jpg",
             "lastMsgUrl": "/src/img/users/user/chat/lastMsgUrl.jpg",
             "lastMsgText": "Це просто неймовірно!",
-            "senderName": "Нео",
+            "senderName": "Єва Грін",
             "date": "Вчора",
             "leftImage": "/src/img/users/user/chat/sender1.jpg",
             "rightImage": "/src/img/users/user/chat/lastMsgUrl.jpg",
-            "chatName": "Нео",
+            "chatName": "Єва Грін",
             "messages": [{
                     "data": "Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить",
                     "time": "12 mins ago"

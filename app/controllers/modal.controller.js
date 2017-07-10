@@ -9,6 +9,7 @@ app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     };
     $scope.openGallery = function (index, nameSpace) {
            console.log(Lightbox);
+           console.log(nameSpace);
         Lightbox.openModal($scope[nameSpace].gallery, index);
     };
 });

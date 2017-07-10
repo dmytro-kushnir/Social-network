@@ -144,7 +144,7 @@
                         }
                     })
                     .state("mainContainer.userPage", {
-                        url: '/chatUser',
+                        url: '/userPage',
                         views: {
                             'userPage@mainContainer': {
                                 templateUrl: 'app/templates/userPage.html',

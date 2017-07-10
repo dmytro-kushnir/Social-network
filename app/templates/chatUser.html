@@ -2,7 +2,7 @@
 <div ng-controller="chatUserCtrl">
 <div class="panel panel-primary">
     <div class="panel-heading userChatPanel">
-        <a ui-sref="mainContainer.chat">
+        <a  onclick="history.back()">
             <figure class="arrowLeft"></figure>
         </a>
         <a class="userChatName" ui-sref="mainContainer.mainPage">{{page.chat[chatId].chatName}}</a>

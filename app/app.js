@@ -23,4 +23,12 @@ app.factory('JsonLoad', function ($http) {
     };
 });
 
+app.factory('JsonFriend', function($http){
+    return{
+        requestPage: function(request){
+            return $http.post("friendReq.php", request);
+        }
+    };
+});
+
 })();

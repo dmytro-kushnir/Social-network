@@ -13,9 +13,9 @@
         $scope.banner = {
             "bg": $scope.page.backgroundUrl // because background we use as a div
         };
-        console.log( $scope.page.avatars);
+     
         // $rootScope.mainPageTitle = $scope.page.firstName + " " + $scope.page.secondName;
-        console.log($rootScope);
+        // console.log($rootScope);
     });
 
     // Завантаження друга при кліку 
@@ -23,11 +23,16 @@
     //отправленный сервером объект answ и устанавливает его в качестве значения $scope.response
     $scope.response={};
     $scope.save = function (answer){
-
-    JsonFriend.requestPage().then(function success(response){
-     
-        $scope.page = response.data;
+      $scope.friendId = answer;
+      console.log(`friend index is ${$scope.friendId}`);
+    JsonFriend.requestPage(answer).then(function success(response){
+        
+        $scope.friend = response.data;
            console.log(response.data);
+             $scope.bannerFriend = {
+            "bg": $scope.friend.backgroundUrl // because background we use as a div
+        };
+        $rootScope.friendName - $scope.friend.firstName;
     });
 
     }

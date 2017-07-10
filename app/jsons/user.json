@@ -10,11 +10,11 @@
     "mobileNumber": "0665654652",
     "countFriends": 5,
     "friends": [{
-            "id": 0,
-            "name": "Нео",
-            "firstName": "Нео",
-            "secondName": "",
-            "url": "/src/img/users/user/friends/220px-Neo2.jpg",
+            "id": 100001,
+            "name": "Єва Грін",
+            "firstName": "Єва",
+            "secondName": "Грін",
+            "url": "/src/img/users/user/friends/friend1.jpg",
             "countFriends": 55
         },
         {

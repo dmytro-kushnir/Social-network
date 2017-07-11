@@ -280,7 +280,6 @@ body {
     height: 225px;
 }
 
-
 /*Update Background*/
 
 .updateBg {
@@ -395,6 +394,17 @@ body {
     display: flex;
     justify-content: flex-start;
     padding: 0 !important;
+}
+
+
+@media (max-width: 499px){
+  .friendsAndPhoto{
+        flex-direction:  column;
+        align-items: center;
+    }
+      .friendsAndPhoto>div{
+        margin-right: 0px;
+    }
 }
 
 .friendsAndPhotoIcon {

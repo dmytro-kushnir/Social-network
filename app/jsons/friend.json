@@ -1,0 +1,121 @@
+{
+    "id": 100001,
+    "firstName": "Єва",
+    "secondName": "Грін",
+    "email": "evaGreen@gmail.com",
+    "password": "1",
+    "birthday": "12 травня 1986р.",
+    "city": "Париж",
+    "education": "Павлівська школа",
+    "mobileNumber": "не скажу",
+    "countFriends": 24,
+    "headerName" : "Doctor",
+    "headerUrl" : "/src/img//users/user/avatars/avatar.jpg",
+    "friends": [{
+            "id": 0,
+            "name": "Тім Бертон",
+            "firstName": "Тім",
+            "secondName": "Бертон",
+            "url": "/src/img/users/friend100001/friends/friend1.jpg",
+            "countFriends": 32
+        }
+    ],
+    "posts": [
+    ],
+    "backgroundUrl": "/src/img/users/friend100001/backgrounds/bg.jpg",
+    "avatarUrl": "/src/img//users/friend100001/avatars/avatar.jpg",
+    "avatars": [{
+            "url": "/src/img/users/friend100001/avatars/avatar.jpg",
+            "likes": 1,
+            "senderName": "Містер Андерсон",
+            "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/friend100001/chat/sender2.jpg",
+            "date": "15.12.12 15:38",
+            "posts": [
+            ]
+        }
+    ],
+    "gallery": [{
+            "id": 1,
+            "url": "/src/img/users/friend100001/gallery/1.jpg",
+            "likes": 1,
+            "senderName": "Містер Сміт",
+            "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/friend100001/chat/sender2.jpg",
+            "date": "15.12.12 15:38",
+            "posts": [
+            ]
+        },
+        {
+            "id": 2,
+            "url": "/src/img/users/friend100001/gallery/2.jpg",
+            "likes": 5,
+            "senderName": "Містер Андерсон",
+            "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/friend100001/chat/sender2.jpg",
+            "date": "11.13.02 12:45",
+            "posts": [
+            ]
+        },
+        {
+            "id": 3,
+            "url": "/src/img/users/friend100001/gallery/3.jpg",
+            "likes": 1000,
+            "senderName": "Містер Фродо",
+            "senderUrl": "/src/img/users/user/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "date": "11.12.13 15:11",
+            "posts": []
+        },
+        {
+            "id": 4,
+            "url": "/src/img/users/friend100001/gallery/4.jpg",
+            "likes": 1000,
+            "senderName": "Містер Фродо",
+            "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/friend100001/chat/sender2.jpg",
+            "date": "11.12.13 15:11",
+            "posts": [{
+                "postSenderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+                "postImage": "/src/img/users/friend100001/gallery/5.jpg",
+                "postSenderName": "Сем Уітвікі",
+                "postContent": "вам мене не перемогти!",
+                "postDate": "11.04.06 23:2",
+                "postLikes": 17
+            }]
+        },
+        {
+            "id": 5,
+            "type":"video",
+            "url": "https://www.youtube.com/embed/Nfq3OC6B-CU",
+            "thumbUrl": "/src/img/users/friend100001/gallery/4.jpg",
+            "likes": 1000,
+            "senderName": "Містер Фродо",
+            "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/friend100001/chat/sender2.jpg",
+            "date": "11.12.13 15:11",
+            "posts": []
+        },
+        {
+            "id": 6,
+            "url": "/src/img/users/friend100001/gallery/6.jpg",
+            "likes": 1000,
+            "senderName": "Містер Фродо",
+            "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "date": "11.12.13 15:11",
+            "posts": []
+        },
+        {
+            "id": 7,
+            "url": "/src/img/users/friend100001/gallery/7.jpg",
+            "likes": 1000,
+            "senderName": "Містер Фродо",
+            "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",
+            "recieverUrl": "/src/img/users/user/chat/sender2.jpg",
+            "date": "11.12.13 15:11",
+            "posts": []
+        }
+
+    ]
+}

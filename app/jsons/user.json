@@ -9,6 +9,8 @@
     "education": "Нанотехнологічний інститут",
     "mobileNumber": "0665654652",
     "countFriends": 5,
+    "headerName" : "Doctor",
+    "headerUrl" : "/src/img//users/user/avatars/avatar.jpg",
     "friends": [{
             "id": 100001,
             "name": "Єва Грін",

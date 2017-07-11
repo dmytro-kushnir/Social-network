@@ -9,12 +9,14 @@
     "education": "",
     "mobileNumber": "",
     "countFriends": 0,
+    "headerName" : "Doctor",
+    "headerUrl" : "/src/img//users/user/avatars/avatar.jpg",
     "friends": [
     ],
     "posts": [
     ],
     "backgroundUrl": "/src/img/users/noUser/backgrounds/bg.jpg",
-    "avatarUrl": "/src/img//users/noUser1/avatars/avatar.jpg",
+    "avatarUrl": "/src/img//users/noUser/avatars/avatar.jpg",
     "avatars": [{
             "url": "/src/img/users/noUser/avatars/avatar.jpg",
             "likes": 0,

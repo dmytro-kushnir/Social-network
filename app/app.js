@@ -10,7 +10,8 @@
         'bootstrapLightbox',
         'ngTouch',
         'angular-carousel',
-        'akoenig.deckgrid'
+        'akoenig.deckgrid',
+        'videosharing-embed'
         ]);
     
     //factory for json load

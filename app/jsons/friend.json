@@ -9,6 +9,8 @@
     "education": "Павлівська школа",
     "mobileNumber": "не скажу",
     "countFriends": 24,
+    "headerName" : "Doctor",
+    "headerUrl" : "/src/img//users/user/avatars/avatar.jpg",
     "friends": [{
             "id": 0,
             "name": "Тім Бертон",
@@ -84,7 +86,9 @@
         },
         {
             "id": 5,
-            "url": "/src/img/users/friend100001/gallery/5.mp4",
+            "type":"video",
+            "url": "https://www.youtube.com/embed/Nfq3OC6B-CU",
+            "thumbUrl": "/src/img/users/friend100001/gallery/4.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",
             "senderUrl": "/src/img/users/friend100001/chat/sender1.jpg",

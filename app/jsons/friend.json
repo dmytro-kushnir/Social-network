@@ -87,7 +87,7 @@
         {
             "id": 5,
             "type":"video",
-            "url": "https://www.youtube.com/embed/Nfq3OC6B-CU",
+            "url": "/src/img/users/friend100001/gallery/5.mp4",
             "thumbUrl": "/src/img/users/friend100001/gallery/4.jpg",
             "likes": 1000,
             "senderName": "Містер Фродо",

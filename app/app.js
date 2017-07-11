@@ -31,9 +31,12 @@ app.factory('JsonFriend', function($http){
         requestPage: function(request){
             return $http.post("friendReq.php", request);
         }
+<<<<<<< .merge_file_a14388
         //  getFriend: function(){
         //     return $http.get("friendReq.php");
         // }
+=======
+>>>>>>> .merge_file_a10744
     };
 });
 

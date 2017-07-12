@@ -9,19 +9,20 @@
     "education": "Нанотехнологічний інститут",
     "mobileNumber": "0665654652",
     "countFriends": 5,
-    "friends": [{
-            "name": "Дмитро Кушнір",
-            "firstName": "Дмитро",
-            "secondName": "Кушнір",
-            "url": "/src/img/users/user/friends/Dima_Kushnir.jpg",
-            "countFriends": 622
-        },
+    "friends": [
         {
             "name": "Анна Медвідь",
             "firstName": "Анна",
             "secondName": "Медвідь",
             "url": "/src/img/users/user/friends/Anna_Medvid.jpg",
             "countFriends": 452
+        },
+        {
+            "name": "Дмитро Кушнір",
+            "firstName": "Дмитро",
+            "secondName": "Кушнір",
+            "url": "/src/img/users/user/friends/Dima_Kushnir.jpg",
+            "countFriends": 622
         },
         {
             "name": "Дженнфіер Лоуренс",

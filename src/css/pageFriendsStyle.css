@@ -17,9 +17,7 @@
     margin: 15px;
     width: 80px;
     height: 100px;
-    background-image: url('../img/users/user1/avatar.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    object-fit : cover;
 }
 
 .firstSecondName{

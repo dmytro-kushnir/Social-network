@@ -7,9 +7,9 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-      <a ui-sref="mainContainer.mainPage" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+      <a ui-sref="mainContainer.mainPage" ng-click="return('page.id')" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
 
-      <a onclick="history.back()">
+      <a onclick="history.back()" ng-click="return('page.id')">
         <figure class="arrowLeftMobile"></figure>
       </a>
 
@@ -20,22 +20,22 @@
     <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a class="user dropdown-toggle" href="" data-toggle="dropdown">{{page.firstName}}<b class="caret"></b>
-                  <img class="userHeader" ng-src="{{page.avatarUrl}}" ng-if="page.avatarUrl" alt="user"></a>
+          <a class="user dropdown-toggle" href="" data-toggle="dropdown">{{page.headerName}}<b class="caret"></b>
+                  <img class="userHeader" ng-src="{{page.headerUrl}}" ng-if="page.headerUrl" alt="user"></a>
 
           <ul class="dropdown-menu userMenu">
-            <li><a ui-sref="mainPage" href="#">Моя сторінка</a></li>
+            <li><a ui-sref="mainContainer.mainPage" ng-click="return('page.id')">Моя сторінка</a></li>
             <li class="divider"></li>
             <li><a ui-sref="autorize">Вийти</a></li>
           </ul>
 
           <div class="MobileUserSideBar">
             <ul class="nav navbar-nav mineNavbar">
-              <li><a ui-sref="mainContainer.mainPage">Мій профіль</a></li>
-              <li><a ui-sref="mainContainer.friends">Мої друзі</a></li>
-              <li><a ui-sref="mainContainer.chat">Повідомлення  <span class="badge"> 2</span></a></li>
+              <li><a ui-sref="mainContainer.mainPage" ng-click="return('page.id')">Мій профіль</a></li>
+              <li><a ui-sref="mainContainer.friends" ng-click="return('page.id')">Мої друзі</a></li>
+              <li><a ui-sref="mainContainer.chat" ng-click="return('page.id')">Повідомлення  <span class="badge"> 2</span></a></li>
 
-              <li> <a ui-sref="mainContainer.gallery">Галерея</a></li>
+              <li> <a ui-sref="mainContainer.gallery" ng-click="return('page.id')">Галерея</a></li>
               <li> <a ui-sref="autorize">Вийти</a></li>
 
             </ul>

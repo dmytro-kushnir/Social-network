@@ -4,67 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Normalize.css-->
     <link rel="stylesheet" href="src/css/normalize.css">
     <!--User styles-->
-    <link rel="stylesheet" href="src/build/style.css">
-    <link rel="stylesheet" href="src/build/modal.css">
-    <link rel="stylesheet" href="src/build/gallery.css">
-    <link rel="stylesheet" href="src/css/pageFriendsStyle.css">
-    <link rel="stylesheet" href="src/build/chat.css">
-    <link rel="stylesheet" href="src/build/lessStyle.css">
-    <link rel="stylesheet" href="src/css/stylefrondAvtorize.css">
+    <link rel="stylesheet" href="src/build/style.css" type="text/css">
+    <link rel="stylesheet" href="src/build/modal.css" type="text/css">
+    <link rel="stylesheet" href="src/build/gallery.css" type="text/css">
+    <link rel="stylesheet" href="src/css/pageFriendsStyle.css" type="text/css">
+    <link rel="stylesheet" href="src/build/chat.css" type="text/css">
+    <link rel="stylesheet" href="src/build/lessStyle.css" type="text/css">
+    <link rel="stylesheet" href="src/css/stylefrondAvtorize.css" type="text/css">
     <!--Styles libs-->
-    <link rel="stylesheet" href="src/css/measonryQueries.css" >
+    <link rel="stylesheet" href="src/css/measonryQueries.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-lightbox/0.12.0/angular-bootstrap-lightbox.min.css">
-    <link rel="stylesheet" href="/src/css/angular-carousel.css">
+    <link rel="stylesheet" href="src/css/angular-carousel.css">
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <!--Title-->
     <title ng-bind="title"></title>
     <!--Script Libs-->
-        <!-- jQuery-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!--    Jquery plugin for touch devices-->
-     <script src="src/js/touchswipe.min.js"></script>
+    <!-- jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--    Jquery plugin for touch devices-->
+    <script src="src/js/touchswipe.min.js"></script>
     <script src="src/js/swipeMobile.js"></script>
-        <!-- AngularJs-->
+    <!-- AngularJs-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="src/libs/angular/ng-videosharing-embed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-lightbox/0.12.0/angular-bootstrap-lightbox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/salvattore/1.0.9/salvattore.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.6.4/angular-touch.min.js"></script>
-    <script src="/src/libs/angular/angular-carousel.js"></script>
+    <script src="src/libs/angular/angular-carousel.js"></script>
     <script src="src/libs/angular/angular-deckgrid.js"></script>
 
-    
-        <!--    change textarea size plugin-->
-    <script src="src/libs/angular/elastic.js"></script> 
+
+
+    <!--    change textarea size plugin-->
+    <script src="src/libs/angular/elastic.js"></script>
 
     <!--App-->
     <script src="app/app.js"></script>
     <!--Controllers/Directives-->
     <script src="app/controllers/navigation.controller.js"></script>
-     <script src="app/controllers/mainPage.controller.js"></script>
+    <script src="app/controllers/mainPage.controller.js"></script>
     <script src="app/controllers/registration.controller.js"></script>
     <script src="app/controllers/chatUser.controller.js"></script>
     <script src="app/controllers/friends.controller.js"></script>
     <script src="app/controllers/modal.controller.js"></script>
+    <script src="app/controllers/userPage.controller.js"></script>
     <script src="app/directives.js"></script>
 </head>
 
-<body ng-controller="MainCtrl as mainPage" ng-cloak>
+<body ng-controller="MainCtrl" ng-cloak>
     <ui-view />
-   
-
 </body>
 
 </html>

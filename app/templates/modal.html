@@ -8,7 +8,9 @@
                                      <figure class="crossModal pull-right" aria-label="Close" ng-click="$dismiss()"></figure>
                             <a class="modalImgWrapper lightbox-image-container">
                                 <img class="img-responsive center-block modalImg" 
-                                    lightbox-src="{{Lightbox.imageUrl}}" alt="mainImage "{{Lightbox.index}} />
+                                   lightbox-src="{{Lightbox.image.url}}" alt="mainImage "{{Lightbox.index}} />
+                                  <!--<embed-video data-ng-href="http://www.youtube.com/watch?v=LOKyEt36Kjc" force-protocol="https" controls=0>
+                                  <a href="http://www.youtube.com/watch?v=LOKyEt36Kjc">Watch</a></embed-video>-->
                                 <span class="modalImgCount">{{Lightbox.index + 1 }}/{{Lightbox.images.length}} </span>
                             </a>
                             <a  ng-click="Lightbox.prevImage()" class="carousel-control left"><i class="glyphicon glyphicon-chevron-left"></i></a>

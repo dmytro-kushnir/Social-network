@@ -142,27 +142,31 @@
                                 $rootScope.title = $rootScope.chatTitle;
                             }]
                         }
+                    })
+                    .state("mainContainer.userPage", {
+                        url: '/userPage',
+                        views: {
+                            'userPage@mainContainer': {
+                                templateUrl: 'app/templates/userPage.html',
+                            },
+
+                        },
+                        resolve: {
+                            'title': ['$rootScope', function ($rootScope) {
+                                console.log($rootScope.friendName);
+                                $rootScope.title =  $rootScope.friendName;
+                            }]
+                        }
                     });
                 $urlRouterProvider.otherwise('/autorize');
+                
             }
         ])
         .run(['$rootScope', '$state', '$stateParams',
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
-
             }
+       
         ]);
-
-    //directive for load background-mage:url() to div
-    app2.directive('backImg', function () {
-        return function ($scope, $element, $attrs) {
-            var url = $attrs.backImg;
-            $element.css({
-                'background-image': 'url(' + url + ')',
-                'background-size': 'cover'
-            });
-        };
-    });
-
 })();

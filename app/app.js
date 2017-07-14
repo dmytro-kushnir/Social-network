@@ -13,6 +13,8 @@
         'videosharing-embed'
     ]);
 
+
+    
     // Routing START  
 
     app.config(['$stateProvider', '$urlRouterProvider',
@@ -40,7 +42,6 @@
                     })
                     .state("mainContainer.mainPage", {
                         url: '/mainPage',
-                        name:'mainPage',
                         views: {
                             'mainPage@mainContainer': {
                                 templateUrl: 'app/templates/mainPage.html',
@@ -129,6 +130,7 @@
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
+                $rootScope.$state.$current = $state.$current;
 
             }
 

@@ -27,6 +27,7 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <!--Title-->
     <title ng-bind="title"></title>
+    
     <!--Script Libs-->
     <!-- jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -64,7 +65,7 @@
     <script src="app/directives.js"></script>
 </head>
 
-<body ng-controller="MainCtrl" ng-cloak>
+<body ng-controller="MainCtrl as mainCtrl" ng-cloak>
     <ui-view />
 </body>
 

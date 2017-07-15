@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.php.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/php-project/1">
+<<<<<<< HEAD
             <name>social-network</name>
+=======
+            <name>socialnetwork</name>
+>>>>>>> origin
         </data>
     </configuration>
 </project>

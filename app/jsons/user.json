@@ -9,6 +9,8 @@
     "education": "Нанотехнологічний інститут",
     "mobileNumber": "0665654652",
     "countFriends": 5,
+
+    "friends": [
     "headerName" : "Doctor",
     "headerUrl" : "/src/img//users/user/avatars/avatar.jpg",
     "friends": [{
@@ -28,7 +30,13 @@
             "countFriends": 452
         },
         {
-            "id": 100003,
+            "name": "Дмитро Кушнір",
+            "firstName": "Дмитро",
+            "secondName": "Кушнір",
+            "url": "/src/img/users/user/friends/Dima_Kushnir.jpg",
+            "countFriends": 622
+        },
+        {
             "name": "Дженнфіер Лоуренс",
             "firstName": "Дженнфіер",
             "secondName": "Лоуренс",

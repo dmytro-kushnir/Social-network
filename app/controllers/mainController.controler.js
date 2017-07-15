@@ -36,14 +36,7 @@
         $scope.$on('user', function (event, data) {
             storageService.save('mainUser', JSON.stringify(data));
         });
-
-        var crutch = 0; 
-        ++crutch;
-        if(crutch == 1){ // if first entrance to app
-            var userData = storageService.get('mainUser'); //get userData from LS to scope
-             $scope.page = JSON.parse(userData);
-            //  console.log("loaded!!!");
-        }
+        
         // if page reload
         if (performance.navigation.type == 1) {
                    var userData = storageService.get('mainUser'); //get userData from LS to scope

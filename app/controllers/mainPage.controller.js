@@ -3,6 +3,7 @@
     app.controller('MainPageCtrl', function ($scope, JsonLoad, storageService) {
         'use strict';
         // load main USER page
+        
         JsonLoad.getPage().then(function (res) {
             console.log("mainPage GET", res);
             $scope.page = [];

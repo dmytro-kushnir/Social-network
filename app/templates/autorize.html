@@ -25,7 +25,7 @@
                 <label class="password">Пароль:</label>
                 <input type="password" name="password" class="password_input" ng_-model="user.password" ng-required="true">
                 <p class="error" ng-show="mainLogin.password.$invalid && mainLogin.password.$touched">Введіть правильний пароль</p>
-                <a ui-sref="mainContainer.mainPage"><button type="button" class="mainenter_button" ng-disabled="mainLogin.$invalid">Увійти</button></a>
+                <a ui-sref="mainContainer.mainPage"><button type="button" class="mainenter_button" ng-disabled="mainLogin.$invalid" >Увійти</button></a>
             </form>
         </article>
         <article class="registration"  ng-controller="singUpController">

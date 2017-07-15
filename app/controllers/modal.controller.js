@@ -1,14 +1,17 @@
+(function(){
+
 // open modal dialog
 app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     'use strict';
+
     $scope.Lightbox = Lightbox;
-    console.log(Lightbox);
+    // console.log(Lightbox);
 
     $scope.openAvatar = function (index, nameSpace) {
         Lightbox.openModal($scope[nameSpace].avatars, index);
     };
     $scope.openGallery = function (index, nameSpace) {
-           console.log(Lightbox);
+        //    console.log(Lightbox);
            console.log(nameSpace);
         Lightbox.openModal($scope[nameSpace].gallery, index);
     };
@@ -24,3 +27,5 @@ app.controller('ModalCtrl', function ($scope) {
         $scope[class1] = !$scope[class1];
     };
 });
+
+})();

@@ -1,27 +1,23 @@
 // rendering page controller
-app.controller('UserPageCtrl', function ($scope, $rootScope, JsonFriend) {
+app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonFriend, storageService) {
     'use strict';
+
+    var localStorageID = storageService.get('friendId');
     // if (performance.navigation.type == 1) {
-    //     console.log($rootScope);
-    //     JsonFriend.getFriend().then(function success(response) {
-    //         $scope.friend = response.data;
 
-    //         $scope.page = $scope.friend;
+    // $state.go("mainContainer.mainPage",{},{reload: "mainContainer.mainPage"});
+    //   console.log("Rootscope friend.id on reload: "+$rootScope.friendId);
 
-    //         console.log($scope.page);
-    //         $rootScope.friendName = $scope.friend.firstName;
-    //     });
-    // } else {
-    //     console.info("This page is not reloaded");
+    JsonFriend.requestPage(localStorageID).then(function (res) {
+        storageService.save('friendName', res.data.firstName + " " + res.data.secondName);
+
+        $scope.friend = res.data;
+
+        $scope.$emit('friend', res.data); // send friend data to parent scope (MainCtrl)
+    });
     // }
-if (performance.navigation.type == 1) {
-   JsonFriend.requestPage(100001).then(function(res) {
-            $scope.friend = res.data;
-            $scope.page = $scope.friend;
-            console.log($scope.page);
-            $rootScope.friendName = $scope.friend.firstName;
-        });
-        } else {
-        console.info("This page is not reloaded");
-    }
+    //  else {
+    //    console.log("Rootscope friend.id: "+$rootScope.friendId);
+
+    // }
 });

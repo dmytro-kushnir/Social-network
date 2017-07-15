@@ -32,7 +32,7 @@
             $scope.hey = data;
 
         });
-        //get data from child ctrl mainPAge and add it to LS
+        //get data from child ctrl and add it to LS
         $scope.$on('user', function (event, data) {
             storageService.save('mainUser', JSON.stringify(data));
         });

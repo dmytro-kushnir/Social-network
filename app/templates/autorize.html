@@ -1,7 +1,7 @@
  <!--header-->
-    <header class="header" ng-app="socialNetwork">
+    <header class="header" ng-app="socialNetwork" ng-controller="singUpController">
         <a ui-sref="mainContainer.autorize"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
-         <form class="header_enter" name="headerEnter" ng-submit="loginUser()" ng-controller="logInController">
+         <form class="header_enter" name="headerEnter">
             <div class="partFormHeder">
             	<div class="emailAndpass">
             		<label class="email">E-mail:</label>
@@ -18,7 +18,7 @@
     <main class="main" >
          <article class="main_enter">
             <p class="enter_header">Заходь!:)</p>
-            <form class="main_login" name="mainLogin" ng-submit="loginUser()" ng-controller="logInController">
+            <form class="main_login" name="mainLogin" ng-submit="loginUser()">
                 <label class="email">E-mail:</label>
                 <input type="email"  name="email" class="email_input" ng_-model="user.email" ng-required="true">
                 <p class="error" ng-show="mainLogin.email.$invalid && mainLogin.email.$touched">Введіть правильний е-мейл</p>
@@ -28,17 +28,17 @@
                 <a ui-sref="mainContainer.mainPage"><button type="button" class="mainenter_button" ng-disabled="mainLogin.$invalid">Увійти</button></a>
             </form>
         </article>
-        <article class="registration"  ng-controller="singUpController">
+        <article class="registration">
             <p class="registration_header">Хочеш приєднатись до друзів?</p>
             <p class="registration_secondheader">реєструйся!</p>
-            <form name="registration" ng-submit="register()">
+            <form name="registration">
                 <div class="partOfForm" >
                     <label for="firstname" class="partOfForm_label">Прізвище</label>
                     <input class="inputsPartOfForm" 
                     	   name="firstname" 
                     	   type="text"
                     	   id="firstname"
-                    	   ng-model="user.firstname" 
+                    	   ng-model="singUpInfo.firstname" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.firstname.$invalid && registration.firstname.$touched">Поле не може бути пустим!</p>
                     <label for="name" class="partOfForm_label">Ім’я</label>
@@ -46,7 +46,7 @@
                     	   name="secondname"
                     	   type="text"
                     	   id="name"
-                    	   ng-model="user.secondname" 
+                    	   ng-model="singUpInfo.secondname" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.secondname.$invalid && registration.secondname.$touched">Поле не може бути пустим!</p>
                     <label for="email" class="partOfForm_label">E-mail</label>
@@ -54,7 +54,7 @@
                     	   name="email"
                     	   type="email"
                     	   id="name" 
-                    	   ng-model="user.email" 
+                    	   ng-model="singUpInfo.email" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.email.$invalid && registration.email.$touched">Введіть правильний емейл</p>
                     <label for="password" class="partOfForm_label">Пароль</label>
@@ -62,11 +62,11 @@
                     	   name="password"
                     	   type="password" 
                     	   id="password"
-                    	   ng-model="user.password" 
+                    	   ng-model="singUpInfo.password" 
                     	   ng-minlength="6" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.password.$invalid && registration.password.$touched">Пароль має містити мінімум 6 символів</p>
-					<a ui-sref="mainContainer.mainPage"><button type="submit" class="form_button" ng-disabled="registration.$invalid">Приєднуйся!</button></a>
+					<button ng-click="singUserUp(data)" class="form_button" ng-disabled="registration.$invalid">Приєднуйся!</button>
                 </div>
             </form>
             <p ng-show="msg">{{msg}}</p>

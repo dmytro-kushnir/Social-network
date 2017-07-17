@@ -26,6 +26,7 @@
                         url: '/mainContainer',
                         templateUrl: "app/templates/mainContainer.html",
                         resolve: {
+                            
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Доктор Стрендж";
                             }]
@@ -130,8 +131,6 @@
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
-                $rootScope.$state.$current = $state.$current;
-
             }
 
         ]);

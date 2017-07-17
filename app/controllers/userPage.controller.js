@@ -12,12 +12,17 @@ app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonFriend,
         storageService.save('friendName', res.data.firstName + " " + res.data.secondName);
 
         $scope.friend = res.data;
-
         $scope.$emit('friend', res.data); // send friend data to parent scope (MainCtrl)
+        
     });
     // }
     //  else {
     //    console.log("Rootscope friend.id: "+$rootScope.friendId);
 
     // }
+    $scope.userPageFrGal = function(){
+        console.log("gallery or frineds from userPage opened!");
+       
+         $scope.$emit('userPageFrGal', "friends"); // send friend data to parent scope (MainCtrl)
+    }
 });

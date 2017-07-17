@@ -3,20 +3,24 @@
     app.controller('MainPageCtrl', function ($scope, JsonLoad, storageService) {
         'use strict';
         // load main USER page
-        
-        JsonLoad.getPage().then(function (res) {
-            console.log("mainPage GET", res);
-            $scope.page = [];
-            $scope.page = res.data;
 
-            storageService.save('userName', res.data.firstName + " " + res.data.secondName);
+        // JsonLoad.getPage().then(function (res) {
+        //     console.log("mainPage GET", res);
+        //     $scope.page = [];
+        //     $scope.page = res.data;
 
-            $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
-            
-            $scope.$emit('user', res.data);
-            storageService.save('user', res.data);
-        });
+        //     storageService.save('userName', res.data.firstName + " " + res.data.secondName);
 
+        //     $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
+
+        //     $scope.$emit('user', res.data);
+        //     storageService.save('user', res.data);
+        // });
+        $scope.mainPageFrGal = function () {
+            console.log("gallery or frineds from mainPage opened!");
+
+            $scope.$emit('mainPageFrGal', "mainPage"); // send friend data to parent scope (MainCtrl)
+        }
 
     });
 

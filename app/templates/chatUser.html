@@ -13,7 +13,7 @@
     <div class="panel-body"  >
     <ul class="chat" data-ng-repeat="chat in page.chat[chatId].messages">
 
-        <li class="rightChat clearfix pull-right" ng-if="$even">
+        <li class="rightChat clearfix pull-right" ng-if="chat.side == 'R'">
             <div class="chat-body bubbleRight ">
                 <p>
                     {{chat.data}}
@@ -30,7 +30,7 @@
         </li>
 
 
-        <li class="leftChat clearfix pull-left" ng-if="$odd">
+        <li class="leftChat clearfix pull-left" ng-if="chat.side == 'L'">
             <span class="chat-img pull-left">
                 <img class="userChatPhoto" ng-src="{{page.chat[chatId].leftImage}}" alt="User Avatar"/>
             </span>
@@ -46,10 +46,6 @@
                 </div>
             </div>
         </li>
-
-
-
-
     </ul>
     </div>
 

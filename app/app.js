@@ -15,8 +15,6 @@
 
     ]);
 
-
-
     // Routing START  
 
     app.config(['$stateProvider', '$urlRouterProvider',

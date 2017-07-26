@@ -247,6 +247,7 @@
                 $http.defaults.headers.common.Authorization = 'Bearer ';
             };
 
+            
             return service;
         }
     ]);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Лип 26 2017 р., 10:12
+-- Час створення: Лип 26 2017 р., 11:30
 -- Версія сервера: 10.1.21-MariaDB
 -- Версія PHP: 5.6.30
 
@@ -39,7 +39,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userId`, `userFirstName`, `userSecondName`, `userEmail`, `userPassword`) VALUES
-(1, 'test', 'test', 'test@test_om', '123456');
+(1, 'test', 'test', 'test@test_om', '123456'),
+(2, 'Медвідь', 'Анна', 'medvidanja94@gmail_com', '123456');
 
 --
 -- Індекси збережених таблиць
@@ -59,7 +60,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблиці `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `userId` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

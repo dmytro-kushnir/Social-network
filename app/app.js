@@ -35,6 +35,7 @@
                     .state("autorize", {
                         url: '/autorize',
                         templateUrl: "app/templates/autorize.html",
+                        controller: 'singUpController',
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Приєднуйся!";

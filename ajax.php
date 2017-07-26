@@ -1,14 +1,12 @@
 <?php
 
-if ($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
-
-    include ('./Config/config.php');
+    include ('Config/config.php');
     $Db = new \Db\Db();
     $temp = array_keys($_POST);
     $data = json_decode($temp[0], true);
 
     if (!empty($data)) {
-        $insertId = $Db->addSql('user', $data);
+        $insertId = $Db->addSql('users', $data);
     }
 
     $result = [
@@ -34,4 +32,3 @@ if ($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
 //    
 //    }
     //echo $result;
-}

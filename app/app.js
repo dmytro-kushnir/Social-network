@@ -12,9 +12,10 @@
         'akoenig.deckgrid',
         'videosharing-embed',
         'ngCookies'
-
     ]);
 
+
+    
     // Routing START  
 
     app.config(['$stateProvider', '$urlRouterProvider',
@@ -26,7 +27,7 @@
                         url: '/mainContainer',
                         templateUrl: "app/templates/mainContainer.html",
                         resolve: {
-
+                            
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Доктор Стрендж";
                             }]
@@ -51,12 +52,9 @@
                             }
                         },
                         resolve: {
-                            'title': ['storageService', '$rootScope', function (storageService, $rootScope) {
-                                $rootScope.title = storageService.get('userName');
-                            }]
-                        },
-                        data: {
-                            authRequired: false
+                           'title': ['storageService', '$rootScope', function (storageService,$rootScope) {
+                                $rootScope.title =  storageService.get('userName');
+                           }]
                         }
                     })
                     .state("mainContainer.friends", {
@@ -122,62 +120,40 @@
 
                         },
                         resolve: {
-                            'title': ['storageService', '$rootScope', function (storageService, $rootScope) {
-                                $rootScope.title = storageService.get('friendName');
+                            'title': ['storageService', '$rootScope', function (storageService,$rootScope) {
+                                $rootScope.title =  storageService.get('friendName');
                             }]
                         }
                     });
-                $urlRouterProvider.otherwise('/mainContainer/mainPage');
+                $urlRouterProvider.otherwise('/autorize');
 
             }
         ])
-
         .run(['$rootScope', '$state', '$stateParams',
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
-                $rootScope.$on('$locationChangeStart', function () {
-                    document.body.scrollTop = document.documentElement.scrollTop = 0;
-                });
             }
 
-        ])
-
-        .run(['$rootScope', '$transitions', '$state', '$cookies', '$http', 'AuthService',
-            function ($rootScope, $transitions, $state, $cookies, $http, AuthService) {
-
-                // keep user logged in after page refresh
-                $rootScope.globals = $cookies.get('globals') || {};
-          
-                $http.defaults.headers.common['Authorization'] = 'Bearer ' + $rootScope.globals;
-                $transitions.onStart({
-                    to: function (state) {
-                        return state.data != null && state.data.authRequired === true;
-                    }
-                }, function () {
-                    if (!AuthService.isAuthenticated()) {
-                        return $state.target("autorize");
-                    }
-                });
-            }
         ]);
+
 
     //factory for json load
     app.factory('JsonLoad', function ($http) {
         return {
             getPage: function () {
-                return $http.get("endPoints/connection.php");
+                return $http.get("connection.php");
             },
             returnHome: function (request) {
-                return $http.post("endPoints/connection.php", request);
+                return $http.post("connection.php", request);
             }
         };
     });
 
-    app.factory('JsonFriend', function ($http) {
+    app.factory('JsonFriend', function ($http, $rootScope) {
         return {
             requestPage: function (request) {
-                return $http.post("endPoints/friendReq.php", request);
+                return $http.post("friendReq.php", request);
             }
             //     getFriend: function () {
             //         return $http({
@@ -190,14 +166,6 @@
             //     }
         };
     });
-    app.factory('ChatLoad' ,function($http){
-        return{
-            requestChat: function(request){
-                return $http.post("endPoints/chatReq.php", request);
-            }
-        }
-    });
-
     app.factory('storageService', ['$rootScope', function ($rootScope) {
 
         return {
@@ -209,46 +177,4 @@
             }
         };
     }]);
-
-
-    app.factory('AuthService', ['$http', '$cookies', '$rootScope',
-        function ($http, $cookies, $rootScope) {
-            var service = {};
-
-            // Authenticates throug a rest service
-            service.authenticate = function (username, password, callback) {
-
-                $http.post('endPoints/login.php', {
-                        username: username,
-                        password: password
-                    })
-                    .then(function (response) {
-                        console.log("response", response);
-                        callback(response);        
-                    });
-            };
-
-            // Creates a cookie and set the Authorization header
-            service.setCredentials = function (response) {
-                $rootScope.globals = response.token;
-
-                $http.defaults.headers.common['Authorization'] = 'Bearer ' + response.token;
-                $cookies.put('globals', $rootScope.globals);
-            };
-
-            // Checks if it's authenticated
-            service.isAuthenticated = function () {
-                return !($cookies.get('globals') === undefined);
-            };
-
-            // Clear credentials when logout
-            service.clearCredentials = function () {
-                $rootScope.globals = undefined;
-                $cookies.remove('globals');
-                $http.defaults.headers.common.Authorization = 'Bearer ';
-            };
-
-            return service;
-        }
-    ]);
 })();

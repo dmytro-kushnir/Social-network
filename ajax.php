@@ -17,18 +17,3 @@
 
     header('Content-Type: application/json');
     echo json_encode($result);
-
-//    $result = '';
-//    
-//    if(!empty($_POST)){
-////        foreach ($_POST as $key => $value){
-////            $result .= $key . '->' . $value . '; ';
-////        }
-//        $temp = array_keys($_POST);
-//        //$result .= $temp[0];
-//        foreach (json_decode($temp[0], true) as $key=> $value){
-//           $result .= $key . '->' . $value . '; ';
-//    }   
-//    
-//    }
-    //echo $result;

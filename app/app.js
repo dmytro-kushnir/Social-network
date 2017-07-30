@@ -177,9 +177,6 @@
             }
         };
     }]);
-<<<<<<< HEAD
-
-
     app.factory('AuthService', ['$http', '$cookies', '$rootScope',
         function ($http, $cookies, $rootScope) {
             var service = {};
@@ -221,6 +218,4 @@
             return service;
         }
     ]);
-=======
->>>>>>> 032fe14d6b10481570cfe1537c3775f8e535921b
 })();

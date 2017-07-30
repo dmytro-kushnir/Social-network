@@ -125,7 +125,7 @@
                             }]
                         }
                     });
-                $urlRouterProvider.otherwise('/autorize');
+                $urlRouterProvider.otherwise('/mainContainer/mainPage');
 
             }
         ])
@@ -142,10 +142,10 @@
     app.factory('JsonLoad', function ($http) {
         return {
             getPage: function () {
-                return $http.get("connection.php");
+                return $http.get("endPoints/connection.php");
             },
             returnHome: function (request) {
-                return $http.post("connection.php", request);
+                return $http.post("endPoints/connection.php", request);
             }
         };
     });
@@ -153,7 +153,7 @@
     app.factory('JsonFriend', function ($http, $rootScope) {
         return {
             requestPage: function (request) {
-                return $http.post("friendReq.php", request);
+                return $http.post("endPoints/friendReq.php", request);
             }
             //     getFriend: function () {
             //         return $http({

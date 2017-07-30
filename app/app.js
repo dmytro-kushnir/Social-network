@@ -177,8 +177,6 @@
             }
         };
     }]);
-
-
     app.factory('AuthService', ['$http', '$cookies', '$rootScope',
         function ($http, $cookies, $rootScope) {
             var service = {};

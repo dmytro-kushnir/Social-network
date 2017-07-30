@@ -177,14 +177,6 @@
             }
         };
     }]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-=======
->>>>>>> AnnaBranch
-=======
->>>>>>> 5630d42956d33504a24b25592d9181577a1907b2
     app.factory('AuthService', ['$http', '$cookies', '$rootScope',
         function ($http, $cookies, $rootScope) {
             var service = {};

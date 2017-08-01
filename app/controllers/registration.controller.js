@@ -18,11 +18,13 @@ app.controller("singUpController", function($scope, $http){
 	};
 
 	$scope.singUserUp = function(){
-		var data = {'userFirstName' : $scope.singUpInfo.firstname,
-				   	'userSecondName' : $scope.singUpInfo.secondname,
-					'userEmail' : $scope.singUpInfo.email,
-					'userPassword' : $scope.singUpInfo.password
+		var data = {"userFirstName" : $scope.singUpInfo.firstname,
+				   	"userSecondName" : $scope.singUpInfo.secondname,
+					"userEmail" : $scope.singUpInfo.email,
+					"userPassword" : $scope.singUpInfo.password
 			};
+				
+				console.log("singUp data input: ", data);
 		$http.post('ajax.php', data).then(function (response){
 			console.log(response);
 		}), function (error){

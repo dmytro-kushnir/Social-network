@@ -12,8 +12,20 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
-define('DB_HOST', 'localhost');
-define('DB_SCHEMA', 'social_network');
-define('DB_LOGIN', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_UTC', '+2:00');
+// localhost
+
+define('DB_HOST', "localhost");
+define('DB_PORT', '3306');
+define('DB_SCHEMA', "social_network");
+define('DB_LOGIN', "root");
+define('DB_PASSWORD', "root");
+define('DB_UTC', "+2:00");
+
+// hostinger
+
+// define('DB_HOST', 'mysql.hostinger.com.ua');
+// define('DB_PORT', '3306');
+// define('DB_SCHEMA', 'u634702278_soc');
+// define('DB_LOGIN', 'u634702278_dima');
+// define('DB_PASSWORD', 'qwerty'); 
+// define('DB_UTC', '+2:00');

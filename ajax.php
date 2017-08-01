@@ -2,8 +2,14 @@
 
     include ('Config/config.php');
     $Db = new \Db\Db();
-    $temp = array_keys($_POST);
-    $data = json_decode($temp[0], true);
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    // test manual data
+    // $array = array(
+    // 'userFirstName' => 'test',
+    // 'userSecondName' => 'test',
+    // 'userEmail' => 'test@test',
+    // 'userPassword' => 'test');
 
     $select = "SELECT count(*) as counter FROM users WHERE userEmail='$data[userEmail]'";
     $query = $Db->query($select);
@@ -11,7 +17,6 @@
     $num = $query->fetchAll(PDO::FETCH_ASSOC);
 
     $insertId = null;
-    
     if (!empty($data)) {
         if($num['counter'] > 0){
             $userInfo = "Користувач з таким емейлом вже існує";
@@ -28,7 +33,7 @@
         }
     } 
     $result = [
-        'type' => 'succes',
+        'type' => 'success',
         'insertId' => $insertId,
         'userInfo' => $userInfo,
         'errors' => []

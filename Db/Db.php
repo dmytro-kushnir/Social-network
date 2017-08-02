@@ -55,11 +55,11 @@ class Db extends \PDO {
                 }
             }
             else{
-                return "hey".$db_array;
+                return "something went wrong #1".$db_array;
             }
         }
         else{
-                return $db_array;
+                return "something went wrong #2".$db_array;
             }
     }
 

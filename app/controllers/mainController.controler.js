@@ -14,18 +14,13 @@
         'use strict';
         $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
 
-     AuthService.authenticate("dimaKush@gmail.com","qwerty", function(tmp){
-            console.log(tmp);
-            storageService.save('authStorage', JSON.stringify(tmp)); //-> mainUser
-        });
 
-     var temp = JSON.parse(storageService.get('authStorage'));
-     
-     console.log(temp);
-
-    AuthService.setCredentials();
-    AuthService.isAuthenticated();
-
+        //logout in header
+	    $scope.logOut = function(){
+		    console.log("LogOut");
+		    AuthService.clearCredentials();
+        }
+            
         // return to main USER page onclick
         $scope.return = function (answer) {
             JsonLoad.returnHome(answer).then(function (res) {

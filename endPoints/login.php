@@ -1,7 +1,11 @@
 <?php
 
-$answer = json_decode(file_get_contents('php://input'), true);
+ $data= file_get_contents('php://input');
+  $result = [
+        'token' => $data,
+        'errors' => []
+];
 
-var_dump($answer);
+echo json_encode($result);
 
 exit;

@@ -36,7 +36,7 @@
                     .state("autorize", {
                         url: '/autorize',
                         templateUrl: "app/templates/autorize.html",
-                        controller: 'singUpController',
+                        // controller: 'singUpController',
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Приєднуйся!";
@@ -205,10 +205,10 @@
             var service = {};
 
             // Authenticates throug a rest service
-            service.authenticate = function (username, password, callback) {
+            service.authenticate = function (email, password, callback) {
 
                 $http.post('endPoints/login.php', {
-                        username: username,
+                        email: email,
                         password: password
                     })
                     .then(function (response) {
@@ -220,16 +220,16 @@
             // Creates a cookie and set the Authorization header
             service.setCredentials = function (response) {
                 console.log(response);
-                $rootScope.globals = response.token;
+                $rootScope.globals = response;
 
-                $http.defaults.headers.common['Authorization'] = 'Bearer ' + response.token;
+                $http.defaults.headers.common['Authorization'] = 'Bearer ' + response;
                 $cookies.put('globals', $rootScope.globals);
             };
 
             // Checks if it's authenticated
             service.isAuthenticated = function () {
-                console.log($cookies.get('globals'));
-                console.log($rootScope.globals);
+                console.log("coockies globals",$cookies.get('globals'));
+                console.log("rootscope gloabls",$rootScope.globals);
 
                 return !($cookies.get('globals') === undefined);
             };

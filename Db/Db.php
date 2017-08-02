@@ -3,14 +3,14 @@
 namespace Db;
 
 class Db extends \PDO {
-
-    private $dbh;
-
     public function __construct($dsn = null, $username = null, $passwd = null, $options = array()) {
-        $dsn = isset($dsn) ? $dsn : "mysql:host=" . DB_HOST . "; dbname=" . DB_SCHEMA;
+
+        $dsn = isset($dsn) ? $dsn : "mysql:host=" . DB_HOST .";port=". DB_PORT .";dbname=" . DB_SCHEMA;
         $username = isset($username) ? $username : DB_LOGIN;
         $passwd = isset($passwd) ? $passwd : DB_PASSWORD;
+
         $options = array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'");
+
         try {
             parent::__construct($dsn, $username, $passwd, $options);
             $this->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
@@ -54,7 +54,13 @@ class Db extends \PDO {
                     echo ($e->getMessage() . $STH->queryString);
                 }
             }
+            else{
+                return "hey".$db_array;
+            }
         }
+        else{
+                return $db_array;
+            }
     }
 
     public function error($error, $sqlstring) {
@@ -105,6 +111,18 @@ class Db extends \PDO {
                     return false;
                 }
             }
+        }
+    }
+    public function querySql($sqlstring) {
+        if (isset($sqlstring)) {
+            try {
+                $STH = $this->query($sqlstring);
+                return $STH;
+            } catch (PDOException $e) {
+                $this->error($e->getMessage(), $sqlstring);
+            }
+        } else {
+            $this->error('', '');
         }
     }
 

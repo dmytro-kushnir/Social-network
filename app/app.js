@@ -55,7 +55,10 @@
                            'title': ['storageService', '$rootScope', function (storageService,$rootScope) {
                                 $rootScope.title =  storageService.get('userName');
                            }]
-                        }
+                        },
+                          data: {
+                                authRequired: true
+                            }
                     })
                     .state("mainContainer.friends", {
                         url: '/friends',
@@ -127,6 +130,7 @@
                     });
                 $urlRouterProvider.otherwise('/mainContainer/mainPage');
 
+
             }
         ])
         .run(['$rootScope', '$state', '$stateParams',
@@ -135,7 +139,25 @@
                 $rootScope.$stateParams = $stateParams;
             }
 
-        ]);
+        ])
+        .run(['$rootScope', '$transitions', '$state', '$cookies', '$http', 'AuthService',
+            function ($rootScope, $transitions, $state, $cookies, $http, AuthService) {
+
+                // keep user logged in after page refresh
+                $rootScope.globals = $cookies.get('globals') || {};
+                $http.defaults.headers.common['Authorization'] = 'Bearer ' + $rootScope.globals;
+
+                $transitions.onStart({
+                    to: function (state) {
+                        return state.data != null && state.data.authRequired === true;
+                    }
+                }, function () {
+                    
+                    if (!AuthService.isAuthenticated()) {
+                        return $state.target("autorize");
+                    }
+                });
+            }]);
 
 
     //factory for json load
@@ -179,6 +201,7 @@
     }]);
     app.factory('AuthService', ['$http', '$cookies', '$rootScope',
         function ($http, $cookies, $rootScope) {
+
             var service = {};
 
             // Authenticates throug a rest service
@@ -196,6 +219,7 @@
 
             // Creates a cookie and set the Authorization header
             service.setCredentials = function (response) {
+                console.log(response);
                 $rootScope.globals = response.token;
 
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + response.token;
@@ -204,6 +228,9 @@
 
             // Checks if it's authenticated
             service.isAuthenticated = function () {
+                console.log($cookies.get('globals'));
+                console.log($rootScope.globals);
+
                 return !($cookies.get('globals') === undefined);
             };
 
@@ -214,7 +241,6 @@
                 $http.defaults.headers.common.Authorization = 'Bearer ';
             };
 
-            
             return service;
         }
     ]);

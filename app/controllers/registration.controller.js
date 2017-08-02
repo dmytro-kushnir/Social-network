@@ -11,8 +11,6 @@ app.controller("singUpController", function($scope, $http){
 	};
 
 	$scope.loginInfo = {
-		firstname : undefined,
-		secondname : undefined,
 		email  : undefined,
 		password :undefined
 	};

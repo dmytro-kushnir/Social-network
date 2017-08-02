@@ -2,7 +2,8 @@
 
     include ('Config/config.php');
     $Db = new \Db\Db();
-    $data = json_decode(file_get_contents('php://input'), true);
+    $temp = array_keys($_POST);
+    $data = json_decode($temp[0], true);
 
     // test manual data
     // $array = array(
@@ -18,10 +19,9 @@
 
     $insertId = null;
     if (!empty($data)) {
-        if($num['counter'] > 0){
+        if($num[0]['counter'] > 0){
             $userInfo = "Користувач з таким емейлом вже існує";
-        }
-       else {
+        }else {
            $insertId = $Db->addSql('users', $data);
            
            if($insertId){

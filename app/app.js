@@ -152,7 +152,7 @@
                         return state.data != null && state.data.authRequired === true;
                     }
                 }, function () {
-                    
+                    console.log("I'm alive!!!");
                     if (!AuthService.isAuthenticated()) {
                         return $state.target("autorize");
                     }
@@ -212,14 +212,14 @@
                         password: password
                     })
                     .then(function (response) {
-                        console.log("response", response);
+                        // console.log("response", response);
                         callback(response);        
                     });
             };
 
             // Creates a cookie and set the Authorization header
             service.setCredentials = function (response) {
-                console.log(response);
+                // console.log(response);
                 $rootScope.globals = response;
 
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + response;
@@ -228,8 +228,8 @@
 
             // Checks if it's authenticated
             service.isAuthenticated = function () {
-                console.log("coockies globals",$cookies.get('globals'));
-                console.log("rootscope gloabls",$rootScope.globals);
+                // console.log("coockies globals",$cookies.get('globals'));
+                console.log("RETURN",$cookies.get('globals') === undefined);
 
                 return !($cookies.get('globals') === undefined);
             };
@@ -238,6 +238,8 @@
             service.clearCredentials = function () {
                 $rootScope.globals = undefined;
                 $cookies.remove('globals');
+                              console.log("CLEAN coockies globals",$cookies.get('globals'));
+               
                 $http.defaults.headers.common.Authorization = 'Bearer ';
             };
 

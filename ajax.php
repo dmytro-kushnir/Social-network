@@ -3,6 +3,7 @@
     include ('Config/config.php');
     $Db = new \Db\Db();
     $data = json_decode(file_get_contents('php://input'), true);
+    $hey = "hello";
 
     // test manual data
     // $array = array(

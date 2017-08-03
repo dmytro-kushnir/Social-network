@@ -36,7 +36,7 @@
                     .state("autorize", {
                         url: '/autorize',
                         templateUrl: "app/templates/autorize.html",
-                        // controller: 'singUpController',
+                        controller: 'singUpController',
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Приєднуйся!";
@@ -146,13 +146,13 @@
                 // keep user logged in after page refresh
                 $rootScope.globals = $cookies.get('globals') || {};
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + $rootScope.globals;
-
+             
                 $transitions.onStart({
                     to: function (state) {
                         return state.data != null && state.data.authRequired === true;
                     }
                 }, function () {
-                    console.log("I'm alive!!!");
+                    console.log("I'm transition.onStart and i'm alive!!!");
                     if (!AuthService.isAuthenticated()) {
                         return $state.target("autorize");
                     }
@@ -205,21 +205,20 @@
             var service = {};
 
             // Authenticates throug a rest service
-            service.authenticate = function (email, password, callback) {
+            service.authenticate = function (data, callback) {
 
                 $http.post('endPoints/login.php', {
-                        email: email,
-                        password: password
+                        data: data
                     })
                     .then(function (response) {
-                        // console.log("response", response);
+                        
                         callback(response);        
                     });
             };
 
             // Creates a cookie and set the Authorization header
             service.setCredentials = function (response) {
-                // console.log(response);
+             
                 $rootScope.globals = response;
 
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + response;
@@ -228,8 +227,8 @@
 
             // Checks if it's authenticated
             service.isAuthenticated = function () {
-                // console.log("coockies globals",$cookies.get('globals'));
-                console.log("RETURN",$cookies.get('globals') === undefined);
+                
+                console.log("If TRUE callback not worked yet!!",$cookies.get('globals') === undefined);
 
                 return !($cookies.get('globals') === undefined);
             };

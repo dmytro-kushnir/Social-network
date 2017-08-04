@@ -8,7 +8,7 @@
                                      <figure class="crossModal pull-right" aria-label="Close" ng-click="$dismiss()"></figure>
                             <a class="modalImgWrapper lightbox-image-container">
                                 <img class="img-responsive center-block modalImg" 
-                                   lightbox-src="{{Lightbox.image.url}}" alt="mainImage "{{Lightbox.index}} />
+                                   lightbox-src="{{Lightbox.image.avatar_url}}" alt="mainImage "{{Lightbox.index}} />
                                   <!--<embed-video data-ng-href="http://www.youtube.com/watch?v=LOKyEt36Kjc" force-protocol="https" controls=0>
                                   <a href="http://www.youtube.com/watch?v=LOKyEt36Kjc">Watch</a></embed-video>-->
                                 <span class="modalImgCount">{{Lightbox.index + 1 }}/{{Lightbox.images.length}} </span>
@@ -20,9 +20,9 @@
                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 modalMasc" ng-class="{'special' : modalMasc }">
                         <div class="rightBodyModal" ng-class="{'special' : rightBodyModal}">
                             <article class="modalUser">
-                                <img class="modalSenderPhoto" lightbox-src="{{Lightbox.image.senderUrl}}" alt="image "{{Lightbox.index}} />
-                                <h4 class="modalUserName">{{Lightbox.image.senderName}}</h4>
-                                <h5><span class='glyphicon glyphicon-time'></span>{{Lightbox.image.date}}</h5>
+                                <img class="modalSenderPhoto" lightbox-src="{{Lightbox.image.sender_url}}" alt="image "{{Lightbox.index}} />
+                                <h4 class="modalUserName">{{Lightbox.image.sender_name}}</h4>
+                                <h5><span class='glyphicon glyphicon-time'></span>{{Lightbox.image.avatar_date}}</h5>
                             </article>
                             <article class="modalLike">
                                 <div>
@@ -49,7 +49,7 @@
                             
                             <textarea class="modalTextArea" ng-class="{'special' : modalTextArea}"></textarea>
                             <img class="otherUserPhoto modalOtherUserPhotoComment pull-left"
-                                    lightbox-src="{{Lightbox.image.senderUrl}}" alt="comment user" />
+                                    lightbox-src="{{Lightbox.image.sender_url}}" alt="comment user" />
                         </div>
                     </div>
                 </div>

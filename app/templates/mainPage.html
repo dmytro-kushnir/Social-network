@@ -3,7 +3,7 @@
 <!--Background-->
 <section class="Background row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <figure class="backgroundImage" ng-style="{'background-image': 'url(' + page.backgroundUrl + ')'}">
+    <figure class="backgroundImage" ng-style="{'background-image': 'url(' + page.background_url + ')'}">
       <!--editing background and page-->
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -30,17 +30,17 @@
   <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
     <div ng-repeat="avatar in page.avatars | limitTo : 1 : 0">
       <a class="galleryLink" ng-click="openAvatar($index, 'page')">
-        <img ng-src="{{avatar.url}}" ng-if="avatar.url" alt="avatar" class="profilePhoto img-rounded"  >    
+        <img ng-src="{{avatar.avatar_url}}" ng-if="avatar.avatar_url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
     </div>
     <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
     <section class="friendsGalleryBlock">
       
-      <h3 class="myFriends" ng-click="mainPageFrGal()" ui-sref="mainContainer.friends">Мої друзі <span>{{page.countFriends}}</span></h3>
+      <h3 class="myFriends" ng-click="mainPageFrGal()" ui-sref="mainContainer.friends">Мої друзі <span>{{page.count_friends}}</span></h3>
       <div ui-sref="mainContainer.userPage"  style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0"
         ng-click="reqFriend(pg.id)">
-        <img class="friend" ng-src="{{pg.url}}" alt="pg.name">
-        <span class="friendsName">{{pg.name}}</span>
+        <img class="friend" ng-src="{{pg.avatar_url}}" alt="pg.first_name">
+        <span class="friendsName">{{pg.first_name}} {{pg.second_name}}</span>
       </div>
       
 
@@ -63,11 +63,11 @@
     <div class="row">
       <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
         <div class="infoName">
-          <h2 class="userName ">{{page.firstName}} {{page.secondName}}</h2>
+          <h2 class="userName ">{{page.first_name}} {{page.second_name}}</h2>
           <p><label>День народження:</label> <span>{{page.birthday}}</span> </p>
           <p><label>Рідне місто:</label> <span>{{page.city}}</span></p>
           <p><label>Освіта:</label> <span>{{page.education}}</span></p>
-          <p><label>Моб. телефон:</label> <span>{{page.mobileNumber}}</span></p>
+          <p><label>Моб. телефон:</label> <span>{{page.mobile_number}}</span></p>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
       <article class="friendsAndPhoto">
         <div>
           <a style="text-decoration:none; color:black;" ui-sref="mainContainer.friends" ng-click="mainPageFrGal()">
-            <p class="myFriends">Друзі<span style="padding-left:10px;">{{page.countFriends}}</span></p>
+            <p class="myFriends">Друзі<span style="padding-left:10px;">{{page.count_friends}}</span></p>
           </a>
           <a ui-sref="mainContainer.friends">
             <figure class="friendsAndPhotoIcon friendsIco"></figure>

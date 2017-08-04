@@ -1,5 +1,3 @@
-//var app = angular.module("socialNetwork");
-
 app.controller("singUpController", function ($scope, $state, $http, AuthService) {
 	// $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 
@@ -23,9 +21,6 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 			"userPassword": $scope.singUpInfo.password
 		};
 
-		 $scope.fooObj = auth;
-		  console.log("AUTH", $scope.fooObj );
-
 		console.log("singUp data input: ", data);
 		$http.post('ajax.php', data).then(function (response) {
 				console.log(response);
@@ -37,13 +32,20 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 	//login
 		
 	$scope.logIn = function () {
+
 		var data = {
 			"userEmail": $scope.loginInfo.email,
 			"userPassword": $scope.loginInfo.password
 			};
+
 			AuthService.authenticate(data, function (callback) { 
 			console.log("CALLBACK! ",callback); //-> callback from server 
-			AuthService.setCredentials(callback);	
+
+			if(callback.data.info)
+			$scope.$emit('logIn', callback.data.info); // send data to parent scope (MainCtrl)
+
+			AuthService.setCredentials(callback.data.success);
+
 			$state.go('mainContainer.mainPage');
 		});
 	}

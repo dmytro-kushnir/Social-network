@@ -5,7 +5,7 @@ app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
     'use strict';
 
     $scope.Lightbox = Lightbox;
-    // console.log(Lightbox);
+    console.log(Lightbox);
 
     $scope.openAvatar = function (index, nameSpace) {
         Lightbox.openModal($scope[nameSpace].avatars, index);

@@ -113,17 +113,4 @@ class Db extends \PDO {
             }
         }
     }
-    public function querySql($sqlstring) {
-        if (isset($sqlstring)) {
-            try {
-                $STH = $this->query($sqlstring);
-                return $STH;
-            } catch (PDOException $e) {
-                $this->error($e->getMessage(), $sqlstring);
-            }
-        } else {
-            $this->error('', '');
-        }
-    }
-
 }

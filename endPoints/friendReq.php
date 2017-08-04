@@ -6,7 +6,7 @@ $answer = json_decode(file_get_contents('php://input'), true);
     // $answer = $_GET['user_id']; // добавити його до перевірки
 
 switch ($answer) {
-    case 100001:  // Єва Грін
+    case 2:  // Єва Грін
         $json = file_get_contents('.././app/jsons/friend.json');
         echo $json;
         break;

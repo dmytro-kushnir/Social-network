@@ -14,7 +14,6 @@
         'use strict';
         $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
 
-
         //logout in header
 	    $scope.logOut = function(){
 		    console.log("LogOut");
@@ -44,6 +43,14 @@
             $rootScope.chatTitle = $scope.page.chat[chatId].chatName;
         };
 
+         // get data from child ctrl registration
+        $scope.$on('logIn', function (event, data) {
+            $scope.page = data;
+            console.log("emit logIn", $scope.page);
+
+            storageService.save('userName', data.first_name + " " + data.second_name);
+            storageService.save('userMain', JSON.stringify(data));
+        });
         // get data from child ctrl userPage
         $scope.$on('friend', function (event, data) {
             $scope.page = data;
@@ -60,28 +67,15 @@
         });
 
 
-        // var stateNew, stateOld = "";
-        // stateNew = storageService.get('stateNew');
-        // stateOld = storageService.get('stateOld');
-        // console.log("Local storage NEW:", stateNew);
-        // console.log("Local storage OLD:", stateOld);
-
         // save current state and watch it change
         $scope.currState = $state;
         $scope.$watch('currState.current.name', function (newValue, oldValue) {
-            // console.log(newValue);//current value
-            // console.log(oldValue);//previous value
-            // storageService.save('stateNew', newValue);
-            // storageService.save('stateOld', oldValue);
-
             switch (newValue) {
                 case 'mainContainer.mainPage':
                     JsonLoad.getPage().then(function (res) {
                         console.log("mainPage GET", res);
                         $scope.page = [];
-                        $scope.page = res.data;
-                        storageService.save('userName', res.data.firstName + " " + res.data.secondName);
-                        storageService.save('userMain', JSON.stringify(res.data));
+                        $scope.page = res.data.info;
                     });
                     break;
                 case 'mainContainer.friends':

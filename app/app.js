@@ -13,9 +13,6 @@
         'videosharing-embed',
         'ngCookies'
     ]);
-
-
-    
     // Routing START  
 
     app.config(['$stateProvider', '$urlRouterProvider',
@@ -129,14 +126,15 @@
                         }
                     });
                 $urlRouterProvider.otherwise('/mainContainer/mainPage');
-
-
             }
         ])
         .run(['$rootScope', '$state', '$stateParams',
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
+                $rootScope.$on('$locationChangeStart', function () {
+                    document.body.scrollTop = document.documentElement.scrollTop = 0;
+                });
             }
 
         ])
@@ -164,7 +162,7 @@
     app.factory('JsonLoad', function ($http) {
         return {
             getPage: function () {
-                return $http.get("endPoints/connection.php");
+                return $http.get("endPoints/login.php");
             },
             returnHome: function (request) {
                 return $http.post("endPoints/connection.php", request);
@@ -177,15 +175,6 @@
             requestPage: function (request) {
                 return $http.post("endPoints/friendReq.php", request);
             }
-            //     getFriend: function () {
-            //         return $http({
-            //             url: "friendReq.php",
-            //             method: "GET",
-            //             params: {
-            //                 user_id: 100001
-            //             }
-            //         });
-            //     }
         };
     });
     app.factory('storageService', ['$rootScope', function ($rootScope) {

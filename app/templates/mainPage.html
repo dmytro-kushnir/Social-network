@@ -30,7 +30,7 @@
   <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
     <div ng-repeat="avatar in page.avatars | limitTo : 1 : 0">
       <a class="galleryLink" ng-click="openAvatar($index, 'page')">
-        <img ng-src="{{avatar.avatar_url}}" ng-if="avatar.avatar_url" alt="avatar" class="profilePhoto img-rounded"  >    
+        <img ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
     </div>
     <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
@@ -49,7 +49,7 @@
         <div class="row no-gutter">
           <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in page.gallery | limitTo : 6 : 0">
             <a ng-click="openGallery($index, 'page')" class="galleryLink">
-                <img class="galleryItem" ng-src="{{gal.url}}" ng-if="gal.url" alt="gallery item {{$index}}">
+                <img class="galleryItem" ng-src="{{gal.image_url}}" ng-if="gal.image_url" alt="gallery item {{$index}}">
               </a>
           </div>
         </div>
@@ -95,7 +95,7 @@
         <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
           <ul  rn-carousel rn-carousel-index="carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
             <li ng-click="openGallery(gal.id-1, 'page')"  ng-repeat="gal in page.gallery track by gal.id" ng-class="'id-' + gal.id">
-              <div ng-style="{'background-image': 'url(' + gal.url + ')'}" class="carouselItem">{{ gal.id}}/{{page.gallery.length}}</div>
+              <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{page.gallery.length}}</div>
             </li>
           </ul>
         </div>
@@ -114,20 +114,20 @@
       <div class="row">
         <div class="posters"ng-repeat="post in page.posts">
           <div>
-            <img class="otherUserPhoto" ng-src="{{post.senderUrl}}" ng-if="post.senderUrl" alt="sender"/>
-            <h4 style="cursor:pointer;">{{post.senderName}}</h4>
-            <h5><span class='glyphicon glyphicon-time'></span>{{post.sendDate}}</h5>
+            <img class="otherUserPhoto" ng-src="{{post.sender_url}}" ng-if="post.sender_url" alt="sender"/>
+            <h4 style="cursor:pointer;">{{post.sender_name}}</h4>
+            <h5><span class='glyphicon glyphicon-time'></span>{{post.send_date}}</h5>
             <a class='label label-danger'>змінити</a>
             <a class='label label-primary' id='remove'>видалити</a>
           </div>
           <div style="background-color: #f2f2f2;">
-          <p style="font-size: 14px;">{{post.postText}}</p>
-          <a style="padding:10px;" href='{{post.postLink}}' target='_blank'>{{post.postLink}}</a>
+          <p style="font-size: 14px;">{{post.post_text}}</p>
+          <a style="padding:10px;" href='{{post.post_link}}' target='_blank'>{{post.post_link}}</a>
           <a>
-            <img class="otherUserPhotoComment" ng-src="{{post.postImage}}" ng-if="post.postImage" ng-hide="post.postImage==''" alt="photo comment"/>
+            <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" alt="photo comment"/>
             </a>
            <figure style="margin-top:10px; margin-right:20px;"class="modalHeart modalHeartComm pull-right" >
-             <span ng-hide="post.postLikes==0">{{post.postLikes}}</span></figure>
+             <span ng-hide="post.post_likes==0">{{post.post_likes}}</span></figure>
              </div>
         </div>
       </div>

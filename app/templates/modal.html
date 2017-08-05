@@ -8,7 +8,7 @@
                                      <figure class="crossModal pull-right" aria-label="Close" ng-click="$dismiss()"></figure>
                             <a class="modalImgWrapper lightbox-image-container">
                                 <img class="img-responsive center-block modalImg" 
-                                   lightbox-src="{{Lightbox.image.avatar_url}}" alt="mainImage "{{Lightbox.index}} />
+                                   lightbox-src="{{Lightbox.image.image_url}}" alt="mainImage "{{Lightbox.index}} />
                                   <!--<embed-video data-ng-href="http://www.youtube.com/watch?v=LOKyEt36Kjc" force-protocol="https" controls=0>
                                   <a href="http://www.youtube.com/watch?v=LOKyEt36Kjc">Watch</a></embed-video>-->
                                 <span class="modalImgCount">{{Lightbox.index + 1 }}/{{Lightbox.images.length}} </span>
@@ -22,7 +22,7 @@
                             <article class="modalUser">
                                 <img class="modalSenderPhoto" lightbox-src="{{Lightbox.image.sender_url}}" alt="image "{{Lightbox.index}} />
                                 <h4 class="modalUserName">{{Lightbox.image.sender_name}}</h4>
-                                <h5><span class='glyphicon glyphicon-time'></span>{{Lightbox.image.avatar_date}}</h5>
+                                <h5><span class='glyphicon glyphicon-time'></span>{{Lightbox.image.image_date}}</h5>
                             </article>
                             <article class="modalLike">
                                 <div>
@@ -34,15 +34,15 @@
 
                             <article class="modalPost"  ng-repeat="post in Lightbox.image.posts">
                                 <img class="modalSenderPhoto modalOtherUserPhotoPost"
-                                    lightbox-src="{{post.postSenderUrl}}" alt="post user" />
-                                <h5 class="modalPostUser">{{post.postSenderName}}</h5>
+                                    lightbox-src="{{post.sender_url}}" alt="post user" />
+                                <h5 class="modalPostUser">{{post.sender_name}}</h5>
                                 <figure class="modalCancel pull-right"></figure>
                                 <a>
                                     <img class=" modalPhotoPost" 
-                                    lightbox-src="{{post.postImage}}" ng-hide="post.postImage==''" alt="post image"></a>
-                                    <p class="postText">{{post.postContent}}</p>
-                                <p class="modalPostDate">{{post.postDate}}</p>
-                                <figure class="modalHeart modalHeartComm pull-right" ><span ng-hide="post.postLikes==0">{{post.postLikes}}</span></figure>
+                                    lightbox-src="{{post.post_image}}" ng-hide="post.post_image==''" alt="post image"></a>
+                                    <p class="postText">{{post.post_text}}</p>
+                                <p class="modalPostDate">{{post.send_date}}</p>
+                                <figure class="modalHeart modalHeartComm pull-right" ><span ng-hide="post.post_likes==0">{{post.post_likes}}</span></figure>
                             </article>
                             
 

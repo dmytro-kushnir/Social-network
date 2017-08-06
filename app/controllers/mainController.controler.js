@@ -6,7 +6,6 @@
         $state, 
         $scope, 
         JsonLoad, 
-        JsonFriend, 
         storageService,
         AuthService
         ) {
@@ -23,8 +22,8 @@
         // return to main USER page onclick
         $scope.return = function (answer) {
             JsonLoad.returnHome(answer).then(function (res) {
-                $scope.page = res.data;
-                console.log("mainPage POST", res.data);
+                $scope.subPage = res.data.info;
+                console.log("subPage POST", $scope.subPage);
             });
             storageService.save('friendSubPage', "mainUser"); // save mainUser flag to LS 
         }
@@ -73,7 +72,7 @@
             switch (newValue) {
                 case 'mainContainer.mainPage':
                     JsonLoad.getPage().then(function (res) {
-                        console.log("mainPage GET", res);
+                        console.log("mainPage POST", res);
                         $scope.page = [];
                         $scope.page = res.data.info;
                     });
@@ -81,6 +80,12 @@
                 case 'mainContainer.friends':
                 case 'mainContainer.gallery':
                     if (performance.navigation.type == 1) { // if page reload
+                         // console.log("POP", newValue.split(".").pop()); mainContainer.gallery -> gallery
+                        JsonLoad.returnHome(newValue.split(".").pop()).then(function (res) {
+                            $scope.subPage = res.data.info;
+                            console.log("subPage reload POST", $scope.subPage);
+                        });
+
                         var friendsSelected = storageService.get("friendSubPage"); //get data state from LS
                         console.log(friendsSelected);
                         if (friendsSelected == "friends") { // it's UserPage friends/gallery

@@ -165,18 +165,14 @@
                 return $http.get("endPoints/login.php");
             },
             returnHome: function (request) {
-                return $http.post("endPoints/connection.php", request);
+                return $http.post("endPoints/subPage.php", request);
+            },
+            renderUserPage: function(request){
+                return $http.post("endPoints/pageRender.php", request);
             }
         };
     });
 
-    app.factory('JsonFriend', function ($http, $rootScope) {
-        return {
-            requestPage: function (request) {
-                return $http.post("endPoints/friendReq.php", request);
-            }
-        };
-    });
     app.factory('storageService', ['$rootScope', function ($rootScope) {
 
         return {

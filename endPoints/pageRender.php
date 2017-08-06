@@ -3,11 +3,10 @@ include ('../Config/config.php');
 include ('../Db/Db.php');
 $Db = new \Db\Db();
 
-  $data = json_decode(file_get_contents('php://input'), true);
+$id = json_decode(file_get_contents('php://input'), true);
 
-  
-  // GET ALL GENERAL DATA
-  $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE id = 1 ");
+ // GET ALL GENERAL DATA
+  $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE id = '$id' ");
 
 /////////////////////////////////// 
 
@@ -21,13 +20,13 @@ $Db = new \Db\Db();
     $friends[] = $buf[0];
   }
   $data_arr[0]["friends"] = $friends; // sets friends to data_arr instead of friends string
-    }
+    }   
 ///////////////////////////////////
 
  // AVATARS
 $avatars = $Db->selectSqlPrepared("SELECT 
     avatars.id, avatars.sender_name, avatars.sender_url, avatars.image_url, avatars.reciever_url, avatars.image_date, avatars.likes 
-      FROM avatars INNER JOIN users_data ON users_data.id=avatars.id WHERE id_owner = 1" );
+      FROM avatars INNER JOIN users_data ON users_data.id=avatars.id WHERE id_owner = '$id'" );
 // AVATAR POSTS
 foreach($avatars as $key => $value){ // get avatar posts
   $posts = $Db->selectSqlPrepared("SELECT 
@@ -42,7 +41,7 @@ $data_arr[0]["avatars"] = $avatars;
 // USER POSTS
 $posts = $Db->selectSqlPrepared("SELECT 
     post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_link, post.post_image, post.post_likes
-      FROM post INNER JOIN users_data ON users_data.id=post.id WHERE id_owner = 1");
+      FROM post INNER JOIN users_data ON users_data.id=post.id WHERE id_owner = '$id'");
 $data_arr[0]["posts"] = $posts;
 
 ///////////////////////////////////
@@ -50,7 +49,7 @@ $data_arr[0]["posts"] = $posts;
 // GALLERY
 $gallery = $Db->selectSqlPrepared("SELECT 
   gallery.id, gallery.sender_name, gallery.sender_url, gallery.image_url, gallery.reciever_url, gallery.image_date, gallery.likes 
-      FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = 1 LIMIT 20");
+      FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = '$id' LIMIT 20");
 
 // GALLERY POSTS
 foreach($gallery as $key => $value){ // get gallery posts
@@ -63,8 +62,7 @@ $data_arr[0]["gallery"] = $gallery;
 
 ///////////////////////////////////
 
-
- $result = [
+$result = [
         'success' => true,
         'info' => $data_arr[0],
         'errors' => []
@@ -72,3 +70,4 @@ $data_arr[0]["gallery"] = $gallery;
 
     header('Content-Type: application/json');
     echo json_encode($result);
+?>

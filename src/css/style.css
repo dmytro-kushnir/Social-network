@@ -78,6 +78,8 @@ body {
     border-radius: 50%;
     height: auto;
     width: 50px;
+    max-height: 50px;
+    object-fit: cover;
 }
 
 .user {

@@ -3,7 +3,7 @@
 <div ng-controller="UserPageCtrl">
 <section class="Background row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <figure class="backgroundImage" ng-if="friend.backgroundUrl" ng-style="{'background-image': 'url(' + friend.background_url + ')'}">
+    <figure class="backgroundImage" ng-if="friend.background_url" ng-style="{'background-image': 'url(' + friend.background_url + ')'}">
       <!--editing background and page-->
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -28,8 +28,8 @@
 <section class="row restPage" ng-controller="OpenModalCtrl as openModal">
   <!--Left part START-->
  <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
-     <div ng-repeat="avatar in page.avatars | limitTo : 1 : 0">
-      <a class="galleryLink" ng-click="openAvatar($index, 'page')">
+     <div ng-repeat="avatar in friend.avatars | limitTo : 1 : 0">
+      <a class="galleryLink" ng-click="openAvatar($index, 'friend')">
         <img ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
     </div>
@@ -49,7 +49,7 @@
         <div class="row no-gutter">
           <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in friend.gallery | limitTo : 6 : 0">
             <a ng-click="openGallery($index, 'friend')" class="galleryLink">
-                <img class="galleryItem" ng-src="{{gal.url}}" ng-if="gal.url" alt="gallery item {{$index}}">
+                <img class="galleryItem" ng-src="{{gal.image_url}}" ng-if="gal.image_url" alt="gallery item {{$index}}">
               </a>
           </div>
         </div>
@@ -63,7 +63,7 @@
     <div class="row">
       <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
         <div class="infoName">
-          <h2 class="userName ">{{friend.first_name}} {{friend.second_name}}</h2>
+          <h2 class="userName ">{{friend.first_name}} {{page.second_name}}</h2>
           <p><label>День народження:</label> <span>{{friend.birthday}}</span> </p>
           <p><label>Рідне місто:</label> <span>{{friend.city}}</span></p>
           <p><label>Освіта:</label> <span>{{friend.education}}</span></p>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 05 2017 г., 21:44
+-- Время создания: Авг 07 2017 г., 14:50
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -43,7 +43,9 @@ CREATE TABLE `avatars` (
 
 INSERT INTO `avatars` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
 (1, 1, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '15.12.12 15:38', 1),
-(2, 1, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23);
+(2, 1, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23),
+(3, 5, '/src/img/users/friend100002/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
+(4, 2, '/src/img/users/friend100001/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23);
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,8 @@ CREATE TABLE `avatars_users` (
 
 INSERT INTO `avatars_users` (`avatar_id`, `user_id`) VALUES
 (1, 1),
-(2, 1);
+(2, 1),
+(3, 5);
 
 -- --------------------------------------------------------
 
@@ -109,7 +112,24 @@ INSERT INTO `gallery` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url
 (21, 5, '/src/img/users/friend100002/gallery/8.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (22, 5, '/src/img/users/friend100002/gallery/9.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (23, 5, '/src/img/users/friend100002/gallery/10.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
-(24, 5, '/src/img/users/friend100002/gallery/11.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4);
+(24, 5, '/src/img/users/friend100002/gallery/11.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(25, 5, '/src/img/users/friend100002/gallery/12.jpg', 'Дженніфер Лоуренс', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(26, 5, '/src/img/users/friend100002/gallery/13.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(27, 5, '/src/img/users/friend100002/gallery/14.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(28, 5, '/src/img/users/friend100002/gallery/15.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(29, 5, '/src/img/users/friend100002/gallery/16.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(30, 5, '/src/img/users/friend100002/gallery/17.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(31, 5, '/src/img/users/friend100002/gallery/18.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(32, 5, '/src/img/users/friend100002/gallery/19.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(33, 5, '/src/img/users/friend100002/gallery/20.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(34, 5, '/src/img/users/friend100002/gallery/21.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(35, 2, '/src/img/users/friend100001/gallery/1.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(38, 2, '/src/img/users/friend100001/gallery/2.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(39, 2, '/src/img/users/friend100001/gallery/3.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(40, 2, '/src/img/users/friend100001/gallery/4.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(41, 2, '/src/img/users/friend100001/gallery/5.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(42, 2, '/src/img/users/friend100001/gallery/6.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(43, 2, '/src/img/users/friend100001/gallery/7.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4);
 
 -- --------------------------------------------------------
 
@@ -332,9 +352,9 @@ CREATE TABLE `users_data` (
 --
 
 INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`) VALUES
-(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '/src/img/users/user/backgrounds/bg.jpg', '/src/img/users/user/avatars/avatar.jpg', '2,5', '0', '', ''),
-(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 421, '/src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', ''),
-(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 4132, '/src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '');
+(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '/src/img/users/user/backgrounds/bg.jpg', '/src/img/users/user/avatars/2.jpg', '2,5', '0', '', ''),
+(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '/src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', ''),
+(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '/src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -425,12 +445,12 @@ ALTER TABLE `users_data`
 -- AUTO_INCREMENT для таблицы `avatars`
 --
 ALTER TABLE `avatars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT для таблицы `post`
 --

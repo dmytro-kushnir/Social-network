@@ -3,10 +3,15 @@ include ('../Config/config.php');
 include ('../Db/Db.php');
 $Db = new \Db\Db();
 
-  $subPage = file_get_contents('php://input');
+  $data = json_decode(file_get_contents('php://input'), true);
+  $subPage = $data["request"]["pageName"];
+  $id = $data["request"]["id"];
 switch ($subPage) {
+    case "mainPage":
+       $data_arr = $Db->selectSqlPrepared("SELECT id, first_name, avatar_url FROM users_data WHERE id = '$id' ");
+    break;
     case "friends":
-        $data_arr = $Db->selectSqlPrepared("SELECT friends FROM users_data WHERE id = 1 ");
+        $data_arr = $Db->selectSqlPrepared("SELECT friends FROM users_data WHERE id = '$id' ");
         $friendsIdArr = explode(",", $data_arr[0]["friends"]); // convert friends string to array
         $friends = array();
       // FRIENDS
@@ -17,11 +22,12 @@ switch ($subPage) {
         }
         $data_arr[0]["friends"] = $friends; // sets friends to data_arr instead of friends string
         break;
+
     case "gallery":
         // GALLERY
         $gallery = $Db->selectSqlPrepared("SELECT 
   gallery.id, gallery.sender_name, gallery.sender_url, gallery.image_url, gallery.reciever_url, gallery.image_date, gallery.likes 
-      FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = 1 LIMIT 30");
+      FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = '$id' LIMIT 20");
 
 // GALLERY POSTS
         foreach ($gallery as $key => $value) { // get gallery posts
@@ -32,6 +38,8 @@ switch ($subPage) {
         }
         $data_arr[0]["gallery"] = $gallery;
         break;
+
+
     case "chat":
         break;
 }

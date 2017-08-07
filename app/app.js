@@ -165,7 +165,9 @@
                 return $http.get("endPoints/login.php");
             },
             returnHome: function (request) {
-                return $http.post("endPoints/subPage.php", request);
+                return $http.post("endPoints/subPage.php",  {
+                        request: request
+                    });
             },
             renderUserPage: function(request){
                 return $http.post("endPoints/pageRender.php", request);

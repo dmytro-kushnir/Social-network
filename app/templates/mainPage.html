@@ -36,7 +36,7 @@
     <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
     <section class="friendsGalleryBlock">
       
-      <h3 class="myFriends" ng-click="mainPageFrGal()" ui-sref="mainContainer.friends">Мої друзі <span>{{page.count_friends}}</span></h3>
+      <h3 class="myFriends" ng-click="mainPageFrGal(page.id, 'friends')" >Мої друзі <span>{{page.count_friends}}</span></h3>
       <div ui-sref="mainContainer.userPage"  style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0"
         ng-click="reqFriend(pg.id)">
         <img class="friend" ng-src="{{pg.avatar_url}}" alt="pg.first_name">
@@ -44,7 +44,7 @@
       </div>
       
 
-      <h3 class="myGallery"><a style="text-decoration:none; color:black;" ui-sref="mainContainer.gallery" ng-click="mainPageFrGal()">Галерея</a></h3>
+      <h3 class="myGallery"><a style="text-decoration:none; color:black;"  ng-click="mainPageFrGal(page.id, 'gallery')">Галерея</a></h3>
       <article class="gallery">
         <div class="row no-gutter">
           <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in page.gallery | limitTo : 6 : 0">
@@ -75,7 +75,7 @@
 
       <article class="friendsAndPhoto">
         <div>
-          <a style="text-decoration:none; color:black;" ui-sref="mainContainer.friends" ng-click="mainPageFrGal()">
+          <a style="text-decoration:none; color:black;"  ng-click="mainPageFrGal(page.id, 'friends')">
             <p class="myFriends">Друзі<span style="padding-left:10px;">{{page.count_friends}}</span></p>
           </a>
           <a ui-sref="mainContainer.friends">
@@ -84,7 +84,7 @@
         </div>
         <!--user friends and photo count-->
         <div style="">
-          <p><a style="text-decoration:none; color:black;" ui-sref="mainContainer.gallery" ng-click="mainPageFrGal()">Галерея</a></p>
+          <p><a style="text-decoration:none; color:black;"  ng-click="mainPageFrGal(page.id, 'gallery')">Галерея</a></p>
           <a ui-sref="mainContainer.gallery">
             <figure class="friendsAndPhotoIcon galleryIco"></figure>
           </a>

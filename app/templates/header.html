@@ -7,7 +7,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-      <a ui-sref="mainContainer.mainPage" ng-click="return('mainPage')" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+      <a ui-sref="mainContainer.mainPage" ng-click="return(page.id, 'mainPage')" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
 
       <a onclick="history.back()">
         <figure class="arrowLeftMobile"></figure>
@@ -24,7 +24,7 @@
                   <img class="userHeader" ng-src="{{page.avatar_url}}" ng-if="page.avatar_url" alt="user"></a>
 
           <ul class="dropdown-menu userMenu">
-            <li><a ui-sref="mainContainer.mainPage" ng-click="return('mainPage')">Моя сторінка</a></li>
+            <li><a ui-sref="mainContainer.mainPage" ng-click="return(page.id, 'mainPage')">Моя сторінка</a></li>
             <li class="divider"></li>
             <li><a ui-sref="autorize" ng-click="logOut()">Вийти</a></li>
           </ul>
@@ -32,10 +32,10 @@
           <div class="MobileUserSideBar">
             <ul class="nav navbar-nav mineNavbar">
               <li><a ui-sref="mainContainer.mainPage" >Мій профіль</a></li>
-              <li><a ui-sref="mainContainer.friends" ng-click="return('friends')">Мої друзі</a></li>
-              <li><a ui-sref="mainContainer.chat" ng-click="return('chat')">Повідомлення  <span class="badge"> 2</span></a></li>
+              <li><a ui-sref="mainContainer.friends" ng-click="return(page.id, 'friends')">Мої друзі</a></li>
+              <li><a ui-sref="mainContainer.chat" ng-click="return(page.id, 'chat')">Повідомлення  <span class="badge"> 2</span></a></li>
 
-              <li> <a ui-sref="mainContainer.gallery" ng-click="return('gallery')">Галерея</a></li>
+              <li> <a ui-sref="mainContainer.gallery" ng-click="return(page.id, 'gallery')">Галерея</a></li>
               <li> <a ui-sref="autorize" ng-click="logOut()">Вийти</a></li>
 
             </ul>

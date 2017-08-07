@@ -36,15 +36,15 @@
     <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
     <section class="friendsGalleryBlock">
       
-      <h3 class="myFriends" ui-sref="mainContainer.friends" ng-click="userPageFrGal()">Друзі <span>{{friend.count_friends}}</span></h3>
-    <div ui-sref="mainContainer.userPage"  style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0"
+      <h3 class="myFriends"  ng-click="userPageFrGal(friend.id, 'friends')">Друзі <span>{{friend.count_friends}}</span></h3>
+    <div ui-sref="mainContainer.userPage"  style="cursor:default;" ng-repeat="pg in friend.friends | limitTo : 4 : 0"
         ng-click="reqFriend(pg.id)">
         <img class="friend" ng-src="{{pg.avatar_url}}" alt="pg.first_name">
         <span class="friendsName">{{pg.first_name}} {{pg.second_name}}</span>
       </div>
       
 
-      <h3 class="myGallery"><a style="text-decoration:none; color:black;" ui-sref="mainContainer.gallery" ng-click="userPageFrGal()">Галерея</a></h3>
+      <h3 class="myGallery"><a style="text-decoration:none; color:black;"  ng-click="userPageFrGal(friend.id, 'gallery')">Галерея</a></h3>
       <article class="gallery">
         <div class="row no-gutter">
           <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in friend.gallery | limitTo : 6 : 0">
@@ -75,16 +75,16 @@
 
       <article class="friendsAndPhoto">
         <div>
-          <a style="text-decoration:none; color:black;" ui-sref="mainContainer.friends" ng-click="userPageFrGal()">
+          <a style="text-decoration:none; color:black;" ng-click="userPageFrGal(friend.id, 'friends')">
             <p class="myFriends">Друзі<span style="padding-left:10px;">{{friend.count_friends}}</span></p>
           </a>
-          <a ui-sref="mainContainer.friends" ng-click="userPageFrGal()">
+          <a  ng-click="userPageFrGal(friend.id, 'gallery')">
             <figure class="friendsAndPhotoIcon friendsIco"></figure>
           </a>
         </div>
         <!--user friends and photo count-->
         <div style="">
-          <p><a style="text-decoration:none; color:black;" ui-sref="mainContainer.gallery" ng-click="userPageFrGal()"=>Галерея</a></p>
+          <p><a style="text-decoration:none; color:black;" ng-click="userPageFrGal(friend.id, 'gallery')"=>Галерея</a></p>
           <a ui-sref="mainContainer.gallery">
             <figure class="friendsAndPhotoIcon galleryIco"></figure>
           </a>
@@ -94,7 +94,7 @@
       <div class="row">
          <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
           <ul  rn-carousel rn-carousel-index="carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
-            <li ng-click="openGallery(gal.id-1, 'page')"  ng-repeat="gal in page.gallery track by gal.id" ng-class="'id-' + gal.id">
+            <li ng-click="openGallery(gal.id-1, 'friend')"  ng-repeat="gal in friend.gallery track by gal.id" ng-class="'id-' + gal.id">
               <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{page.gallery.length}}</div>
             </li>
           </ul>

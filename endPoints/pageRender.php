@@ -26,7 +26,7 @@ $id = json_decode(file_get_contents('php://input'), true);
  // AVATARS
 $avatars = $Db->selectSqlPrepared("SELECT 
     avatars.id, avatars.sender_name, avatars.sender_url, avatars.image_url, avatars.reciever_url, avatars.image_date, avatars.likes 
-      FROM avatars INNER JOIN users_data ON users_data.id=avatars.id WHERE id_owner = '$id'" );
+      FROM avatars INNER JOIN users_data ON users_data.id=avatars.id_owner WHERE id_owner = '$id'" );
 // AVATAR POSTS
 foreach($avatars as $key => $value){ // get avatar posts
   $posts = $Db->selectSqlPrepared("SELECT 

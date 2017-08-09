@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 07 2017 г., 14:50
+-- Время создания: Авг 09 2017 г., 17:56
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -66,6 +66,43 @@ INSERT INTO `avatars_users` (`avatar_id`, `user_id`) VALUES
 (1, 1),
 (2, 1),
 (3, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `chat`
+--
+
+CREATE TABLE `chat` (
+  `id` int(11) NOT NULL,
+  `id_owner` int(11) NOT NULL,
+  `sender` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `last_msg_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `last_msg_text` varchar(2000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `chat_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `sender_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `reciever_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `chat`
+--
+
+INSERT INTO `chat` (`id`, `id_owner`, `sender`, `last_msg_url`, `last_msg_text`, `sender_name`, `chat_date`, `sender_url`, `reciever_url`) VALUES
+(1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мне след, По которому, я буду лететь. И за руку тебя, мой родной, Заберу я с собой...', 'Єва Грін', '11.04.06 23:22', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg'),
+(2, 1, '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `chat_users`
+--
+
+CREATE TABLE `chat_users` (
+  `id_chat` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -240,6 +277,56 @@ INSERT INTO `postavatars_users` (`id_post`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `postchat`
+--
+
+CREATE TABLE `postchat` (
+  `id` int(11) NOT NULL,
+  `id_owner` int(11) NOT NULL,
+  `id_chat` int(11) NOT NULL,
+  `side` varchar(5) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `message_data` varchar(2000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
+  `message_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `postchat`
+--
+
+INSERT INTO `postchat` (`id`, `id_owner`, `id_chat`, `side`, `message_data`, `message_date`) VALUES
+(1, 1, 1, 'R', 'Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить', '12 mins ago'),
+(2, 1, 1, 'L', 'Це просто неймовріно!', '10 mins ago'),
+(3, 1, 1, 'L', 'Знаєш приспів', '8 mins ago'),
+(4, 1, 1, 'R', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мне след, По которому, я буду лететь. И за руку тебя, мой родной, Заберу я с собой...', '2 mins ago'),
+(5, 1, 2, 'R', 'Ти чудова! Давй свій телефон!', 'зараз'),
+(6, 1, 2, 'L', 'Дякую, приємно :-)\nтримай +390 <не дам> 12 43', 'зараз');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `postchat_users`
+--
+
+CREATE TABLE `postchat_users` (
+  `id_post` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `postchat_users`
+--
+
+INSERT INTO `postchat_users` (`id_post`, `id_user`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `postgallery`
 --
 
@@ -344,17 +431,18 @@ CREATE TABLE `users_data` (
   `friends` varchar(1000) NOT NULL,
   `avatars` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `gallery` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `posts` varchar(100) NOT NULL
+  `posts` varchar(100) NOT NULL,
+  `chat` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Дамп данных таблицы `users_data`
 --
 
-INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`) VALUES
-(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '/src/img/users/user/backgrounds/bg.jpg', '/src/img/users/user/avatars/2.jpg', '2,5', '0', '', ''),
-(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '/src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', ''),
-(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '/src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '');
+INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`, `chat`) VALUES
+(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '/src/img/users/user/backgrounds/bg.jpg', '/src/img/users/user/avatars/2.jpg', '2,5', '0', '', '', ''),
+(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '/src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', '', ''),
+(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '/src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -372,6 +460,19 @@ ALTER TABLE `avatars`
 ALTER TABLE `avatars_users`
   ADD KEY `avatar_id` (`avatar_id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Индексы таблицы `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `chat_users`
+--
+ALTER TABLE `chat_users`
+  ADD KEY `id_chat` (`id_chat`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Индексы таблицы `gallery`
@@ -404,6 +505,19 @@ ALTER TABLE `postavatars`
 ALTER TABLE `postavatars_users`
   ADD KEY `id_post` (`id_post`),
   ADD KEY `id_user` (`id_user`);
+
+--
+-- Индексы таблицы `postchat`
+--
+ALTER TABLE `postchat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `postchat_users`
+--
+ALTER TABLE `postchat_users`
+  ADD KEY `postchat_users_ibfk_1` (`id_post`),
+  ADD KEY `postchat_users_ibfk_2` (`id_user`);
 
 --
 -- Индексы таблицы `postgallery`
@@ -447,6 +561,11 @@ ALTER TABLE `users_data`
 ALTER TABLE `avatars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT для таблицы `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT для таблицы `gallery`
 --
 ALTER TABLE `gallery`
@@ -461,6 +580,11 @@ ALTER TABLE `post`
 --
 ALTER TABLE `postavatars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT для таблицы `postchat`
+--
+ALTER TABLE `postchat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `postgallery`
 --
@@ -488,6 +612,13 @@ ALTER TABLE `avatars_users`
   ADD CONSTRAINT `avatars_users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users_data` (`id`);
 
 --
+-- Ограничения внешнего ключа таблицы `chat_users`
+--
+ALTER TABLE `chat_users`
+  ADD CONSTRAINT `chat_users_ibfk_1` FOREIGN KEY (`id_chat`) REFERENCES `chat` (`id`),
+  ADD CONSTRAINT `chat_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
+
+--
 -- Ограничения внешнего ключа таблицы `gallery_users`
 --
 ALTER TABLE `gallery_users`
@@ -500,6 +631,13 @@ ALTER TABLE `gallery_users`
 ALTER TABLE `postavatars_users`
   ADD CONSTRAINT `postavatars_users_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `postavatars` (`id`),
   ADD CONSTRAINT `postavatars_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
+
+--
+-- Ограничения внешнего ключа таблицы `postchat_users`
+--
+ALTER TABLE `postchat_users`
+  ADD CONSTRAINT `postchat_users_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `postchat` (`id`),
+  ADD CONSTRAINT `postchat_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `postgallery_users`

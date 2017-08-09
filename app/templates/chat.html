@@ -5,14 +5,14 @@
     <span class="searchText">Пошук</span>
 </div>
 
-    <a class="userChatBlock" ui-sref="mainContainer.chatUser"  ng-repeat="chat in page.chat" >
-        <div class="chatWrapper" ng-click="chatEnter(chat.id);">
+    <a class="userChatBlock" ng-click="chatEnter(chat.id);"  ng-repeat="chat in subPage.chat" >
+        <div class="chatWrapper" >
             <img class="userChatPhoto" ng-src="{{chat.sender}}" ng-if="chat.sender" alt="sender">
-            <span class="userNameChat">{{chat.senderName}}</span>
+            <span class="userNameChat">{{chat.sender_name}}</span>
             <div class="userLast">
-                <img class="userLastPhoto"  ng-src="{{chat.lastMsgUrl}}" ng-if="chat.lastMsgUrl" alt="lastUrl">
-                <span class="userLastComment">{{chat.lastMsgText}}</span>
+                <img class="userLastPhoto"  ng-src="{{chat.last_msg_url}}" ng-if="chat.last_msg_url" alt="lastUrl">
+                <span class="userLastComment">{{chat.last_msg_text}}</span>
             </div>
         </div>
-        <p class="chatDate">{{chat.date}}</p>
+        <p class="chatDate">{{chat.chat_date}}</p>
     </a>

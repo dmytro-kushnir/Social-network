@@ -32,21 +32,37 @@
                 $scope.subPage = res.data.info;
                 console.log("subPage POST", $scope.subPage);
             });
-            storageService.save('friendId', id);
+            storageService.save('pageId', id);
             storageService.save('friendSubPage', "mainUser"); // save mainUser flag to LS 
         }
         // load userPage onclick
         $scope.reqFriend = function (answer) {
-            // save friendId to localStorage
-            storageService.save('friendId', answer);
+            // save pageId to localStorage
+            storageService.save('pageId', answer);
         }
 
         // load chatUser onclick 
         $scope.chatEnter = function (chatId) {
-
             $scope.chatId = chatId;
             console.log(`chat index is ${$scope.chatId}`);
-            $rootScope.chatTitle = $scope.page.chat[chatId].chatName;
+            storageService.save('chatId', chatId);
+            $rootScope.chatTitle = $scope.subPage.chat[chatId - 1].sender_name;
+            
+            var localStorageID = storageService.get('pageId');
+                        var data = {
+                            id: localStorageID,
+                            pageName: "chatUser",
+                            idChat: chatId
+                        }
+
+                        JsonLoad.returnHome(data).then(function (res) {
+                            $scope.subPage = res.data.info;
+                            $scope.chatId = chatId;
+                            console.log("CHAT ENTER POST", $scope.subPage);
+
+                        });
+
+            $state.go('mainContainer.chatUser');
         };
 
         // get data from child ctrl registration
@@ -89,13 +105,16 @@
                     break;
                 case 'mainContainer.friends':
                 case 'mainContainer.gallery':
-                    if (performance.navigation.type == 1) { // if page reload
-
+                case 'mainContainer.chat':
+                case 'mainContainer.chatUser':
+                    // if (performance.navigation.type == 1) { // if page reload
+                        
                         var userId = storageService.get('userId');
                         console.log("USER ID ", userId);
                         var userData = {
                             id: userId,
-                            pageName: "mainPage"
+                            pageName: "mainPage",
+                           
                         }
                         // load id , url and first name of user
                         JsonLoad.returnHome(userData).then(function (res) {
@@ -105,23 +124,26 @@
 
 
                         // console.log("POP", newValue.split(".").pop()); mainContainer.gallery -> gallery
-                        var localStorageID = storageService.get('friendId');
+                        var localStorageID = storageService.get('pageId');
+                        var chatId = storageService.get('chatId'); // only for chatUser!
+                        console.log("CHAT ID ", chatId);
                         console.log("localStorageID: ", localStorageID);
 
                         var data = {
                             id: localStorageID,
-                            pageName: newValue.split(".").pop()
+                            pageName: newValue.split(".").pop(),
+                            idChat: chatId
                         }
 
                         JsonLoad.returnHome(data).then(function (res) {
                             $scope.subPage = res.data.info;
+                            $scope.chatId = chatId;
                             console.log("subPage reload POST", $scope.subPage);
 
                         });
-                    }
+                    // }
                     break;
                 case 'mainContainer.userPage':
-                    if (performance.navigation.type == 1) { // if page reload
                         var userId = storageService.get('userId');
                         console.log("USER ID ", userId);
                         var userData = {
@@ -133,7 +155,6 @@
                             $scope.page = res.data.info;
                             console.log("loggined page reload POST", res.data.info);
                         });
-                    }
                     break;
             }
         });

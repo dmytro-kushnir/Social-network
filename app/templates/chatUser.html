@@ -5,43 +5,43 @@
         <a  onclick="history.back()">
             <figure class="arrowLeft"></figure>
         </a>
-        <a class="userChatName" ui-sref="mainContainer.mainPage">{{page.chat[chatId].chatName}}</a>
+        <a class="userChatName">{{subPage.chat[0].sender_name}}</a>
         <figure class="searchIcon searchIconUserChat"></figure>
     </div>
 </div>
 
-    <div class="panel-body"  >
-    <ul class="chat" data-ng-repeat="chat in page.chat[chatId].messages">
+    <div class="panel-body" >
+    <ul class="chat" data-ng-repeat="chat in subPage.chat[0].messages">
 
         <li class="rightChat clearfix pull-right" ng-if="chat.side == 'R'">
             <div class="chat-body bubbleRight ">
                 <p>
-                    {{chat.data}}
+                    {{chat.message_data}}
                 </p>
                 <div class="msgTime">
                     <small class="pull-right ">
-                        <span class="glyphicon glyphicon-time"></span>  {{chat.time}}
+                        <span class="glyphicon glyphicon-time"></span>  {{chat.message_date}}
                     </small>
                 </div>
             </div>
             <span class="chat-img pull-right">
-                <img class="userChatPhoto" ng-src="{{page.chat[chatId].rightImage}}" alt="Mine Avatar" />
+                <img class="userChatPhoto" ng-src="{{subPage.chat[0].reciever_url}}" alt="Mine Avatar" />
             </span>
         </li>
 
 
         <li class="leftChat clearfix pull-left" ng-if="chat.side == 'L'">
             <span class="chat-img pull-left">
-                <img class="userChatPhoto" ng-src="{{page.chat[chatId].leftImage}}" alt="User Avatar"/>
+                <img class="userChatPhoto" ng-src="{{subPage.chat[0].sender_url}}" alt="User Avatar"/>
             </span>
             <div class="chat-body bubbleLeft">
 
                 <p>
-                      {{chat.data}}
+                      {{chat.message_data}}
                 </p>
                 <div class="msgTime">
                     <small class="pull-right ">
-                        <span class="glyphicon glyphicon-time"></span>{{chat.time}}
+                        <span class="glyphicon glyphicon-time"></span>{{chat.message_date}}
                     </small>
                 </div>
             </div>

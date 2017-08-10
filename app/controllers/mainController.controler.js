@@ -21,19 +21,11 @@
 
         // return to main USER page onclick
         $scope.return = function (id, pageName) {
-            var data = {
-                id: id,
-                pageName: pageName
-            }
+            $scope.subPage = null;
             console.log("ID", id);
             console.log("pageName", pageName);
-
-            JsonLoad.returnHome(data).then(function (res) {
-                $scope.subPage = res.data.info;
-                console.log("subPage POST", $scope.subPage);
-            });
             storageService.save('pageId', id);
-            storageService.save('friendSubPage', "mainUser"); // save mainUser flag to LS 
+            // storageService.save('friendSubPage', "mainUser"); // save mainUser flag to LS 
         }
         // load userPage onclick
         $scope.reqFriend = function (answer) {
@@ -47,21 +39,6 @@
             console.log(`chat index is ${$scope.chatId}`);
             storageService.save('chatId', chatId);
             $rootScope.chatTitle = $scope.subPage.chat[chatId - 1].sender_name;
-            
-            var localStorageID = storageService.get('pageId');
-                        var data = {
-                            id: localStorageID,
-                            pageName: "chatUser",
-                            idChat: chatId
-                        }
-
-                        JsonLoad.returnHome(data).then(function (res) {
-                            $scope.subPage = res.data.info;
-                            $scope.chatId = chatId;
-                            console.log("CHAT ENTER POST", $scope.subPage);
-
-                        });
-
             $state.go('mainContainer.chatUser');
         };
 
@@ -138,7 +115,7 @@
                         JsonLoad.returnHome(data).then(function (res) {
                             $scope.subPage = res.data.info;
                             $scope.chatId = chatId;
-                            console.log("subPage reload POST", $scope.subPage);
+                            console.log("subPage POST", $scope.subPage);
 
                         });
                     // }

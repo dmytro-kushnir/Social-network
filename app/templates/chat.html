@@ -1,11 +1,11 @@
 
 
-<div class="searchBlock ">
+<div class="searchBlock">
     <figure class="searchIcon"></figure>
     <span class="searchText">Пошук</span>
 </div>
 
-    <a class="userChatBlock" ng-click="chatEnter(chat.id);"  ng-repeat="chat in subPage.chat" >
+    <a class="userChatBlock animated fadeIn " ng-click="chatEnter(chat.id);"  ng-repeat="chat in subPage.chat" >
         <div class="chatWrapper" >
             <img class="userChatPhoto" ng-src="{{chat.sender}}" ng-if="chat.sender" alt="sender">
             <span class="userNameChat">{{chat.sender_name}}</span>

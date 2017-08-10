@@ -9,6 +9,7 @@ $Db = new \Db\Db();
 if(isset($data["request"]["idChat"])) $idChat = $data["request"]["idChat"];
 
 switch ($subPage) {
+    // MAINPAGE
     case "mainPage":
         $data_arr = $Db->selectSqlPrepared("SELECT id, first_name, avatar_url FROM users_data WHERE id = '$id' ");
         break;
@@ -44,20 +45,13 @@ switch ($subPage) {
     // CHAT
         $chat = $Db->selectSqlPrepared("SELECT chat.id, chat.sender, chat.last_msg_url, chat.last_msg_text, chat.sender_name, chat.chat_date, chat.reciever_url, chat.sender_url
       FROM chat INNER JOIN users_data ON users_data.id=chat.id_owner WHERE id_owner = '$id' LIMIT 20");
-// CHAT POSTS
-        foreach ($chat as $key => $value) { // get gallery posts
-                  $posts = $Db->selectSqlPrepared("SELECT 
-   postchat.id, postchat.side, postchat.message_data, postchat.message_data, postchat.message_date
-      FROM postchat INNER JOIN users_data ON users_data.id=postchat.id_owner WHERE id_chat = '$value[id]' LIMIT 1");
-                      $chat[$key]["messages"] = $posts;
-        }
         $data_arr[0]["chat"] = $chat;
         break;
     case "chatUser":
-    // CHAT RELOAD
+    // CHATUSER
          $chat = $Db->selectSqlPrepared("SELECT chat.id, chat.sender_name, chat.chat_date, chat.reciever_url, chat.sender_url
       FROM chat WHERE id = '$idChat'");
-// CHAT POSTS
+    // CHATUSER POSTS
         foreach ($chat as $key => $value) { // get gallery posts
                   $posts = $Db->selectSqlPrepared("SELECT 
    postchat.id, postchat.side, postchat.message_data, postchat.message_data, postchat.message_date

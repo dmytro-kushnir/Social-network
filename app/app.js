@@ -157,7 +157,6 @@
                 });
             }]);
 
-
     //factory for json load
     app.factory('JsonLoad', function ($http) {
         return {

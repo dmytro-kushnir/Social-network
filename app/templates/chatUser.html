@@ -13,7 +13,7 @@
     <div class="panel-body" >
     <ul class="chat" data-ng-repeat="chat in subPage.chat[0].messages">
 
-        <li class="rightChat clearfix pull-right" ng-if="chat.side == 'R'">
+        <li class="rightChat clearfix pull-right animated fadeInRight" ng-if="chat.side == 'R'">
             <div class="chat-body bubbleRight ">
                 <p>
                     {{chat.message_data}}
@@ -30,7 +30,7 @@
         </li>
 
 
-        <li class="leftChat clearfix pull-left" ng-if="chat.side == 'L'">
+        <li class="leftChat clearfix pull-left animated fadeInLeft" ng-if="chat.side == 'L'">
             <span class="chat-img pull-left">
                 <img class="userChatPhoto" ng-src="{{subPage.chat[0].sender_url}}" alt="User Avatar"/>
             </span>

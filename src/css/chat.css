@@ -202,6 +202,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
 }
 
 .chat li {
@@ -245,6 +246,7 @@
 .panel-body {
     overflow-y: scroll;
     height: 74vh;
+    overflow-x: hidden;
 }
 
 .panel-primary {

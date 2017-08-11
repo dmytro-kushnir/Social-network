@@ -13,12 +13,6 @@
         'use strict';
         $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
 
-        //logout in header
-        $scope.logOut = function () {
-            console.log("LogOut");
-            AuthService.clearCredentials();
-        }
-
         // return to main USER page onclick
         $scope.return = function (id, pageName) {
             $scope.subPage = null;
@@ -29,18 +23,38 @@
         }
         // load userPage onclick
         $scope.reqFriend = function (answer) {
-            // save pageId to localStorage
-            storageService.save('pageId', answer);
+            // save userPageId to localStorage
+            storageService.save('userPageId', answer);
         }
 
         // load chatUser onclick 
-        $scope.chatEnter = function (chatId) {
-            $scope.chatId = chatId;
-            console.log(`chat index is ${$scope.chatId}`);
+        $scope.chatEnter = function (chatId, index, nameSpace) {
+            // $scope.chatId = chatId;
+            console.log(`chat index is ${chatId}`);
             storageService.save('chatId', chatId);
-            $rootScope.chatTitle = $scope.subPage.chat[chatId - 1].sender_name;
+            var date = new Date();
+            $scope.FromDate = ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2);
+
+            if (nameSpace == "friends") {
+                $rootScope.chatTitle = $scope.subPage[nameSpace][index].first_name + " " + $scope.subPage[nameSpace][index].second_name;
+                $scope.avatar_url = $scope.subPage[nameSpace][index].avatar_url;
+            } else if (nameSpace == "chat")
+                $rootScope.chatTitle = $scope.subPage[nameSpace][index].sender_name;
+            else if (nameSpace == "userPage") 
+                $rootScope.chatTitle = $rootScope.title;
+
+            var chatData = {
+                "id_sender": chatId,
+                "sender_name": $rootScope.chatTitle,
+                "sender": $scope.avatar_url,
+                "reciever_url": $scope.page.avatar_url,
+                "chat_date": $scope.FromDate
+            }
+            console.log("chatDaTa", chatData);
+            storageService.save('chatData', JSON.stringify(chatData));
             $state.go('mainContainer.chatUser');
         };
+
 
         // get data from child ctrl registration
         $scope.$on('logIn', function (event, data) {
@@ -52,10 +66,15 @@
             storageService.save('userId', data.id);
         });
         // get data from child ctrl userPage
-        $scope.$on('friend', function (event, data) {
-            $scope.page = data;
-            storageService.save('userFriend', JSON.stringify(data));
-            console.log("emit data FRIEND", $scope.page);
+        $scope.$on('friendName', function (event, data) {
+
+            $rootScope.title = data;
+            console.log("emit data FRIEND", data);
+        });
+        $scope.$on('friendAvatar', function (event, data) {
+
+            $scope.avatar_url = data;
+            console.log("emit data FRIEND", data);
         });
         // get data from child ctrl userPage
         $scope.$on('userPageFrGal', function (event, data) {
@@ -85,53 +104,66 @@
                 case 'mainContainer.chat':
                 case 'mainContainer.chatUser':
                     // if (performance.navigation.type == 1) { // if page reload
-                        
-                        var userId = storageService.get('userId');
-                        console.log("USER ID ", userId);
-                        var userData = {
-                            id: userId,
-                            pageName: "mainPage",
-                           
-                        }
-                        // load id , url and first name of user
-                        JsonLoad.returnHome(userData).then(function (res) {
-                            $scope.page = res.data.info;
-                            console.log("loggined page reload POST", res.data.info);
-                        });
+
+                    var userId = storageService.get('userId');
+                    console.log("USER ID ", userId);
+                    var userData = {
+                        id: userId,
+                        pageName: "mainPage",
+
+                    }
+                    // load id , url and first name of user
+                    JsonLoad.returnHome(userData).then(function (res) {
+                        $scope.page = res.data.info;
+                        console.log("loggined page reload POST", res.data.info);
+                    });
 
 
-                        // console.log("POP", newValue.split(".").pop()); mainContainer.gallery -> gallery
-                        var localStorageID = storageService.get('pageId');
-                        var chatId = storageService.get('chatId'); // only for chatUser!
-                        console.log("CHAT ID ", chatId);
-                        console.log("localStorageID: ", localStorageID);
+                    // console.log("POP", newValue.split(".").pop()); mainContainer.gallery -> gallery
+                    var localStorageID = storageService.get('pageId');
+                    
+                    if(newValue == "mainContainer.chatUser"){ // its Chat User
+                    var chatData =  storageService.get('chatData');
+                    var parsedChatData = JSON.parse(chatData);
+                    var chatId = storageService.get('chatId'); // only for chatUser!
+                    console.log("CHAT ID ", chatId);
+                       console.log(JSON.parse(chatData));
+                    }
 
-                        var data = {
-                            id: localStorageID,
-                            pageName: newValue.split(".").pop(),
-                            idChat: chatId
-                        }
+                    console.log("localStorageID: ", localStorageID);
+                 
 
-                        JsonLoad.returnHome(data).then(function (res) {
-                            $scope.subPage = res.data.info;
-                            $scope.chatId = chatId;
-                            console.log("subPage POST", $scope.subPage);
+                    var data = {
+                        id: localStorageID,
+                        pageName: newValue.split(".").pop(),
+                        idChat: chatId,
+                        chatData: parsedChatData
+                    }
 
-                        });
+                    JsonLoad.returnHome(data).then(function (res) {
+                        $scope.subPage = res.data.info;
+                        $scope.chatId = chatId;
+                        console.log("subPage POST", $scope.subPage);
+
+                    });
                     // }
                     break;
                 case 'mainContainer.userPage':
-                        var userId = storageService.get('userId');
-                        console.log("USER ID ", userId);
-                        var userData = {
-                            id: userId,
-                            pageName: "mainPage"
-                        }
-                        // load id , url and first name of user
-                        JsonLoad.returnHome(userData).then(function (res) {
-                            $scope.page = res.data.info;
-                            console.log("loggined page reload POST", res.data.info);
-                        });
+                    var userId = storageService.get('userId');
+                    console.log("USER ID ", userId);
+                    var userData = {
+                        id: userId,
+                        pageName: "mainPage"
+                    }
+                    // load id , url and first name of user
+                    JsonLoad.returnHome(userData).then(function (res) {
+                        $scope.page = res.data.info;
+                        console.log("loggined page reload POST", res.data.info);
+                    });
+                    break;
+                case 'autorize':
+                    console.log("LogOut");
+                    AuthService.clearCredentials();
                     break;
             }
         });

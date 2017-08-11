@@ -1,6 +1,6 @@
      <!--friends part Start-->
       <div class="partOfFriends animated fadeIn " ng-app="socialNetwork"> 
-        <div  class="friends" ng-repeat="friend in subPage.friends">
+        <div  class="friends" ng-repeat="friend in subPage.friends track by $index">
           <img ui-sref="mainContainer.userPage"  ng-click="reqFriend(friend.id)" class="friendPhoto" src="{{friend.avatar_url}}"/>
           <div  class="aboutFriend">
             
@@ -15,7 +15,7 @@
           	<p><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></p>
           </div>
           <div class="buttons" >
-            <a ui-sref="mainContainer.chatUser" ng-click="chatEnter(friend.id);"><button type="button" class="write">Написати повідомлення</button></a>
+            <a ui-sref="mainContainer.chatUser" ng-click="chatEnter(friend.id, $index,'friends');"><button type="button" class="write">Написати повідомлення</button></a>
             <button type="button" class="del">Видалити з друзів</button>
           </div>
         </div>

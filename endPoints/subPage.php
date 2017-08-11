@@ -45,13 +45,13 @@ switch ($subPage) {
         break;
     case "chat":
     // CHAT
-        $chat = $Db->selectSqlPrepared("SELECT chat.id,chat.id_sender, chat.sender, chat.last_msg_url, chat.last_msg_text, chat.sender_name, chat.chat_date, chat.reciever_url, chat.sender_url
+        $chat = $Db->selectSqlPrepared("SELECT chat.id,chat.id_sender, chat.sender, chat.last_msg_url, chat.last_msg_text, chat.sender_name, chat.chat_date, chat.reciever_url
       FROM chat INNER JOIN users_data ON users_data.id=chat.id_owner WHERE id_owner = '$id' LIMIT 20");
         $data_arr[0]["chat"] = $chat;
         break;
     case "chatUser":
     // CHATUSER
-         $chat = $Db->selectSqlPrepared("SELECT chat.id_sender, chat.sender_name, chat.chat_date, chat.reciever_url, chat.sender_url
+         $chat = $Db->selectSqlPrepared("SELECT chat.id_sender, chat.sender_name, chat.chat_date, chat.reciever_url, chat.sender
       FROM chat WHERE id_sender = '$idChat'");
          if(empty($chat)){ // нема такого користувача
             $insertId = $Db->addSql('chat', $chatData[0]); // добавити його

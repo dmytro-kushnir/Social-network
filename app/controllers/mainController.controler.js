@@ -13,6 +13,10 @@
         'use strict';
         $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
 
+    
+    
+
+
         // return to main USER page onclick
         $scope.return = function (id, pageName) {
             $scope.subPage = null;
@@ -25,14 +29,19 @@
         $scope.reqFriend = function (answer) {
             // save userPageId to localStorage
             storageService.save('userPageId', answer);
+            storageService.save('pageId', answer);
         }
-
+        $scope.goBack = function() {
+                storageService.save('pageId', $scope.page.id);
+                window.history.back();
+        };
         // load chatUser onclick 
         $scope.chatEnter = function (chatId, index, nameSpace) {
             // $scope.chatId = chatId;
             console.log(`chat index is ${chatId}`);
             storageService.save('chatId', chatId);
             var date = new Date();
+            var pageId = storageService.get('pageId');
             $scope.FromDate = ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2);
 
             if (nameSpace == "friends") {
@@ -40,11 +49,12 @@
                 $scope.avatar_url = $scope.subPage[nameSpace][index].avatar_url;
             } else if (nameSpace == "chat")
                 $rootScope.chatTitle = $scope.subPage[nameSpace][index].sender_name;
-            else if (nameSpace == "userPage") 
+            else if (nameSpace == "userPage")
                 $rootScope.chatTitle = $rootScope.title;
 
             var chatData = {
                 "id_sender": chatId,
+                "id_owner": pageId,
                 "sender_name": $rootScope.chatTitle,
                 "sender": $scope.avatar_url,
                 "reciever_url": $scope.page.avatar_url,
@@ -62,7 +72,7 @@
             console.log("emit logIn", $scope.page);
 
             storageService.save('userName', data.first_name + " " + data.second_name);
-            storageService.save('userMain', JSON.stringify(data));
+            // storageService.save('userMain', JSON.stringify(data));
             storageService.save('userId', data.id);
         });
         // get data from child ctrl userPage
@@ -78,14 +88,12 @@
         });
         // get data from child ctrl userPage
         $scope.$on('userPageFrGal', function (event, data) {
-            $scope.subPage = data;
-            storageService.save('friendSubPage', data); //-> friends
+            $scope.subPage = data; //-> friends
         });
         // get data from child ctrl mainPage
         $scope.$on('mainPageFrGal', function (event, data) {
             console.log(data);
-            $scope.subPage = data;
-            storageService.save('friendSubPage', data); //-> mainUser
+            $scope.subPage = data; //-> mainUser
         });
         // save current state and watch it change
         $scope.currState = $state;
@@ -103,35 +111,24 @@
                 case 'mainContainer.gallery':
                 case 'mainContainer.chat':
                 case 'mainContainer.chatUser':
-                    // if (performance.navigation.type == 1) { // if page reload
 
                     var userId = storageService.get('userId');
                     console.log("USER ID ", userId);
+
                     var userData = {
                         id: userId,
                         pageName: "mainPage",
-
                     }
-                    // load id , url and first name of user
-                    JsonLoad.returnHome(userData).then(function (res) {
-                        $scope.page = res.data.info;
-                        console.log("loggined page reload POST", res.data.info);
-                    });
-
-
-                    // console.log("POP", newValue.split(".").pop()); mainContainer.gallery -> gallery
                     var localStorageID = storageService.get('pageId');
+                      console.log("localStorageID: ", localStorageID);
                     
-                    if(newValue == "mainContainer.chatUser"){ // its Chat User
-                    var chatData =  storageService.get('chatData');
-                    var parsedChatData = JSON.parse(chatData);
-                    var chatId = storageService.get('chatId'); // only for chatUser!
-                    console.log("CHAT ID ", chatId);
-                       console.log(JSON.parse(chatData));
+                      if (newValue == "mainContainer.chatUser") { // its Chat User
+                        var chatData = storageService.get('chatData');
+                        var parsedChatData = JSON.parse(chatData);
+                        var chatId = storageService.get('chatId'); // only for chatUser!
+                        console.log("CHAT ID ", chatId);
+                        console.log(JSON.parse(chatData));
                     }
-
-                    console.log("localStorageID: ", localStorageID);
-                 
 
                     var data = {
                         id: localStorageID,
@@ -140,13 +137,19 @@
                         chatData: parsedChatData
                     }
 
+                    // load id , url and first name of user
+                    JsonLoad.returnHome(userData).then(function (res) {
+                        $scope.page = res.data.info;
+                        console.log("loggined page reload POST", res.data.info);
+                    });
+
                     JsonLoad.returnHome(data).then(function (res) {
                         $scope.subPage = res.data.info;
                         $scope.chatId = chatId;
                         console.log("subPage POST", $scope.subPage);
 
                     });
-                    // }
+
                     break;
                 case 'mainContainer.userPage':
                     var userId = storageService.get('userId');

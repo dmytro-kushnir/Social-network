@@ -2,7 +2,7 @@
 app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, storageService) {
     'use strict';
 
-    var localStorageID = storageService.get('userPageId');
+    var localStorageID = storageService.get('pageId');
 
 
     JsonLoad.renderUserPage(localStorageID).then(function (res) {

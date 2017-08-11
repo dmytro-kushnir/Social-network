@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 09 2017 г., 17:56
+-- Время создания: Авг 11 2017 г., 23:16
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -76,12 +76,12 @@ INSERT INTO `avatars_users` (`avatar_id`, `user_id`) VALUES
 CREATE TABLE `chat` (
   `id` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
+  `id_sender` int(11) NOT NULL,
   `sender` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `last_msg_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `last_msg_text` varchar(2000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `chat_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `sender_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `reciever_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -89,9 +89,11 @@ CREATE TABLE `chat` (
 -- Дамп данных таблицы `chat`
 --
 
-INSERT INTO `chat` (`id`, `id_owner`, `sender`, `last_msg_url`, `last_msg_text`, `sender_name`, `chat_date`, `sender_url`, `reciever_url`) VALUES
-(1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мне след, По которому, я буду лететь. И за руку тебя, мой родной, Заберу я с собой...', 'Єва Грін', '11.04.06 23:22', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg'),
-(2, 1, '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg');
+INSERT INTO `chat` (`id`, `id_owner`, `id_sender`, `sender`, `last_msg_url`, `last_msg_text`, `sender_name`, `chat_date`, `reciever_url`) VALUES
+(1, 1, 2, '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мн', 'Єва Грін', '11.04.06 23:22', '/src/img/users/user/avatars/2.jpg'),
+(2, 1, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/user/avatars/2.jpg'),
+(3, 0, 2, '/src/img/users/friend100001/avatars/avatar.jpg', '', '', 'Єва Грін', '08.11', '/src/img/users/user/avatars/2.jpg'),
+(4, 0, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '', '', 'Дженніфер Лоуренс', '08.11', '/src/img/users/user/avatars/2.jpg');
 
 -- --------------------------------------------------------
 
@@ -103,6 +105,16 @@ CREATE TABLE `chat_users` (
   `id_chat` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `chat_users`
+--
+
+INSERT INTO `chat_users` (`id_chat`, `id_user`) VALUES
+(1, 1),
+(2, 1),
+(1, 2),
+(2, 5);
 
 -- --------------------------------------------------------
 
@@ -294,12 +306,12 @@ CREATE TABLE `postchat` (
 --
 
 INSERT INTO `postchat` (`id`, `id_owner`, `id_chat`, `side`, `message_data`, `message_date`) VALUES
-(1, 1, 1, 'R', 'Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить', '12 mins ago'),
-(2, 1, 1, 'L', 'Це просто неймовріно!', '10 mins ago'),
-(3, 1, 1, 'L', 'Знаєш приспів', '8 mins ago'),
-(4, 1, 1, 'R', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мне след, По которому, я буду лететь. И за руку тебя, мой родной, Заберу я с собой...', '2 mins ago'),
-(5, 1, 2, 'R', 'Ти чудова! Давй свій телефон!', 'зараз'),
-(6, 1, 2, 'L', 'Дякую, приємно :-)\nтримай +390 <не дам> 12 43', 'зараз');
+(1, 1, 2, 'R', 'Просто так, неожиданно пришел закат, Ласково ноченька приплыла к нам с того берега, К шелку уронила. Что не так? И зачем я так хочу бежать Долго ли лодочка, ты плыви плыви, Больно мне помнить', '12 mins ago'),
+(2, 1, 2, 'L', 'Це просто неймовріно!', '10 mins ago'),
+(3, 1, 2, 'L', 'Знаєш приспів', '8 mins ago'),
+(4, 1, 2, 'R', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мне след, По которому, я буду лететь. И за руку тебя, мой родной, Заберу я с собой...', '2 mins ago'),
+(5, 1, 5, 'R', 'Ти чудова! Давй свій телефон!', 'зараз'),
+(6, 1, 5, 'L', 'Дякую, приємно :-)\nтримай +390 <не дам> 12 43', 'зараз');
 
 -- --------------------------------------------------------
 
@@ -564,7 +576,7 @@ ALTER TABLE `avatars`
 -- AUTO_INCREMENT для таблицы `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `gallery`
 --

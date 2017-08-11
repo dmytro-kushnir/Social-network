@@ -24,7 +24,7 @@
                         url: '/mainContainer',
                         templateUrl: "app/templates/mainContainer.html",
                         resolve: {
-                            
+
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Доктор Стрендж";
                             }]
@@ -49,13 +49,13 @@
                             }
                         },
                         resolve: {
-                           'title': ['storageService', '$rootScope', function (storageService,$rootScope) {
-                                $rootScope.title =  storageService.get('userName');
-                           }]
+                            'title': ['storageService', '$rootScope', function (storageService, $rootScope) {
+                                $rootScope.title = storageService.get('userName');
+                            }]
                         },
-                          data: {
-                                authRequired: true
-                            }
+                        data: {
+                            authRequired: true
+                        }
                     })
                     .state("mainContainer.friends", {
                         url: '/friends',
@@ -129,7 +129,22 @@
                 $urlRouterProvider.otherwise('/mainContainer/mainPage');
             }
         ])
-        .run(['$rootScope', '$state', '$stateParams',
+        .run(function ($rootScope, $location, storageService) { // history back event
+
+            $rootScope.$on('$locationChangeSuccess', function () {
+                $rootScope.actualLocation = $location.absUrl();
+            });
+
+            $rootScope.$watch(function () {
+                return $location.absUrl()
+            }, function (newLocation, oldLocation) {
+                if ($rootScope.actualLocation === newLocation) {
+                      var userId = storageService.get('userId');
+                      storageService.save('pageId', userId);
+                }
+            });
+        })
+        .run(['$rootScope', '$state', '$stateParams', // for route header name
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
@@ -139,13 +154,13 @@
             }
 
         ])
-        .run(['$rootScope', '$transitions', '$state', '$cookies', '$http', 'AuthService',
+        .run(['$rootScope', '$transitions', '$state', '$cookies', '$http', 'AuthService', // for registration
             function ($rootScope, $transitions, $state, $cookies, $http, AuthService) {
 
                 // keep user logged in after page refresh
                 $rootScope.globals = $cookies.get('globals') || {};
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + $rootScope.globals;
-             
+
                 $transitions.onStart({
                     to: function (state) {
                         return state.data != null && state.data.authRequired === true;
@@ -156,7 +171,8 @@
                         return $state.target("autorize");
                     }
                 });
-            }]);
+            }
+        ]);
 
     //factory for json load
     app.factory('JsonLoad', function ($http) {
@@ -165,11 +181,11 @@
                 return $http.get("endPoints/login.php");
             },
             returnHome: function (request) {
-                return $http.post("endPoints/subPage.php",  {
-                        request: request
-                    });
+                return $http.post("endPoints/subPage.php", {
+                    request: request
+                });
             },
-            renderUserPage: function(request){
+            renderUserPage: function (request) {
                 return $http.post("endPoints/pageRender.php", request);
             }
         };
@@ -198,14 +214,14 @@
                         data: data
                     })
                     .then(function (response) {
-                        
-                        callback(response);        
+
+                        callback(response);
                     });
             };
 
             // Creates a cookie and set the Authorization header
             service.setCredentials = function (response) {
-             
+
                 $rootScope.globals = response;
 
                 $http.defaults.headers.common['Authorization'] = 'Bearer ' + response;
@@ -214,8 +230,8 @@
 
             // Checks if it's authenticated
             service.isAuthenticated = function () {
-                
-                console.log("If TRUE callback not worked yet!!",$cookies.get('globals') === undefined);
+
+                console.log("If TRUE callback not worked yet!!", $cookies.get('globals') === undefined);
 
                 return !($cookies.get('globals') === undefined);
             };
@@ -224,8 +240,8 @@
             service.clearCredentials = function () {
                 $rootScope.globals = undefined;
                 $cookies.remove('globals');
-                              console.log("CLEAN coockies globals",$cookies.get('globals'));
-               
+                console.log("CLEAN coockies globals", $cookies.get('globals'));
+
                 $http.defaults.headers.common.Authorization = 'Bearer ';
             };
 

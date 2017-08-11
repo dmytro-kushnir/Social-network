@@ -5,7 +5,7 @@
     <span class="searchText">Пошук</span>
 </div>
 
-    <a class="userChatBlock animated fadeIn " ng-click="chatEnter(chat.id);"  ng-repeat="chat in subPage.chat" >
+    <a class="userChatBlock animated fadeIn " ng-click="chatEnter(chat.id_sender, $index, 'chat');"  ng-repeat="chat in subPage.chat track by $index" >
         <div class="chatWrapper" >
             <img class="userChatPhoto" ng-src="{{chat.sender}}" ng-if="chat.sender" alt="sender">
             <span class="userNameChat">{{chat.sender_name}}</span>

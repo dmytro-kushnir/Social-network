@@ -120,9 +120,10 @@
 
                         },
                         resolve: {
-                            'title': ['storageService', '$rootScope', function (storageService,$rootScope) {
-                                $rootScope.title =  storageService.get('friendName');
-                            }]
+                            // 'title': ['storageService', '$rootScope', function (storageService,$rootScope) {
+                            //     console.log("HEYY");                   
+                            //        $rootScope.title =  storageService.get('friendName');
+                            // }]
                         }
                     });
                 $urlRouterProvider.otherwise('/mainContainer/mainPage');

@@ -23,13 +23,30 @@
             console.log("ID", id);
             console.log("pageName", pageName);
             storageService.save('pageId', id);
+            
             // storageService.save('friendSubPage', "mainUser"); // save mainUser flag to LS 
+            if($scope.subPage == null){ // повторно нажали на ту саму вкладку
+                     var data = {
+                        id: id,
+                        pageName: pageName,
+                        idChat: undefined,
+                        chatData: undefined
+                    }
+                    JsonLoad.returnHome(data).then(function (res) {
+                        $scope.subPage = res.data.info;
+                        console.log("second subPage POST", $scope.subPage);
+                    });
+            }
+            
         }
         // load userPage onclick
         $scope.reqFriend = function (answer) {
             // save userPageId to localStorage
             storageService.save('userPageId', answer);
             storageService.save('pageId', answer);
+
+         
+            
         }
         $scope.goBack = function() {
                 storageService.save('pageId', $scope.page.id);

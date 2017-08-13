@@ -84,6 +84,33 @@
                             }]
                         }
                     })
+                    .state("mainContainer.userFriends", {
+                        url: '/friends',
+                        views: {
+                            'userFriends@mainContainer': {
+                                templateUrl: 'app/templates/userFriends.html'
+                            }
+                        },
+                        resolve: {
+                            'title': ['$rootScope', function ($rootScope) {
+                                $rootScope.title = "Мої друзі";
+                            }]
+                        }
+                    })
+                    .state("mainContainer.userGallery", {
+                        url: '/gallery',
+                        views: {
+                            'userGallery@mainContainer': {
+                                templateUrl: 'app/templates/userGallery.html',
+                            }
+                        },
+                        resolve: {
+                            'title': ['$rootScope', function ($rootScope) {
+                                $rootScope.title = "Галерея";
+
+                            }]
+                        }
+                    })
                     .state("mainContainer.chat", {
                         url: '/chat',
                         views: {
@@ -129,21 +156,21 @@
                 $urlRouterProvider.otherwise('/mainContainer/mainPage');
             }
         ])
-        .run(function ($rootScope, $location, storageService) { // history back event
+        // .run(function ($rootScope, $location, storageService) { // history back event
 
-            $rootScope.$on('$locationChangeSuccess', function () {
-                $rootScope.actualLocation = $location.absUrl();
-            });
+        //     $rootScope.$on('$locationChangeSuccess', function () {
+        //         $rootScope.actualLocation = $location.absUrl();
+        //     });
 
-            $rootScope.$watch(function () {
-                return $location.absUrl()
-            }, function (newLocation, oldLocation) {
-                if ($rootScope.actualLocation === newLocation) {
-                      var userId = storageService.get('userId');
-                      storageService.save('pageId', userId);
-                }
-            });
-        })
+        //     $rootScope.$watch(function () {
+        //         return $location.absUrl()
+        //     }, function (newLocation, oldLocation) {
+        //         if ($rootScope.actualLocation === newLocation) {
+        //               var userId = storageService.get('userId');
+        //               storageService.save('pageId', userId);
+        //         }
+        //     });
+        // })
         .run(['$rootScope', '$state', '$stateParams', // for route header name
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;

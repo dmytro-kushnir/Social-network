@@ -2,7 +2,7 @@
 app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, storageService) {
     'use strict';
 
-    var localStorageID = storageService.get('pageId');
+    var localStorageID = storageService.get('userPageId');
 
 
     JsonLoad.renderUserPage(localStorageID).then(function (res) {
@@ -32,9 +32,9 @@ app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, s
             $scope.$emit('userPageFrGal', $scope.subPage); // send friend data to parent scope (MainCtrl)
 
             if (pageName == "gallery")
-                $state.go('mainContainer.gallery');
+                $state.go('mainContainer.userGallery');
             else if (pageName == "friends")
-                $state.go('mainContainer.friends');
+                $state.go('mainContainer.userFriends');
         });
     }
 });

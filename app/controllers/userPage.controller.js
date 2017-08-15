@@ -4,7 +4,6 @@ app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, s
 
     var localStorageID = storageService.get('userPageId');
 
-
     JsonLoad.renderUserPage(localStorageID).then(function (res) {
         console.log("userPage POST", res.data.info);
         $scope.friend = res.data.info;

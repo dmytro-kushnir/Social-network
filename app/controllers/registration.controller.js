@@ -44,7 +44,9 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 			if(callback.data.info)
 			$scope.$emit('logIn', callback.data.info); // send data to parent scope (MainCtrl)
 
-			AuthService.setCredentials(callback.data.success);
+			AuthService.setCredentials(callback.data.success); // send flag from server if auth. is success
+			// true -> success
+			// undefined -> failed
 
 			$state.go('mainContainer.mainPage');
 		});

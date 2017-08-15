@@ -1,8 +1,45 @@
 (function () {
-    app.controller('MainPageCtrl', function ($scope, $state, JsonLoad, storageService) {
+    app.controller('MainPageCtrl', function ($scope, $state, JsonLoad, storageService, Upload, $timeout) {
         'use strict';
+        $scope.textAreaFlag = true;// for post send validation 
+        $scope.imageFlag = true;
+       console.log($scope.textarea);
+$scope.textarea = {};
+        $scope.uploadPic = function (file) { 
+            if(file != undefined || file != null){ //text with file or only file
+            file.upload = Upload.upload({
+                url: 'endPoints/upload-image.php',
+                method: "POST",
+                file: file,
+                data: {
+                    // 'targetPath' : '/src/img/users/user'+$scope.page.id+'/posts/',
+                    'targetPath' : '../src/img/users/user/posts/',
+                    'textArea': $scope.textarea,
+                    'file': file
+                }
+            });
+
+            file.upload.then(function (response) {
+                $timeout(function () {
+                    console.log("FILE RESULT", response.data);
+                    file.result = response.data;
+                });
+            }, function (response) {
+                if (response.status > 0)
+                    $scope.errorMsg = response.status + ': ' + response.data;
+            }, function (evt) {
+                // Math.min is to fix IE which reports 200% sometimes
+                file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+            });
+                       
+            }
+        else{ //  only text
+            console.log($scope.textarea);
+        }
+        }
+
         $scope.mainPageFrGal = function (id, pageName) {
-             var data = {
+            var data = {
                 id: id,
                 pageName: pageName
             }
@@ -12,13 +49,13 @@
             JsonLoad.returnHome(data).then(function (res) {
                 $scope.subPage = res.data.info;
                 console.log("subPage POST", $scope.subPage);
-                
-            $scope.$emit('mainPageFrGal', $scope.subPage); // send friend data to parent scope (MainCtrl)
-       
-             if(pageName == "gallery")
+
+                $scope.$emit('mainPageFrGal', $scope.subPage); // send friend data to parent scope (MainCtrl)
+
+                if (pageName == "gallery")
                     $state.go('mainContainer.gallery');
-             else if (pageName == "friends")
-                 $state.go('mainContainer.friends'); 
+                else if (pageName == "friends")
+                    $state.go('mainContainer.friends');
             });
 
 

@@ -11,7 +11,8 @@
         'angular-carousel',
         'akoenig.deckgrid',
         'videosharing-embed',
-        'ngCookies'
+        'ngCookies',
+        'ngFileUpload'
     ]);
     // Routing START  
 

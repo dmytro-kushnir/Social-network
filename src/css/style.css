@@ -544,3 +544,14 @@ body {
     display: block !important;
 }
 
+.thumb {
+    max-height: 120px;
+     min-width: 140px; 
+     display: inline-block;
+    float: none;
+    margin-top: 40px;
+    margin-left: -40px;
+    /* object-fit: cover; */
+    position: relative;
+    top: 7px;
+}

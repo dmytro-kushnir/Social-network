@@ -24,7 +24,9 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 		console.log("singUp data input: ", data);
 		$http.post('ajax.php', data).then(function (response) {
 				console.log(response);
-				localStorage.setItem("user", JSON.stringify({user: response}));
+				localStorage.setItem("user", JSON.stringify({
+					user: response
+				}));
 				$state.go("/mainContainer/mainPage");
 			}),
 			function (error) {
@@ -35,18 +37,14 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 	console.log($scope.loginInfo.email);
 	$scope.logIn = function () {
 
-		// var data = {
-		// 	"userEmail": $scope.loginInfo.email,
-		// 	"userPassword": $scope.loginInfo.password
-		// 	};
-		
-			AuthService.authenticate($scope.loginInfo.email, "Regstarr@ukr.net", function (callback) { 
-			console.log("CALLBACK! ",callback); //-> callback from server 
+		AuthService.authenticate($scope.loginInfo.email, $scope.loginInfo.password, function (callback) {
+			console.log("CALLBACK! ", callback); //-> callback from server 
 
-			if(callback.data.info)
+			if (callback.data.info)
 				console.log(callback.data.info);
 			$scope.$emit('logIn', callback.data.info); // send data to parent scope (MainCtrl)
-
+			if(callback.data.success == false)
+				callback.data.success = undefined;
 			AuthService.setCredentials(callback.data.success); // send flag from server if auth. is success
 			// true -> success
 			// undefined -> failed

@@ -206,7 +206,7 @@
     app.factory('JsonLoad', function ($http) {
         return {
             getPage: function () {
-                return $http.get("endPoints/login.php");
+                return $http.get("endPoints/mainPageRender.php");
             },
             returnHome: function (request) {
                 return $http.post("endPoints/subPage.php", {
@@ -236,8 +236,8 @@
             var service = {};
 
             // Authenticates throug a rest service
-            service.authenticate = function (username, password, callback) {
-                $http.post('endPoints/login.php', {username: username, password: password})
+            service.authenticate = function (userEmail, userPassword, callback) {
+                $http.post('endPoints/login.php', {userEmail: userEmail, userPassword: userPassword})
                     .then(function (response) {
                         callback(response);
                     });

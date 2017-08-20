@@ -4,15 +4,8 @@ include ('../Db/Db.php');
 $Db = new \Db\Db();
 
   $data = json_decode(file_get_contents('php://input'), true);
-  $select = "SELECT count(*) as counter FROM users WHERE userEmail = '$data[userEmail]' AND userPassword = '$data[userPassword]'";
-  $query = $Db->query($select);
-  $query->execute();
-  $num = $query->fetchAll(PDO::FETCH_ASSOC);
-  $userInfo = null;
+ 
   $data_arr = null;
-  
-  if(!empty($data)){
-    if($num[0]['counter'] > 0){
   
       // GET ALL GENERAL DATA
       $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE id = '1'");
@@ -70,18 +63,9 @@ $Db = new \Db\Db();
     }
     $data_arr[0]["gallery"] = $gallery;
 
-    $success = true;
-    ///////////////////////////////////
 
-  }else{
-      $userInfo = "Користувача з таким емейлом, або паролем не існує";
-      $success= false;
-    }
-  }
  $result = [
-        'success' => $success,
         'info' => $data_arr[0],
-        'userInfo'=>$userInfo,
         'errors' => []
     ];
 

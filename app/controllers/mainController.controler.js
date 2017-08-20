@@ -83,10 +83,15 @@
         $scope.$on('logIn', function (event, data) {
             $scope.page = data;
             console.log("emit logIn", $scope.page);
+            if(data != undefined){
+                storageService.save('userName', data.first_name + " " + data.second_name);
+                // storageService.save('userMain', JSON.stringify(data));
+                storageService.save('userId', data.id);
+            }
+            else{
+                console.log("АВТОРИЗАЦІЯ НЕ ВИЙШЛА")
+            }
 
-            storageService.save('userName', data.first_name + " " + data.second_name);
-            // storageService.save('userMain', JSON.stringify(data));
-            storageService.save('userId', data.id);
         });
         // get data from child ctrl userPage
         $scope.$on('friendName', function (event, data) {
@@ -117,7 +122,6 @@
                         console.log("mainPage POST", res);
                         $scope.page = [];
                         $scope.page = res.data.info;
-
                     });
                     break;
                 case 'mainContainer.friends':

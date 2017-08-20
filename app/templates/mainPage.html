@@ -103,7 +103,7 @@
         <div class="row " style="margin-bottom: 30px !important; ">
           <form class="textareaMainPage" role="form " name="form">
             <div class="form-group">
-              <textarea placeholder="Що у вас нового?" name="textArea" data-ng-model="textAreaModel" class="form-control " rows="5 " ng-model="textarea.value" ng-required="textAreaFlag" ng-click="imageFlag = false" id="comment "></textarea>
+              <textarea placeholder="Що у вас нового?" name="textArea" class="form-control " rows="5 " ng-model="textarea.value" ng-required="textAreaFlag" ng-click="imageFlag = false" id="comment "></textarea>
                <i ng-show="myForm.userName.$error.required">*required</i>
               <figure class="commentImage pull-left" type="file" ng-required="imageFlag" ng-click="textAreaFlag = false" ngf-select ng-model="picFile"  name="file" accept="image/*" ngf-max-size="4MB" ngf-model-invalid="errorFile">  </figure>
                 <!-- <i ng-show="form.file.$error.required">*required</i><br> -->

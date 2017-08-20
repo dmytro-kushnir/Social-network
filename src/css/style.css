@@ -48,6 +48,7 @@ body {
 
 .navbarToggleMasc {
     border-radius: 0px !important;
+    pointer-events: all;
 }
 
 .btn-default {

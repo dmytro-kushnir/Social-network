@@ -184,6 +184,7 @@
     height: 45px;
     margin-top: 5px;
     margin-left: 15px;
+    pointer-events: all;
     cursor: pointer;
 }
 
@@ -372,6 +373,7 @@ padding:  3px 10px !important;
 }
 .nabvarHeaderMine{
     height: 50px;
+    pointer-events: none;
 }
 
 

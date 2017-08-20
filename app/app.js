@@ -236,13 +236,9 @@
             var service = {};
 
             // Authenticates throug a rest service
-            service.authenticate = function (data, callback) {
-
-                $http.post('endPoints/login.php', {
-                        data: data
-                    })
+            service.authenticate = function (username, password, callback) {
+                $http.post('endPoints/login.php', {username: username, password: password})
                     .then(function (response) {
-
                         callback(response);
                     });
             };

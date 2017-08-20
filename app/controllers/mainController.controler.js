@@ -13,10 +13,6 @@
         'use strict';
         $scope.carouselIndex = 1; // щоб сладйер починався з другого індексу
 
-    
-    
-
-
         // return to main USER page onclick
         $scope.return = function (id, pageName) {
             $scope.subPage = null;

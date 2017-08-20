@@ -2,6 +2,13 @@
     font-family: Helvetica, Arial;
     src: url("./fonts/HelveticaBlack/HelveticaBlack.ttf");
 }
+
+html {
+    height: 100%; 
+}
+body {
+    height: 100%;
+}
 /*header*/
 button[disabled="disabled"]{
 	opacity: 0.5;
@@ -110,6 +117,9 @@ button[disabled="disabled"]{
     width: 275px;
     
     margin: auto;
+}
+.partOfForm_label{
+    font-size: 16px;
 }
 .inputsPartOfForm{
     margin: 5px 0;

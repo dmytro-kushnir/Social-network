@@ -4,70 +4,83 @@ include ('../Db/Db.php');
 $Db = new \Db\Db();
 
   $data = json_decode(file_get_contents('php://input'), true);
+  $select = "SELECT count(*) as counter FROM users WHERE userEmail = '$data[userEmail]' AND userPassword = '$data[userPassword]'";
+  $query = $Db->query($select);
+  $query->execute();
+  $num = $query->fetchAll(PDO::FETCH_ASSOC);
+  $userInfo = null;
 
+  if(!empty($data)){
+    if($num[0]['counter'] > 0){
   
-  // GET ALL GENERAL DATA
-  $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE id = 1 ");
+      // GET ALL GENERAL DATA
+      $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE id = '1'");
 
-/////////////////////////////////// 
+    /////////////////////////////////// 
 
-  $friendsIdArr = explode(",",$data_arr[0]["friends"]); // convert friends string to array
-  $friends = array();
-  // FRIENDS 
-    if($friendsIdArr[0] != "" || !empty($friendsIdArr[0])){
-  foreach($friendsIdArr as $value){
-    $buf = $Db->selectSqlPrepared("SELECT id, first_name, second_name, count_friends, avatar_url 
-      FROM users_data WHERE id = '$value' LIMIt 5");
-    $friends[] = $buf[0];
-  }
-  $data_arr[0]["friends"] = $friends; // sets friends to data_arr instead of friends string
+      $friendsIdArr = explode(",",$data_arr[0]["friends"]); // convert friends string to array
+      $friends = array();
+      // FRIENDS 
+        if($friendsIdArr[0] != "" || !empty($friendsIdArr[0])){
+      foreach($friendsIdArr as $value){
+        $buf = $Db->selectSqlPrepared("SELECT id, first_name, second_name, count_friends, avatar_url 
+          FROM users_data WHERE id = '$value' LIMIt 5");
+        $friends[] = $buf[0];
+      }
+      $data_arr[0]["friends"] = $friends; // sets friends to data_arr instead of friends string
+        }
+    ///////////////////////////////////
+
+    // AVATARS
+    $avatars = $Db->selectSqlPrepared("SELECT 
+        avatars.id, avatars.sender_name, avatars.sender_url, avatars.image_url, avatars.reciever_url, avatars.image_date, avatars.likes 
+          FROM avatars INNER JOIN users_data ON users_data.id=avatars.id_owner WHERE id_owner = 1" );
+    // AVATAR POSTS
+    foreach($avatars as $key => $value){ // get avatar posts
+      $posts = $Db->selectSqlPrepared("SELECT 
+      postavatars.id, postavatars.sender_name, postavatars.sender_url, postavatars.send_date, postavatars.post_text, postavatars.post_link, postavatars.post_image, postavatars.post_likes
+          FROM postavatars INNER JOIN users_data ON users_data.id=postavatars.id WHERE id_image = '$value[id]'");
+          $avatars[$key]["posts"] = $posts;
     }
-///////////////////////////////////
+    $data_arr[0]["avatars"] = $avatars;
 
- // AVATARS
-$avatars = $Db->selectSqlPrepared("SELECT 
-    avatars.id, avatars.sender_name, avatars.sender_url, avatars.image_url, avatars.reciever_url, avatars.image_date, avatars.likes 
-      FROM avatars INNER JOIN users_data ON users_data.id=avatars.id_owner WHERE id_owner = 1" );
-// AVATAR POSTS
-foreach($avatars as $key => $value){ // get avatar posts
-  $posts = $Db->selectSqlPrepared("SELECT 
-   postavatars.id, postavatars.sender_name, postavatars.sender_url, postavatars.send_date, postavatars.post_text, postavatars.post_link, postavatars.post_image, postavatars.post_likes
-      FROM postavatars INNER JOIN users_data ON users_data.id=postavatars.id WHERE id_image = '$value[id]'");
-      $avatars[$key]["posts"] = $posts;
-}
-$data_arr[0]["avatars"] = $avatars;
+    ///////////////////////////////////
 
-///////////////////////////////////
+    // USER POSTS
+    $posts = $Db->selectSqlPrepared("SELECT 
+        post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_link, post.post_image, post.post_likes
+          FROM post INNER JOIN users_data ON users_data.id=post.id WHERE id_owner = 1");
+    $data_arr[0]["posts"] = $posts;
 
-// USER POSTS
-$posts = $Db->selectSqlPrepared("SELECT 
-    post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_link, post.post_image, post.post_likes
-      FROM post INNER JOIN users_data ON users_data.id=post.id WHERE id_owner = 1");
-$data_arr[0]["posts"] = $posts;
+    ///////////////////////////////////
 
-///////////////////////////////////
+    // GALLERY
+    $gallery = $Db->selectSqlPrepared("SELECT 
+      gallery.id, gallery.sender_name, gallery.sender_url, gallery.image_url, gallery.reciever_url, gallery.image_date, gallery.likes 
+          FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = 1 LIMIT 20");
 
-// GALLERY
-$gallery = $Db->selectSqlPrepared("SELECT 
-  gallery.id, gallery.sender_name, gallery.sender_url, gallery.image_url, gallery.reciever_url, gallery.image_date, gallery.likes 
-      FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = 1 LIMIT 20");
+    // GALLERY POSTS
+    foreach($gallery as $key => $value){ // get gallery posts
+      $posts = $Db->selectSqlPrepared("SELECT 
+      postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_link, postgallery.post_image, postgallery.post_likes
+          FROM postgallery INNER JOIN users_data ON users_data.id=postgallery.id WHERE id_image = '$value[id]'");
+          $gallery[$key]["posts"] = $posts;
+            $gallery[$key]["id"] = $key+1;
+    }
+    $data_arr[0]["gallery"] = $gallery;
 
-// GALLERY POSTS
-foreach($gallery as $key => $value){ // get gallery posts
-  $posts = $Db->selectSqlPrepared("SELECT 
-   postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_link, postgallery.post_image, postgallery.post_likes
-      FROM postgallery INNER JOIN users_data ON users_data.id=postgallery.id WHERE id_image = '$value[id]'");
-      $gallery[$key]["posts"] = $posts;
-         $gallery[$key]["id"] = $key+1;
-}
-$data_arr[0]["gallery"] = $gallery;
+    $success = true;
+    ///////////////////////////////////
 
-///////////////////////////////////
-
-
+  }else{
+      $userInfo = "Користувача з таким емейлом, або паролем не існує";
+      $success= false;
+    }
+  }
  $result = [
-        'success' => true,
+        'success' => $success,
         'info' => $data_arr[0],
+        'userInfo'=>$userInfo,
         'errors' => []
     ];
 

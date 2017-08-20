@@ -30,15 +30,15 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 			}
 	}
 	//login
-		
+	console.log($scope.loginInfo.email);
 	$scope.logIn = function () {
 
-		var data = {
-			"userEmail": $scope.loginInfo.email,
-			"userPassword": $scope.loginInfo.password
-			};
-
-			AuthService.authenticate(data, function (callback) { 
+		// var data = {
+		// 	"userEmail": $scope.loginInfo.email,
+		// 	"userPassword": $scope.loginInfo.password
+		// 	};
+		
+			AuthService.authenticate($scope.loginInfo.email, "Regstarr@ukr.net", function (callback) { 
 			console.log("CALLBACK! ",callback); //-> callback from server 
 
 			if(callback.data.info)

@@ -215,6 +215,12 @@
             },
             renderUserPage: function (request) {
                 return $http.post("endPoints/pageRender.php", request);
+            },
+            uploadPost: function (request) {
+                return $http.post("endPoints/uploadPost.php", request);
+            },
+            deletePost: function (request) {
+                return $http.post("endPoints/deletePost.php", request);
             }
         };
     });
@@ -272,4 +278,12 @@
             return service;
         }
     ]);
+
+
+    app.filter('reverse', function() {
+        return function(items) {
+          if(!angular.isArray(items)) { return items; }
+          return items.slice().reverse();
+        };
+      });
 })();

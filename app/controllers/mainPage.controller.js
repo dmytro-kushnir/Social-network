@@ -5,10 +5,23 @@
         $scope.imageFlag = true;
        console.log($scope.textarea);
         $scope.textarea = {};
-        $scope.uploadPic = function (file) {
+
+        $scope.deletePost = function(id){
+            var data = { // prepare data to server send
+                "id_owner": storageService.get("userId"),
+                "id_post": id
+            }
+            JsonLoad.deletePost(data).then(function(response){
+                console.log(response);
+                $scope.page.posts.splice(id, 1);
+            });
+        }
+
+        $scope.uploadPic = function (file, id) {
             var date = new Date();
             var data = { // prepare data to server send
                 "id_owner": storageService.get("userId"),
+                "id_post": id,
                 "sender_url":"../src/img/users/user/avatars/2.jpg",
                 "sender_name":storageService.get("userName"), 
                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'), 
@@ -20,7 +33,7 @@
             
             if(file != undefined || file != null){ //text with file or only file
             file.upload = Upload.upload({
-                url: 'endPoints/upload-image.php',
+                url: 'endPoints/uploadPost.php',
                 method: "POST",
                 file: file,
                 data: {
@@ -48,6 +61,10 @@
             }
         else{ //  only text
             console.log($scope.textarea);
+            JsonLoad.uploadPost(data).then(function(response){
+                console.log(response);
+                $scope.page.posts.push(response.data.info);
+            });
         }
         }
 

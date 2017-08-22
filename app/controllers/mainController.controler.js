@@ -85,6 +85,7 @@
             console.log("emit logIn", $scope.page);
             if(data != undefined){
                 storageService.save('userName', data.first_name + " " + data.second_name);
+                storageService.save('userUrl', data.avatar_url);
                 // storageService.save('userMain', JSON.stringify(data));
                 storageService.save('userId', data.id);
             }

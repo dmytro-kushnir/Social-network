@@ -23,7 +23,7 @@
             var data = { // prepare data to server send
                 "id_owner": storageService.get("userId"),
                 "id_post": id,
-                "sender_url":"../src/img/users/user/avatars/2.jpg",
+                "sender_url":storageService.get("userUrl"),
                 "sender_name":storageService.get("userName"), 
                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'), 
                 "post_text":$scope.textarea.value,

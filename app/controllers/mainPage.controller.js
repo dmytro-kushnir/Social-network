@@ -6,14 +6,15 @@
        console.log($scope.textarea);
         $scope.textarea = {};
 
-        $scope.deletePost = function(id){
+        $scope.deletePost = function(array_id,id){
             var data = { // prepare data to server send
                 "id_owner": storageService.get("userId"),
-                "id_post": id
+                "id": id
             }
+            console.log("ARRAY ID", array_id);
             JsonLoad.deletePost(data).then(function(response){
                 console.log(response);
-                $scope.page.posts.splice(id, 1);
+                $scope.page.posts.splice(array_id, 1);
             });
         }
 
@@ -25,8 +26,7 @@
                 "sender_url":"../src/img/users/user/avatars/2.jpg",
                 "sender_name":storageService.get("userName"), 
                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'), 
-                "post_text":$scope.textarea.value, 
-                "post_link":"", // make in server
+                "post_text":$scope.textarea.value,
                 "post_image":"../src/img/users/user/posts/", //make in server
                 "post_likes":0 
             }
@@ -46,7 +46,7 @@
             file.upload.then(function (response) {
                 $timeout(function () {
                     console.log("FILE RESULT", response.data);
-                    $scope.page.posts.push(response.data.info);
+                    $scope.page.posts.unshift(response.data.info);
                     console.log("ADD POST", $scope.page);
                     // file.result = response.data;
                 });
@@ -61,9 +61,10 @@
             }
         else{ //  only text
             console.log($scope.textarea);
+            console.log("DATA",data);
             JsonLoad.uploadPost(data).then(function(response){
                 console.log(response);
-                $scope.page.posts.push(response.data.info);
+                $scope.page.posts.unshift(response.data.info);
             });
         }
         }

@@ -117,23 +117,22 @@
                 <span ng-show="picFile.result">Upload Successful</span>
                 <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
             
-              <button type="button" class="btn btn-default post pull-right" ng-disabled="!form.$valid"  ng-click="uploadPic(picFile, $index); picFile = null">Відправити</button>
+              <button type="button" class="btn btn-default post pull-right" ng-disabled="!form.$valid"  ng-click="uploadPic(picFile, page.posts.length); picFile = null">Відправити</button>
             </div>
           </form>
         </div>
         <!--POST-->
         <div class="row">
-          <div class="posters" ng-repeat="post in page.posts">
+          <div class="posters" ng-repeat="post in page.posts track by post.id">
             <div>
               <img class="otherUserPhoto" ng-src="{{post.sender_url}}" ng-if="post.sender_url" alt="sender" />
               <h4 style="cursor:pointer;">{{post.sender_name}}</h4>
               <h5><span class='glyphicon glyphicon-time'></span>{{post.send_date}}</h5>
               <a class='label label-danger'>змінити</a>
-              <a class='label label-primary' id='remove' ng-click="deletePost($index)">видалити</a>
+              <a class='label label-primary' id='remove' ng-click="deletePost($index, post.id)">видалити</a>
             </div>
             <div style="background-color: #f2f2f2;">
-              <p style="font-size: 14px;">{{post.post_text}}</p>
-              <a style="padding:10px;" href='{{post.post_link}}' target='_blank'>{{post.post_link}}</a>
+              <p style="font-size: 14px;" ng-bind-html="post.post_text | linky" >{{post.post_text}}</p>
               <a>
             <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" />
             </a>

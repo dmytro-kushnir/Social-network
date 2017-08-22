@@ -39,8 +39,8 @@ $Db = new \Db\Db();
     // AVATAR POSTS
     foreach($avatars as $key => $value){ // get avatar posts
       $posts = $Db->selectSqlPrepared("SELECT 
-      postavatars.id, postavatars.sender_name, postavatars.sender_url, postavatars.send_date, postavatars.post_text, postavatars.post_link, postavatars.post_image, postavatars.post_likes
-          FROM postavatars INNER JOIN users_data ON users_data.id=postavatars.id WHERE id_image = '$value[id]'");
+      postavatars.id, postavatars.sender_name, postavatars.sender_url, postavatars.send_date, postavatars.post_text, postavatars.post_image, postavatars.post_likes
+          FROM postavatars INNER JOIN users_data ON users_data.id=postavatars.id WHERE id_image = '$value[id]' ");
           $avatars[$key]["posts"] = $posts;
     }
     $data_arr[0]["avatars"] = $avatars;
@@ -49,8 +49,8 @@ $Db = new \Db\Db();
 
     // USER POSTS
     $posts = $Db->selectSqlPrepared("SELECT 
-        post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_link, post.post_image, post.post_likes
-          FROM post INNER JOIN users_data ON users_data.id=post.id WHERE id_owner = 1");
+       post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_image, post.post_likes
+          FROM post  WHERE id_owner = 1");
     $data_arr[0]["posts"] = $posts;
 
     ///////////////////////////////////
@@ -63,7 +63,7 @@ $Db = new \Db\Db();
     // GALLERY POSTS
     foreach($gallery as $key => $value){ // get gallery posts
       $posts = $Db->selectSqlPrepared("SELECT 
-      postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_link, postgallery.post_image, postgallery.post_likes
+      postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_image, postgallery.post_likes
           FROM postgallery INNER JOIN users_data ON users_data.id=postgallery.id WHERE id_image = '$value[id]'");
           $gallery[$key]["posts"] = $posts;
             $gallery[$key]["id"] = $key+1;

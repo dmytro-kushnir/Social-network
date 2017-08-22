@@ -84,7 +84,8 @@ button[disabled="disabled"]{
 	width: 275px;
 }
 .email_input, .password_input{
-	height: 30px;
+    height: 30px;
+    font-size: 16px;
 }
 .error{
 	color: red;
@@ -124,7 +125,8 @@ button[disabled="disabled"]{
 }
 .inputsPartOfForm{
     margin: 5px 0;
-	height: 30px;
+    height: 30px;
+    font-size: 16px;
 }
 .form_button, .mainenter_button{
     margin: 5px 0 10px 0;

@@ -9,7 +9,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 // $data["id_post"];
 
 // $insertId = $Db->selectSqlPrepared("DELETE * FROM post WHERE  id_post = '$data[id_post]' AND id_owner = '$data[id_owner]'");
-$insertId = $Db->deleteSql('post', $data); // add post to SQL
+$insertId = $Db->deleteSql('post', $data); 
   $result = [
     'info' => $data,
     'errors' => []

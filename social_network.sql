@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 11 2017 г., 23:16
+-- Время создания: Авг 22 2017 г., 15:34
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -91,9 +91,7 @@ CREATE TABLE `chat` (
 
 INSERT INTO `chat` (`id`, `id_owner`, `id_sender`, `sender`, `last_msg_url`, `last_msg_text`, `sender_name`, `chat_date`, `reciever_url`) VALUES
 (1, 1, 2, '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мн', 'Єва Грін', '11.04.06 23:22', '/src/img/users/user/avatars/2.jpg'),
-(2, 1, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/user/avatars/2.jpg'),
-(3, 0, 2, '/src/img/users/friend100001/avatars/avatar.jpg', '', '', 'Єва Грін', '08.11', '/src/img/users/user/avatars/2.jpg'),
-(4, 0, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '', '', 'Дженніфер Лоуренс', '08.11', '/src/img/users/user/avatars/2.jpg');
+(2, 1, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/user/avatars/2.jpg');
 
 -- --------------------------------------------------------
 
@@ -224,11 +222,11 @@ INSERT INTO `gallery_users` (`id_gallery`, `id_user`) VALUES
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
+  `id_post` int(11) NOT NULL,
   `sender_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `send_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_text` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `post_link` varchar(500) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_image` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -237,8 +235,9 @@ CREATE TABLE `post` (
 -- Дамп данных таблицы `post`
 --
 
-INSERT INTO `post` (`id`, `id_owner`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_link`, `post_image`, `post_likes`) VALUES
-(1, 1, '/src/img/users/friend100002/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)', 'https://my-hit.org/film/415353', '/src/img/users/user/posts/post1/post_image.jpg', 12);
+INSERT INTO `post` (`id`, `id_owner`, `id_post`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
+(1, 1, 0, '/src/img/users/friend100002/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)    https://my-hit.org/film/415353', '/src/img/users/user/posts/post1/post_image.jpg', 12),
+(28, 1, 2, '../src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:11:28', 'dsasd', '../src/img/users/user/posts/14079532_528450687364315_3352630776540591931_n.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -254,7 +253,6 @@ CREATE TABLE `postavatars` (
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `send_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_text` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `post_link` varchar(500) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_image` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -263,10 +261,10 @@ CREATE TABLE `postavatars` (
 -- Дамп данных таблицы `postavatars`
 --
 
-INSERT INTO `postavatars` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_link`, `post_image`, `post_likes`) VALUES
-(1, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт!', '', '', 0),
-(2, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт Двічі!', '', '', 0),
-(3, 1, 5, '/src/img/users/friend100001/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Хей привіт Тричі від Дженніфер!', '', '', 0);
+INSERT INTO `postavatars` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
+(1, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт!', '', 0),
+(2, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт Двічі!', '', 0),
+(3, 1, 5, '/src/img/users/friend100001/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Хей привіт Тричі від Дженніфер!', '', 0);
 
 -- --------------------------------------------------------
 
@@ -350,7 +348,6 @@ CREATE TABLE `postgallery` (
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `send_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_text` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `post_link` varchar(500) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_image` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -359,9 +356,9 @@ CREATE TABLE `postgallery` (
 -- Дамп данных таблицы `postgallery`
 --
 
-INSERT INTO `postgallery` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_link`, `post_image`, `post_likes`) VALUES
-(1, 1, 1, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'тестове повідомлення самому собі', '', '', 0),
-(2, 1, 6, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'а це повідомлення має бути на шостій фотці', '', '', 0);
+INSERT INTO `postgallery` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
+(1, 1, 1, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'тестове повідомлення самому собі', '', 0),
+(2, 1, 6, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'а це повідомлення має бути на шостій фотці', '', 0);
 
 -- --------------------------------------------------------
 
@@ -421,7 +418,7 @@ INSERT INTO `users` (`userId`, `userFirstName`, `userSecondName`, `userEmail`, `
 (1, 'test', 'test', 'test@test_om', '123456'),
 (2, 'Медвідь', 'Анна', 'medvidanja94@gmail_com', '123456'),
 (5, 'Dmytro', 'Kushnir', 'dimakush1@gmail_com', '123445'),
-(10, 're', 'fds', 'regstarrr@ukr.net', 'fffffff');
+(10, 're', 'fds', 'regstarrr@ukr.net', '1234');
 
 -- --------------------------------------------------------
 
@@ -576,7 +573,7 @@ ALTER TABLE `avatars`
 -- AUTO_INCREMENT для таблицы `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `gallery`
 --
@@ -586,7 +583,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT для таблицы `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT для таблицы `postavatars`
 --

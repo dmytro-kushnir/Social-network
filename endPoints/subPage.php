@@ -37,7 +37,7 @@ switch ($subPage) {
 // GALLERY POSTS
         foreach ($gallery as $key => $value) { // get gallery posts
                   $posts = $Db->selectSqlPrepared("SELECT 
-   postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_link, postgallery.post_image, postgallery.post_likes
+   postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_image, postgallery.post_likes
       FROM postgallery INNER JOIN users_data ON users_data.id=postgallery.id_owner WHERE id_image = '$value[id]'");
                       $gallery[$key]["posts"] = $posts; 
         }

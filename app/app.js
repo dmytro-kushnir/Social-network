@@ -12,7 +12,8 @@
         'akoenig.deckgrid',
         'videosharing-embed',
         'ngCookies',
-        'ngFileUpload'
+        'ngFileUpload',
+        'ngSanitize'
     ]);
     // Routing START  
 

@@ -37,7 +37,7 @@
       <section class="friendsGalleryBlock">
 
         <h3 class="myFriends" ng-click="userPageFrGal(friend.id, 'friends')">Друзі <span>{{friend.count_friends}}</span></h3>
-        <div ui-sref="mainContainer.userPage" style="cursor:default;" ng-repeat="pg in friend.friends | limitTo : 4 : 0" ng-click="reqFriend(pg.id)">
+        <div ui-sref="cont.userPage" style="cursor:default;" ng-repeat="pg in friend.friends | limitTo : 4 : 0" ng-click="reqFriend(pg.id)">
           <img class="friend" ng-src="{{pg.avatar_url}}" alt="pg.first_name">
           <span class="friendsName">{{pg.first_name}} {{pg.second_name}}</span>
         </div>
@@ -84,7 +84,7 @@
           <!--user friends and photo count-->
           <div style="">
             <p><a style="text-decoration:none; color:black;" ng-click="userPageFrGal(friend.id, 'gallery')"=>Галерея</a></p>
-            <a ui-sref="mainContainer.userGallery">
+            <a ui-sref="cont.userGallery">
               <figure class="friendsAndPhotoIcon galleryIco"></figure>
             </a>
           </div>
@@ -103,7 +103,7 @@
         <div class="row " style="margin-bottom: 30px !important; ">
           <form class="textareaMainPage" role="form " name="form">
             <div class="form-group">
-              <textarea placeholder="Що у вас нового?" name="textArea" class="form-control " rows="5 " ng-model="textarea.value" ng-required="textAreaFlag"
+              <textarea placeholder="Що у вас нового?" name="textArea" class="form-control textaArea" rows="5 " ng-model="textarea.value" ng-required="textAreaFlag"
                 ng-click="imageFlag = false" id="comment "></textarea>
               <i ng-show="myForm.userName.$error.required">*required</i>
               <figure class="commentImage pull-left" type="file" ng-required="imageFlag" ng-click="textAreaFlag = false" ngf-select ng-model="picFile"

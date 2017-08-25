@@ -27,7 +27,7 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 				localStorage.setItem("user", JSON.stringify({
 					user: response
 				}));
-				$state.go("/mainContainer/mainPage");
+				$state.go("/cont/mainPage");
 			}),
 			function (error) {
 				console.log(error);
@@ -40,16 +40,17 @@ app.controller("singUpController", function ($scope, $state, $http, AuthService)
 		AuthService.authenticate($scope.loginInfo.email, $scope.loginInfo.password, function (callback) {
 			console.log("CALLBACK! ", callback); //-> callback from server 
 
-			if (callback.data.info)
+			if (callback.data.info) {
 				console.log(callback.data.info);
-			$scope.$emit('logIn', callback.data.info); // send data to parent scope (MainCtrl)
-			if(callback.data.success == false)
-				callback.data.success = undefined;
-			AuthService.setCredentials(callback.data.success); // send flag from server if auth. is success
-			// true -> success
-			// undefined -> failed
+				$scope.$emit('logIn', callback.data.info); // send data to parent scope (MainCtrl)
+				if (callback.data.success == false)
+					callback.data.success = undefined;
+				AuthService.setCredentials(callback.data.success); // send flag from server if auth. is success
+				// true -> success
+				// undefined -> failed
 
-			$state.go('mainContainer.mainPage');
+				$state.go('cont.mainPage');
+			}
 		});
 	}
 });

@@ -84,9 +84,9 @@
                 $scope.$emit('mainPageFrGal', $scope.subPage); // send friend data to parent scope (MainCtrl)
 
                 if (pageName == "gallery")
-                    $state.go('mainContainer.gallery');
+                    $state.go('cont.gallery');
                 else if (pageName == "friends")
-                    $state.go('mainContainer.friends');
+                    $state.go('cont.friends');
             });
 
 

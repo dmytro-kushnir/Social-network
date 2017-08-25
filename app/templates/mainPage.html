@@ -37,7 +37,7 @@
       <section class="friendsGalleryBlock">
 
         <h3 class="myFriends" ng-click="mainPageFrGal(page.id, 'friends')">Мої друзі <span>{{page.count_friends}}</span></h3>
-        <div ui-sref="mainContainer.userPage" style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0" ng-click="reqFriend(pg.id)">
+        <div ui-sref="cont.userPage" style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0" ng-click="reqFriend(pg.id)">
           <img class="friend" ng-src="{{pg.avatar_url}}" alt="pg.first_name">
           <span class="friendsName">{{pg.first_name}} {{pg.second_name}}</span>
         </div>
@@ -77,14 +77,14 @@
             <a style="text-decoration:none; color:black;" ng-click="mainPageFrGal(page.id, 'friends')">
               <p class="myFriends">Друзі<span style="padding-left:10px;">{{page.count_friends}}</span></p>
             </a>
-            <a ui-sref="mainContainer.friends">
+            <a ui-sref="cont.friends">
               <figure class="friendsAndPhotoIcon friendsIco"></figure>
             </a>
           </div>
           <!--user friends and photo count-->
           <div style="">
             <p><a style="text-decoration:none; color:black;" ng-click="mainPageFrGal(page.id, 'gallery')">Галерея</a></p>
-            <a ui-sref="mainContainer.gallery">
+            <a ui-sref="cont.gallery">
               <figure class="friendsAndPhotoIcon galleryIco"></figure>
             </a>
           </div>
@@ -103,7 +103,7 @@
         <div class="row " style="margin-bottom: 30px !important; ">
           <form class="textareaMainPage" role="form " name="form">
             <div class="form-group">
-              <textarea placeholder="Що у вас нового?" name="textArea" class="form-control " rows="5 " ng-model="textarea.value" ng-required="textAreaFlag" ng-click="imageFlag = false" id="comment "></textarea>
+              <textarea placeholder="Що у вас нового?" name="textArea" class="form-control textaArea" rows="5 " ng-model="textarea.value" ng-required="textAreaFlag" ng-click="imageFlag = false" id="comment "></textarea>
                <i ng-show="myForm.userName.$error.required">*required</i>
               <figure class="commentImage pull-left" type="file" ng-required="imageFlag" ng-click="textAreaFlag = false" ngf-select ng-model="picFile"  name="file" accept="image/*" ngf-max-size="4MB" ngf-model-invalid="errorFile">  </figure>
                 <!-- <i ng-show="form.file.$error.required">*required</i><br> -->

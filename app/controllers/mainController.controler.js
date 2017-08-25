@@ -75,7 +75,7 @@
             }
             console.log("chatDaTa", chatData);
             storageService.save('chatData', JSON.stringify(chatData));
-            $state.go('mainContainer.chatUser');
+            $state.go('cont.chatUser');
         };
 
 
@@ -118,17 +118,17 @@
         $scope.currState = $state;
         $scope.$watch('currState.current.name', function (newValue, oldValue) {
             switch (newValue) {
-                case 'mainContainer.mainPage':
+                case 'cont.mainPage':
                     JsonLoad.getPage().then(function (res) {
                         console.log("mainPage POST", res);
                         $scope.page = [];
                         $scope.page = res.data.info;
                     });
                     break;
-                case 'mainContainer.friends':
-                case 'mainContainer.gallery':
-                case 'mainContainer.chat':
-                case 'mainContainer.chatUser':
+                case 'cont.friends':
+                case 'cont.gallery':
+                case 'cont.chat':
+                case 'cont.chatUser':
 
                     var userId = storageService.get('userId');
                     console.log("USER ID ", userId);
@@ -140,7 +140,7 @@
                     var localStorageID = storageService.get('pageId');
                       console.log("localStorageID: ", localStorageID);
                     
-                      if (newValue == "mainContainer.chatUser") { // its Chat User
+                      if (newValue == "cont.chatUser") { // its Chat User
                         var chatData = storageService.get('chatData');
                         var parsedChatData = JSON.parse(chatData);
                         var chatId = storageService.get('chatId'); // only for chatUser!
@@ -169,7 +169,7 @@
                     });
 
                     break;
-                case 'mainContainer.userPage':
+                case 'cont.userPage':
                     var userId = storageService.get('userId');
                     console.log("USER ID ", userId);
                     var userData = {

@@ -452,7 +452,9 @@ body {
 .post {
     margin: 5px;
 }
-
+.textaArea{
+    resize: none;
+}
 
 /*Comment END*/
 

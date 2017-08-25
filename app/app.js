@@ -21,9 +21,9 @@
             function ($stateProvider, $urlRouterProvider) {
 
                 $stateProvider
-                    .state("mainContainer", {
+                    .state("cont", {
 
-                        url: '/mainContainer',
+                        url: '/cont',
                         templateUrl: "app/templates/mainContainer.html",
                         resolve: {
 
@@ -42,10 +42,10 @@
                             }]
                         }
                     })
-                    .state("mainContainer.mainPage", {
+                    .state("cont.mainPage", {
                         url: '/mainPage',
                         views: {
-                            'mainPage@mainContainer': {
+                            'mainPage@cont': {
                                 templateUrl: 'app/templates/mainPage.html',
 
                             }
@@ -59,10 +59,10 @@
                             authRequired: true
                         }
                     })
-                    .state("mainContainer.friends", {
+                    .state("cont.friends", {
                         url: '/friends',
                         views: {
-                            'friends@mainContainer': {
+                            'friends@cont': {
                                 templateUrl: 'app/templates/friends.html'
                             }
                         },
@@ -72,10 +72,10 @@
                             }]
                         }
                     })
-                    .state("mainContainer.gallery", {
+                    .state("cont.gallery", {
                         url: '/gallery',
                         views: {
-                            'gallery@mainContainer': {
+                            'gallery@cont': {
                                 templateUrl: 'app/templates/gallery.html',
                             }
                         },
@@ -86,10 +86,10 @@
                             }]
                         }
                     })
-                    .state("mainContainer.userFriends", {
-                        url: '/friends',
+                    .state("cont.userFriends", {
+                        url: '/userFriends',
                         views: {
-                            'userFriends@mainContainer': {
+                            'userFriends@cont': {
                                 templateUrl: 'app/templates/userFriends.html'
                             }
                         },
@@ -99,10 +99,10 @@
                             }]
                         }
                     })
-                    .state("mainContainer.userGallery", {
-                        url: '/gallery',
+                    .state("cont.userGallery", {
+                        url: '/userGallery',
                         views: {
-                            'userGallery@mainContainer': {
+                            'userGallery@cont': {
                                 templateUrl: 'app/templates/userGallery.html',
                             }
                         },
@@ -113,10 +113,10 @@
                             }]
                         }
                     })
-                    .state("mainContainer.chat", {
+                    .state("cont.chat", {
                         url: '/chat',
                         views: {
-                            'chat@mainContainer': {
+                            'chat@cont': {
                                 templateUrl: 'app/templates/chat.html',
                             }
                         },
@@ -126,10 +126,10 @@
                             }]
                         }
                     })
-                    .state("mainContainer.chatUser", {
+                    .state("cont.chatUser", {
                         url: '/chatUser',
                         views: {
-                            'chatUser@mainContainer': {
+                            'chatUser@cont': {
                                 templateUrl: 'app/templates/chatUser.html',
                             },
 
@@ -140,10 +140,10 @@
                             }]
                         }
                     })
-                    .state("mainContainer.userPage", {
+                    .state("cont.userPage", {
                         url: '/userPage',
                         views: {
-                            'userPage@mainContainer': {
+                            'userPage@cont': {
                                 templateUrl: 'app/templates/userPage.html',
                             },
 
@@ -155,7 +155,7 @@
                             // }]
                         }
                     });
-                $urlRouterProvider.otherwise('/mainContainer/mainPage');
+                $urlRouterProvider.otherwise('/cont/mainPage');
             }
         ])
         // .run(function ($rootScope, $location, storageService) { // history back event

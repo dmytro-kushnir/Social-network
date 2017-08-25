@@ -103,9 +103,9 @@ app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, s
             $scope.$emit('userPageFrGal', $scope.subPage); // send friend data to parent scope (MainCtrl)
 
             if (pageName == "gallery")
-                $state.go('mainContainer.userGallery');
+                $state.go('cont.userGallery');
             else if (pageName == "friends")
-                $state.go('mainContainer.userFriends');
+                $state.go('cont.userFriends');
         });
     }
 });

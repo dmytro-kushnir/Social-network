@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="src/css/galleryAdditional.css">
 <div ng-init="initialised=true;" class="animated fadeIn " class="galleryContainer" ng-controller="OpenModalCtrl as openModal">
-    <div deckgrid class="deckgrid clearfix" source="subPage.gallery">
+    <div deckgrid class="deckgrid clearfix" source="$ctrl.page.gallery">
         <div class="a-card " >
             <a  data-ng-click="mother.openGallery(card.$index,'subPage')" >
             <img  alt="gallery item {{card.$index}}" data-ng-src="{{card.image_url}}" class="img-responsive galleryImg">

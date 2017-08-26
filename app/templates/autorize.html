@@ -1,15 +1,15 @@
  <!--header-->
- <div  ng-controller="singUpController" >
+ <div>
     <header class="header">
         <a ui-sref="cont.autorize"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
          <form class="header_enter" name="headerEnter">
             <div class="partFormHeder">
             	<div class="emailAndpass">
             		<label class="email">E-mail:</label>
-            		<input type="email" name="email" class="email_input" ng-model="loginInfo.email" ng-required="true">
+            		<input type="email" name="email" class="email_input" ng-model="$ctrl.loginInfo.email" ng-required="true">
             		<label class="password">Пароль:</label>
-            		<input type="password" name="password" class="password_input" ng-model="loginInfo.password" ng-required="true">
-				    <button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid" ng-click="logIn()">Увійти</button>
+            		<input type="password" name="password" class="password_input" ng-model="$ctrl.loginInfo.password" ng-required="true">
+				    <button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid" ng-click="$ctrl.logIn()">Увійти</button>
             	</div>
             	<div class="d33" ng-show="headerEnter.email.$invalid && headerEnter.email.$touched || headerEnter.password.$invalid && headerEnter.password.$touched">Не правильний е-мейл або пароль</div>
             </div>
@@ -21,12 +21,12 @@
             <p class="enter_header">Заходь!:)</p>
             <form class="main_login" name="mainLogin">
                 <label class="email">E-mail:</label>
-                <input type="email"  name="email" class="email_input" ng-model="loginInfo.email" ng-required="true">
+                <input type="email"  name="email" class="email_input" ng-model="$ctrl.loginInfo.email" ng-required="true">
                 <p class="error" ng-show="mainLogin.email.$invalid && mainLogin.email.$touched">Введіть правильний е-мейл</p>
                 <label class="password">Пароль:</label>
-                <input type="password" name="password" class="password_input" ng-model="loginInfo.password" ng-required="true">
+                <input type="password" name="password" class="password_input" ng-model="$ctrl.loginInfo.password" ng-required="true">
                 <p class="error" ng-show="mainLogin.password.$invalid && mainLogin.password.$touched">Введіть правильний пароль</p>
-                <button type="button" class="mainenter_button" ng-disabled="mainLogin.$invalid" ng-click="logIn()">Увійти</button>
+                <button type="button" class="mainenter_button" ng-disabled="mainLogin.$invalid" ng-click="$ctrl.logIn()">Увійти</button>
             </form>
         </article>
         <article class="registration">
@@ -39,7 +39,7 @@
                     	   name="firstname" 
                     	   type="text"
                     	   id="firstname"
-                    	   ng-model="singUpInfo.firstname" 
+                    	   ng-model="$ctrl.singUpInfo.firstname" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.firstname.$invalid && registration.firstname.$touched">Поле не може бути пустим!</p>
                     <label for="name" class="partOfForm_label">Прізвище</label>
@@ -47,7 +47,7 @@
                     	   name="secondname"
                     	   type="text"
                     	   id="name"
-                    	   ng-model="singUpInfo.secondname" 
+                    	   ng-model="$ctrl.singUpInfo.secondname" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.secondname.$invalid && registration.secondname.$touched">Поле не може бути пустим!</p>
                     <label for="email" class="partOfForm_label">E-mail</label>
@@ -55,7 +55,7 @@
                     	   name="email"
                     	   type="email"
                     	   id="name" 
-                    	   ng-model="singUpInfo.email" 
+                    	   ng-model="$ctrl.singUpInfo.email" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.email.$invalid && registration.email.$touched">Введіть правильний емейл</p>
                     <label for="password" class="partOfForm_label">Пароль</label>
@@ -63,11 +63,11 @@
                     	   name="password"
                     	   type="password" 
                     	   id="password"
-                    	   ng-model="singUpInfo.password" 
+                    	   ng-model="$ctrl.singUpInfo.password" 
                     	   ng-minlength="6" 
                     	   ng-required="true">
                     <p class="error" ng-show="registration.password.$invalid && registration.password.$touched">Пароль має містити мінімум 6 символів</p>
-					<button type="button" ng-click="singUserUp()" class="form_button" ng-disabled="registration.$invalid" >Приєднуйся!</button>
+					<button type="button" ng-click="$ctrl.singUserUp()" class="form_button" ng-disabled="registration.$invalid" >Приєднуйся!</button>
                 </div>
                 <p>{{userInfo}}</p>
             </form>

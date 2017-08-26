@@ -1,6 +1,6 @@
      <!--friends part Start-->
       <div class="partOfFriends animated fadeIn " ng-app="socialNetwork"> 
-        <div  class="friends" ng-repeat="friend in subPage.friends track by $index">
+        <div  class="friends" ng-repeat="friend in $ctrl.page.friends track by $index">
           <img ui-sref="cont.userPage"  ng-click="reqFriend(friend.id)" class="friendPhoto" src="{{friend.avatar_url}}"/>
           <div  class="aboutFriend">
             

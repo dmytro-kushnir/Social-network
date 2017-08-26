@@ -6,9 +6,13 @@ $Db = new \Db\Db();
   $data = json_decode(file_get_contents('php://input'), true);
   $subPage = $data["request"]["pageName"];
   $id = $data["request"]["id"];
-if(isset($data["request"]["idChat"])) $idChat = $data["request"]["idChat"];
+if (isset($data["request"]["idChat"])) {
+    $idChat = $data["request"]["idChat"];
+}
 $chatData = array();
-if(isset($data["request"]["chatData"])) $chatData[] = $data["request"]["chatData"];
+if (isset($data["request"]["chatData"])) {
+    $chatData[] = $data["request"]["chatData"];
+}
 
 switch ($subPage) {
     // MAINPAGE
@@ -39,34 +43,33 @@ switch ($subPage) {
                   $posts = $Db->selectSqlPrepared("SELECT 
    postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_image, postgallery.post_likes
       FROM postgallery INNER JOIN users_data ON users_data.id=postgallery.id_owner WHERE id_image = '$value[id]'");
-                      $gallery[$key]["posts"] = $posts; 
+                      $gallery[$key]["posts"] = $posts;
         }
         $data_arr[0]["gallery"] = $gallery;
         break;
     case "chat":
     // CHAT
         $chat = $Db->selectSqlPrepared("SELECT chat.id,chat.id_sender, chat.sender, chat.last_msg_url, chat.last_msg_text, chat.sender_name, chat.chat_date, chat.reciever_url
-      FROM chat INNER JOIN users_data ON users_data.id=chat.id_owner WHERE id_owner = '$id' LIMIT 20");
+      FROM chat INNER JOIN users_data ON users_data.id=chat.id_owner WHERE id_owner = '$id' ORDER BY chat.id DESC LIMIT 20");
         $data_arr[0]["chat"] = $chat;
         break;
     case "chatUser":
     // CHATUSER
          $chat = $Db->selectSqlPrepared("SELECT chat.id_sender, chat.sender_name, chat.chat_date, chat.reciever_url, chat.sender
       FROM chat WHERE id_sender = '$idChat'");
-         if(empty($chat)){ // нема такого користувача
+        if (empty($chat)) { // нема такого користувача
             $insertId = $Db->addSql('chat', $chatData[0]); // добавити його
             $data_arr = $insertId;
-       }
-       else{ // такий користувач вже існує
-    // CHATUSER POSTS
-        foreach ($chat as $key => $value) { // get gallery posts
+        } else { // такий користувач вже існує
+      // CHATUSER POSTS
+            foreach ($chat as $key => $value) { // get chat posts
                   $posts = $Db->selectSqlPrepared("SELECT 
    postchat.id, postchat.side, postchat.message_data, postchat.message_data, postchat.message_date
       FROM postchat INNER JOIN users_data ON users_data.id=postchat.id_owner WHERE id_chat = '$value[id_sender]'");
                       $chat[$key]["messages"] = $posts;
+            }
+            $data_arr[0]["chat"] = $chat;
         }
-        $data_arr[0]["chat"] = $chat;
-    }
         break;
 }
     

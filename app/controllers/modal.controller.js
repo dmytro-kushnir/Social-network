@@ -1,7 +1,7 @@
 (function(){
 
 // open modal dialog
-app.controller('OpenModalCtrl', function ($scope, Lightbox, JsonLoad) {
+app.controller('OpenModalCtrl', function ($scope, Lightbox, socialService) {
     'use strict';
 
     $scope.Lightbox = Lightbox;

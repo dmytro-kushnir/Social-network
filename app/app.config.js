@@ -1,32 +1,12 @@
 (function () {
-    var app = angular.module("socialNetwork", ["social-directives",
-        "angularCSS",
-        "Controllers",
-        'ui.router',
-        'ngAnimate',
-        'monospaced.elastic',
-        'ui.bootstrap',
-        'bootstrapLightbox',
-        'ngTouch',
-        'angular-carousel',
-        'akoenig.deckgrid',
-        'videosharing-embed',
-        'ngCookies',
-        'ngFileUpload',
-        'ngSanitize'
-    ]);
-    // Routing START  
-
+    var app = angular.module('socialNetwork');
     app.config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
-
                 $stateProvider
                     .state("cont", {
-
                         url: '/cont',
-                        templateUrl: "app/templates/mainContainer.html",
+                        template: "<main-container></main-container>",
                         resolve: {
-
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Доктор Стрендж";
                             }]
@@ -34,8 +14,7 @@
                     })
                     .state("autorize", {
                         url: '/autorize',
-                        templateUrl: "app/templates/autorize.html",
-                        controller: 'singUpController',
+                        template: "<sing-up></sing-up>",
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Приєднуйся!";
@@ -43,11 +22,13 @@
                         }
                     })
                     .state("cont.mainPage", {
-                        url: '/mainPage',
+                        url: '/mainPage/:userId',
+                        params:{
+                            userId:null
+                        },
                         views: {
                             'mainPage@cont': {
-                                templateUrl: 'app/templates/mainPage.html',
-
+                                template: "<main-page></main-page>",
                             }
                         },
                         resolve: {
@@ -60,10 +41,13 @@
                         }
                     })
                     .state("cont.friends", {
-                        url: '/friends',
+                        url: '/friends/:userId',
+                        params:{
+                            userId:null
+                        },
                         views: {
                             'friends@cont': {
-                                templateUrl: 'app/templates/friends.html'
+                                template: '<friends></friends>',
                             }
                         },
                         resolve: {
@@ -73,39 +57,16 @@
                         }
                     })
                     .state("cont.gallery", {
-                        url: '/gallery',
+                        url: '/gallery/:userId',
+                        params:{
+                            userId:null
+                        },
                         views: {
                             'gallery@cont': {
-                                templateUrl: 'app/templates/gallery.html',
+                                template: '<gallery></gallery>',
                             }
                         },
-                        resolve: {
-                            'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Галерея";
-
-                            }]
-                        }
-                    })
-                    .state("cont.userFriends", {
-                        url: '/userFriends',
-                        views: {
-                            'userFriends@cont': {
-                                templateUrl: 'app/templates/userFriends.html'
-                            }
-                        },
-                        resolve: {
-                            'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Мої друзі";
-                            }]
-                        }
-                    })
-                    .state("cont.userGallery", {
-                        url: '/userGallery',
-                        views: {
-                            'userGallery@cont': {
-                                templateUrl: 'app/templates/userGallery.html',
-                            }
-                        },
+                       
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = "Галерея";
@@ -114,10 +75,13 @@
                         }
                     })
                     .state("cont.chat", {
-                        url: '/chat',
+                        url: '/chat/:userId',
+                        params:{
+                            userId:null
+                        },
                         views: {
                             'chat@cont': {
-                                templateUrl: 'app/templates/chat.html',
+                                template: '<chat></chat>',
                             }
                         },
                         resolve: {
@@ -127,12 +91,15 @@
                         }
                     })
                     .state("cont.chatUser", {
-                        url: '/chatUser',
+                        url: '/chatUser:/userId:/chatId',
+                        params:{
+                            userId:null,
+                            chatId:null,
+                        },
                         views: {
                             'chatUser@cont': {
-                                templateUrl: 'app/templates/chatUser.html',
-                            },
-
+                                template: '<chat-user></chat-user>',
+                            }
                         },
                         resolve: {
                             'title': ['$rootScope', function ($rootScope) {
@@ -155,7 +122,12 @@
                             // }]
                         }
                     });
-                $urlRouterProvider.otherwise('/cont/mainPage');
+                    $urlRouterProvider.otherwise(function ($injector, $location) {
+                        var $state = $injector.get('$state');
+                        $state.go("cont.mainPage", {'userId':localStorage.getItem("userId")});
+                    });
+                   
+           
             }
         ])
         // .run(function ($rootScope, $location, storageService) { // history back event
@@ -202,89 +174,4 @@
                 });
             }
         ]);
-
-    //factory for json load
-    app.factory('JsonLoad', function ($http) {
-        return {
-            getPage: function () {
-                return $http.get("endPoints/mainPageRender.php");
-            },
-            returnHome: function (request) {
-                return $http.post("endPoints/subPage.php", {
-                    request: request
-                });
-            },
-            renderUserPage: function (request) {
-                return $http.post("endPoints/pageRender.php", request);
-            },
-            uploadPost: function (request) {
-                return $http.post("endPoints/uploadPost.php", request);
-            },
-            deletePost: function (request) {
-                return $http.post("endPoints/deletePost.php", request);
-            }
-        };
-    });
-
-    app.factory('storageService', ['$rootScope', function ($rootScope) {
-
-        return {
-            get: function (key) {
-                return localStorage.getItem(key);
-            },
-            save: function (key, data) {
-                localStorage.setItem(key, data);
-            }
-        };
-    }]);
-    app.factory('AuthService', ['$http', '$cookies', '$rootScope',
-        function ($http, $cookies, $rootScope) {
-
-            var service = {};
-
-            // Authenticates throug a rest service
-            service.authenticate = function (userEmail, userPassword, callback) {
-                $http.post('endPoints/login.php', {userEmail: userEmail, userPassword: userPassword})
-                    .then(function (response) {
-                        callback(response);
-                    });
-            };
-
-            // Creates a cookie and set the Authorization header
-            service.setCredentials = function (response) {
-
-                $rootScope.globals = response;
-
-                $http.defaults.headers.common['Authorization'] = 'Bearer ' + response;
-                $cookies.put('globals', $rootScope.globals);
-            };
-
-            // Checks if it's authenticated
-            service.isAuthenticated = function () {
-
-                console.log("If TRUE callback not worked yet!!", $cookies.get('globals') === undefined);
-
-                return !($cookies.get('globals') === undefined);
-            };
-
-            // Clear credentials when logout
-            service.clearCredentials = function () {
-                $rootScope.globals = undefined;
-                $cookies.remove('globals');
-                console.log("CLEAN coockies globals", $cookies.get('globals'));
-
-                $http.defaults.headers.common.Authorization = 'Bearer ';
-            };
-
-            return service;
-        }
-    ]);
-
-
-    app.filter('reverse', function() {
-        return function(items) {
-          if(!angular.isArray(items)) { return items; }
-          return items.slice().reverse();
-        };
-      });
 })();

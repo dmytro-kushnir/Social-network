@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/src/css/mainPageAdditional.css">
-<div ng-controller="MainPageCtrl" class="animated fadeIn ">
+<div  class="animated fadeIn ">
   <!--Background-->
   <section class="Background row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <figure class="backgroundImage" ng-style="{'background-image': 'url(' + page.background_url + ')'}">
+      <figure class="backgroundImage" ng-style="{'background-image': 'url(' + $ctrl.page.background_url + ')'}">
         <!--editing background and page-->
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -28,7 +28,7 @@
   <section class="row restPage" ng-controller="OpenModalCtrl as openModal">
     <!--Left part START-->
     <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
-      <div ng-repeat="avatar in page.avatars | limitTo : 1 : 0">
+      <div ng-repeat="avatar in $ctrl.page.avatars | limitTo : 1 : 0">
         <a class="galleryLink" ng-click="openAvatar($index, 'page')">
         <img ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
@@ -36,17 +36,17 @@
       <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
       <section class="friendsGalleryBlock">
 
-        <h3 class="myFriends" ng-click="mainPageFrGal(page.id, 'friends')">Мої друзі <span>{{page.count_friends}}</span></h3>
-        <div ui-sref="cont.userPage" style="cursor:default;" ng-repeat="pg in page.friends | limitTo : 4 : 0" ng-click="reqFriend(pg.id)">
+        <h3 class="myFriends" ng-click="$ctrl.mainPageFrGal(page.id, 'friends')">Мої друзі <span>{{page.count_friends}}</span></h3>
+        <div ui-sref="cont.userPage" style="cursor:default;" ng-repeat="pg in $ctrl.page.friends | limitTo : 4 : 0" ng-click="reqFriend(pg.id)">
           <img class="friend" ng-src="{{pg.avatar_url}}" alt="pg.first_name">
           <span class="friendsName">{{pg.first_name}} {{pg.second_name}}</span>
         </div>
 
 
-        <h3 class="myGallery"><a style="text-decoration:none; color:black;" ng-click="mainPageFrGal(page.id, 'gallery')">Галерея</a></h3>
+        <h3 class="myGallery"><a style="text-decoration:none; color:black;" ng-click="$ctrl.mainPageFrGal($ctrl.userId, 'gallery')">Галерея</a></h3>
         <article class="gallery">
           <div class="row no-gutter">
-            <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in page.gallery | limitTo : 6 : 0">
+            <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in $ctrl.page.gallery | limitTo : 6 : 0">
               <a ng-click="openGallery($index, 'page')" class="galleryLink">
                 <img class="galleryItem" ng-src="{{gal.image_url}}" ng-if="gal.image_url" alt="gallery item {{$index}}">
               </a>
@@ -62,11 +62,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
           <div class="infoName">
-            <h2 class="userName ">{{page.first_name}} {{page.second_name}}</h2>
-            <p><label>День народження:</label> <span>{{page.birthday}}</span> </p>
-            <p><label>Рідне місто:</label> <span>{{page.city}}</span></p>
-            <p><label>Освіта:</label> <span>{{page.education}}</span></p>
-            <p><label>Моб. телефон:</label> <span>{{page.mobile_number}}</span></p>
+            <h2 class="userName ">{{$ctrl.page.first_name}} {{$ctrl.page.second_name}}</h2>
+            <p><label>День народження:</label> <span>{{$ctrl.page.birthday}}</span> </p>
+            <p><label>Рідне місто:</label> <span>{{$ctrl.page.city}}</span></p>
+            <p><label>Освіта:</label> <span>{{$ctrl.page.education}}</span></p>
+            <p><label>Моб. телефон:</label> <span>{{$ctrl.page.mobile_number}}</span></p>
           </div>
         </div>
       </div>
@@ -74,8 +74,8 @@
 
         <article class="friendsAndPhoto">
           <div>
-            <a style="text-decoration:none; color:black;" ng-click="mainPageFrGal(page.id, 'friends')">
-              <p class="myFriends">Друзі<span style="padding-left:10px;">{{page.count_friends}}</span></p>
+            <a style="text-decoration:none; color:black;" ng-click="$ctrl.mainPageFrGal($ctrl.userId, 'friends')">
+              <p class="myFriends">Друзі<span style="padding-left:10px;">{{$ctrl.page.count_friends}}</span></p>
             </a>
             <a ui-sref="cont.friends">
               <figure class="friendsAndPhotoIcon friendsIco"></figure>
@@ -83,7 +83,7 @@
           </div>
           <!--user friends and photo count-->
           <div style="">
-            <p><a style="text-decoration:none; color:black;" ng-click="mainPageFrGal(page.id, 'gallery')">Галерея</a></p>
+            <p><a style="text-decoration:none; color:black;" ng-click="$ctrl.mainPageFrGal($ctrl.userId, 'gallery')">Галерея</a></p>
             <a ui-sref="cont.gallery">
               <figure class="friendsAndPhotoIcon galleryIco"></figure>
             </a>
@@ -92,8 +92,8 @@
         <!---->
         <div class="row">
           <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
-            <ul rn-carousel rn-carousel-index="carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
-              <li ng-click="openGallery(gal.id-1, 'page')" ng-repeat="gal in page.gallery track by gal.id" ng-class="'id-' + gal.id">
+            <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
+              <li ng-click="openGallery(gal.id-1, 'page')" ng-repeat="gal in $ctrl.page.gallery track by gal.id" ng-class="'id-' + gal.id">
                 <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{page.gallery.length}}</div>
               </li>
             </ul>
@@ -103,33 +103,54 @@
         <div class="row " style="margin-bottom: 30px !important; ">
           <form class="textareaMainPage" role="form " name="form">
             <div class="form-group">
-              <textarea placeholder="Що у вас нового?" name="textArea" class="form-control textaArea" rows="5 " ng-model="textarea.value" ng-required="textAreaFlag" ng-click="imageFlag = false" id="comment "></textarea>
+              <textarea 
+              placeholder="Що у вас нового?" 
+              name="textArea"
+               class="form-control textaArea" 
+               rows="5 " 
+              ng-model="$ctrl.textarea.value" 
+              ng-required="textAreaFlag" 
+              ng-click="$ctrl.imageFlag = false" 
+              id="comment ">
+            </textarea>
                <i ng-show="myForm.userName.$error.required">*required</i>
-              <figure class="commentImage pull-left" type="file" ng-required="imageFlag" ng-click="textAreaFlag = false" ngf-select ng-model="picFile"  name="file" accept="image/*" ngf-max-size="4MB" ngf-model-invalid="errorFile">  </figure>
+              <figure class="commentImage pull-left" 
+                type="file" ng-required="$ctrl.imageFlag" 
+                ng-click="$ctrl.textAreaFlag = false" 
+                ngf-select ng-model="picFile"  
+                name="file" 
+                accept="image/*" 
+                ngf-max-size="4MB" 
+                ngf-model-invalid="errorFile"
+                >  
+              
+              </figure>
                 <!-- <i ng-show="form.file.$error.required">*required</i><br> -->
                 <i ng-show="form.file.$error.maxSize">File too large 
           {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
        
           <div class="thumb">
-              <figure class="crossModal" ng-click="picFile = null; textAreaFlag = true" ng-show="picFile"></figure>
+              <figure class="crossModal" ng-click="picFile = null; $ctrl.textAreaFlag = true" ng-show="picFile"></figure>
            <img ng-show="form.file.$valid" name="image" ngf-thumbnail="picFile" style="max-width:150px; max-height:150px;">
             </div> 
                 <span ng-show="picFile.result">Upload Successful</span>
-                <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                <span class="err" ng-show="$ctrl.errorMsg">{{$ctrl.errorMsg}}</span>
             
-              <button type="button" class="btn btn-default post pull-right" ng-disabled="!form.$valid"  ng-click="uploadPic(picFile, page.posts.length); picFile = null">Відправити</button>
+              <button type="button" class="btn btn-default post pull-right" ng-disabled="!form.$valid"  
+              ng-click="$ctrl.uploadPic(picFile, $ctrl.page.posts.length); picFile = null">Відправити
+            </button>
             </div>
           </form>
         </div>
         <!--POST-->
         <div class="row">
-          <div class="posters" ng-repeat="post in page.posts">
+          <div class="posters" ng-repeat="post in $ctrl.page.posts">
             <div>
               <img class="otherUserPhoto" ng-src="{{post.sender_url}}" ng-if="post.sender_url" alt="sender" />
               <h4 style="cursor:pointer;">{{post.sender_name}}</h4>
               <h5><span class='glyphicon glyphicon-time'></span>{{post.send_date}}</h5>
               <a class='label label-danger'>змінити</a>
-              <a class='label label-primary' id='remove' ng-click="deletePost($index, post.id)">видалити</a>
+              <a class='label label-primary' id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
             </div>
             <div style="background-color: #f2f2f2;">
               <p style="font-size: 14px;" ng-bind-html="post.post_text | linky" >{{post.post_text}}</p>

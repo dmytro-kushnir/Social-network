@@ -1,16 +1,84 @@
 <div id="wrappper">
-    <!-- Modal gallery window-->
+    <!-- Modal gallery window HERE-->
     <div class="container-fluid">
         <div class="container custom-container">
             <div class="row">
                 <!--Header-->
-                <social-header></social-header>
+                <header class="navbar navbar-inverse navbarTop navbar-fixed-top">
+                    <div class="container containerHeader">
+                        <div class="navbar-header nabvarHeaderMine">
+                            <button type="button" class="navbar-toggle navbarToggleMasc" data-toggle="collapse" ng-click="collapsed = true" data-target="#responsive-menu">
+                                        <span class="sr-only">Open navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                            <a ui-sref="cont.mainPage" ng-click="subPageEnter('mainPage')" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
+
+                            <a onclick="history.back()">
+                                <figure class="arrowLeftMobile"></figure>
+                            </a>
+
+                            <a class="headerName" ng-bind="title" ng-click="subPageEnter('mainPage')">{{$ctrl.page.first_name}} {{$ctrl.page.second_name}}</a>
+
+
+                        </div>
+                        <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a class="user dropdown-toggle" href="" data-toggle="dropdown">{{$ctrl.page.first_name}}<b class="caret"></b>
+                                    <img class="userHeader" ng-src="{{$ctrl.page.avatar_url}}" ng-if="$ctrl.page.avatar_url" alt="user"></a>
+
+                                    <ul class="dropdown-menu userMenu">
+                                        <li><a ng-click="$ctrl.subPageEnter('mainPage')">Моя сторінка</a></li>
+                                        <li class="divider"></li>
+                                        <li><a ui-sref="autorize" ng-click="logOut()">Вийти</a></li>
+                                    </ul>
+                                    <div class="MobileUserSideBar">
+                                        <ul class="nav navbar-nav mineNavbar">
+                                            <li><a ng-click="$ctrl.subPageEnter('mainPage')" >Мій профіль</a></li>
+                                            <li><a ng-click="$ctrl.subPageEnter('friends')" >Мої друзі</a></li>
+                                            <li><a ng-click="$ctrl.subPageEnter('chat')" >Повідомлення  <span class="badge"> 2</span></a></li>
+                                            <li><a ng-click="$ctrl.subPageEnter('gallery')">Галерея</a></li>
+                                            <li><a ui-sref="autorize">Вийти</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
                 <!--Navigation-->
-                <social-side-menu></social-side-menu>
+                <nav class="col-lg-2 col-md-3 col-sm-3 col-xs-0">
+                    <div class="classWithPad">
+                        <div class="sidebar-nav userSideBar">
+                            <div class="navbar navbar-default userNavbar">
+                                <div class="navbar-header">
+                                    <ul class="nav navbar-nav asideNavbar">
+                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('mainPage')"  >Мій профіль</a></li>
+                                        <li><a ng-click="$ctrl.subPageEnter('friends')">Мої друзі</a></li>
+                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('chat')" >Повідомлення  <span class="badge"> 2</span></a></li>
+                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('gallery')" >Галерея</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
                 <!--Main body-->
-                <social-router></social-router>
+                <main class="col-lg-9 col-md-9 col-sm-9 col-xs-12 mainRouter">
+                <div class="classWithPad userMainBody">
+                    <div ui-view="mainPage"></div>
+                    <div ui-view="friends"></div>
+                    <div ui-view="userFriends"></div>
+                    <div ui-view="gallery"></div>
+                    <div ui-view="userGallery"></div>
+                    <div ui-view="chat"></div>
+                    <div ui-view="userPage"></div>
+                    <div ui-view="chatUser"></div>
             </div>
+            </main>
         </div>
     </div>
 </div>
-
+</div>

@@ -9,24 +9,7 @@
             templateUrl: "/app/templates/modal.html"
         };
     });
-    app.directive("socialHeader", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "/app/templates/header.html"
-        };
-    });
-    app.directive("socialSideMenu", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "/app/templates/sideMenu.html"
-        };
-    });
-    app.directive("socialRouter", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "/app/templates/router.html"
-        }
-    });
+  
     // Collapsing directive for mobile
     app.directive('navCollapse', function () {
         return {

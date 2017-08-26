@@ -1,10 +1,10 @@
 // rendering page controller
-app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, storageService, Upload, $timeout) {
+app.controller('UserPageCtrl', function ($scope, $state, $rootScope, socialService, storageService, Upload, $timeout) {
     'use strict';
 
     var localStorageID = storageService.get('userPageId');
 
-    JsonLoad.renderUserPage(localStorageID).then(function (res) {
+    socialService.pageRender(localStorageID).then(function (res) {
         console.log("userPage POST", res.data.info);
         $scope.friend = res.data.info;
 
@@ -26,7 +26,7 @@ app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, s
             "id": id
         }
         console.log("ARRAY ID", array_id);
-        JsonLoad.deletePost(data).then(function(response){
+        socialService.deletePost(data).then(function(response){
             console.log(response);
             $scope.friend.posts.splice(array_id, 1);
         });
@@ -76,7 +76,7 @@ app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, s
     else{ //  only text
         console.log($scope.textarea);
         console.log("DATA",data);
-        JsonLoad.uploadPost(data).then(function(response){
+        socialService.uploadPost(data).then(function(response){
             console.log(response);
             if($scope.friend.posts.length > 1)
             $scope.friend.posts.unshift(response.data.info);
@@ -96,7 +96,7 @@ app.controller('UserPageCtrl', function ($scope, $state, $rootScope, JsonLoad, s
         console.log("ID", id);
         console.log("pageName", pageName);
 
-        JsonLoad.returnHome(data).then(function (res) {
+        socialService.getSubPage(data).then(function (res) {
             $scope.subPage = res.data.info;
             console.log("friend POST", $scope.subPage);
 

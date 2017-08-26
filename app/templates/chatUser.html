@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="src/css/chatAdditional.css">
-<div ng-controller="chatUserCtrl">
+
 <div class="panel panel-primary">
     <div class="panel-heading userChatPanel">
         <a  onclick="history.back()">
             <figure class="arrowLeft"></figure>
         </a>
-        <a class="userChatName">{{subPage.chat[0].sender_name}}</a>
+        <a class="userChatName">{{$ctrl.page.chat[0].sender_name}}</a>
         <figure class="searchIcon searchIconUserChat"></figure>
     </div>
 </div>
 
     <div class="panel-body" >
-    <ul class="chat" data-ng-repeat="chat in subPage.chat[0].messages">
+    <ul class="chat" data-ng-repeat="chat in $ctrl.page.chat[0].messages">
 
         <li class="rightChat clearfix pull-right animated fadeInRight" ng-if="chat.side == 'R'">
             <div class="chat-body bubbleRight ">
@@ -59,4 +59,4 @@
         <figure class="sendIcon chatButton" ></figure>
      
 </div>
- </div>
+ 

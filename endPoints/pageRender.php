@@ -41,7 +41,7 @@ $data_arr[0]["avatars"] = $avatars;
 // USER POSTS
 $posts = $Db->selectSqlPrepared("SELECT 
     post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_image, post.post_likes
-      FROM post   WHERE id_owner = '$id'");
+      FROM post   WHERE id_owner = '$id' ORDER BY post.id DESC");
 $data_arr[0]["posts"] = $posts;
 
 ///////////////////////////////////

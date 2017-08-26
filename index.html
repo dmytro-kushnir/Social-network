@@ -53,19 +53,24 @@
     <!--    change textarea size plugin-->
     <script src="src/libs/angular/elastic.js"></script>
     <!--App-->
-    <script src="app/app.js"></script>
-    <!--Controllers/Directives-->
-    <script src="app/controllers/navigation.controller.js"></script>
-    <script src="app/controllers/mainController.controler.js"></script>
-    <script src="app/controllers/mainPage.controller.js"></script>
-    <script src="app/controllers/registration.controller.js"></script>
-    <script src="app/controllers/chatUser.controller.js"></script>
-    <script src="app/controllers/friends.controller.js"></script>
-    <script src="app/controllers/modal.controller.js"></script>
+    <script src="app/app.modules.js"></script>
+    <script src="app/app.services.js"></script>
+    <script src="app/app.config.js"></script>
+    <!--Components-->
+    <script src="app/controllers/mainContainer.component.js"></script>
+    <script src="app/controllers/mainPage.component.js"></script>
+    <script src="app/controllers/registration.component.js"></script>
+        <!-- Sub pages -->
+        <script src="app/controllers/gallery/gallery.component.js"></script>
+        <script src="app/controllers/friends/friends.component.js"></script>
+        <script src="app/controllers/chat/chat.component.js"></script>
+        <script src="app/controllers/chat/chatUser.component.js"></script>
+    
+        <script src="app/controllers/modal.controller.js"></script>
     <script src="app/controllers/userPage.controller.js"></script>
     <script src="app/directives.js"></script>
 </head>
-<body ng-controller="MainCtrl as mainCtrl" ng-cloak>
+<body ng-cloak>
     <ui-view />
 </body>
 </html>

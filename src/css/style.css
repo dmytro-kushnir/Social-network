@@ -91,7 +91,9 @@ body {
 .mineNavbar {
     margin: 7.5px 0px !important;
 }
-
+.mineNavbar>li>a{
+    cursor: pointer;
+}
 
 /* Navigation header END*/
 
@@ -114,6 +116,7 @@ body {
 
 .asideNavbar>li>a {
     font-size: 14px;
+    cursor: pointer;
 }
 
 .asideNavbar ul {

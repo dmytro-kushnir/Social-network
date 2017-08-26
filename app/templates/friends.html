@@ -1,21 +1,21 @@
      <!--friends part Start-->
       <div class="partOfFriends animated fadeIn " ng-app="socialNetwork"> 
         <div  class="friends" ng-repeat="friend in $ctrl.page.friends track by $index">
-          <img ui-sref="cont.userPage"  ng-click="reqFriend(friend.id)" class="friendPhoto" src="{{friend.avatar_url}}"/>
+          <img ui-sref="cont.mainPage({userId:friend.id})" class="friendPhoto" src="{{friend.avatar_url}}"/>
           <div  class="aboutFriend">
             
-          	<div ui-sref="cont.userPage" class="firstSecondName" ng-click="reqFriend(friend.id)" >
+          	<div ui-sref="cont.mainPage({userId:friend.id})" class="firstSecondName" >
           		<span class="friendFirstName">{{friend.first_name}}</span>
           		<span class="friendSecondName">{{friend.second_name}}</span>
           	</div>
               <p class="countFriends">{{friend.count_friends}}<span class="pFriend">друзів</span></p>
           </div>
            <div class="icons">
-            <a ui-sref="cont.chatUser" class="icon"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
+            <a ng-click="$ctrl.chatEnter(friend.id, $index);" class="icon"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
           	<p><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></p>
           </div>
           <div class="buttons" >
-            <a ui-sref="cont.chatUser" ng-click="chatEnter(friend.id, $index,'friends');"><button type="button" class="write">Написати повідомлення</button></a>
+            <a  ng-click="$ctrl.chatEnter(friend.id, $index);"><button type="button" class="write">Написати повідомлення</button></a>
             <button type="button" class="del">Видалити з друзів</button>
           </div>
         </div>

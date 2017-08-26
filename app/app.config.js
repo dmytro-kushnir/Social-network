@@ -6,11 +6,6 @@
                     .state("cont", {
                         url: '/cont',
                         template: "<main-container></main-container>",
-                        resolve: {
-                            'title': ['$rootScope', function ($rootScope) {
-                                $rootScope.title = "Доктор Стрендж";
-                            }]
-                        }
                     })
                     .state("autorize", {
                         url: '/autorize',
@@ -91,7 +86,7 @@
                         }
                     })
                     .state("cont.chatUser", {
-                        url: '/chatUser:/userId:/chatId',
+                        url: '/chatUser/:userId/:chatId',
                         params:{
                             userId:null,
                             chatId:null,
@@ -105,21 +100,6 @@
                             'title': ['$rootScope', function ($rootScope) {
                                 $rootScope.title = $rootScope.chatTitle;
                             }]
-                        }
-                    })
-                    .state("cont.userPage", {
-                        url: '/userPage',
-                        views: {
-                            'userPage@cont': {
-                                templateUrl: 'app/templates/userPage.html',
-                            },
-
-                        },
-                        resolve: {
-                            // 'title': ['storageService', '$rootScope', function (storageService,$rootScope) {
-                            //     console.log("HEYY");                   
-                            //        $rootScope.title =  storageService.get('friendName');
-                            // }]
                         }
                     });
                     $urlRouterProvider.otherwise(function ($injector, $location) {
@@ -167,7 +147,7 @@
                         return state.data != null && state.data.authRequired === true;
                     }
                 }, function () {
-                    console.log("I'm transition.onStart and i'm alive!!!");
+                    // console.log("I'm transition.onStart and i'm alive!!!");
                     if (!AuthService.isAuthenticated()) {
                         return $state.target("autorize");
                     }

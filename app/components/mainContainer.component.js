@@ -6,7 +6,7 @@
         "gallery",
         "friends",
         "chat",
-        "chat-user"
+        "image-modal"
     ]);
     app.component("mainContainer", {
         templateUrl: "app/templates/mainContainer.html",
@@ -14,18 +14,15 @@
             function GalleryCtrl($state, socialService, storageService) {
                 ////////////////////
                 var self = this;
-                self.userId = $state.params.userId;
-                ////////////////////
-                if(self.userId == null)
-                    self.userId = storageService.get("userId");
-
+                self.userId = storageService.get("userId");
+                ///////////////////
                 var data = {
                     id: self.userId,
                     pageName: "mainPage"
                 }
                 socialService.getSubPage(data).then(function (response) {
                     self.page = response.data.info;
-                    console.log("mainContainer", self.page);
+                    storageService.save("loginUserData", JSON.stringify(self.page));
                 });
 
                 self.subPageEnter = function(pageName){

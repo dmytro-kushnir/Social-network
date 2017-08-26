@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module("chat-user", ["components"]);
+    var app = angular.module("chat-user", ["chat"]);
     app.component("chatUser", {
         templateUrl: "app/templates/chatUser.html",
         controller: ["$state", "socialService","$window","storageService",

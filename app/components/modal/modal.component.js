@@ -1,5 +1,16 @@
 (function(){
-
+    // var app = angular.module("image-modal", ["components"]);
+    // app.component("imageModal",{
+    //     templateUrl:"app/templates.modal.html",
+    //     controller: ["$state", "LightBox", "socialService", 
+    //         function OpenModalCtrl($state, LightBox, socialService) {  
+    //             ///////////////
+    //             var self = this;
+    //             console.log(self);
+    //             ///////////////
+    //         }
+    //     ]
+    // });
 // open modal dialog
 app.controller('OpenModalCtrl', function ($scope, Lightbox, socialService) {
     'use strict';

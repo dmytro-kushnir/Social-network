@@ -17,7 +17,7 @@ if (isset($data["request"]["chatData"])) {
 switch ($subPage) {
     // MAINPAGE
     case "mainPage":
-        $data_arr = $Db->selectSqlPrepared("SELECT id, first_name, avatar_url FROM users_data WHERE id = '$id' ");
+        $data_arr = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data WHERE id = '$id' ");
         break;
     case "friends":
         $data_arr = $Db->selectSqlPrepared("SELECT friends FROM users_data WHERE id = '$id' ");

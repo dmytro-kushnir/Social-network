@@ -9,6 +9,8 @@
                 var self = this;
                 self.page = {}
                 self.userId = $state.params.userId;
+                self.logginedId = storageService.get("userId");
+                self.logginedData = JSON.parse(storageService.get("loginUserData"));
 
                 self.textAreaFlag = true;
                 self.imageFlag = true;
@@ -19,6 +21,15 @@
                     self.page = response.data.info;
                     console.log("mainPage", self.page);
                 });
+                
+              
+
+               self.isLoggined = function (targetId, logginedId){
+                    if(targetId == logginedId)
+                        return true;
+                    else 
+                        return false;
+                }
 
                 self.mainPageFrGal = function (id, pageName) {
                     var data = {
@@ -42,6 +53,22 @@
                     storageService.save('friendSubPage', "mainUser"); // save mainUser flag to LS   
                 }
 
+                self.chatEnter = function (chatId, index) {
+                    var chatData = {
+                        "id_sender": chatId,
+                        "id_owner": self.userId,
+                        "sender_name": self.page.first_name + " " + self.page.second_name,
+                        "sender": self.logginedData.avatar_url,
+                        "reciever_url": self.page.avatar_url,
+                        "chat_date": dateFormat(new Date(), 'm-d-Y h:i:s')
+                    }
+                    storageService.save('chatData', JSON.stringify(chatData));
+                    $state.go('cont.chatUser', {
+                        userId: self.userId,
+                        chatId: chatId
+                    });
+                }
+
                 self.deletePost = function (array_id, id) {
                     var data = { // prepare data to server send
                         "id_owner": self.userId,
@@ -58,8 +85,8 @@
                     var data = { // prepare data to server send
                         "id_owner": self.userId,
                         "id_post": id,
-                        "sender_url": self.page.avatar_url,
-                        "sender_name": self.page.first_name + " " + self.page.second_name,
+                        "sender_url": self.logginedData.avatar_url,
+                        "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                         "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                         "post_text": self.textarea.value,
                         "post_image": "../src/img/users/user/posts/", //make in server

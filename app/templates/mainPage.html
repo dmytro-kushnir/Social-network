@@ -33,7 +33,7 @@
     <!--Left part START-->
     <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
       <div ng-repeat="avatar in $ctrl.page.avatars | limitTo : 1 : 0">
-        <a class="galleryLink" ng-click="openAvatar($index, 'page')">
+        <a class="galleryLink" ng-click="$ctrl.openAvatars($index)">
         <img ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
       </div>
@@ -51,7 +51,7 @@
         <article class="gallery">
           <div class="row no-gutter">
             <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0" ng-repeat="gal in $ctrl.page.gallery | limitTo : 6 : 0">
-              <a ng-click="openGallery($index, 'page')" class="galleryLink">
+              <a ng-click="$ctrl.openGallery($index)" class="galleryLink">
                 <img class="galleryItem" ng-src="{{gal.image_url}}" ng-if="gal.image_url" alt="gallery item {{$index}}">
               </a>
             </div>
@@ -88,7 +88,7 @@
           <!--user friends and photo count-->
           <div style="">
             <p><a style="text-decoration:none; color:black;" ng-click="$ctrl.mainPageFrGal($ctrl.userId, 'gallery')">Галерея</a></p>
-            <a ui-sref="cont.gallery">
+            <a ng-click="$ctrl.mainPageFrGal($ctrl.userId, 'gallery')">
               <figure class="friendsAndPhotoIcon galleryIco"></figure>
             </a>
           </div>
@@ -97,8 +97,8 @@
         <div class="row">
           <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
             <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
-              <li ng-click="openGallery(gal.id-1, 'page')" ng-repeat="gal in $ctrl.page.gallery track by gal.id" ng-class="'id-' + gal.id">
-                <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{page.gallery.length}}</div>
+              <li ng-click="$ctrl.openGallery(gal.id-1)"  ng-repeat="gal in $ctrl.page.gallery track by gal.id" ng-class="'id-' + gal.id">
+                <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{$ctrl.page.gallery.length}}</div>
               </li>
             </ul>
           </div>

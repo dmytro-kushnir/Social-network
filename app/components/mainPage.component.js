@@ -2,8 +2,8 @@
     var app = angular.module("main-page", ["components"]);
     app.component("mainPage", {
         templateUrl: "app/templates/mainPage.html",
-        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout',
-            function MainPageCtrl($state, socialService, storageService, Upload, $timeout) {
+        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout' ,'Lightbox',
+            function MainPageCtrl($state, socialService, storageService, Upload, $timeout,  Lightbox) {
 
                 /////////////////
                 var self = this;
@@ -22,8 +22,13 @@
                     console.log("mainPage", self.page);
                 });
                 
-              
-
+                self.openAvatars = function(index){
+                    Lightbox.openModal(self.page.avatars, index);
+                }
+                self.openGallery = function(index){
+                    Lightbox.openModal(self.page.gallery, index);
+                }
+                
                self.isLoggined = function (targetId, logginedId){
                     if(targetId == logginedId)
                         return true;

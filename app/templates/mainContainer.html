@@ -1,5 +1,6 @@
 <div id="wrappper">
     <!-- Modal gallery window HERE-->
+    <!-- <image-modal data-ng-if="true"></image-modal> -->
     <div class="container-fluid">
         <div class="container custom-container">
             <div class="row">
@@ -20,7 +21,9 @@
                             </a>
 
                             <a class="headerName" ng-bind="title" ng-click="subPageEnter('mainPage')">{{$ctrl.page.first_name}} {{$ctrl.page.second_name}}</a>
-
+                            <div class="searchBlockHeader ">
+                                <input placeholder="search" class="form-control" data-ng-model="search">
+                            </div>
 
                         </div>
                         <div class="collapse navbar-collapse navbar-app-collapse" id="responsive-menu" nav-collapse="">
@@ -36,9 +39,9 @@
                                     </ul>
                                     <div class="MobileUserSideBar">
                                         <ul class="nav navbar-nav mineNavbar">
-                                            <li><a ng-click="$ctrl.subPageEnter('mainPage')" >Мій профіль</a></li>
-                                            <li><a ng-click="$ctrl.subPageEnter('friends')" >Мої друзі</a></li>
-                                            <li><a ng-click="$ctrl.subPageEnter('chat')" >Повідомлення  <span class="badge"> 2</span></a></li>
+                                            <li><a ng-click="$ctrl.subPageEnter('mainPage')">Мій профіль</a></li>
+                                            <li><a ng-click="$ctrl.subPageEnter('friends')">Мої друзі</a></li>
+                                            <li><a ng-click="$ctrl.subPageEnter('chat')">Повідомлення  <span class="badge"> 2</span></a></li>
                                             <li><a ng-click="$ctrl.subPageEnter('gallery')">Галерея</a></li>
                                             <li><a ui-sref="autorize">Вийти</a></li>
                                         </ul>
@@ -55,10 +58,10 @@
                             <div class="navbar navbar-default userNavbar">
                                 <div class="navbar-header">
                                     <ul class="nav navbar-nav asideNavbar">
-                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('mainPage')"  >Мій профіль</a></li>
+                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('mainPage')">Мій профіль</a></li>
                                         <li><a ng-click="$ctrl.subPageEnter('friends')">Мої друзі</a></li>
-                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('chat')" >Повідомлення  <span class="badge"> 2</span></a></li>
-                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('gallery')" >Галерея</a></li>
+                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('chat')">Повідомлення  <span class="badge"> 2</span></a></li>
+                                        <li ui-sref-active="active"><a ng-click="$ctrl.subPageEnter('gallery')">Галерея</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -67,18 +70,18 @@
                 </nav>
                 <!--Main body-->
                 <main class="col-lg-9 col-md-9 col-sm-9 col-xs-12 mainRouter">
-                <div class="classWithPad userMainBody">
-                    <div ui-view="mainPage"></div>
-                    <div ui-view="friends"></div>
-                    <div ui-view="userFriends"></div>
-                    <div ui-view="gallery"></div>
-                    <div ui-view="userGallery"></div>
-                    <div ui-view="chat"></div>
-                    <div ui-view="userPage"></div>
-                    <div ui-view="chatUser"></div>
+                    <div class="classWithPad userMainBody">
+                        <div ui-view="mainPage"></div>
+                        <div ui-view="friends"></div>
+                        <div ui-view="userFriends"></div>
+                        <div ui-view="gallery"></div>
+                        <div ui-view="userGallery"></div>
+                        <div ui-view="chat"></div>
+                        <div ui-view="userPage"></div>
+                        <div ui-view="chatUser"></div>
+                    </div>
+                </main>
             </div>
-            </main>
         </div>
     </div>
-</div>
 </div>

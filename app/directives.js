@@ -1,15 +1,7 @@
 (function(){
-
 "use strict";
     var app = angular.module("social-directives", []);
-
-    app.directive("socialModal", function () {
-        return {
-            restrict: "AE",
-            templateUrl: "/app/templates/modal.html"
-        };
-    });
-  
+   
     // Collapsing directive for mobile
     app.directive('navCollapse', function () {
         return {

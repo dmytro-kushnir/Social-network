@@ -33,8 +33,8 @@
     <!--Left part START-->
     <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
       <div ng-repeat="avatar in $ctrl.page.avatars | limitTo : 1 : 0">
-        <a class="galleryLink" ng-click="$ctrl.openAvatars($index)">
-        <img ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
+        <a class="galleryLink" >
+        <img ng-click="$ctrl.openAvatars($index)" ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
       </a>
       </div>
       <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->

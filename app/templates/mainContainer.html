@@ -33,9 +33,9 @@
                                     <img class="userHeader" ng-src="{{$ctrl.page.avatar_url}}" ng-if="$ctrl.page.avatar_url" alt="user"></a>
 
                                     <ul class="dropdown-menu userMenu">
-                                        <li><a ng-click="$ctrl.subPageEnter('mainPage')">Моя сторінка</a></li>
+                                        <li style="cursor:pointer"><a ng-click="$ctrl.subPageEnter('mainPage')">Моя сторінка</a></li>
                                         <li class="divider"></li>
-                                        <li><a ui-sref="autorize" ng-click="logOut()">Вийти</a></li>
+                                        <li style="cursor:pointer"><a ng-click="$ctrl.subPageEnter('autorize')">Вийти</a></li>
                                     </ul>
                                     <div class="MobileUserSideBar">
                                         <ul class="nav navbar-nav mineNavbar">
@@ -43,7 +43,7 @@
                                             <li><a ng-click="$ctrl.subPageEnter('friends')">Мої друзі</a></li>
                                             <li><a ng-click="$ctrl.subPageEnter('chat')">Повідомлення  <span class="badge"> 2</span></a></li>
                                             <li><a ng-click="$ctrl.subPageEnter('gallery')">Галерея</a></li>
-                                            <li><a ui-sref="autorize">Вийти</a></li>
+                                            <li><a ng-click="$ctrl.subPageEnter('autorize')">Вийти</a></li>
                                         </ul>
                                     </div>
                                 </li>

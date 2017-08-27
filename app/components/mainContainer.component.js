@@ -9,8 +9,8 @@
     ]);
     app.component("mainContainer", {
         templateUrl: "app/templates/mainContainer.html",
-        controller: ["$state", "socialService", "storageService",
-            function GalleryCtrl($state, socialService, storageService) {
+        controller: ["$state", "socialService", "storageService","AuthService",
+            function GalleryCtrl($state, socialService, storageService,AuthService) {
                 ////////////////////
                 var self = this;
                 self.userId = storageService.get("userId");
@@ -37,6 +37,11 @@
                         break;
                         case 'chat':
                         $state.go('cont.chat',{userId:self.userId},{reload: true}); 
+                        break;
+                        case 'autorize':
+                        console.log("LogOut");
+                        AuthService.clearCredentials();
+                        $state.go('autorize',{userId:self.userId},{reload: true}); 
                         break;
                     }
                  

@@ -1,13 +1,15 @@
 <link rel="stylesheet" href="/src/css/mainPageAdditional.css">
-<div  class="animated fadeIn ">
+<div class="animated fadeIn ">
   <!--Background-->
   <section class="Background row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <figure class="backgroundImage" ng-style="{'background-image': 'url(' + $ctrl.page.background_url + ')'}">
+      <figure class="backgroundImage"  ng-style="{'background-image': 'url(' + $ctrl.page.background_url + ')'}">
         <!--editing background and page-->
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-            <div class="updateBg pull-left" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">
+            <div class="updateBg pull-left" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
+            ngf-select="$ctrl.uploadPic(picFile, $ctrl.page.posts.length, 'uploadBackground'); picFile = null"
+              ng-model="picFile" name="file" accept="image/*" ngf-model-invalid="errorFile">
               <span class="media-left">
                           <figure class="changeBgImage"></figure>
                           </span>
@@ -17,11 +19,9 @@
             </div>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-            <button class="editProfile btn btn-default  pull-right" 
-            data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
+            <button class="editProfile btn btn-default  pull-right" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
 
-            <button class="editProfile btn btn-default  pull-right" 
-            data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.chatEnter($ctrl.page.id, $index);">Написати повідомлення</button>
+            <button class="editProfile btn btn-default  pull-right" data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.chatEnter($ctrl.page.id, $index);">Написати повідомлення</button>
           </div>
         </div>
       </figure>
@@ -32,10 +32,15 @@
   <section class="row restPage">
     <!--Left part START-->
     <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
-      <div ng-repeat="avatar in $ctrl.page.avatars | limitTo : 1 : 0">
-        <a class="galleryLink" >
+      <div  class="detailLogo" ng-repeat="avatar in $ctrl.page.avatars | limitTo : 1 : 0">
+        <div class="galleryLink detailLogo">
         <img ng-click="$ctrl.openAvatars($index)" ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
-      </a>
+
+      </div>
+      <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
+      src="src/img/bgChange.png" alt="upload"
+      ngf-select="$ctrl.uploadPic(picFile, $ctrl.page.posts.length, 'uploadAvatar'); picFile = null"
+      ng-model="picFile" name="file" accept="image/*" ngf-model-invalid="errorFile">
       </div>
       <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
       <section class="friendsGalleryBlock">
@@ -96,8 +101,9 @@
         <!---->
         <div class="row">
           <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
-            <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered class="carouselWrapper">
-              <li ng-click="$ctrl.openGallery(gal.id-1)"  ng-repeat="gal in $ctrl.page.gallery track by gal.id" ng-class="'id-' + gal.id">
+            <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered
+              class="carouselWrapper">
+              <li ng-click="$ctrl.openGallery(gal.id-1)" ng-repeat="gal in $ctrl.page.gallery track by gal.id" ng-class="'id-' + gal.id">
                 <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{$ctrl.page.gallery.length}}</div>
               </li>
             </ul>
@@ -107,41 +113,26 @@
         <div class="row " style="margin-bottom: 30px !important; ">
           <form class="textareaMainPage" role="form " name="form">
             <div class="form-group">
-              <textarea 
-              placeholder="Що у вас нового?" 
-              name="textArea"
-               class="form-control textaArea" 
-               rows="5 " 
-              ng-model="$ctrl.textarea.value" 
-              ng-required="textAreaFlag" 
-              ng-click="$ctrl.imageFlag = false" 
-              id="comment ">
+              <textarea placeholder="Що у вас нового?" name="textArea" class="form-control textaArea" rows="5 " ng-model="$ctrl.textarea.value"
+                ng-required="textAreaFlag" ng-click="$ctrl.imageFlag = false" id="comment ">
             </textarea>
-               <i ng-show="myForm.userName.$error.required">*required</i>
-              <figure class="commentImage pull-left" 
-                type="file" ng-required="$ctrl.imageFlag" 
-                ng-click="$ctrl.textAreaFlag = false" 
-                ngf-select ng-model="picFile"  
-                name="file" 
-                accept="image/*" 
-                ngf-max-size="4MB" 
-                ngf-model-invalid="errorFile"
-                >  
-              
+              <i ng-show="myForm.userName.$error.required">*required</i>
+              <figure class="commentImage pull-left" type="file" ng-required="$ctrl.imageFlag" ng-click="$ctrl.textAreaFlag = false" ngf-select
+                ng-model="picFile" name="file" accept="image/*" ngf-max-size="4MB" ngf-model-invalid="errorFile">
+
               </figure>
-                <!-- <i ng-show="form.file.$error.required">*required</i><br> -->
-                <i ng-show="form.file.$error.maxSize">File too large 
+              <!-- <i ng-show="form.file.$error.required">*required</i><br> -->
+              <i ng-show="form.file.$error.maxSize">File too large 
           {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-       
-          <div class="thumb">
-              <figure class="crossModal" ng-click="picFile = null; $ctrl.textAreaFlag = true" ng-show="picFile"></figure>
-           <img ng-show="form.file.$valid" name="image" ngf-thumbnail="picFile" style="max-width:150px; max-height:150px;">
-            </div> 
-                <span ng-show="picFile.result">Upload Successful</span>
-                <span class="err" ng-show="$ctrl.errorMsg">{{$ctrl.errorMsg}}</span>
-            
-              <button type="button" class="btn btn-default post pull-right" ng-disabled="!form.$valid"  
-              ng-click="$ctrl.uploadPic(picFile, $ctrl.page.posts.length); picFile = null">Відправити
+
+              <div class="thumb">
+                <figure class="crossModal" ng-click="picFile = null; $ctrl.textAreaFlag = true" ng-show="picFile"></figure>
+                <img ng-show="form.file.$valid" name="image" ngf-thumbnail="picFile" style="max-width:150px; max-height:150px;">
+              </div>
+              <span ng-show="picFile.result">Upload Successful</span>
+              <span class="err" ng-show="$ctrl.errorMsg">{{$ctrl.errorMsg}}</span>
+
+              <button type="button" class="btn btn-default post pull-right" ng-disabled="!form.$valid" ng-click="$ctrl.uploadPic(picFile, $ctrl.page.posts.length,'uploadPost'); picFile = null">Відправити
             </button>
             </div>
           </form>
@@ -157,7 +148,7 @@
               <a class='label label-primary' id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
             </div>
             <div style="background-color: #f2f2f2;">
-              <p style="font-size: 14px;" ng-bind-html="post.post_text | linky" >{{post.post_text}}</p>
+              <p style="font-size: 14px;" ng-bind-html="post.post_text | linky">{{post.post_text}}</p>
               <a>
             <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" />
             </a>

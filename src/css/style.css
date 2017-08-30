@@ -95,8 +95,9 @@ body {
     cursor: pointer;
 }
 .dropdownMenuSearch{
-    left: auto !important;
+    /* left: auto !important; */
     top: 80% !important; 
+    min-width: 210px !important;
 }
 .dropdownMenuSearch>li{
     padding: 10px;
@@ -293,6 +294,11 @@ body {
     /*background-image: url("../img/bg.jpg");*/
     background-size: cover;
     height: 225px;
+       /*parallax  */
+    /* background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 /*Update Background*/
@@ -382,7 +388,54 @@ body {
     border-radius: 0px !important;
     cursor: pointer;
 }
+.detailLogo {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+/* default image  */
 
+.detailLogo img {
+    display: block;
+}
+/* hover image */
+
+.detailLogo+img {
+    position: absolute;
+    z-index: 1;
+    top: 65px;
+    right: 80px;
+}
+
+/* .detailLogo .profilePhoto {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    margin-top: -40px;
+     margin-left: 15px;
+    border-radius: 0px !important;
+    cursor: pointer;
+} */
+
+.musicLogoBig:hover {
+    cursor: pointer;
+
+}
+
+.detailLogo .musicLogoHover {
+    width: 30px;
+    height: 30px;
+    width: auto;
+    display: none;
+}
+
+.detailLogo:hover .musicLogoHover {
+    display: block !important;
+}
+
+.detailLogo:hover {
+    cursor: pointer;
+}
 
 /*Friends and photo count*/
 

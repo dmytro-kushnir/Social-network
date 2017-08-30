@@ -24,12 +24,35 @@ switch ($subPage) {
         $data_arr[0] = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data");
         break;
     // USERPOST
-    case "userPost":
+    case "uploadPost":
         $posts = $Db->selectSqlPrepared("SELECT 
 post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_image, post.post_likes
   FROM post  WHERE id_owner = '$id' ORDER BY post.id DESC");
         $data_arr[0] = $posts;
         break;
+    // USER BACKGROUND
+    case "uploadBackground":
+        $background = $Db->selectSqlPrepared("SELECT users_data.background_url
+    FROM users_data  WHERE id = '$id' ");
+        $data_arr[0] =  $background;
+        break;
+    // USER AVATAR
+    case "uploadAvatar":
+    // $avatar = $Db->selectSqlPrepared("SELECT users_data.avatar_url
+    // FROM users_data  WHERE id = '$id' ");
+        $avatars = $Db->selectSqlPrepared("SELECT 
+    avatars.id, avatars.sender_name, avatars.sender_url, avatars.image_url, avatars.reciever_url, avatars.image_date, avatars.likes 
+      FROM avatars INNER JOIN users_data ON users_data.id=avatars.id_owner WHERE id_owner = '$id'" );
+// AVATAR POSTS
+        foreach ($avatars as $key => $value) { // get avatar posts
+                  $posts = $Db->selectSqlPrepared("SELECT 
+   postavatars.id, postavatars.sender_name, postavatars.sender_url, postavatars.send_date, postavatars.post_text, postavatars.post_image, postavatars.post_likes
+      FROM postavatars INNER JOIN users_data ON users_data.id=postavatars.id WHERE id_image = '$value[id]'");
+                      $avatars[$key]["posts"] = $posts;
+        }
+        $data_arr[0] = $avatars;
+        break;
+    
     case "friends":
         $data_arr = $Db->selectSqlPrepared("SELECT friends FROM users_data WHERE id = '$id' ");
         $friendsIdArr = explode(",", $data_arr[0]["friends"]); // convert friends string to array

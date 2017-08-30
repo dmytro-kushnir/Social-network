@@ -129,6 +129,12 @@
   }
 }
 @media (min-width: 768px) {
+  .detailLogo + img {
+    top: 50px;
+  }
+  .dropdownMenuSearch {
+    margin-left: 40px !important;
+  }
   .navbar-brand {
     display: block !important ;
   }

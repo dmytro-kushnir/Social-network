@@ -4,6 +4,9 @@
     margin-top: -50px;
     padding: 10px 20px 10px 30px;
   }
+  .dropdownMenuSearch {
+    width: 43vw;
+  }
   .userChatPanel {
     display: none;
   }

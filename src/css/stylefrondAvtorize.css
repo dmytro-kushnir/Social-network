@@ -40,7 +40,9 @@ button[disabled="disabled"]{
 .email, .password{
 	font-family: Helvetica;
     margin: 5px;
-    font-size:16px;
+}
+.emailAndpass{
+    margin-top: 5px;
 }
 .enter_button{
 	font-family: Helvetica;

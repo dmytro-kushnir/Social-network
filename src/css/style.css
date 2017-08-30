@@ -94,7 +94,16 @@ body {
 .mineNavbar>li>a{
     cursor: pointer;
 }
-
+.dropdownMenuSearch{
+    left: auto !important;
+    top: 80% !important; 
+}
+.dropdownMenuSearch>li{
+    padding: 10px;
+    padding: 5px;
+    display: flex;
+    cursor: pointer;
+}
 /* Navigation header END*/
 
 

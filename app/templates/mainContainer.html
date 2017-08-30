@@ -15,14 +15,25 @@
                                         <span class="icon-bar"></span>
                                     </button>
                             <a ui-sref="cont.mainPage" ng-click="subPageEnter('mainPage')" class="navbar-brand"><img class="logo" src="src/img/log.png" alt="logo"></a>
-
+                            <!-- Back button-->
                             <a onclick="history.back()">
                                 <figure class="arrowLeftMobile"></figure>
                             </a>
-
-                            <a class="headerName" ng-bind="title" ng-click="subPageEnter('mainPage')">{{$ctrl.page.first_name}} {{$ctrl.page.second_name}}</a>
-                            <div class="searchBlockHeader ">
-                                <input placeholder="search" class="form-control" data-ng-model="search">
+                            <!-- page tilte -->
+                            <!-- <a class="headerName" ng-bind="title" ng-click="subPageEnter('mainPage')">{{$ctrl.page.first_name}} {{$ctrl.page.second_name}}</a> -->
+                           <!-- SEARCH -->
+                            <div class="searchBlockHeader dropdown" >
+                                <input placeholder="search" 
+                                class="form-control dropdown-toggle" 
+                                data-toggle="dropdown" 
+                                data-ng-model="search" 
+                                ng-click="$ctrl.usersListRender()">
+                                <ul class="dropdown-menu dropdownMenuSearch">
+                                    <li ng-repeat="user in $ctrl.users | toArray:false | filter: search | limitTo : 8 : 0" ui-sref="cont.mainPage({userId:user.id})" >
+                                        <img class="userHeader" style="width: 30px; height:30px;" ng-src="{{user.avatar_url}}" ng-if="user.avatar_url" alt="user"></a>
+                                        <a>{{user.first_name}} {{user.second_name}}</a>   
+                                    </li>
+                                </ul>
                             </div>
 
                         </div>

@@ -2,8 +2,8 @@
     var app = angular.module("main-page", ["components"]);
     app.component("mainPage", {
         templateUrl: "app/templates/mainPage.html",
-        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout' ,'Lightbox',
-            function MainPageCtrl($state, socialService, storageService, Upload, $timeout,  Lightbox) {
+        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', 'Lightbox',
+            function MainPageCtrl($state, socialService, storageService, Upload, $timeout, Lightbox) {
 
                 /////////////////
                 var self = this;
@@ -21,18 +21,18 @@
                     self.page = response.data.info;
                     console.log("mainPage", self.page);
                 });
-                
-                self.openAvatars = function(index){
+
+                self.openAvatars = function (index) {
                     Lightbox.openModal(self.page.avatars, index);
                 }
-                self.openGallery = function(index){
+                self.openGallery = function (index) {
                     Lightbox.openModal(self.page.gallery, index);
                 }
-                
-               self.isLoggined = function (targetId, logginedId){
-                    if(targetId == logginedId)
+
+                self.isLoggined = function (targetId, logginedId) {
+                    if (targetId == logginedId)
                         return true;
-                    else 
+                    else
                         return false;
                 }
 
@@ -49,9 +49,13 @@
 
                         // $scope.$emit('mainPageFrGal', $scope.subPage); // send friend data to parent scope (MainCtrl)
                         if (pageName == "gallery")
-                            $state.go('cont.gallery',{userId:id});
+                            $state.go('cont.gallery', {
+                                userId: id
+                            });
                         else if (pageName == "friends")
-                            $state.go('cont.friends',{userId:id});
+                            $state.go('cont.friends', {
+                                userId: id
+                            });
                     });
 
                     storageService.save('friendId', id);
@@ -113,7 +117,15 @@
                         file.upload.then(function (response) {
                             $timeout(function () {
                                 console.log("FILE RESULT", response.data);
-                                self.page.posts.unshift(response.data.info);
+                                var data = {
+                                    id: self.userId,
+                                    pageName: "userPost"
+                                }
+                                socialService.getSubPage(data).then(function (response) {
+                                    self.page.posts = response.data.info;
+                                    console.log(self.page.posts)
+                                });
+                                // self.page.posts.unshift(response.data.info);
                             });
                         }, function (response) {
                             if (response.status > 0)
@@ -127,7 +139,15 @@
                         if (self.textarea.value != null) {
                             socialService.uploadPost(data).then(function (response) {
                                 console.log(response);
-                                self.page.posts.unshift(response.data.info);
+                                var data = {
+                                    id: self.userId,
+                                    pageName: "userPost"
+                                }
+                                socialService.getSubPage(data).then(function (response) {
+                                    self.page.posts = response.data.info;
+                                    console.log(self.page.posts)
+                                });
+                                // self.page.posts.unshift(response.data.info);
                             });
                         }
                     }

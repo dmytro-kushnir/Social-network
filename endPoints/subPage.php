@@ -19,6 +19,17 @@ switch ($subPage) {
     case "mainPage":
         $data_arr = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data WHERE id = '$id' ");
         break;
+    // USERLIST
+    case "userList":
+        $data_arr[0] = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data");
+        break;
+    // USERPOST
+    case "userPost":
+        $posts = $Db->selectSqlPrepared("SELECT 
+post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_image, post.post_likes
+  FROM post  WHERE id_owner = '$id' ORDER BY post.id DESC");
+        $data_arr[0] = $posts;
+        break;
     case "friends":
         $data_arr = $Db->selectSqlPrepared("SELECT friends FROM users_data WHERE id = '$id' ");
         $friendsIdArr = explode(",", $data_arr[0]["friends"]); // convert friends string to array

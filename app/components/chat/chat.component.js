@@ -21,8 +21,6 @@
 
 
                 self.chatEnter = function (chatId, index) {
-
-                    // $rootScope.chatTitle = self.page[index].sender_name;
                     console.log(self.page);
                     var chatData = {
                         "id_sender": chatId,
@@ -32,8 +30,6 @@
                         "reciever_url": self.page.chat[index].reciever_url,
                         "chat_date": dateFormat(new Date(), 'm-d-Y h:i:s')
                     }
-
-                    console.log("chatDaTa", chatData);
                     storageService.save('chatData', JSON.stringify(chatData));
                     $state.go('cont.chatUser', {
                         userId: self.userId,

@@ -96,7 +96,7 @@ class Db extends \PDO {
                 $db_values = array_values($db_array);
                 $sql_pre = "UPDATE " . $table . " SET ";
                 $sql_pre .= implode(" = ? , ", $db_keys) . " = ? ";
-                $sql_pre .= $where?  " WHERE id = " . $where : '';
+                $sql_pre .= $where?  " WHERE " . $where : '';
                
                 //var_dump($sql_pre);
                 try {

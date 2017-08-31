@@ -23,6 +23,7 @@
                 });
 
                 self.openAvatars = function (index) {
+                    console.log(index);
                     Lightbox.openModal(self.page.avatars, index);
                 }
                 self.openGallery = function (index) {
@@ -89,37 +90,42 @@
                         self.page.posts.splice(array_id, 1);
                     });
                 }
+                //UPLOAD 
                 self.uploadPic = function (file, id, phpFileName) {
 
                     var date = new Date();
-                    if (phpFileName == 'uploadPost') { // POST
-                        var data = {
-                            "id_owner": self.userId,
-                            "id_post": id,
-                            "sender_url": self.logginedData.avatar_url,
-                            "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
-                            "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
-                            "post_text": self.textarea.value,
-                            "post_image": "../src/img/users/user/posts/", //make in server
-                            "post_likes": 0
-                        }
-                    } else if (phpFileName == 'uploadBackground') { // BACKGROUND
-                        var data = {
-                            "id": self.userId,
-                            "background_url": "../src/img/users/user/backgrounds/" //make in server
-                        }
-                    } else if (phpFileName == 'uploadAvatar') { // AVATAR
-                        var data = {
-                            "id_owner": self.userId,
-                            "image_url": "../src/img/users/user/avatars/", //make in server
-                            "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
-                            "sender_url": self.logginedData.avatar_url,
-                            "reciever_url": self.logginedData.avatar_url,
-                            "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
-                            "likes": 0
-                        }
+                    switch (phpFileName) {
+                        case 'uploadPost':
+                            var data = {
+                                "id_owner": self.userId,
+                                "id_post": id,
+                                "sender_url": self.logginedData.avatar_url,
+                                "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
+                                "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
+                                "post_text": self.textarea.value,
+                                "post_image": "../src/img/users/user/posts/", //make in server
+                                "post_likes": 0
+                            }
+                            break;
+                        case 'uploadBackground':
+                            var data = {
+                                "id": self.userId,
+                                "background_url": "../src/img/users/user/backgrounds/" //make in server
+                            }
+                            break;
+                        case 'uploadAvatar':
+                            var data = {
+                                "id_owner": self.userId,
+                                "image_url": "../src/img/users/user/avatars/", //make in server
+                                "is_set": 1, //make in server
+                                "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
+                                "sender_url": "../src/img/users/user/avatars/",
+                                "reciever_url": "../src/img/users/user/avatars/",
+                                "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
+                                "likes": 0
+                            }
+                            break;
                     }
-
                     if (file != undefined || file != null) { //text with file or only file
                         if (file) {
                             file.upload = Upload.upload({
@@ -140,26 +146,20 @@
                                         id: self.userId,
                                         pageName: phpFileName
                                     }
-                                    if (phpFileName == 'uploadPost') { // POST
-                                       
-                                        socialService.getSubPage(data).then(function (response) {
-                                            self.page.posts = response.data.info;
-                                            console.log(self.page.posts)
-                                        });
-                                    } else if (phpFileName == 'uploadBackground') { // BACKGROUND
-                                      
-                                        socialService.getSubPage(data).then(function (response) {
-                                            console.log(response.data.info[0]);
-                                            self.page.background_url = response.data.info[0].background_url;
-                                            console.log(self.page)
-                                        });
-                                    } else if (phpFileName == 'uploadAvatar') { // AVATAR
-                                        socialService.getSubPage(data).then(function (response) {
-                                            console.log(response.data.info);
-                                            self.page.avatar_url = response.data.info[0].avatar_url;
-                                            console.log(self.page);
-                                        });
-                                    }
+                                    socialService.getSubPage(data).then(function (response) {
+                                        switch (phpFileName) {
+                                            case 'uploadPost':
+                                                self.page.posts = response.data.info;
+                                                break;
+                                            case 'uploadBackground':
+                                                self.page.background_url = response.data.info[0].background_url;
+                                                break;
+                                            case 'uploadAvatar':
+                                                self.page.avatar_url = response.data.info["global_avatars"][0].avatar_url;
+                                                self.page.avatars = response.data.info["avatars"];
+                                                break;
+                                        }
+                                    });
                                 });
                             }, function (response) {
                                 if (response.status > 0)
@@ -172,14 +172,12 @@
                     } else { //  only text (POST)
                         if (self.textarea.value != null) {
                             socialService.uploadPost(data).then(function (response) {
-                                console.log(response);
                                 var data = {
                                     id: self.userId,
                                     pageName: "userPost"
                                 }
                                 socialService.getSubPage(data).then(function (response) {
                                     self.page.posts = response.data.info;
-                                    console.log(self.page.posts)
                                 });
                             });
                         }

@@ -32,9 +32,9 @@
   <section class="row restPage">
     <!--Left part START-->
     <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0">
-      <div  class="detailLogo" ng-repeat="avatar in $ctrl.page.avatars | limitTo : 1 : 0">
+      <div  class="detailLogo" ng-repeat="avatar in $ctrl.page.avatars | filter:{is_set:1} track by avatar.id">
         <div class="galleryLink detailLogo">
-        <img ng-click="$ctrl.openAvatars($index)" ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
+        <img ng-click="$ctrl.openAvatars($ctrl.page.avatars.indexOf(avatar))" ng-src="{{avatar.image_url}}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
 
       </div>
       <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 

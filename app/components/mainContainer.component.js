@@ -25,6 +25,7 @@
                 socialService.getSubPage(data).then(function (response) {
                     self.page = response.data.info;
                     storageService.save("loginUserData", JSON.stringify(self.page));
+                    console.log(self.page);
                 });
                 self.usersListRender = function(){
                     var data = {

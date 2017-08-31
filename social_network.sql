@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 22 2017 г., 15:34
+-- Время создания: Авг 31 2017 г., 08:48
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `avatars` (
   `id` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
+  `is_set` tinyint(1) NOT NULL,
   `image_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
@@ -41,11 +42,13 @@ CREATE TABLE `avatars` (
 -- Дамп данных таблицы `avatars`
 --
 
-INSERT INTO `avatars` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
-(1, 1, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '15.12.12 15:38', 1),
-(2, 1, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23),
-(3, 5, '/src/img/users/friend100002/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
-(4, 2, '/src/img/users/friend100001/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23);
+INSERT INTO `avatars` (`id`, `id_owner`, `is_set`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
+(1, 1, 0, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '15.12.12 15:38', 1),
+(2, 1, 0, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23),
+(3, 5, 1, '/src/img/users/friend100002/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
+(4, 2, 1, '/src/img/users/friend100001/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
+(32, 1, 0, '../src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/v.JPG', '../src/img/users/user/avatars/v.JPG', '08-31-2017 09:46:48', 0),
+(33, 1, 1, '../src/img/users/user/avatars/avatar.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/avatar.jpg', '../src/img/users/user/avatars/avatar.jpg', '08-31-2017 09:48:18', 0);
 
 -- --------------------------------------------------------
 
@@ -174,9 +177,11 @@ INSERT INTO `gallery` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url
 (38, 2, '/src/img/users/friend100001/gallery/2.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (39, 2, '/src/img/users/friend100001/gallery/3.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (40, 2, '/src/img/users/friend100001/gallery/4.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
-(41, 2, '/src/img/users/friend100001/gallery/5.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(41, 2, '/src/img/users/friend100001/gallery/5.mp4', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (42, 2, '/src/img/users/friend100001/gallery/6.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
-(43, 2, '/src/img/users/friend100001/gallery/7.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4);
+(43, 2, '/src/img/users/friend100001/gallery/7.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(48, 1, '../src/img/users/user/gallery/jTfIQ5AY9UU.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '08-26-2017 08:30:08', 0),
+(49, 1, '../src/img/users/user/gallery/avatar.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/avatar.jpg', '../src/img/users/user/avatars/avatar.jpg', '08-30-2017 11:08:59', 0);
 
 -- --------------------------------------------------------
 
@@ -237,7 +242,9 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`id`, `id_owner`, `id_post`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
 (1, 1, 0, '/src/img/users/friend100002/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)    https://my-hit.org/film/415353', '/src/img/users/user/posts/post1/post_image.jpg', 12),
-(28, 1, 2, '../src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:11:28', 'dsasd', '../src/img/users/user/posts/14079532_528450687364315_3352630776540591931_n.jpg', 0);
+(30, 1, 1, '../src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:38:41', 'wwfes', '../src/img/users/user/posts/14079532_528450687364315_3352630776540591931_n.jpg', 0),
+(52, 5, 0, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 09:20:56', 'це часом не ти?', '../src/img/users/friend100002/posts/17.jpg', 0),
+(63, 2, 0, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-26-2017 04:01:05', 'йоу йоу', '../src/img/users/user/posts/', 0);
 
 -- --------------------------------------------------------
 
@@ -449,9 +456,9 @@ CREATE TABLE `users_data` (
 --
 
 INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`, `chat`) VALUES
-(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '/src/img/users/user/backgrounds/bg.jpg', '/src/img/users/user/avatars/2.jpg', '2,5', '0', '', '', ''),
-(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '/src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', '', ''),
-(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '/src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '', '');
+(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '../src/img/users/user/backgrounds/bg.jpg', '../src/img/users/user/avatars/avatar.jpg', '2,5', '0', '', '', ''),
+(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '../src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', '', ''),
+(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '../src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -568,7 +575,7 @@ ALTER TABLE `users_data`
 -- AUTO_INCREMENT для таблицы `avatars`
 --
 ALTER TABLE `avatars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT для таблицы `chat`
 --
@@ -578,12 +585,12 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT для таблицы `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT для таблицы `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 --
 -- AUTO_INCREMENT для таблицы `postavatars`
 --

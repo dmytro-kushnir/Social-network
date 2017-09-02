@@ -4,6 +4,7 @@ include ('../Db/Db.php');
 $Db = new \Db\Db();
 
   $filename = $_FILES['file']['name'];
+  
   $meta = $_POST;
   $destination = $meta['dataArr']['background_url'] . $filename;
   $data = $meta['dataArr'];

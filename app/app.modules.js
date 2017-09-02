@@ -7,7 +7,6 @@
         'ngAnimate',
         'monospaced.elastic',
         'ui.bootstrap',
-        'bootstrapLightbox',
         'ngTouch',
         'angular-carousel',
         'akoenig.deckgrid',

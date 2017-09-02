@@ -5,6 +5,7 @@ $Db = new \Db\Db();
 
 if($_FILES){ // it's files and text
   $filename = $_FILES['file']['name'];
+  
   $meta = $_POST;
   $destination = $meta['dataArr']['post_image'] . $filename;
   $data = $meta['dataArr'];

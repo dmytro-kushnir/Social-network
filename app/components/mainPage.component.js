@@ -1,9 +1,9 @@
 (function () {
-    var app = angular.module("main-page", ["components"]);
+    var app = angular.module("main-page", ["components", "image-modal"]);
     app.component("mainPage", {
         templateUrl: "app/templates/mainPage.html",
-        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', 'Lightbox',
-            function MainPageCtrl($state, socialService, storageService, Upload, $timeout, Lightbox) {
+        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', 'Lightbox','$uibModal',
+            function MainPageCtrl($state, socialService, storageService, Upload, $timeout, Lightbox,$uibModal) {
 
                 /////////////////
                 var self = this;
@@ -23,11 +23,34 @@
                 });
 
                 self.openAvatars = function (index) {
-                    console.log(index);
-                    Lightbox.openModal(self.page.avatars, index);
+                    console.log(self.page.avatars[index]);
+                    var modalInstance = $uibModal.open({
+                        animation: false,
+                        component: "image-modal",
+                        resolve: {
+                          image: function() {
+                            return self.page.avatars;
+                          },
+                          index: function(){
+                              return index;
+                          }
+                        }
+                      });
+                    // Lightbox.openModal(self.page.avatars, index);
                 }
                 self.openGallery = function (index) {
-                    Lightbox.openModal(self.page.gallery, index);
+                    var modalInstance = $uibModal.open({
+                        animation: false,
+                        component: "image-modal",
+                        resolve: {
+                          image: function() {
+                            return self.page.gallery;
+                          },
+                          index: function(){
+                              return index;
+                          }
+                        }
+                      });
                 }
 
                 self.isLoggined = function (targetId, logginedId) {
@@ -90,9 +113,19 @@
                         self.page.posts.splice(array_id, 1);
                     });
                 }
+
+                
                 //UPLOAD 
                 self.uploadPic = function (file, id, phpFileName) {
-
+                //     function generateName() {
+                //     var text = "";
+                //     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                  
+                //     for (var i = 0; i < 15; i++)
+                //       text += possible.charAt(Math.floor(Math.random() * possible.length));
+                  
+                //     return text;
+                //   }
                     var date = new Date();
                     switch (phpFileName) {
                         case 'uploadPost':
@@ -114,6 +147,7 @@
                             }
                             break;
                         case 'uploadAvatar':
+                        
                             var data = {
                                 "id_owner": self.userId,
                                 "image_url": "../src/img/users/user/avatars/", //make in server
@@ -128,10 +162,14 @@
                     }
                     if (file != undefined || file != null) { //text with file or only file
                         if (file) {
+                            
+                           
+                            // file.upload = Upload.rename(file, generateName());
+                           console.log(file);
                             file.upload = Upload.upload({
                                 url: 'endPoints/' + phpFileName + '.php',
                                 method: "POST",
-                                file: file,
+                                nameOfImage: file,
                                 data: {
                                     // 'targetPath' : '/src/img/users/user'+$scope.page.id+'/posts/',
                                     "dataArr": data,
@@ -174,7 +212,7 @@
                             socialService.uploadPost(data).then(function (response) {
                                 var data = {
                                     id: self.userId,
-                                    pageName: "userPost"
+                                    pageName: "uploadPost"
                                 }
                                 socialService.getSubPage(data).then(function (response) {
                                     self.page.posts = response.data.info;

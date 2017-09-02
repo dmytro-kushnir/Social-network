@@ -1,9 +1,9 @@
 (function () {
-    var app = angular.module("gallery", ["components"]);
+    var app = angular.module("gallery", ["components", "image-modal"]);
     app.component("gallery", {
         templateUrl: "app/templates/gallery.html",
-        controller: ["$state", "socialService", "Lightbox", "$timeout", "storageService", "Upload",
-            function GalleryCtrl($state, socialService, Lightbox, $timeout, storageService, Upload) {
+        controller: ["$state", "socialService", "Lightbox", "$timeout", "storageService", "Upload",'$uibModal',
+            function GalleryCtrl($state, socialService, Lightbox, $timeout, storageService, Upload, $uibModal) {
                 /////////////////
                 var self = this;
                 self.page = {}
@@ -22,7 +22,18 @@
                 });
 
                 self.open = function (index) {
-                    Lightbox.openModal(self.page.gallery, index);
+                    var modalInstance = $uibModal.open({
+                        animation: false,
+                        component: "image-modal",
+                        resolve: {
+                          image: function() {
+                            return self.page.gallery;
+                          },
+                          index: function(){
+                              return index;
+                          }
+                        }
+                      });
                 }
                 self.isLoggined = function (targetId, logginedId){
                     if(targetId == logginedId)

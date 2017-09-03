@@ -1,25 +1,29 @@
 (function () {
     var app = angular.module("main-page", ["components", "image-modal"]);
     app.component("mainPage", {
+        transclude:true,
         templateUrl: "app/templates/mainPage.html",
-        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', 'Lightbox','$uibModal',
-            function MainPageCtrl($state, socialService, storageService, Upload, $timeout, Lightbox,$uibModal) {
+        bindings: {
+            cmpName: '@' },
+        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout','$uibModal','componentService',
+            function MainPageCtrl($state, socialService, storageService, Upload, $timeout,$uibModal,componentService) {
 
                 /////////////////
                 var self = this;
                 self.page = {}
                 self.userId = $state.params.userId;
                 self.logginedId = storageService.get("userId");
-                self.logginedData = JSON.parse(storageService.get("loginUserData"));
-
                 self.textAreaFlag = true;
                 self.imageFlag = true;
                 self.textarea = {};
                 self.carouselIndex = 1;
+               
                 ////////////////
                 socialService.pageRender(self.userId).then(function (response) {
                     self.page = response.data.info;
+                    self.logginedData = JSON.parse(storageService.get("loginUserData"));
                     console.log("mainPage", self.page);
+                    console.log(self.logginedData);
                 });
 
                 self.openAvatars = function (index) {
@@ -113,19 +117,48 @@
                         self.page.posts.splice(array_id, 1);
                     });
                 }
+                self.uploadAvatar = function(){
+                    var data = {
+                        "id_owner": self.userId,
+                        "image_url": "../src/img/users/user/avatars/", //make in server
+                        "is_set": 1, //make in server
+                        "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
+                        "sender_url": "../src/img/users/user/avatars/",
+                        "reciever_url": "../src/img/users/user/avatars/",
+                        "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
+                        "likes": 0
+                    }
 
+                    var modalInstance = $uibModal.open({
+                        animation: false,
+                        component: "avatar-modal",
+                        resolve: {
+                          data: function() {
+                            return data;
+                          }
+                        }
+                      });
+                }
+                // UPLOAD DATA FROM SIBLING COMPONENT(modal_avatar)
+                var oldModel = angular.copy(self.uploadData);
+                self.response = componentService.get();
                 
+                self.$doCheck = function(){
+
+                    if(self.response.msg !== ""){
+                        console.log(self.response);
+                        self.page.avatar_url = self.response.msg.data.info["global_avatars"][0].avatar_url;
+                        self.page.avatars = self.response.msg.data.info["avatars"];
+                    }
+                }
+            
+                if(self.response.msg != ""){
+                    console.log(self.response);
+                 
+                }
+                 console.log("UPLOAD DATA", self.component_service);
                 //UPLOAD 
                 self.uploadPic = function (file, id, phpFileName) {
-                //     function generateName() {
-                //     var text = "";
-                //     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-                  
-                //     for (var i = 0; i < 15; i++)
-                //       text += possible.charAt(Math.floor(Math.random() * possible.length));
-                  
-                //     return text;
-                //   }
                     var date = new Date();
                     switch (phpFileName) {
                         case 'uploadPost':
@@ -146,37 +179,18 @@
                                 "background_url": "../src/img/users/user/backgrounds/" //make in server
                             }
                             break;
-                        case 'uploadAvatar':
-                        
-                            var data = {
-                                "id_owner": self.userId,
-                                "image_url": "../src/img/users/user/avatars/", //make in server
-                                "is_set": 1, //make in server
-                                "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
-                                "sender_url": "../src/img/users/user/avatars/",
-                                "reciever_url": "../src/img/users/user/avatars/",
-                                "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
-                                "likes": 0
-                            }
-                            break;
                     }
                     if (file != undefined || file != null) { //text with file or only file
                         if (file) {
-                            
-                           
-                            // file.upload = Upload.rename(file, generateName());
-                           console.log(file);
                             file.upload = Upload.upload({
                                 url: 'endPoints/' + phpFileName + '.php',
                                 method: "POST",
-                                nameOfImage: file,
                                 data: {
                                     // 'targetPath' : '/src/img/users/user'+$scope.page.id+'/posts/',
                                     "dataArr": data,
                                     "file": file
                                 }
                             });
-
                             file.upload.then(function (response) {
                                 $timeout(function () {
                                     console.log("FILE RESULT", response.data);
@@ -192,11 +206,9 @@
                                             case 'uploadBackground':
                                                 self.page.background_url = response.data.info[0].background_url;
                                                 break;
-                                            case 'uploadAvatar':
-                                                self.page.avatar_url = response.data.info["global_avatars"][0].avatar_url;
-                                                self.page.avatars = response.data.info["avatars"];
-                                                break;
                                         }
+                                        if(self.textarea != null)
+                                        self.textarea.value = null;
                                     });
                                 });
                             }, function (response) {
@@ -216,6 +228,7 @@
                                 }
                                 socialService.getSubPage(data).then(function (response) {
                                     self.page.posts = response.data.info;
+                                    self.textarea.value = null;
                                 });
                             });
                         }
@@ -224,4 +237,5 @@
             }
         ]
     });
+    
 })();

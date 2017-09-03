@@ -8,7 +8,7 @@
                                   <figure class="crossModal pull-right" aria-label="Close" ng-click="$ctrl.close()"></figure>
                          <a class="modalImgWrapper lightbox-image-container">
                              <img class="img-responsive center-block modalImg" 
-                                src="{{$ctrl.image.image_url}}" alt="Image not found" />
+                                ng-src="{{$ctrl.image.image_url}}" alt="Image not found" />
                                <!--<embed-video data-ng-href="http://www.youtube.com/watch?v=LOKyEt36Kjc" force-protocol="https" controls=0>
                                <a href="http://www.youtube.com/watch?v=LOKyEt36Kjc">Watch</a></embed-video>-->
                              <span class="modalImgCount">{{$ctrl.index + 1 }}/{{$ctrl.images.length}} </span>
@@ -20,7 +20,7 @@
                  <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 modalMasc" ng-class="{'special' : modalMasc }">
                      <div class="rightBodyModal" ng-class="{'special' : rightBodyModal}">
                          <article class="modalUser">
-                             <img class="modalSenderPhoto" src="{{$ctrl.image.sender_url}}" alt="image" />
+                             <img class="modalSenderPhoto" ng-src="{{$ctrl.image.sender_url}}" alt="image" />
                              <h4 class="modalUserName">{{$ctrl.image.sender_name}}</h4>
                              <h5><span class='glyphicon glyphicon-time'></span>{{$ctrl.image.image_date}}</h5>
                          </article>
@@ -34,12 +34,12 @@
 
                          <article class="modalPost"  ng-repeat="post in $ctrl.image.posts">
                              <img class="modalSenderPhoto modalOtherUserPhotoPost"
-                                 src="{{post.sender_url}}" alt="post user" />
+                             ng-src="{{post.sender_url}}" alt="post user" />
                              <h5 class="modalPostUser">{{post.sender_name}}</h5>
                              <figure class="modalCancel pull-right"></figure>
                              <a>
                                  <img class=" modalPhotoPost" 
-                                 src="{{post.post_image}}" ng-hide="post.post_image==''" alt="post image"></a>
+                                 ng-src="{{post.post_image}}" ng-hide="post.post_image==''" alt="post image"></a>
                                  <p class="postText">{{post.post_text}}</p>
                              <p class="modalPostDate">{{post.send_date}}</p>
                              <figure class="modalHeart modalHeartComm pull-right" ><span ng-hide="post.post_likes==0">{{post.post_likes}}</span></figure>
@@ -49,7 +49,7 @@
                          
                          <textarea class="modalTextArea" ng-class="{'special' : modalTextArea}"></textarea>
                          <img class="otherUserPhoto modalOtherUserPhotoComment pull-left"
-                                 src="{{$ctrl.image.sender_url}}" alt="comment user" />
+                         ng-src="{{$ctrl.image.sender_url}}" alt="comment user" />
                      </div>
                  </div>
              </div>
@@ -60,7 +60,7 @@
                      <div class="TabletComment" style="margin-bottom:20px;" ng-class="{'special' : TabletComment }">
                          <figure class="commentImage" style="margin-top:5px;"></figure>
                          <textarea msd-elastic ng-model="foo" class="TabletTextArea"></textarea>
-                         <img  src="../../src/img/send.png" alt="send"
+                         <img  ng-src="../../src/img/send.png" alt="send"
                          class="sendIcon" style="margin-top:3px;">
                      </div>
                      <div class="leftFotterModal">

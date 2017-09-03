@@ -1,14 +1,14 @@
 (function () {
-    var app = angular.module("image-modal", ["main-page", "gallery", 'bootstrapLightbox']);
+    var app = angular.module("image-modal", ["main-page", "gallery"]);
     app.component("imageModal", {
-        templateUrl: "app/templates/modal.html",
+        templateUrl: "app/templates/modalImage.html",
         bindings: {
             close: '&',
             resolve: '<',
             index: '<'
         },
-        controller: ["$state", "Lightbox", "socialService",
-            function OpenModalCtrl($state, Lightbox, socialService) {
+        controller: [
+            function OpenModalCtrl() {
                 ///////////////
                 var self = this;
                 console.log(self);
@@ -19,27 +19,25 @@
                     self.image = self.images[self.index];
                 };
                 ///////////////
-               
+
                 self.close = function () {
-                $modalInstance.dismiss(self);
+                    $modalInstance.dismiss(self);
                 }
                 self.prevImage = function () {
-                    if(self.index > 0){
-                    self.index -= 1;
-                    self.image = self.images[self.index];
-                    }
-                    else{
-                        self.index = self.images.length-1;
+                    if (self.index > 0) {
+                        self.index -= 1;
+                        self.image = self.images[self.index];
+                    } else {
+                        self.index = self.images.length - 1;
                         self.image = self.images[self.index];
                     }
                 };
-                
+
                 self.nextImage = function () {
-                    if(self.index < self.images.length-1){
+                    if (self.index < self.images.length - 1) {
                         self.index += 1;
-                        self.image = self.images[self.index]; 
-                    }
-                    else{ 
+                        self.image = self.images[self.index];
+                    } else {
                         self.index = 0;
                         self.image = self.images[self.index];
                     }

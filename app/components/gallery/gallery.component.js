@@ -2,8 +2,8 @@
     var app = angular.module("gallery", ["components", "image-modal"]);
     app.component("gallery", {
         templateUrl: "app/templates/gallery.html",
-        controller: ["$state", "socialService", "Lightbox", "$timeout", "storageService", "Upload",'$uibModal',
-            function GalleryCtrl($state, socialService, Lightbox, $timeout, storageService, Upload, $uibModal) {
+        controller: ["$state", "socialService", "$timeout", "storageService", "Upload",'$uibModal',
+            function GalleryCtrl($state, socialService, $timeout, storageService, Upload, $uibModal) {
                 /////////////////
                 var self = this;
                 self.page = {}

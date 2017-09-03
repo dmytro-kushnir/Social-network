@@ -38,10 +38,9 @@
 
       </div>
       <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
-      src="src/img/bgChange.png" alt="upload"
-      ngf-select="$ctrl.uploadPic(picFile, $ctrl.page.posts.length, 'uploadAvatar'); picFile = null"
-      ng-model="picFile" name="file" accept="image/*" ngf-model-invalid="errorFile">
+      src="src/img/bgChange.png" alt="upload" ng-click="$ctrl.uploadAvatar();">
       </div>
+      
       <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
       <section class="friendsGalleryBlock">
 
@@ -116,7 +115,7 @@
               <textarea placeholder="Що у вас нового?" name="textArea" class="form-control textaArea" rows="5 " ng-model="$ctrl.textarea.value"
                 ng-required="textAreaFlag" ng-click="$ctrl.imageFlag = false" id="comment ">
             </textarea>
-              <i ng-show="myForm.userName.$error.required">*required</i>
+              <i ng-show="form.userName.$error.required">*required</i>
               <figure class="commentImage pull-left" type="file" ng-required="$ctrl.imageFlag" ng-click="$ctrl.textAreaFlag = false" ngf-select
                 ng-model="picFile" name="file" accept="image/*" ngf-max-size="4MB" ngf-model-invalid="errorFile">
 

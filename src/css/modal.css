@@ -299,3 +299,57 @@
 }
 
 /*Footer END*/
+
+/* Modal avatar */
+.avatarForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatarForm>h4{
+  margin: 10px;
+  text-align: center;
+}
+.submitBtns{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.submitBtns>button{
+  margin: 10px;
+  width: 150px;
+}
+.submitImage{
+  display: none !important;
+}
+.submitImageShow{
+  display: block !important;
+}
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:450px;
+  height:300px;
+  max-width: 100%;
+}
+.cropView{
+  margin: 15px;
+  display: none;
+}
+.cropViewShow{
+  display: block;
+}
+form .progress {
+  line-height: 15px;
+}
+.progress {
+  display: inline-block;
+  width: 100px;
+  border: 3px groove #CCC;
+}
+.progress div {
+  font-size: smaller;
+  background: orange;
+  width: 0;
+}

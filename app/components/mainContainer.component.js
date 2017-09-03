@@ -11,7 +11,7 @@
     app.component("mainContainer", {
         templateUrl: "app/templates/mainContainer.html",
         controller: ["$state", "socialService", "storageService", "AuthService",
-            function GalleryCtrl($state, socialService, storageService, AuthService) {
+            function MainCtrl($state, socialService, storageService, AuthService) {
                 ////////////////////
                 var self = this;
                 self.userId = storageService.get("userId");

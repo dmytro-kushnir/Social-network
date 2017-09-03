@@ -70,7 +70,23 @@
             return service;
         }
     ]);
-
+    app.factory('componentService', () => {
+        // hold a local copy of the state, setting its defaults
+        const state = {
+          data: {
+            msg: ''
+          }
+        };
+        // expose basic getter and setter methods
+        return {
+          get() {
+            return state.data;
+          },
+          set(data) {
+            Object.assign(state.data, data);
+          }
+        };
+      })
 
     app.filter('reverse', function() {
         return function(items) {

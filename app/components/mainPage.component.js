@@ -17,7 +17,11 @@
                 self.imageFlag = true;
                 self.textarea = {};
                 self.carouselIndex = 1;
+                // switching default or loaded avatars. If delete current avatar -> switch to default
+               self.defaultAvatar = false;
+               self.AvatarsList = true;
                
+
                 ////////////////
                 socialService.pageRender(self.userId).then(function (response) {
                     self.page = response.data.info;
@@ -37,6 +41,9 @@
                           },
                           index: function(){
                               return index;
+                          },
+                          dbName: function(){
+                              return 'avatars'
                           }
                         }
                       });
@@ -52,6 +59,9 @@
                           },
                           index: function(){
                               return index;
+                          },
+                          dbName: function(){
+                              return 'gallery'
                           }
                         }
                       });
@@ -145,17 +155,23 @@
                 
                 self.$doCheck = function(){
 
-                    if(self.response.msg !== ""){
-                        console.log(self.response);
-                        self.page.avatar_url = self.response.msg.data.info["global_avatars"][0].avatar_url;
-                        self.page.avatars = self.response.msg.data.info["avatars"];
+                    if(self.response.avatar !== ""){
+                        // console.log(self.response);
+                        self.page.avatar_url = self.response.avatar.data.info["global_avatars"][0].avatar_url;
+                        self.page.avatars = self.response.avatar.data.info["avatars"];
+                    }
+                    if(self.response.image !== ""){
+                        if(self.response.image["dbName"] == "gallery"){ // gallery
+                            self.page.gallery.splice(self.response.image["array_id"], 1);
+                        }
+                        else{ // avatars
+                            // self.page.avatar_url = "/src/img/users/noUser/avatars/avatar.jpg";
+                            // console.log(self.page.avatar_url);
+                            self.page.avatars.splice(self.response.image["array_id"], 1);   
+                        }    
                     }
                 }
             
-                if(self.response.msg != ""){
-                    console.log(self.response);
-                 
-                }
                  console.log("UPLOAD DATA", self.component_service);
                 //UPLOAD 
                 self.uploadPic = function (file, id, phpFileName) {

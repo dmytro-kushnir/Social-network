@@ -20,19 +20,7 @@
                 };
 
                 ///////////////
-                // define the callback for the input change
-                self.onMessageChange = () => {
-                    // BOOM! We just set the Store data.
-                    // No need to notify or anything!
-                    componentService.set({
-                        msg: self.data
-                    });
-                };
-
-                self.close = function () {
-                
-                    // $modalInstance.dismiss(self);          
-                }
+         
                 self.showCropView = function () {
                     var cropView = angular.element(document.querySelector('.cropView'));
                     cropView.addClass('cropViewShow');
@@ -40,7 +28,7 @@
                     uploadBtn.addClass('submitImageShow');
                 }
 
-                self.upload = function (dataUrl, name) {
+                self.upload = (dataUrl, name) => {
 
                     Upload.upload({
                         url: 'endPoints/uploadAvatar.php',
@@ -57,7 +45,7 @@
                             }
                             socialService.getSubPage(data).then(function (response) {
                                 componentService.set({
-                                    msg: response
+                                    avatar: response
                                 });
                                        
                             });

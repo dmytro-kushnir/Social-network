@@ -7,22 +7,42 @@
             resolve: '<',
             index: '<'
         },
-        controller: [
-            function OpenModalCtrl() {
+        controller: ['$state','socialService' ,'componentService',
+            function OpenModalCtrl($state, socialService ,componentService) {
                 ///////////////
                 var self = this;
+                self.userId = $state.params.userId;
                 console.log(self);
                 self.$onInit = function () {
                     console.log(self.resolve.image);
                     self.images = self.resolve.image;
                     self.index = self.resolve.index;
                     self.image = self.images[self.index];
+                    self.dbName = self.resolve.dbName;
                 };
                 ///////////////
-
-                self.close = function () {
-                    $modalInstance.dismiss(self);
+                self.deleteImage = function (array_id, id) {
+                    var data = { // prepare data to server send
+                        0:{
+                            "id_owner": self.userId,
+                            "id": id
+                        },
+                        1:{
+                            "dbName": self.dbName,
+                            "array_id":array_id,
+                            "is_set":self.image.is_set
+                        }
+                    }
+                    console.log("ARRAY ID", array_id);
+                    socialService.deleteImage(data).then(function (response) {
+                        componentService.set({
+                            image: response.data.info[1]
+                        });
+                        console.log(response);
+                      
+                    });
                 }
+
                 self.prevImage = function () {
                     if (self.index > 0) {
                         self.index -= 1;

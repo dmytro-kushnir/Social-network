@@ -15,6 +15,9 @@
             },
             deletePost: function (request) {
                 return $http.post("endPoints/deletePost.php", request);
+            },
+            deleteImage: function (request) {
+                return $http.post("endPoints/deleteImage.php", request);
             }
         };
     });
@@ -74,7 +77,8 @@
         // hold a local copy of the state, setting its defaults
         const state = {
           data: {
-            msg: ''
+            avatar: '',
+            image:''
           }
         };
         // expose basic getter and setter methods

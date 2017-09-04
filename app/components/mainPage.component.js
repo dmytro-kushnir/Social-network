@@ -1,12 +1,13 @@
 (function () {
     var app = angular.module("main-page", ["components", "image-modal"]);
     app.component("mainPage", {
-        transclude:true,
+        transclude: true,
         templateUrl: "app/templates/mainPage.html",
         bindings: {
-            cmpName: '@' },
-        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout','$uibModal','componentService',
-            function MainPageCtrl($state, socialService, storageService, Upload, $timeout,$uibModal,componentService) {
+            cmpName: '@'
+        },
+        controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', '$uibModal', 'componentService',
+            function MainPageCtrl($state, socialService, storageService, Upload, $timeout, $uibModal, componentService) {
 
                 /////////////////
                 var self = this;
@@ -17,10 +18,6 @@
                 self.imageFlag = true;
                 self.textarea = {};
                 self.carouselIndex = 1;
-                // switching default or loaded avatars. If delete current avatar -> switch to default
-               self.defaultAvatar = false;
-               self.AvatarsList = true;
-               
 
                 ////////////////
                 socialService.pageRender(self.userId).then(function (response) {
@@ -36,17 +33,17 @@
                         animation: false,
                         component: "image-modal",
                         resolve: {
-                          image: function() {
-                            return self.page.avatars;
-                          },
-                          index: function(){
-                              return index;
-                          },
-                          dbName: function(){
-                              return 'avatars'
-                          }
+                            image: function () {
+                                return self.page.avatars;
+                            },
+                            index: function () {
+                                return index;
+                            },
+                            dbName: function () {
+                                return 'avatars'
+                            }
                         }
-                      });
+                    });
                     // Lightbox.openModal(self.page.avatars, index);
                 }
                 self.openGallery = function (index) {
@@ -54,17 +51,17 @@
                         animation: false,
                         component: "image-modal",
                         resolve: {
-                          image: function() {
-                            return self.page.gallery;
-                          },
-                          index: function(){
-                              return index;
-                          },
-                          dbName: function(){
-                              return 'gallery'
-                          }
+                            image: function () {
+                                return self.page.gallery;
+                            },
+                            index: function () {
+                                return index;
+                            },
+                            dbName: function () {
+                                return 'gallery'
+                            }
                         }
-                      });
+                    });
                 }
 
                 self.isLoggined = function (targetId, logginedId) {
@@ -127,7 +124,7 @@
                         self.page.posts.splice(array_id, 1);
                     });
                 }
-                self.uploadAvatar = function(){
+                self.uploadAvatar = function () {
                     var data = {
                         "id_owner": self.userId,
                         "image_url": "../src/img/users/user/avatars/", //make in server
@@ -143,37 +140,47 @@
                         animation: false,
                         component: "avatar-modal",
                         resolve: {
-                          data: function() {
-                            return data;
-                          }
+                            data: function () {
+                                return data;
+                            }
                         }
-                      });
+                    });
                 }
-                // UPLOAD DATA FROM SIBLING COMPONENT(modal_avatar)
-                var oldModel = angular.copy(self.uploadData);
-                self.response = componentService.get();
-                
-                self.$doCheck = function(){
 
-                    if(self.response.avatar !== ""){
-                        // console.log(self.response);
+                // UPLOAD DATA FROM SIBLING COMPONENT(modal_avatar)
+                self.response = componentService.get();
+                self.$doCheck = function () {
+                    if (self.response.avatar !== "") { // -> upload avatar event
                         self.page.avatar_url = self.response.avatar.data.info["global_avatars"][0].avatar_url;
                         self.page.avatars = self.response.avatar.data.info["avatars"];
+                        self.response.avatar = ""
                     }
-                    if(self.response.image !== ""){
-                        if(self.response.image["dbName"] == "gallery"){ // gallery
-                            self.page.gallery.splice(self.response.image["array_id"], 1);
+                    if (self.response.image !== "") { // -> image delete event
+
+                        if (self.response.image["dbName"] == "gallery") { //it's gallery image
+                            var data = {
+                                id: self.userId,
+                                pageName: "gallery"
+                            }
+                            socialService.getSubPage(data).then(function (response) {
+                                self.page.gallery = response.data.info["gallery"];
+                                console.log(response.data.info["gallery"]);
+                            });
+                            self.response.image = ""
+                        } else { // it's avatars
+                            var data = {
+                                id: self.userId,
+                                pageName: "uploadAvatar"
+                            }
+                            socialService.getSubPage(data).then(function (response) {
+                                self.page.avatar_url = response.data.info["global_avatars"][0].avatar_url;
+                                self.page.avatars = response.data.info["avatars"];
+                            });
                         }
-                        else{ // avatars
-                            // self.page.avatar_url = "/src/img/users/noUser/avatars/avatar.jpg";
-                            // console.log(self.page.avatar_url);
-                            self.page.avatars.splice(self.response.image["array_id"], 1);   
-                        }    
+                        self.response.image = ""
                     }
                 }
-            
-                 console.log("UPLOAD DATA", self.component_service);
-                //UPLOAD 
+                //UPLOAD BACKGROUND or POST (AVATAR moved to modal.avatar component) 
                 self.uploadPic = function (file, id, phpFileName) {
                     var date = new Date();
                     switch (phpFileName) {
@@ -223,8 +230,8 @@
                                                 self.page.background_url = response.data.info[0].background_url;
                                                 break;
                                         }
-                                        if(self.textarea != null)
-                                        self.textarea.value = null;
+                                        if (self.textarea != null)
+                                            self.textarea.value = null;
                                     });
                                 });
                             }, function (response) {
@@ -253,5 +260,5 @@
             }
         ]
     });
-    
+
 })();

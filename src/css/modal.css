@@ -337,8 +337,13 @@
   margin: 15px;
   display: none;
 }
+
 .cropViewShow{
   display: block;
+}
+.cropViewShow>img{
+  /* width: 400px;
+  height: 400px; */
 }
 form .progress {
   line-height: 15px;

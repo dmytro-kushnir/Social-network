@@ -2,8 +2,8 @@
     var app = angular.module("gallery", ["components", "image-modal"]);
     app.component("gallery", {
         templateUrl: "app/templates/gallery.html",
-        controller: ["$state", "socialService", "$timeout", "storageService", "Upload",'$uibModal',
-            function GalleryCtrl($state, socialService, $timeout, storageService, Upload, $uibModal) {
+        controller: ["$state", "socialService", "$timeout", "storageService", "Upload",'$uibModal','componentService',
+            function GalleryCtrl($state, socialService, $timeout, storageService, Upload, $uibModal,componentService) {
                 /////////////////
                 var self = this;
                 self.page = {}
@@ -31,6 +31,9 @@
                           },
                           index: function(){
                               return index;
+                          },
+                          dbName: function () {
+                              return 'gallery'
                           }
                         }
                       });
@@ -41,6 +44,25 @@
                     else 
                         return false;
                 }
+                 // UPLOAD DATA FROM SIBLING COMPONENT(modal_avatar)
+                 self.response = componentService.get();
+                 self.$doCheck = function () {
+                     if (self.response.image !== "") { // -> image delete event
+                         if (self.response.image["dbName"] == "gallery") { //it's gallery image
+                             var data = {
+                                 id: self.userId,
+                                 pageName: "gallery"
+                             }
+                             socialService.getSubPage(data).then(function (response) {
+                                 self.page.gallery = response.data.info["gallery"];
+                                 console.log(response.data.info["gallery"]);
+                             });
+                             self.response.image = ""
+                         } 
+                         self.response.image = ""
+                     }
+                 }
+                //  UPLOAD IMAGE
                 self.uploadPic = function (file, id) {
                     if (file) {
                     var date = new Date();

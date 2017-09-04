@@ -71,7 +71,7 @@ post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post
         // GALLERY
         $gallery = $Db->selectSqlPrepared("SELECT 
   gallery.id, gallery.sender_name, gallery.sender_url, gallery.image_url, gallery.reciever_url, gallery.image_date, gallery.likes 
-      FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = '$id' ORDER BY gallery.id DESC LIMIT 20");
+      FROM gallery  WHERE id_owner = '$id' ORDER BY gallery.id DESC LIMIT 20");
 
 // GALLERY POSTS
         foreach ($gallery as $key => $value) { // get gallery posts

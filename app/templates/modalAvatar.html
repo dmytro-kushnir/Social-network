@@ -5,7 +5,8 @@
         <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
             <img-crop 
             image="picFile  | ngfDataUrl" 
-            result-image="croppedDataUrl" 
+            result-image="croppedDataUrl"
+            result-image-size="400" 
             ng-init="croppedDataUrl=''">
             </img-crop>
         </div>
@@ -17,26 +18,24 @@
                 accept="image/*"
                 name="file"
                 type="file"
+                ngf-resize="{width: 1000, height: 1000, centerCrop: true}"
                 ng-click="$ctrl.showCropView();">
                     Вибрати фото
                 </button>
                 <button class="btn btn-default submitImage" 
                     ng-click="$ctrl.upload(croppedDataUrl, picFile.name); $ctrl.close(); "
-                    ng-disabled="!form.$valid">
+                    >
                     Завантажити
                 </button>
         </div>  
         <div class="cropView" >
-            <img  ng-show="form.file.$valid" name="image"
+            <img   name="image"
+         
             ng-src="{{croppedDataUrl}}" 
+            ngf-resize="{width: 1000, height: 1000, centerCrop: true}"
             />
         </div>
      
-        <span class="progress" ng-show="$ctrl.progress >= 0">
-                          <div style="width:{{progress}}%" ng-bind="$ctrl.progress + '%'"></div>
-                        </span>
-        <span ng-show="$ctrl.result">Upload Successful</span>
-        <span class="err" ng-show="$ctrl.errorMsg">{{$ctrl.errorMsg}}</span>
     </form>
 
 </div>

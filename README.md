@@ -2,7 +2,7 @@
 
 ### Program overview:
 WELCOME! And be ready to deep into amazing world of communication and sharing!
-Estimate project Release: September 2017
+Estimate project Release: September-October 2017
 
 ### Program specification:
 - Controllers/models. In this app we are using model hierarchy, based on atomic components

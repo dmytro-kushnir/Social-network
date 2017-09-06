@@ -7,11 +7,13 @@
             resolve: '<',
             index: '<'
         },
-        controller: ['$state','socialService' ,'componentService',
-            function OpenModalCtrl($state, socialService ,componentService) {
+        controller: ['$state','storageService','socialService' ,'componentService',
+            function OpenModalCtrl($state,storageService, socialService ,componentService) {
                 ///////////////
                 var self = this;
                 self.userId = $state.params.userId;
+                var pageName = $state.current.name.split(".").pop();
+                self.logginedData = JSON.parse(storageService.get("loginUserData"));
                 console.log(self);
                 self.$onInit = function () {
                     console.log(self.resolve.image);
@@ -21,6 +23,53 @@
                     self.dbName = self.resolve.dbName;
                 };
                 ///////////////
+                self.updateAvatar = function(id, url){
+                    if(pageName == "mainPage"){
+                        var data = {
+                            user_id: self.userId,
+                            image_id: id,
+                            url: url,
+                            pageName: pageName
+                        }
+                    }
+                    else if(pageName == "gallery"){
+                        var data = {
+                            user_id: self.userId,
+                            image_id: id,
+                            url: url,
+                            pageName: pageName,
+                            newAvatar:{
+                                id_owner: self.userId,
+                                image_url: url, //make in server
+                                is_set: 1, //make in server
+                                sender_name: self.logginedData.first_name + " " + self.logginedData.second_name,
+                                sender_url: url,
+                                reciever_url: url,
+                                image_date: dateFormat(new Date(), 'm-d-Y h:i:s'),
+                                likes: 0
+                            }
+                        }
+                    }
+                    socialService.updateAvatar(data).then(function (response) {
+                        var data = {
+                            id: self.userId,
+                            pageName: 'uploadAvatar'
+                        }
+                        socialService.getSubPage(data).then(function (response) {
+                            $state.go('cont.mainPage', {
+                                userId: self.userId
+                            }, {
+                                reload: true
+                            });
+                            componentService.set({
+                                avatar: response
+                            });    
+                        });       
+                    });
+                    
+                }
+
+
                 self.deleteImage = function (array_id, id) {
                     var data = { // prepare data to server send
                         0:{
@@ -35,6 +84,7 @@
                     }
                     console.log("ARRAY ID", array_id);
                     socialService.deleteImage(data).then(function (response) {
+                        console.log(response);
                         componentService.set({
                             image: response.data.info[1]
                         });
@@ -42,7 +92,7 @@
                       
                     });
                 }
-
+                // moving left 
                 self.prevImage = function () {
                     if (self.index > 0) {
                         self.index -= 1;
@@ -52,7 +102,7 @@
                         self.image = self.images[self.index];
                     }
                 };
-
+                // moving right
                 self.nextImage = function () {
                     if (self.index < self.images.length - 1) {
                         self.index += 1;

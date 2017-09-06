@@ -7,19 +7,19 @@
         <!--editing background and page-->
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-            <div class="updateBg pull-left" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
+            <div  class="updateBg pull-left" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
             ngf-select="$ctrl.uploadPic(picFile, $ctrl.page.posts.length, 'uploadBackground'); picFile = null"
               ng-model="picFile" name="file" accept="image/*" ngf-model-invalid="errorFile">
               <span class="media-left">
                           <figure class="changeBgImage"></figure>
                           </span>
               <span class="media-body">
-                            <p class="changeBgText">Оновити обкладинку</p>
+                            <p class="changeBgText ">Оновити обкладинку</p>
                           </span>
             </div>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-            <button class="editProfile btn btn-default  pull-right" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
+            <button class="editProfile btn btn-default  pull-right"  ng-click="" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
 
             <button class="editProfile btn btn-default  pull-right" data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.chatEnter($ctrl.page.id, $index);">Написати повідомлення</button>
           </div>
@@ -43,11 +43,11 @@
       <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
       src="src/img/bgChange.png" alt="upload" ng-click="$ctrl.uploadAvatar();">
       </div>
-
+<!-- if avatar is not set -> show default avatar -->
       <div  class="detailLogo" ng-show="results.length == 0">
       <div class="galleryLink detailLogo" >
           <img  
-            ng-click="" 
+          ng-click="$ctrl.openAvatars(0)"
             ng-src="{{'/src/img/users/noUser/avatars/avatar.jpg'}}"  alt="default" class="profilePhoto img-rounded"  >    
       </div>
       <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 

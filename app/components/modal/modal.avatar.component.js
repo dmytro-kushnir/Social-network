@@ -5,11 +5,10 @@
         transclude: true,
         bindings: {
             close: '&',
-            resolve: '<',
-            cmpName: '@'
+            resolve: '<'
         },
-        controller: ['$state','Upload', '$timeout','socialService' ,'componentService',
-            function OpenModalCtrl($state,Upload, $timeout,socialService ,componentService) {
+        controller: ['$state', 'Upload', '$timeout', 'socialService', 'componentService',
+            function OpenModalCtrl($state, Upload, $timeout, socialService, componentService) {
                 ///////////////
                 var self = this;
                 self.userId = $state.params.userId;
@@ -20,7 +19,7 @@
                 };
 
                 ///////////////
-         
+
                 self.showCropView = function () {
                     var cropView = angular.element(document.querySelector('.cropView'));
                     cropView.addClass('cropViewShow');
@@ -29,36 +28,38 @@
                 }
 
                 self.upload = (dataUrl, name) => {
+                    if (name) {
 
-                    Upload.upload({
-                        url: 'endPoints/uploadAvatar.php',
-                        data: {
-                            "dataArr": self.data,
-                            "file": Upload.dataUrltoBlob(dataUrl, name)
-                        },
-                    }).then(function (response) {
-                        $timeout(function () {
-                            console.log("FILE RESULT", response.data);
-                            var data = {
-                                id: self.userId,
-                                pageName: 'uploadAvatar'
-                            }
-                            socialService.getSubPage(data).then(function (response) {
-                                componentService.set({
-                                    avatar: response
+
+                        Upload.upload({
+                            url: 'endPoints/uploadAvatar.php',
+                            data: {
+                                "dataArr": self.data,
+                                "file": Upload.dataUrltoBlob(dataUrl, name)
+                            },
+                        }).then(function (response) {
+                            $timeout(function () {
+                                console.log("FILE RESULT", response.data);
+                                var data = {
+                                    id: self.userId,
+                                    pageName: 'uploadAvatar'
+                                }
+                                socialService.getSubPage(data).then(function (response) {
+                                    componentService.set({
+                                        avatar: response
+                                    });
+
                                 });
-                                       
-                            });
-                            
-                        });
-                    }, function (response) {
-                        if (response.status > 0) self.errorMsg = response.status +
-                            ': ' + response.data;
-                    }, function (evt) {
-                        self.progress = parseInt(100.0 * evt.loaded / evt.total);
-                    });
-                }
 
+                            });
+                        }, function (response) {
+                            if (response.status > 0) self.errorMsg = response.status +
+                                ': ' + response.data;
+                        }, function (evt) {
+                            self.progress = parseInt(100.0 * evt.loaded / evt.total);
+                        });
+                    }
+                }
             }
         ]
     });

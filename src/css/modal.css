@@ -363,3 +363,9 @@ form .progress {
   background: orange;
   width: 0;
 }
+
+.updateAvatar{
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+}

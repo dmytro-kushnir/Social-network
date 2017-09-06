@@ -3,8 +3,8 @@
     app.component("mainPage", {
         transclude: true,
         templateUrl: "app/templates/mainPage.html",
-        bindings: {
-            cmpName: '@'
+        require: {
+            parentCtrl: "^mainContainer"
         },
         controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', '$uibModal', 'componentService',
             function MainPageCtrl($state, socialService, storageService, Upload, $timeout, $uibModal, componentService) {
@@ -153,6 +153,7 @@
                     if (self.response.avatar !== "") { // -> upload avatar event
                         self.page.avatar_url = self.response.avatar.data.info["global_avatars"][0].avatar_url;
                         self.page.avatars = self.response.avatar.data.info["avatars"];
+                        self.parentCtrl.avatarChange(self.page.avatar_url);
                         self.response.avatar = ""
                     }
                     if (self.response.image !== "") { // -> image delete event
@@ -175,9 +176,16 @@
                             socialService.getSubPage(data).then(function (response) {
                                 self.page.avatar_url = response.data.info["global_avatars"][0].avatar_url;
                                 self.page.avatars = response.data.info["avatars"];
+                                self.parentCtrl.avatarChange(self.page.avatar_url);
                             });
                         }
-                        self.response.image = ""
+                        self.response.image = "";
+                    }
+                    if(self.response.updateAvatar !== ""){ // change avatar to current image event
+                        self.page.avatar_url = self.response.updateAvatar;
+                        console.log(self.response);
+                        self.parentCtrl.avatarChange(self.page.avatar_url);
+                        self.response.updateAvatar = "";
                     }
                 }
                 //UPLOAD BACKGROUND or POST (AVATAR moved to modal.avatar component) 

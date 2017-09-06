@@ -37,6 +37,12 @@
                         console.log(self.users);
                     });
                 }
+                // GET data from child component, when avatar changes
+                self.avatarChange = function(avatar_url){
+                    self.page.avatar_url = avatar_url;
+                }
+            
+                
                 self.subPageEnter = function (pageName) {
                     switch (pageName) {
                         case 'gallery':

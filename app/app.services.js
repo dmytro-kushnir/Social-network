@@ -18,6 +18,9 @@
             },
             deleteImage: function (request) {
                 return $http.post("endPoints/deleteImage.php", request);
+            },
+            updateAvatar: function (request) {
+                return $http.post("endPoints/updateAvatar.php", request);
             }
         };
     });
@@ -78,6 +81,7 @@
         const state = {
           data: {
             avatar: '',
+            updateAvatar: '',
             image:''
           }
         };

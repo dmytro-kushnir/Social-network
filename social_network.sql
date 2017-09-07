@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 11 2017 г., 23:16
+-- Время создания: Сен 05 2017 г., 16:03
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `avatars` (
   `id` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
+  `is_set` tinyint(1) NOT NULL,
   `image_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
@@ -41,11 +42,12 @@ CREATE TABLE `avatars` (
 -- Дамп данных таблицы `avatars`
 --
 
-INSERT INTO `avatars` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
-(1, 1, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '15.12.12 15:38', 1),
-(2, 1, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23),
-(3, 5, '/src/img/users/friend100002/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
-(4, 2, '/src/img/users/friend100001/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23);
+INSERT INTO `avatars` (`id`, `id_owner`, `is_set`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
+(1, 1, 0, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '15.12.12 15:38', 1),
+(2, 1, 0, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23),
+(3, 5, 1, '/src/img/users/friend100002/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
+(4, 2, 1, '/src/img/users/friend100001/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
+(45, 1, 1, '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '09-04-2017 07:16:13', 0);
 
 -- --------------------------------------------------------
 
@@ -91,9 +93,7 @@ CREATE TABLE `chat` (
 
 INSERT INTO `chat` (`id`, `id_owner`, `id_sender`, `sender`, `last_msg_url`, `last_msg_text`, `sender_name`, `chat_date`, `reciever_url`) VALUES
 (1, 1, 2, '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мн', 'Єва Грін', '11.04.06 23:22', '/src/img/users/user/avatars/2.jpg'),
-(2, 1, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/user/avatars/2.jpg'),
-(3, 0, 2, '/src/img/users/friend100001/avatars/avatar.jpg', '', '', 'Єва Грін', '08.11', '/src/img/users/user/avatars/2.jpg'),
-(4, 0, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '', '', 'Дженніфер Лоуренс', '08.11', '/src/img/users/user/avatars/2.jpg');
+(2, 1, 5, '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/user/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/user/avatars/2.jpg');
 
 -- --------------------------------------------------------
 
@@ -138,18 +138,14 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
-(1, 1, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 4),
 (2, 1, '/src/img/users/user/gallery/2.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 45),
 (3, 1, '/src/img/users/user/gallery/3.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 41),
-(4, 1, '/src/img/users/user/gallery/4.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 2),
 (5, 1, '/src/img/users/user/gallery/5.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 0),
 (6, 1, '/src/img/users/user/gallery/6.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 0),
 (7, 1, '/src/img/users/user/gallery/7.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 1),
 (8, 1, '/src/img/users/user/gallery/8.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 2),
 (9, 1, '/src/img/users/user/gallery/9.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 3),
 (10, 1, '/src/img/users/user/gallery/10.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 5),
-(11, 1, '/src/img/users/user/gallery/11.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 2),
-(12, 1, '/src/img/users/user/gallery/12.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 5),
 (13, 1, '/src/img/users/user/gallery/13.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/avatars/2.jpg', '15.11.17 14:31', 4),
 (14, 5, '/src/img/users/friend100002/gallery/1.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (15, 5, '/src/img/users/friend100002/gallery/2.jpg', 'Дженнфіер Лоуренс', '/src/img/users/friend100002/avatars/avatar.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '15.11.17 14:31', 4),
@@ -176,44 +172,13 @@ INSERT INTO `gallery` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url
 (38, 2, '/src/img/users/friend100001/gallery/2.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (39, 2, '/src/img/users/friend100001/gallery/3.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (40, 2, '/src/img/users/friend100001/gallery/4.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
-(41, 2, '/src/img/users/friend100001/gallery/5.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(41, 2, '/src/img/users/friend100001/gallery/5.mp4', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (42, 2, '/src/img/users/friend100001/gallery/6.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
-(43, 2, '/src/img/users/friend100001/gallery/7.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `gallery_users`
---
-
-CREATE TABLE `gallery_users` (
-  `id_gallery` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Дамп данных таблицы `gallery_users`
---
-
-INSERT INTO `gallery_users` (`id_gallery`, `id_user`) VALUES
-(1, 1),
-(2, 1),
-(2, 1),
-(2, 1),
-(2, 1),
-(2, 1),
-(2, 1),
-(3, 1),
-(4, 1),
-(5, 1),
-(6, 1),
-(7, 1),
-(8, 1),
-(9, 1),
-(10, 1),
-(13, 1),
-(14, 1),
-(15, 1);
+(43, 2, '/src/img/users/friend100001/gallery/7.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
+(51, 1, '../src/img/users/user/gallery/11.jpg', 'Доктор Стрендж', '../src/img/users/noUser/avatars/avatar.jpg', '../src/img/users/noUser/avatars/avatar.jpg', '09-04-2017 05:03:25', 0),
+(52, 1, '../src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '../src/img/users/noUser/avatars/avatar.jpg', '../src/img/users/noUser/avatars/avatar.jpg', '09-04-2017 05:03:29', 0),
+(53, 1, '../src/img/users/user/gallery/5.jpg', 'Доктор Стрендж', '../src/img/users/noUser/avatars/avatar.jpg', '../src/img/users/noUser/avatars/avatar.jpg', '09-04-2017 05:03:32', 0),
+(58, 1, '../src/img/users/user/gallery/qzo24qijf5nmpax.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '09-04-2017 07:18:03', 0);
 
 -- --------------------------------------------------------
 
@@ -224,11 +189,11 @@ INSERT INTO `gallery_users` (`id_gallery`, `id_user`) VALUES
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
+  `id_post` int(11) NOT NULL,
   `sender_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `send_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_text` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `post_link` varchar(500) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_image` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -237,8 +202,11 @@ CREATE TABLE `post` (
 -- Дамп данных таблицы `post`
 --
 
-INSERT INTO `post` (`id`, `id_owner`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_link`, `post_image`, `post_likes`) VALUES
-(1, 1, '/src/img/users/friend100002/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)', 'https://my-hit.org/film/415353', '/src/img/users/user/posts/post1/post_image.jpg', 12);
+INSERT INTO `post` (`id`, `id_owner`, `id_post`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
+(1, 1, 0, '/src/img/users/friend100002/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)    https://my-hit.org/film/415353', '/src/img/users/user/posts/post1/post_image.jpg', 12),
+(30, 1, 1, '../src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:38:41', 'wwfes', '../src/img/users/user/posts/14079532_528450687364315_3352630776540591931_n.jpg', 0),
+(52, 5, 0, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 09:20:56', 'це часом не ти?', '../src/img/users/friend100002/posts/17.jpg', 0),
+(63, 2, 0, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '08-26-2017 04:01:05', 'йоу йоу', '../src/img/users/user/posts/', 0);
 
 -- --------------------------------------------------------
 
@@ -254,7 +222,6 @@ CREATE TABLE `postavatars` (
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `send_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_text` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `post_link` varchar(500) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_image` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -263,10 +230,10 @@ CREATE TABLE `postavatars` (
 -- Дамп данных таблицы `postavatars`
 --
 
-INSERT INTO `postavatars` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_link`, `post_image`, `post_likes`) VALUES
-(1, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт!', '', '', 0),
-(2, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт Двічі!', '', '', 0),
-(3, 1, 5, '/src/img/users/friend100001/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Хей привіт Тричі від Дженніфер!', '', '', 0);
+INSERT INTO `postavatars` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
+(1, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт!', '', 0),
+(2, 1, 1, '/src/img/users/friend100001/avatars/avatar.jpg', 'Єва Грін', '13.05.17 14:38', 'Хей привіт Двічі!', '', 0),
+(3, 1, 5, '/src/img/users/friend100001/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Хей привіт Тричі від Дженніфер!', '', 0);
 
 -- --------------------------------------------------------
 
@@ -350,7 +317,6 @@ CREATE TABLE `postgallery` (
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `send_date` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_text` varchar(1000) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
-  `post_link` varchar(500) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_image` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `post_likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -359,9 +325,9 @@ CREATE TABLE `postgallery` (
 -- Дамп данных таблицы `postgallery`
 --
 
-INSERT INTO `postgallery` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_link`, `post_image`, `post_likes`) VALUES
-(1, 1, 1, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'тестове повідомлення самому собі', '', '', 0),
-(2, 1, 6, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'а це повідомлення має бути на шостій фотці', '', '', 0);
+INSERT INTO `postgallery` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
+(1, 1, 1, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'тестове повідомлення самому собі', '', 0),
+(2, 1, 6, '/src/img/users/user/avatars/2.jpg', 'Доктор Стрендж', '13.05.17 14:38', 'а це повідомлення має бути на шостій фотці', '', 0);
 
 -- --------------------------------------------------------
 
@@ -379,24 +345,6 @@ CREATE TABLE `postgallery_users` (
 --
 
 INSERT INTO `postgallery_users` (`id_post`, `id_user`) VALUES
-(1, 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `post_users`
---
-
-CREATE TABLE `post_users` (
-  `id_post` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Дамп данных таблицы `post_users`
---
-
-INSERT INTO `post_users` (`id_post`, `id_user`) VALUES
 (1, 1);
 
 -- --------------------------------------------------------
@@ -421,7 +369,7 @@ INSERT INTO `users` (`userId`, `userFirstName`, `userSecondName`, `userEmail`, `
 (1, 'test', 'test', 'test@test_om', '123456'),
 (2, 'Медвідь', 'Анна', 'medvidanja94@gmail_com', '123456'),
 (5, 'Dmytro', 'Kushnir', 'dimakush1@gmail_com', '123445'),
-(10, 're', 'fds', 'regstarrr@ukr.net', 'fffffff');
+(10, 're', 'fds', 'regstarrr@ukr.net', '1234');
 
 -- --------------------------------------------------------
 
@@ -452,9 +400,9 @@ CREATE TABLE `users_data` (
 --
 
 INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`, `chat`) VALUES
-(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '/src/img/users/user/backgrounds/bg.jpg', '/src/img/users/user/avatars/2.jpg', '2,5', '0', '', '', ''),
-(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '/src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', '', ''),
-(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '/src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '', '');
+(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '../src/img/users/user/backgrounds/bg.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '2,5', '0', '', '', ''),
+(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '../src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', '', ''),
+(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '../src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -491,13 +439,6 @@ ALTER TABLE `chat_users`
 --
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `gallery_users`
---
-ALTER TABLE `gallery_users`
-  ADD KEY `id_gallery` (`id_gallery`),
-  ADD KEY `id_user` (`id_user`);
 
 --
 -- Индексы таблицы `post`
@@ -545,13 +486,6 @@ ALTER TABLE `postgallery_users`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Индексы таблицы `post_users`
---
-ALTER TABLE `post_users`
-  ADD KEY `id_post` (`id_post`),
-  ADD KEY `id_user` (`id_user`);
-
---
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
@@ -571,22 +505,22 @@ ALTER TABLE `users_data`
 -- AUTO_INCREMENT для таблицы `avatars`
 --
 ALTER TABLE `avatars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT для таблицы `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT для таблицы `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT для таблицы `postavatars`
 --
@@ -631,13 +565,6 @@ ALTER TABLE `chat_users`
   ADD CONSTRAINT `chat_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `gallery_users`
---
-ALTER TABLE `gallery_users`
-  ADD CONSTRAINT `gallery_users_ibfk_1` FOREIGN KEY (`id_gallery`) REFERENCES `gallery` (`id`),
-  ADD CONSTRAINT `gallery_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
-
---
 -- Ограничения внешнего ключа таблицы `postavatars_users`
 --
 ALTER TABLE `postavatars_users`
@@ -657,13 +584,6 @@ ALTER TABLE `postchat_users`
 ALTER TABLE `postgallery_users`
   ADD CONSTRAINT `postgallery_users_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `postgallery` (`id`),
   ADD CONSTRAINT `postgallery_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
-
---
--- Ограничения внешнего ключа таблицы `post_users`
---
-ALTER TABLE `post_users`
-  ADD CONSTRAINT `post_users_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `post` (`id`),
-  ADD CONSTRAINT `post_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `users_data`

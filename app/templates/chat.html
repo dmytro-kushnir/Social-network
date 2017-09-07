@@ -1,11 +1,16 @@
 
 
 <div class="searchBlock">
+        <input placeholder="search" class="form-control" data-ng-model="search"> 
+                <span class="input-group-btn">
+       
+               </span>
     <figure class="searchIcon"></figure>
-    <span class="searchText">Пошук</span>
+    
 </div>
 
-    <a class="userChatBlock animated fadeIn " ng-click="chatEnter(chat.id_sender, $index, 'chat');"  ng-repeat="chat in subPage.chat track by $index" >
+    <a class="userChatBlock animated fadeIn " ng-click="$ctrl.chatEnter(chat.id_sender, $index);"  
+        ng-repeat="chat in $ctrl.page.chat | filter:search track by $index" >
         <div class="chatWrapper" >
             <img class="userChatPhoto" ng-src="{{chat.sender}}" ng-if="chat.sender" alt="sender">
             <span class="userNameChat">{{chat.sender_name}}</span>

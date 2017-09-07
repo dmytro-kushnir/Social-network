@@ -8,6 +8,14 @@
 @extraLarge: ~"(min-width: 999px)";
 ///////////////////////// 
 @media @tablet {
+    .searchBlockHeader{
+        width: 50vw;
+        margin-top: -50px;
+        padding: 10px 20px 10px 30px;
+    }
+    .dropdownMenuSearch{
+        width: 43vw;
+    }
     .userChatPanel{
         display: none;
     }
@@ -151,6 +159,12 @@
 
 /////////////////////////  
 @media @desktop {
+    .detailLogo+img {
+        top: 50px;   
+    }
+    .dropdownMenuSearch{
+        margin-left: 40px !important;
+    }
     .navbar-brand {
     display: block !important ;
     }
@@ -213,6 +227,13 @@
 
 ///////////////////////// 
 @media @extraSmall {
+    .imageContainer{
+        text-align: center;
+    }
+    .searchBlockHeader{
+
+        padding: 10px 0px 10px 10px;
+    }
     .mainRouter{
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -273,8 +294,9 @@
     }
     .profilePhoto {
         width: 200px;
+        height: 200px;
         max-width: 100%;
-        height: auto;
+        // height: auto;
         width: auto\9; //IE 8
          margin-left:auto;
    margin-right:auto;
@@ -315,6 +337,7 @@
 
 /////
 @media @medium {
+  
     // MODAL START
      .modal-dialog{
         width: 700px !important ;
@@ -363,7 +386,7 @@
         display: block !important;
     }
     .TabletTextArea {
-        height: 35px;
+        height: 40px;
         width: 60%;
     }
     .TabletComment {

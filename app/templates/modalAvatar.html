@@ -1,0 +1,42 @@
+<div class="modal-body">
+     <figure class="crossModal pull-right" aria-label="Close" ng-click="$ctrl.close()"></figure>
+    <form name="form" class="avatarForm">
+        <h4>Відредагуйте ваше зображення</h4>
+        <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+            <img-crop 
+            image="picFile  | ngfDataUrl" 
+            result-image="croppedDataUrl"
+            result-image-size="400" 
+            ng-init="croppedDataUrl=''">
+            </img-crop>
+        </div>
+       
+        <div class="submitBtns">
+                <button class="btn btn-default" 
+                ngf-select 
+                ng-model="picFile" 
+                accept="image/*"
+                name="file"
+                type="file"
+                ngf-resize="{width: 1000, height: 1000, centerCrop: true}"
+                ng-click="$ctrl.showCropView();">
+                    Вибрати фото
+                </button>
+                <button class="btn btn-default submitImage" 
+                    ng-click="$ctrl.upload(croppedDataUrl, picFile.name); $ctrl.close();"
+                    >
+                    Завантажити
+                </button>
+        </div>  
+        <div class="cropView" >
+            <img   name="image"
+         
+            ng-src="{{croppedDataUrl}}" 
+            ngf-resize="{width: 1000, height: 1000, centerCrop: true}"
+            />
+        </div>
+     
+    </form>
+
+</div>
+

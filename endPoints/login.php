@@ -10,6 +10,7 @@ $Db = new \Db\Db();
   $num = $query->fetchAll(PDO::FETCH_ASSOC);
   $userInfo = null;
 <<<<<<< HEAD
+<<<<<<< HEAD
   $data_arr = null;
   
   if(!empty($data)){
@@ -54,6 +55,9 @@ if (!empty($data)) {
         $success = true;
 >>>>>>> origin/master
     ///////////////////////////////////
+=======
+
+>>>>>>> d5bf4b58041411531532a5f78c3f86f0fcd15145
     } else {
         $userInfo = "Користувача з таким емейлом, або паролем не існує";
         $success= false;

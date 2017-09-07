@@ -9,6 +9,7 @@ $Db = new \Db\Db();
   $query->execute();
   $num = $query->fetchAll(PDO::FETCH_ASSOC);
   $userInfo = null;
+<<<<<<< HEAD
   $data_arr = null;
   
   if(!empty($data)){
@@ -45,42 +46,22 @@ $Db = new \Db\Db();
     }
     $data_arr[0]["avatars"] = $avatars;
 
+=======
+  $id = null;
+if (!empty($data)) {
+    if ($num[0]['counter'] > 0) {
+        $id = 1; //АНЯ.  знайди айдішку по логінуванню і передавай сюди
+        $success = true;
+>>>>>>> origin/master
     ///////////////////////////////////
-
-    // USER POSTS
-    $posts = $Db->selectSqlPrepared("SELECT 
-        post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_link, post.post_image, post.post_likes
-          FROM post INNER JOIN users_data ON users_data.id=post.id WHERE id_owner = 1");
-    $data_arr[0]["posts"] = $posts;
-
-    ///////////////////////////////////
-
-    // GALLERY
-    $gallery = $Db->selectSqlPrepared("SELECT 
-      gallery.id, gallery.sender_name, gallery.sender_url, gallery.image_url, gallery.reciever_url, gallery.image_date, gallery.likes 
-          FROM gallery INNER JOIN users_data ON users_data.id=gallery.id_owner WHERE id_owner = 1 LIMIT 20");
-
-    // GALLERY POSTS
-    foreach($gallery as $key => $value){ // get gallery posts
-      $posts = $Db->selectSqlPrepared("SELECT 
-      postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_link, postgallery.post_image, postgallery.post_likes
-          FROM postgallery INNER JOIN users_data ON users_data.id=postgallery.id WHERE id_image = '$value[id]'");
-          $gallery[$key]["posts"] = $posts;
-            $gallery[$key]["id"] = $key+1;
+    } else {
+        $userInfo = "Користувача з таким емейлом, або паролем не існує";
+        $success= false;
     }
-    $data_arr[0]["gallery"] = $gallery;
-
-    $success = true;
-    ///////////////////////////////////
-
-  }else{
-      $userInfo = "Користувача з таким емейлом, або паролем не існує";
-      $success= false;
-    }
-  }
+}
  $result = [
         'success' => $success,
-        'info' => $data_arr[0],
+        'id' => $id,
         'userInfo'=>$userInfo,
         'errors' => []
     ];

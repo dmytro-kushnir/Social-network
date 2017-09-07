@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="src/css/galleryAdditional.css">
-<div ng-init="initialised=true;" class="animated fadeIn " class="galleryContainer" ng-controller="OpenModalCtrl as openModal">
-    <div deckgrid class="deckgrid clearfix" source="subPage.gallery">
+<div ng-init="initialised=true;" class="animated fadeIn " class="galleryContainer">
+    <div deckgrid class="deckgrid clearfix" source="$ctrl.page.gallery">
         <div class="a-card " >
-            <a  data-ng-click="mother.openGallery(card.$index,'subPage')" >
+            <a  data-ng-click="mother.$ctrl.open(card.$index,'$ctrl.page')" >
             <img  alt="gallery item {{card.$index}}" data-ng-src="{{card.image_url}}" class="img-responsive galleryImg">
             </a>
         </div>
@@ -27,10 +27,19 @@
 
 </div>-->
 
-<div class="row navbar navbarGallery navbar-fixed-bottom">
+<div class="row navbar navbarGallery navbar-fixed-bottom" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-        <div class="galleryInput">
-            <button type="button" class="btn btn-default btnGallery ">Добавити Фото/Відео</button>
+        <div class="galleryInput"
+        type="file"  
+        ngf-select="$ctrl.uploadPic(picFile, $ctrl.page.posts.length); picFile = null" 
+         ng-model="picFile"  
+        name="file" 
+        accept="image/*" 
+        ngf-model-invalid="errorFile">
+            <button type="button" class="btn btn-default btnGallery "
+          
+            >
+            Добавити Фото/Відео</button>
             <figure class="commentImage ImageGallery"></figure>
         </div>
     </div>

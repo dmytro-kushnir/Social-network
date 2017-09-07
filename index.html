@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="socialNetwork">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Normalize.css-->
-    <link rel="stylesheet" href="src/css/normalize.css">
-    <!--User styles-->
-    <link rel="stylesheet" href="src/build/style.css" type="text/css">
-    <link rel="stylesheet" href="src/build/modal.css" type="text/css">
-    <link rel="stylesheet" href="src/build/gallery.css" type="text/css">
-    <link rel="stylesheet" href="src/css/pageFriendsStyle.css" type="text/css">
-    <link rel="stylesheet" href="src/build/chat.css" type="text/css">
-    <link rel="stylesheet" href="src/build/lessStyle.css" type="text/css">
-    <link rel="stylesheet" href="src/css/stylefrondAvtorize.css" type="text/css">
-    <!--Styles libs-->
-    <link rel="stylesheet" href="src/css/measonryQueries.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-lightbox/0.12.0/angular-bootstrap-lightbox.min.css">
-    <link rel="stylesheet" href="src/css/angular-carousel.css">
-    <link rel="stylesheet" href="src/css/animate.css">
-    <!--Favicon-->
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    <!--Title-->
-    <title ng-bind="title"></title>
-    <!--Script Libs-->
-    <!-- jQuery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--    Jquery plugin for touch devices-->
-    <script src="src/js/touchswipe.min.js"></script>
-    <script src="src/js/swipeMobile.js"></script>
-    <!-- AngularJs-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script src="src/libs/angular/ng-videosharing-embed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-lightbox/0.12.0/angular-bootstrap-lightbox.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.6.4/angular-touch.min.js"></script>
-    <script src="src/libs/angular/angular-carousel.js"></script>
-    <script src="src/libs/angular/angular-deckgrid.js"></script>
-    <script src="src/js/dateFormat.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-cookies.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload-shim.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.js"></script>
-    <!--    change textarea size plugin-->
-    <script src="src/libs/angular/elastic.js"></script>
-    <!--App-->
-    <script src="app/app.js"></script>
-    <!--Controllers/Directives-->
-    <script src="app/controllers/navigation.controller.js"></script>
-    <script src="app/controllers/mainController.controler.js"></script>
-    <script src="app/controllers/mainPage.controller.js"></script>
-    <script src="app/controllers/registration.controller.js"></script>
-    <script src="app/controllers/chatUser.controller.js"></script>
-    <script src="app/controllers/friends.controller.js"></script>
-    <script src="app/controllers/modal.controller.js"></script>
-    <script src="app/controllers/userPage.controller.js"></script>
-    <script src="app/directives.js"></script>
-</head>
-<body ng-controller="MainCtrl as mainCtrl" ng-cloak>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Cache-control" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--Normalize.css-->
+        <link rel="stylesheet" href="src/css/normalize.css">
+        <!--User styles-->
+        <link rel="stylesheet" href="src/build/style.css" type="text/css">
+        <link rel="stylesheet" href="src/build/modal.css" type="text/css">
+        <link rel="stylesheet" href="src/build/gallery.css" type="text/css">
+        <link rel="stylesheet" href="src/css/pageFriendsStyle.css" type="text/css">
+        <link rel="stylesheet" href="src/build/chat.css" type="text/css">
+        <link rel="stylesheet" href="src/css/ng-img-crop.css" type="text/css">
+        <link rel="stylesheet" href="src/build/lessStyle.css" type="text/css">
+        <link rel="stylesheet" href="src/css/stylefrondAvtorize.css" type="text/css">
+        <!--Styles libs-->
+        <link rel="stylesheet" href="src/css/measonryQueries.css">
+        <link rel="stylesheet" href="src/css/bootstrap.min.css">
+        <link rel="stylesheet" href="src/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="src/css/font-awesome.min.css">
+        <link rel="stylesheet" href="src/css/angular-carousel.css">
+        <link rel="stylesheet" href="src/css/animate.css">
+        <!--Favicon-->
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+        <!--Title-->
+        <title ng-bind="title"></title>
+        <!--Script Libs-->
+        <!-- jQuery-->
+        <script src="src/libs/jQuery/jquery.min.js"></script>
+        <!--    Jquery plugin for touch devices-->
+        <script src="src/js/touchswipe.min.js"></script>
+        <script src="src/js/swipeMobile.js"></script>
+        <!-- bootstrap Js -->
+        <script src="src/js/bootstrap.min.js"></script>
+        <!-- AngularJs-->
+        <script src="src/libs/angular/angular.min.js"></script>
+        <script src="src/libs/angular/angular-css.js"></script>
+        <script src="src/libs/angular/angular-ui-router.min.js"></script>
+        <script src="src/libs/angular/angular-animate.min.js"></script>
+        <script src="src/libs/angular/ui-bootstrap-tpls.min.js"></script>
+        <script src="src/libs/angular/ng-videosharing-embed.min.js"></script>
+        <script src="src/libs/angular/angular-touch.min.js"></script>
+        <script src="src/libs/angular/angular-carousel.js"></script>
+        <script src="src/libs/angular/angular-deckgrid.js"></script>
+        <script src="src/js/dateFormat.min.js"></script>
+        <script src="src/libs/angular/angular-cookies.min.js"></script>
+        <script src="src/libs/angular/ng-file-upload-shim.js"></script>
+        <script src="src/libs/angular/ng-file-upload.js"></script>
+        <script src="src/libs/angular/angular-sanitize.min.js"></script>
+        <script src="src/libs/angular/toArrayFilter.js"></script>
+        <script src="src/libs/angular/ng-img-crop.js"></script>
+        <!--    change textarea size plugin-->
+        <script src="src/libs/angular/elastic.js"></script>
+        <!--App-->
+        <script src="app/app.modules.js"></script>
+        <script src="app/app.services.js"></script>
+        <script src="app/app.config.js"></script>
+        <!--Components-->
+        <script src="app/components/mainContainer.component.js"></script>
+        <script src="app/components/mainPage.component.js"></script>
+        <script src="app/components/registration.component.js"></script>
+            <!-- Sub pages -->
+            <script src="app/components/gallery/gallery.component.js"></script>
+            <script src="app/components/friends/friends.component.js"></script>
+            <script src="app/components/chat/chat.component.js"></script>
+            <script src="app/components/chat/chatUser.component.js"></script>
+            <script src="app/components/modal/modal.image.component.js"></script>
+            <script src="app/components/modal/modal.avatar.component.js"></script>
+            <!--Sub Pages End-->
+        <!--Components End-->
+        <script src="app/directives.js"></script>
+    </head>
+<body ng-cloak>
     <ui-view />
 </body>
-</html>
+</html>	

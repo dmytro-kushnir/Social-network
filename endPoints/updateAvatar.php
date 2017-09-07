@@ -16,7 +16,7 @@ $data = json_decode(file_get_contents('php://input'), true);
  
     $dataIsSet['is_set'] = 0;
     $insertId = $Db->updateSql('avatars', $dataIsSet, "id_owner = " . $user_id['id']); // NULL all isset before update avatar
-  if($page_name == 'mainPage'){
+  if($page_name == 'avatars'){
     $dataIsSet['is_set'] = 1;
     $image_id['id'] = $data['image_id'];
     $insertId = $Db->updateSql('avatars', $dataIsSet, "id = " . $image_id['id']); // asing is_set to updated image("1")

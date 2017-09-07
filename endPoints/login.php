@@ -13,7 +13,7 @@ $Db = new \Db\Db();
   
   if(!empty($data)){
     if($num[0]['counter'] > 0){
-  
+     
       // GET ALL GENERAL DATA
       $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE id = '1'");
 

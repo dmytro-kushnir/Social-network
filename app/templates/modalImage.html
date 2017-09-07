@@ -23,7 +23,7 @@
                              <img class="modalSenderPhoto" ng-src="{{$ctrl.image.sender_url}}" alt="image" />
                              <h4 class="modalUserName">{{$ctrl.image.sender_name}}</h4>
                              <h5><span class='glyphicon glyphicon-time'></span>{{$ctrl.image.image_date}}</h5>
-                             <p class="updateAvatar" ng-click="$ctrl.updateAvatar($ctrl.image.id, $ctrl.image.image_url); $ctrl.close();">Зробити фотографією профіля<p>
+                             <p class="updateAvatar" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.updateAvatar($ctrl.image.id, $ctrl.image.image_url); $ctrl.close();">Зробити фотографією профіля<p>
                          </article>
                          <article class="modalLike">
                              <div>

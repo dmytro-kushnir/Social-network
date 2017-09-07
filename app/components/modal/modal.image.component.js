@@ -12,32 +12,42 @@
                 ///////////////
                 var self = this;
                 self.userId = $state.params.userId;
-                var pageName = $state.current.name.split(".").pop();
+                self.logginedId = storageService.get("userId");
                 self.logginedData = JSON.parse(storageService.get("loginUserData"));
                 console.log(self);
                 self.$onInit = function () {
-                    console.log(self.resolve.image);
+                    console.log(self.resolve);
+                    self.dbName = self.resolve.dbName;
                     self.images = self.resolve.image;
                     self.index = self.resolve.index;
-                    self.image = self.images[self.index];
-                    self.dbName = self.resolve.dbName;
+                    self.image = self.images[self.index]; 
                 };
                 ///////////////
+                
+                self.isLoggined = function (targetId, logginedId) {
+                    if (targetId == logginedId)
+                        return true;
+                    else
+                        return false;
+                }
+          
                 self.updateAvatar = function(id, url){
-                    if(pageName == "mainPage"){
+                    console.log(self.dbName);
+                    if(self.dbName == 'avatars'){
                         var data = {
                             user_id: self.userId,
                             image_id: id,
                             url: url,
-                            pageName: pageName
+                            pageName: self.dbName
                         }
                     }
-                    else if(pageName == "gallery"){
+                    
+                    else if(self.dbName == 'gallery'){
                         var data = {
                             user_id: self.userId,
                             image_id: id,
                             url: url,
-                            pageName: pageName,
+                            pageName: self.dbName,
                             newAvatar:{
                                 id_owner: self.userId,
                                 image_url: url, //make in server
@@ -56,11 +66,14 @@
                             pageName: 'uploadAvatar'
                         }
                         socialService.getSubPage(data).then(function (response) {
-                            $state.go('cont.mainPage', {
-                                userId: self.userId
-                            }, {
-                                reload: true
-                            });
+                            if(pageName == "gallery"){
+                                $state.go('cont.mainPage', {
+                                    userId: self.userId
+                                }, {
+                                    reload: true
+                                });
+                            }
+                         
                             componentService.set({
                                 avatar: response
                             });    

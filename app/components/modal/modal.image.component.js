@@ -66,7 +66,7 @@
                             pageName: 'uploadAvatar'
                         }
                         socialService.getSubPage(data).then(function (response) {
-                            if(pageName == "gallery"){
+                            if(self.dbName == "gallery"){
                                 $state.go('cont.mainPage', {
                                     userId: self.userId
                                 }, {

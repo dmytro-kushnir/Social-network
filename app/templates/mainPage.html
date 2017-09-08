@@ -42,6 +42,7 @@
       </div>
       <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
       src="src/img/bgChange.png" alt="upload" ng-click="$ctrl.uploadAvatar();">
+      <p class="updateBgText" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)"  ng-click="$ctrl.uploadAvatar();">Оновити</p>
       </div>
 <!-- if avatar is not set -> show default avatar -->
       <div  class="detailLogo" ng-show="results.length == 0">

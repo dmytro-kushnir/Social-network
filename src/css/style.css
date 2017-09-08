@@ -438,7 +438,21 @@ body {
 .detailLogo:hover {
     cursor: pointer;
 }
-
+.updateBgText{
+    
+      position: absolute;
+       top: 80px;
+       left: 70px;
+       z-index: 2;
+       color: lavender;
+       font-weight: 600;
+       font-size: 2rem;
+       display: none !important;
+   }
+   
+   .detailLogo:hover .updateBgText {
+       display: block !important;
+   }
 /*Friends and photo count*/
 
 .friendsAndPhoto * {

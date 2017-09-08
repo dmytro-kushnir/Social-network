@@ -90,7 +90,15 @@
                     file.upload.then(function (response) {
                         $timeout(function () {
                             console.log("FILE RESULT", response.data);
-                            self.page.gallery.unshift(response.data.info);
+                            var data = {
+                                id: self.userId,
+                                pageName: "gallery"
+                            }
+                            socialService.getSubPage(data).then(function (response) {
+                                console.log(response);
+                                self.page.gallery = response.data.info["gallery"];
+                                console.log(response.data.info["gallery"]);
+                            });
                         });
                     }, function (response) {
                         if (response.status > 0)

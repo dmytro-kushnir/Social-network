@@ -29,6 +29,8 @@
 
                 self.upload = (dataUrl, name) => {
                     if (name) {
+
+
                         Upload.upload({
                             url: 'endPoints/uploadAvatar.php',
                             data: {
@@ -46,7 +48,9 @@
                                     componentService.set({
                                         avatar: response
                                     });
+
                                 });
+
                             });
                         }, function (response) {
                             if (response.status > 0) self.errorMsg = response.status +

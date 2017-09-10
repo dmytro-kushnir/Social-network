@@ -40,6 +40,9 @@ body {
     height: 30px;
     width: auto;
     margin-top: -10px !important;
+    cursor: pointer;
+    z-index: 2;
+    pointer-events: all;
 }
 
 .navbar {

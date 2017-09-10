@@ -28,9 +28,8 @@ function random_string($length) {
   
   $dataBg['background_url'] = $data['background_url'];
  
-  $insertId = $Db->updateSql('users_data', $dataBg, $data['id']);
-
- 
+  $insertId = $Db->updateSql('users_data', $dataBg, "id = " . $data['id']); // UPDATE
+  
 
   $result = [
     'info' => $data,

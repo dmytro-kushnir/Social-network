@@ -101,6 +101,22 @@
                                 $rootScope.title = $rootScope.chatTitle;
                             }]
                         }
+                    })
+                    .state("cont.changeInfo", {
+                        url: '/changeInfo/:userId',
+                        params: {
+                            userId:null
+                        },
+                        views:{
+                            'changeInfo@cont':{
+                                template: '<change-info></change-info>',
+                            }
+                        },
+                        resolve: {
+                            'title': ['$rootScope', function($rootScope){
+                                $rootScope.title = "Змінити інформацію";
+                            }]
+                        }
                     });
                     $urlRouterProvider.otherwise(function ($injector, $location) {
                         var $state = $injector.get('$state');

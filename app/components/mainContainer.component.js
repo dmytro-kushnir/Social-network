@@ -6,7 +6,8 @@
         "gallery",
         "friends",
         "chat",
-        'angular-toArrayFilter'
+        "angular-toArrayFilter",
+        "change-info"     
     ]);
     app.component("mainContainer", {
         templateUrl: "app/templates/mainContainer.html",

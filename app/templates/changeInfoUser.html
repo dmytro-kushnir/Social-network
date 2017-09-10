@@ -1,0 +1,33 @@
+<div>
+    <form class="infoBlock">
+        <label for="firstName" class="infoBlock_label">
+            Ім’я:
+            <input type="text" name="firstName" id="firstName" ng-model="$ctrl.changeInfo.firstName" class="infoBlock_input">
+        </label>
+        <label for="surName" class="infoBlock_label">
+            Прізвище:
+            <input type="text" name="surName" id="surName" ng-model="$ctrl.changeInfo.surName" class="infoBlock_input">
+        </label>
+        <label for="emeil" class="infoBlock_label">
+            Email:
+            <input type="email" name="email" id="emeil" ng-model="$ctrl.changeInfo.email" class="infoBlock_input">
+        </label>
+        <label for="bDay" class="infoBlock_label">
+            День Народження:
+            <input type="date" name="bDay" id="bDay" ng-model="$ctrl.changeInfo.bDay" class="infoBlock_input"> 
+        </label>
+        <label for="city" class="infoBlock_label">
+            Рідне місто:
+            <input type="text" name="city" id="city" ng-model="$ctrl.changeInfo.city" class="infoBlock_input">
+        </label>
+        <label for="education" class="infoBlock_label">
+            Освіта:
+            <input type="text" name="education" id="education" ng-model="$ctrl.changeInfo.education" class="infoBlock_input">
+        </label>
+        <label for="phoneNumber" class="infoBlock_label">
+            Моб. телефон:
+            <input type="tel" name="phoneNumber" id="phoneNumber" ng-model="$ctrl.changeInfo.phoneNumber" class="infoBlock_input">
+        </label>
+        <button type="button" ng-click="$ctrl.saveChange()" class="changeBtn">Змінити</button>
+    </form>
+</div>

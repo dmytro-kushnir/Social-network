@@ -146,7 +146,14 @@
                         }
                     });
                 }
-
+                self.editPage = function(){
+                    console.log("hey!!!!!!!!!!!");
+                    $state.go('cont.changeInfo', {
+                        userId: self.userId
+                    }, {
+                        reload: true
+                    });
+                }
                 // UPLOAD DATA FROM SIBLING COMPONENT(modal_avatar)
                 self.response = componentService.get();
                 self.$doCheck = function () {

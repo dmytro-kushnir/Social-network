@@ -10,8 +10,12 @@ $Db = new \Db\Db();
   $num = $query->fetchAll(PDO::FETCH_ASSOC);
   $userInfo = null;
   $id = null;
+
+
 if (!empty($data)) {
     if ($num[0]['counter'] > 0) {
+        
+         
         $id = 1; //АНЯ.  знайди айдішку по логінуванню і передавай сюди
         $success = true;
     ///////////////////////////////////

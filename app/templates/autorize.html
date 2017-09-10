@@ -69,7 +69,7 @@
                     <p class="error" ng-show="registration.password.$invalid && registration.password.$touched">Пароль має містити мінімум 6 символів</p>
 					<button type="button" ng-click="$ctrl.singUserUp()" class="form_button" ng-disabled="registration.$invalid" >Приєднуйся!</button>
                 </div>
-                <p>{{userInfo}}</p>
+                <p>{{$ctrl.userInfo}}</p>
             </form>
                 
         </article>

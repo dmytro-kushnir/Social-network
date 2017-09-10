@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-            <button class="editProfile btn btn-default  pull-right"  ng-click="" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
+            <button class="editProfile btn btn-default  pull-right"  ng-click="$ctrl.editPage();" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
 
             <button class="editProfile btn btn-default  pull-right" data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.chatEnter($ctrl.page.id, $index);">Написати повідомлення</button>
           </div>
@@ -105,7 +105,7 @@
             </a>
           </div>
           <!--user friends and photo count-->
-          <div style="">
+          <div>
             <p><a style="text-decoration:none; color:black;" ng-click="$ctrl.mainPageFrGal($ctrl.userId, 'gallery')">Галерея</a></p>
             <a ng-click="$ctrl.mainPageFrGal($ctrl.userId, 'gallery')">
               <figure class="friendsAndPhotoIcon galleryIco"></figure>

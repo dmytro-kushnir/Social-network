@@ -21,6 +21,12 @@
             },
             updateAvatar: function (request) {
                 return $http.post("endPoints/updateAvatar.php", request);
+            },
+            changeUserInfo: function(request){
+                return $http.post("endPoints/updateUserInfo.php", request);
+            },
+            editUserData: function(request){
+                return $http.post("endPoints/editUserData.php", request);
             }
         };
     });

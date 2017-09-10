@@ -9,6 +9,9 @@ html {
 body {
     height: 100%;
 }
+.wrapper{
+    height: 100%;
+}
 /*header*/
 button[disabled="disabled"]{
 	opacity: 0.5;

@@ -285,6 +285,7 @@ button[disabled="disabled"]{
         background: url("../img/avtorizbackground.jpg");
         background-size: auto;
         padding: 120px 0 170px 100px;
+        min-height: 92vh;
         }
     .main_enter{
         display: none;

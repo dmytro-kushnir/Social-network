@@ -13,6 +13,8 @@
     font-family: Helvetica, Arial;
 }
 .infoBlock_label{
+    font-size: 14px;
+    font-family: Helvetica, Arial;
     display: flex;
     flex-direction: column;
     margin: 0 0 15px 0;
@@ -22,6 +24,7 @@
     border-bottom: 1px solid rgb(61, 61, 61);
     width: 95%;
     margin: 10px 0 0;
+    outline: none;
 }
 .changeBtn{
     font-family: Helvetica;

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Сен 05 2017 г., 16:03
--- Версия сервера: 10.1.21-MariaDB
--- Версия PHP: 5.6.30
+-- Час створення: Вер 12 2017 р., 20:21
+-- Версія сервера: 10.1.21-MariaDB
+-- Версія PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `social_network`
+-- База даних: `social_network`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `avatars`
+-- Структура таблиці `avatars`
 --
 
 CREATE TABLE `avatars` (
@@ -39,7 +39,7 @@ CREATE TABLE `avatars` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `avatars`
+-- Дамп даних таблиці `avatars`
 --
 
 INSERT INTO `avatars` (`id`, `id_owner`, `is_set`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
@@ -47,12 +47,14 @@ INSERT INTO `avatars` (`id`, `id_owner`, `is_set`, `image_url`, `sender_name`, `
 (2, 1, 0, '/src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23),
 (3, 5, 1, '/src/img/users/friend100002/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '/src/img/users/friend100002/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
 (4, 2, 1, '/src/img/users/friend100001/avatars/avatar.jpg\r\n', 'Дженніфер Лоуренс ', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '14.11.11 14:34', 23),
-(45, 1, 1, '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '09-04-2017 07:16:13', 0);
+(45, 1, 0, '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '09-04-2017 07:16:13', 0),
+(46, 1, 0, '../src/img/users/user/avatars/ametxmh4v36hx1z.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/ametxmh4v36hx1z.jpg', '../src/img/users/user/avatars/ametxmh4v36hx1z.jpg', '09-10-2017 04:27:36', 0),
+(47, 1, 1, '../src/img/users/user/avatars/fhy8yjpnpv8vwtg.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/fhy8yjpnpv8vwtg.jpg', '../src/img/users/user/avatars/fhy8yjpnpv8vwtg.jpg', '09-11-2017 08:38:54', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `avatars_users`
+-- Структура таблиці `avatars_users`
 --
 
 CREATE TABLE `avatars_users` (
@@ -61,7 +63,7 @@ CREATE TABLE `avatars_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `avatars_users`
+-- Дамп даних таблиці `avatars_users`
 --
 
 INSERT INTO `avatars_users` (`avatar_id`, `user_id`) VALUES
@@ -72,7 +74,7 @@ INSERT INTO `avatars_users` (`avatar_id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `chat`
+-- Структура таблиці `chat`
 --
 
 CREATE TABLE `chat` (
@@ -88,7 +90,7 @@ CREATE TABLE `chat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `chat`
+-- Дамп даних таблиці `chat`
 --
 
 INSERT INTO `chat` (`id`, `id_owner`, `id_sender`, `sender`, `last_msg_url`, `last_msg_text`, `sender_name`, `chat_date`, `reciever_url`) VALUES
@@ -98,7 +100,7 @@ INSERT INTO `chat` (`id`, `id_owner`, `id_sender`, `sender`, `last_msg_url`, `la
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `chat_users`
+-- Структура таблиці `chat_users`
 --
 
 CREATE TABLE `chat_users` (
@@ -107,7 +109,7 @@ CREATE TABLE `chat_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `chat_users`
+-- Дамп даних таблиці `chat_users`
 --
 
 INSERT INTO `chat_users` (`id_chat`, `id_user`) VALUES
@@ -119,7 +121,7 @@ INSERT INTO `chat_users` (`id_chat`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gallery`
+-- Структура таблиці `gallery`
 --
 
 CREATE TABLE `gallery` (
@@ -131,10 +133,10 @@ CREATE TABLE `gallery` (
   `reciever_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `image_date` varchar(50) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `likes` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Дамп данных таблицы `gallery`
+-- Дамп даних таблиці `gallery`
 --
 
 INSERT INTO `gallery` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
@@ -172,18 +174,16 @@ INSERT INTO `gallery` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url
 (38, 2, '/src/img/users/friend100001/gallery/2.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (39, 2, '/src/img/users/friend100001/gallery/3.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (40, 2, '/src/img/users/friend100001/gallery/4.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
-(41, 2, '/src/img/users/friend100001/gallery/5.mp4', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (42, 2, '/src/img/users/friend100001/gallery/6.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (43, 2, '/src/img/users/friend100001/gallery/7.jpg', 'Єва Грін', '/src/img/users/friend100001/avatars/avatar.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '15.11.17 14:31', 4),
 (51, 1, '../src/img/users/user/gallery/11.jpg', 'Доктор Стрендж', '../src/img/users/noUser/avatars/avatar.jpg', '../src/img/users/noUser/avatars/avatar.jpg', '09-04-2017 05:03:25', 0),
 (52, 1, '../src/img/users/user/gallery/1.jpg', 'Доктор Стрендж', '../src/img/users/noUser/avatars/avatar.jpg', '../src/img/users/noUser/avatars/avatar.jpg', '09-04-2017 05:03:29', 0),
-(53, 1, '../src/img/users/user/gallery/5.jpg', 'Доктор Стрендж', '../src/img/users/noUser/avatars/avatar.jpg', '../src/img/users/noUser/avatars/avatar.jpg', '09-04-2017 05:03:32', 0),
-(58, 1, '../src/img/users/user/gallery/qzo24qijf5nmpax.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '09-04-2017 07:18:03', 0);
+(53, 1, '../src/img/users/user/gallery/5.jpg', 'Доктор Стрендж', '../src/img/users/noUser/avatars/avatar.jpg', '../src/img/users/noUser/avatars/avatar.jpg', '09-04-2017 05:03:32', 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `post`
+-- Структура таблиці `post`
 --
 
 CREATE TABLE `post` (
@@ -199,7 +199,7 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Дамп данных таблицы `post`
+-- Дамп даних таблиці `post`
 --
 
 INSERT INTO `post` (`id`, `id_owner`, `id_post`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
@@ -211,7 +211,7 @@ INSERT INTO `post` (`id`, `id_owner`, `id_post`, `sender_url`, `sender_name`, `s
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `postavatars`
+-- Структура таблиці `postavatars`
 --
 
 CREATE TABLE `postavatars` (
@@ -227,7 +227,7 @@ CREATE TABLE `postavatars` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Дамп данных таблицы `postavatars`
+-- Дамп даних таблиці `postavatars`
 --
 
 INSERT INTO `postavatars` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
@@ -238,7 +238,7 @@ INSERT INTO `postavatars` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_n
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `postavatars_users`
+-- Структура таблиці `postavatars_users`
 --
 
 CREATE TABLE `postavatars_users` (
@@ -247,7 +247,7 @@ CREATE TABLE `postavatars_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `postavatars_users`
+-- Дамп даних таблиці `postavatars_users`
 --
 
 INSERT INTO `postavatars_users` (`id_post`, `id_user`) VALUES
@@ -256,7 +256,7 @@ INSERT INTO `postavatars_users` (`id_post`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `postchat`
+-- Структура таблиці `postchat`
 --
 
 CREATE TABLE `postchat` (
@@ -269,7 +269,7 @@ CREATE TABLE `postchat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `postchat`
+-- Дамп даних таблиці `postchat`
 --
 
 INSERT INTO `postchat` (`id`, `id_owner`, `id_chat`, `side`, `message_data`, `message_date`) VALUES
@@ -283,7 +283,7 @@ INSERT INTO `postchat` (`id`, `id_owner`, `id_chat`, `side`, `message_data`, `me
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `postchat_users`
+-- Структура таблиці `postchat_users`
 --
 
 CREATE TABLE `postchat_users` (
@@ -292,7 +292,7 @@ CREATE TABLE `postchat_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `postchat_users`
+-- Дамп даних таблиці `postchat_users`
 --
 
 INSERT INTO `postchat_users` (`id_post`, `id_user`) VALUES
@@ -306,7 +306,7 @@ INSERT INTO `postchat_users` (`id_post`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `postgallery`
+-- Структура таблиці `postgallery`
 --
 
 CREATE TABLE `postgallery` (
@@ -322,7 +322,7 @@ CREATE TABLE `postgallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Дамп данных таблицы `postgallery`
+-- Дамп даних таблиці `postgallery`
 --
 
 INSERT INTO `postgallery` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
@@ -332,7 +332,7 @@ INSERT INTO `postgallery` (`id`, `id_owner`, `id_image`, `sender_url`, `sender_n
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `postgallery_users`
+-- Структура таблиці `postgallery_users`
 --
 
 CREATE TABLE `postgallery_users` (
@@ -341,7 +341,7 @@ CREATE TABLE `postgallery_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `postgallery_users`
+-- Дамп даних таблиці `postgallery_users`
 --
 
 INSERT INTO `postgallery_users` (`id_post`, `id_user`) VALUES
@@ -350,7 +350,7 @@ INSERT INTO `postgallery_users` (`id_post`, `id_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Структура таблиці `users`
 --
 
 CREATE TABLE `users` (
@@ -362,7 +362,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Дамп данных таблицы `users`
+-- Дамп даних таблиці `users`
 --
 
 INSERT INTO `users` (`userId`, `userFirstName`, `userSecondName`, `userEmail`, `userPassword`) VALUES
@@ -374,13 +374,14 @@ INSERT INTO `users` (`userId`, `userFirstName`, `userSecondName`, `userEmail`, `
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users_data`
+-- Структура таблиці `users_data`
 --
 
 CREATE TABLE `users_data` (
   `id` int(11) NOT NULL,
   `first_name` varchar(70) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   `second_name` varchar(70) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
+  `userId` int(11) NOT NULL,
   `birthday` date NOT NULL,
   `city` varchar(80) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
   `education` varchar(80) CHARACTER SET utf16 COLLATE utf16_bin NOT NULL,
@@ -396,200 +397,194 @@ CREATE TABLE `users_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп данных таблицы `users_data`
+-- Дамп даних таблиці `users_data`
 --
 
-INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`, `chat`) VALUES
-(1, 'Доктор', 'Стрендж', '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '../src/img/users/user/backgrounds/bg.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '2,5', '0', '', '', ''),
-(2, 'Єва', 'Грін', '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '../src/img/users/friend100001/backgrounds/bg.jpg', '/src/img/users/friend100001/avatars/avatar.jpg', '', '0', '', '', ''),
-(5, 'Дженніфер', 'Лоуренс', '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '../src/img/users/friend100002/backgrounds/bg.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '', '');
+INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `userId`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`, `chat`) VALUES
+(1, 'Доктор', 'Стрендж', 1, '1982-03-04', 'Лондон', 'Кембридж', '0665654652', 5, '../src/img/users/user/backgrounds/wwm9d7jl14v5cyh.jpg', '../src/img/users/user/avatars/fhy8yjpnpv8vwtg.jpg', '2,5', '0', '', '', ''),
+(2, 'Єва', 'Грін', 2, '1993-04-05', 'Париж', 'Павлівська школа', 'не скажу', 0, '../src/img/users/user/backgrounds/ceooqhs782jd2q5.jpg', '/src/img/users/friend100001/avatars/avatar.jpg\r\n', '', '0', '', '', ''),
+(5, 'Дженніфер', 'Лоуренс', 5, '1992-01-14', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '../src/img/users/user/backgrounds/ceooqhs782jd2q5.jpg', '/src/img/users/friend100002/avatars/avatar.jpg', '', '0', '', '', '');
 
 --
--- Индексы сохранённых таблиц
+-- Індекси збережених таблиць
 --
 
 --
--- Индексы таблицы `avatars`
+-- Індекси таблиці `avatars`
 --
 ALTER TABLE `avatars`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `avatars_users`
+-- Індекси таблиці `avatars_users`
 --
 ALTER TABLE `avatars_users`
   ADD KEY `avatar_id` (`avatar_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Индексы таблицы `chat`
+-- Індекси таблиці `chat`
 --
 ALTER TABLE `chat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `chat_users`
+-- Індекси таблиці `chat_users`
 --
 ALTER TABLE `chat_users`
   ADD KEY `id_chat` (`id_chat`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Индексы таблицы `gallery`
+-- Індекси таблиці `gallery`
 --
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `post`
+-- Індекси таблиці `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `postavatars`
+-- Індекси таблиці `postavatars`
 --
 ALTER TABLE `postavatars`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `postavatars_users`
+-- Індекси таблиці `postavatars_users`
 --
 ALTER TABLE `postavatars_users`
   ADD KEY `id_post` (`id_post`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Индексы таблицы `postchat`
+-- Індекси таблиці `postchat`
 --
 ALTER TABLE `postchat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `postchat_users`
+-- Індекси таблиці `postchat_users`
 --
 ALTER TABLE `postchat_users`
   ADD KEY `postchat_users_ibfk_1` (`id_post`),
   ADD KEY `postchat_users_ibfk_2` (`id_user`);
 
 --
--- Индексы таблицы `postgallery`
+-- Індекси таблиці `postgallery`
 --
 ALTER TABLE `postgallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `postgallery_users`
+-- Індекси таблиці `postgallery_users`
 --
 ALTER TABLE `postgallery_users`
   ADD KEY `id_post` (`id_post`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Индексы таблицы `users`
+-- Індекси таблиці `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`userId`);
 
 --
--- Индексы таблицы `users_data`
+-- Індекси таблиці `users_data`
 --
 ALTER TABLE `users_data`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT для збережених таблиць
 --
 
 --
--- AUTO_INCREMENT для таблицы `avatars`
+-- AUTO_INCREMENT для таблиці `avatars`
 --
 ALTER TABLE `avatars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
--- AUTO_INCREMENT для таблицы `chat`
+-- AUTO_INCREMENT для таблиці `chat`
 --
 ALTER TABLE `chat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT для таблицы `gallery`
+-- AUTO_INCREMENT для таблиці `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
--- AUTO_INCREMENT для таблицы `post`
+-- AUTO_INCREMENT для таблиці `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 --
--- AUTO_INCREMENT для таблицы `postavatars`
+-- AUTO_INCREMENT для таблиці `postavatars`
 --
 ALTER TABLE `postavatars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT для таблицы `postchat`
+-- AUTO_INCREMENT для таблиці `postchat`
 --
 ALTER TABLE `postchat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT для таблицы `postgallery`
+-- AUTO_INCREMENT для таблиці `postgallery`
 --
 ALTER TABLE `postgallery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT для таблицы `users`
+-- AUTO_INCREMENT для таблиці `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
--- AUTO_INCREMENT для таблицы `users_data`
+-- AUTO_INCREMENT для таблиці `users_data`
 --
 ALTER TABLE `users_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Обмеження зовнішнього ключа збережених таблиць
 --
 
 --
--- Ограничения внешнего ключа таблицы `avatars_users`
+-- Обмеження зовнішнього ключа таблиці `avatars_users`
 --
 ALTER TABLE `avatars_users`
   ADD CONSTRAINT `avatars_users_ibfk_1` FOREIGN KEY (`avatar_id`) REFERENCES `avatars` (`id`),
   ADD CONSTRAINT `avatars_users_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users_data` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `chat_users`
+-- Обмеження зовнішнього ключа таблиці `chat_users`
 --
 ALTER TABLE `chat_users`
   ADD CONSTRAINT `chat_users_ibfk_1` FOREIGN KEY (`id_chat`) REFERENCES `chat` (`id`),
   ADD CONSTRAINT `chat_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `postavatars_users`
+-- Обмеження зовнішнього ключа таблиці `postavatars_users`
 --
 ALTER TABLE `postavatars_users`
   ADD CONSTRAINT `postavatars_users_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `postavatars` (`id`),
   ADD CONSTRAINT `postavatars_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `postchat_users`
+-- Обмеження зовнішнього ключа таблиці `postchat_users`
 --
 ALTER TABLE `postchat_users`
   ADD CONSTRAINT `postchat_users_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `postchat` (`id`),
   ADD CONSTRAINT `postchat_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
 
 --
--- Ограничения внешнего ключа таблицы `postgallery_users`
+-- Обмеження зовнішнього ключа таблиці `postgallery_users`
 --
 ALTER TABLE `postgallery_users`
   ADD CONSTRAINT `postgallery_users_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `postgallery` (`id`),
   ADD CONSTRAINT `postgallery_users_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_data` (`id`);
-
---
--- Ограничения внешнего ключа таблицы `users_data`
---
-ALTER TABLE `users_data`
-  ADD CONSTRAINT `users_data_ibfk_1` FOREIGN KEY (`id`) REFERENCES `users` (`userId`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

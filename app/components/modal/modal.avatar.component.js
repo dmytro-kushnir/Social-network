@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     var app = angular.module("main-page");
     app.component("avatarModal", {
         templateUrl: "app/templates/modalAvatar.html",

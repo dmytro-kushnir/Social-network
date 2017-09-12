@@ -1,3 +1,5 @@
+(function () {
+    "use strict";
 var app = angular.module("sing-up", ["components"]);
 app.component("singUp", {
 	templateUrl: "/app/templates/autorize.html",
@@ -21,12 +23,14 @@ app.component("singUp", {
 			};
 
 			self.singUserUp = function () {
-				var data = {
-					"userFirstName": self.singUpInfo.firstname,
-					"userSecondName": self.singUpInfo.secondname,
-					"userEmail": self.singUpInfo.email,
-					"userPassword": self.singUpInfo.password
-				};
+			
+				 	data = {
+						"userFirstName": self.singUpInfo.firstname,
+						"userSecondName": self.singUpInfo.secondname,
+						"userEmail": self.singUpInfo.email,
+						"userPassword": self.singUpInfo.password
+					}
+				
 
 				console.log("singUp data input: ", data);
 				$http.post('ajax.php', data).then(function (response) {
@@ -60,3 +64,4 @@ app.component("singUp", {
 		}
 	]
 });
+})();

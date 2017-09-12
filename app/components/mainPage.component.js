@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     var app = angular.module("main-page", ["components", "image-modal"]);
     app.component("mainPage", {
         transclude: true,

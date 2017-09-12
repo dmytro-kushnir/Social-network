@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     // rendering page controller
     var app = angular.module('components', [
         "sing-up",

@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     var app = angular.module("gallery", ["components", "image-modal"]);
     app.component("gallery", {
         templateUrl: "app/templates/gallery.html",

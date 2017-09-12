@@ -1,7 +1,10 @@
 (function () {
+    "use strict";
     var app = angular.module('socialNetwork');
-    app.config(['$stateProvider', '$urlRouterProvider',
-            function ($stateProvider, $urlRouterProvider) {
+    app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+            function ($stateProvider, $urlRouterProvider, $locationProvider) {
+                $locationProvider.hashPrefix(''); // by default '!'
+                $locationProvider.html5Mode(true);
                 $stateProvider
                     .state("cont", {
                         url: '/cont',

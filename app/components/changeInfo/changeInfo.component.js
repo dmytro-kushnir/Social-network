@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     var app = angular.module("change-info", ["components"]);
     app.component("changeInfo", {
         templateUrl: "app/templates/changeInfoUser.html",

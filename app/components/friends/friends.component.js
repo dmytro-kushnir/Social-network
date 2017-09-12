@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     var app = angular.module("friends", ["components"]);
     app.component("friends", {
         templateUrl: "app/templates/friends.html",

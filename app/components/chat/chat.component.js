@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     var app = angular.module("chat", ["components", "chat-user"]);
     app.component("chat", {
         templateUrl: "app/templates/chat.html",

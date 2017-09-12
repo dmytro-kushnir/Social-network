@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     var app = angular.module("socialNetwork", [
         "social-directives",
         "components",

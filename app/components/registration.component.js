@@ -23,19 +23,6 @@ app.component("singUp", {
 			};
 
 			self.singUserUp = function () {
-<<<<<<< HEAD
-			
-				 	data = {
-						"userFirstName": self.singUpInfo.firstname,
-						"userSecondName": self.singUpInfo.secondname,
-						"userEmail": self.singUpInfo.email,
-						"userPassword": self.singUpInfo.password
-					}
-				
-
-				console.log("singUp data input: ", data);
-				$http.post('ajax.php', data).then(function (response) {
-=======
 				var globalData = {
 				users: {
 					"userFirstName": self.singUpInfo.firstname,
@@ -63,7 +50,6 @@ app.component("singUp", {
 			};
 				console.log("singUp data input: ", globalData);
 				$http.post('ajax.php', globalData).then(function (response) {
->>>>>>> ec059b00980213029879127f6d527df5986d60f7
 						console.log(response);
 						localStorage.setItem("user", JSON.stringify({
 							user: response

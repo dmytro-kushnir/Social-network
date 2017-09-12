@@ -17,8 +17,14 @@
                 phoneNumber: undefined
             };
             socialService.editUserData(that.userId).then(function (response) {
-                that.changeInfo={
-                    //дані зсерверу..
+                that.changeUserInfo={
+                    first_name: undefined,
+                    second_name: undefined,
+                    email: undefined,
+                    birthday: undefined,
+                    city: undefined,
+                    education: undefined,
+                    mobile_number: undefined
                 }
             });
             that.saveChange = function(){

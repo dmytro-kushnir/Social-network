@@ -18,15 +18,13 @@
     width: 80px;
     height: 100px;
 	object-fit: cover;
+	cursor: pointer;
 }
 
 .firstSecondName{
     color: #333;
     margin: 15px 20px 10px 5px;
     font-weight: bold;
-}
-.friendFirstName{
-    /*margin: 0 5px 0 0;*/
 }
 .countFriends{
     margin: 0 0 0 15px;

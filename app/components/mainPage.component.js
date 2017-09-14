@@ -23,6 +23,8 @@
                 ////////////////
                 socialService.pageRender(self.userId).then(function (response) {
                     self.page = response.data.info;
+                    // self.page.avatars = "";
+                    // self.page.background_url = "";
                     self.logginedData = JSON.parse(storageService.get("loginUserData"));
                     console.log("mainPage", self.page);
                     console.log(self.logginedData);

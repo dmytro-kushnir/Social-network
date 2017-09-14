@@ -13,8 +13,8 @@ $Db = new \Db\Db();
 
 
 if (!empty($data)) {
-    if (!empty($num)) {
-        $id = $num; //АНЯ.  знайди айдішку по логінуванню і передавай сюди
+    if (!empty($num)) { 
+        $id = (int)$num[0]["userId"]; 
         $success = true;
     ///////////////////////////////////
     } else {

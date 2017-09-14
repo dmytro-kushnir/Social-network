@@ -18,14 +18,15 @@
                 phoneNumber: undefined
             };
             socialService.editUserData(that.userId).then(function (response) {
-                that.changeUserInfo={
-                    first_name: undefined,
-                    second_name: undefined,
-                    email: undefined,
-                    birthday: undefined,
-                    city: undefined,
-                    education: undefined,
-                    mobile_number: undefined
+                console.log("response:", response);
+                that.changeUser={
+                    first_name: response.data.info.first_name,
+                    second_name: response.data.info.second_name,
+                    email: response.data.infoEmail.email,
+                    birthday: response.data.info.birthday,
+                    city: response.data.info.city,
+                    education: response.data.info.education,
+                    mobile_number: response.data.info.mobile_number
                 }
             });
             that.saveChange = function(){

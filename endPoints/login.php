@@ -4,7 +4,7 @@ include ('../Db/Db.php');
 $Db = new \Db\Db();
 
   $data = json_decode(file_get_contents('php://input'), true);
-  $select = "SELECT count(*) as counter FROM users WHERE userEmail = '$data[userEmail]' AND userPassword = '$data[userPassword]'";
+  $select = "SELECT userId FROM users WHERE userEmail = '$data[userEmail]' AND userPassword = '$data[userPassword]'";
   $query = $Db->query($select);
   $query->execute();
   $num = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -13,10 +13,8 @@ $Db = new \Db\Db();
 
 
 if (!empty($data)) {
-    if ($num[0]['counter'] > 0) {
-        
-         
-        $id = 1; //АНЯ.  знайди айдішку по логінуванню і передавай сюди
+    if (!empty($num)) {
+        $id = $num; //АНЯ.  знайди айдішку по логінуванню і передавай сюди
         $success = true;
     ///////////////////////////////////
     } else {

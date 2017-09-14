@@ -75,6 +75,9 @@ button[disabled="disabled"]{
     margin: 0 auto 25px;
     padding: 15px 5px;
 }
+.bgImg{
+    display: none;
+}
 .main_login{
     display: flex;
     flex-direction: column;
@@ -282,9 +285,10 @@ button[disabled="disabled"]{
     margin: 8px 0 0 145px;
 }
     .main{
-        background: url("../img/avtorizbackground.jpg");
+        display: flex;
+        justify-content: center;
         background-size: auto;
-        padding: 120px 0 170px 100px;
+        padding: 120px 0 170px 0;
         min-height: 92vh;
         }
     .main_enter{
@@ -292,6 +296,9 @@ button[disabled="disabled"]{
         }
     .registration{
 		padding: 15px 0 10px 0;
-        margin: 0 0 0 50px;
+        margin: 0 150px 0 50px;
+    }
+    .bgImg{
+        display: block;
     }
 }

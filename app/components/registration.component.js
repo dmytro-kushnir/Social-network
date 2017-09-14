@@ -62,7 +62,6 @@ app.component("singUp", {
 			}
 			//login
 			self.logIn = function () {
-				console.log("Hey");
 				AuthService.authenticate(self.loginInfo.email, self.loginInfo.password, function (callback) {
 					console.log("CALLBACK! ", callback); //-> callback from server 
 					if (callback.data.success == true) {

@@ -125,8 +125,7 @@
                         var $state = $injector.get('$state');
                         $state.go("cont.mainPage", {'userId':localStorage.getItem("userId")});
                     });
-                   
-           
+         
             }
         ])
         // .run(function ($rootScope, $location, storageService) { // history back event

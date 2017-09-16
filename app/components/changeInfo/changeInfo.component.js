@@ -5,45 +5,53 @@
         templateUrl: "app/templates/changeInfoUser.html",
         controller: ["$state", "$http", "socialService",
         function changeInfoCtrl ($state, $http, socialService){
+            ///////
             var that = this;
             that.userId =  $state.params.userId;
-            console.log(that.userId);
-            that.changeInfo = {
-                firstName: undefined,
-                surName: undefined,
-                email: undefined,
-                bDay: undefined,
+            that.edit = {};
+            that.updateInfo = {
+                first_name: undefined,
+                second_name: undefined,
+                userEmail: undefined,
+                birthday: undefined,
                 city: undefined,
                 education: undefined,
-                phoneNumber: undefined
-            };
+                mobile_number: undefined
+            }
+            //////
+    
+            
             socialService.editUserData(that.userId).then(function (response) {
                 console.log("response:", response);
-                that.changeUser={
-                    first_name: response.data.info.first_name,
-                    second_name: response.data.info.second_name,
-                    email: response.data.infoEmail.email,
-                    birthday: response.data.info.birthday,
-                    city: response.data.info.city,
-                    education: response.data.info.education,
-                    mobile_number: response.data.info.mobile_number
-                }
+                //that.edit = response.data.info[0];
+                //that.edit = response.data.info[0].concat(response.data.infoEmail[0]);
+                that.edit =  Object.assign(response.data.info[0], response.data.infoEmail[0]);
+               
+                console.log(that.edit);
             });
+            
             that.saveChange = function(){
                 var data = {
-                    info:{
-                    "first_name": that.changeInfo.firstName,
-                    "second_name": that.changeInfo.surName,
-                    "email": that.changeInfo.email,
-                    "birthday": that.changeInfo.bDay,
-                    "city": that.changeInfo.city,
-                    "education": that.changeInfo.education,
-                    "mobile_number": that.changeInfo.phoneNumber
+                    updateInfoUser: {
+                        "first_name": that.updateInfo.first_name,
+                        "second_name": that.updateInfo.second_name,
+                        "userId": that.userId,
+                        "birthday": that.updateInfo.birthday,
+                        "city":that.updateInfo.city,
+                        "education":that.updateInfo.education,
+                        "mobile_number": that.updateInfo.mobile_number
                     },
-                    userId:{
-                        id: that.userId
+                    userEmail: {
+                        "first_name": that.updateInfo.first_name,
+                        "second_name": that.updateInfo.second_name,
+                        "userEmail": that.updateInfo.userEmail
+                    },
+                    userId: {
+                        "userId": that.userId,
                     }
+
                 }
+                console.log("SOME!!!!: ", data);
                 socialService.changeUserInfo(data).then(function(res){
                     console.log(res);
                 });

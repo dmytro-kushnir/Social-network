@@ -6,6 +6,8 @@
     
     $info = $Db->selectSqlPrepared("SELECT first_name, second_name, birthday, city, education, mobile_number FROM users_data WHERE userId = '$data'");
     $infoEmail = $Db->selectSqlPrepared("SELECT userEmail FROM users WHERE userId = '$data'");
+    
+
     $result = [
         'info' => $info,
         'infoEmail' => $infoEmail,

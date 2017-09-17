@@ -17,7 +17,7 @@ if (isset($data["request"]["chatData"])) {
 switch ($subPage) {
     // MAINPAGE
     case "mainPage":
-        $data_arr = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data WHERE id = '$id' ");
+        $data_arr = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data WHERE userId = '$id' ");
         break;
     // USERLIST
     case "userList":
@@ -55,13 +55,13 @@ post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post
         break;
     
     case "friends":
-        $data_arr = $Db->selectSqlPrepared("SELECT friends FROM users_data WHERE id = '$id' ");
+        $data_arr = $Db->selectSqlPrepared("SELECT friends FROM users_data WHERE userId = '$id' ");
         $friendsIdArr = explode(",", $data_arr[0]["friends"]); // convert friends string to array
         $friends = array();
       // FRIENDS
         foreach ($friendsIdArr as $value) {
                 $buf = $Db->selectSqlPrepared("SELECT id, first_name, second_name, count_friends, avatar_url 
-      FROM users_data WHERE id = '$value'");
+      FROM users_data WHERE userId= '$value'");
                 $friends[] = $buf[0];
         }
         $data_arr[0]["friends"] = $friends; // sets friends to data_arr instead of friends string

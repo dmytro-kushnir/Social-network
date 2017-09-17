@@ -2,31 +2,31 @@
     <form class="infoBlock">
         <label for="firstName" class="infoBlock_label">
             Ім’я:
-            <input type="text" value="{{$ctrl.changeUserInfo.first_name}}" name="firstName" id="firstName" ng-model="$ctrl.changeInfo.firstName" class="infoBlock_input">
+            <input type="text" ng-value="$ctrl.edit.first_name" data-ng-model="$ctrl.updateInfo.first_name" name="firstName" id="firstName"  class="infoBlock_input">
         </label>
         <label for="surName" class="infoBlock_label">
             Прізвище:
-            <input type="text" value="{{$ctrl.changeUserInfo.second_name}}" name="surName" id="surName" ng-model="$ctrl.changeInfo.surName" class="infoBlock_input">
+            <input type="text"  ng-value="$ctrl.edit.second_name" data-ng-model="$ctrl.updateInfo.second_name" name="surName" id="surName"  class="infoBlock_input">
         </label>
         <label for="emeil" class="infoBlock_label">
             Email:
-            <input type="email" value="{{$ctrl.changeUserInfo.email}}" name="email" id="emeil" ng-model="$ctrl.changeInfo.email" class="infoBlock_input">
+            <input type="email"  ng-value="$ctrl.edit.userEmail" data-ng-model="$ctrl.updateInfo.userEmail" name="email" id="emeil"  class="infoBlock_input">
         </label>
         <label for="bDay" class="infoBlock_label">
             День Народження:
-            <input type="date" value="{{$ctrl.changeUserInfo.birthday}}" name="bDay" id="bDay" ng-model="$ctrl.changeInfo.bDay" class="infoBlock_input"> 
+            <input type="date" ng-value="$ctrl.edit.birthday" data-ng-model="$ctrl.updateInfo.birthday" name="bDay" id="bDay"  class="infoBlock_input"> 
         </label>
         <label for="city" class="infoBlock_label">
             Рідне місто:
-            <input type="text" value="{{$ctrl.changeUserInfo.city}}" name="city" id="city" ng-model="$ctrl.changeInfo.city" class="infoBlock_input">
+            <input type="text" ng-value="$ctrl.edit.city" data-ng-model="$ctrl.updateInfo.city" name="city" id="city"  class="infoBlock_input">
         </label>
         <label for="education" class="infoBlock_label">
             Освіта:
-            <input type="text" value="{{$ctrl.changeUserInfo.education}}" name="education" id="education" ng-model="$ctrl.changeInfo.education" class="infoBlock_input">
+            <input type="text" ng-value="$ctrl.edit.education" data-ng-model="$ctrl.updateInfo.education" name="education" id="education" class="infoBlock_input">
         </label>
         <label for="phoneNumber" class="infoBlock_label">
             Моб. телефон:
-            <input type="tel" value="{{$ctrl.changeUserInfo.mobile_number}}" name="phoneNumber" id="phoneNumber" ng-model="$ctrl.changeInfo.phoneNumber" class="infoBlock_input">
+            <input type="tel" ng-value="$ctrl.edit.mobile_number" data-ng-model="$ctrl.updateInfo.mobile_number" name="phoneNumber" id="phoneNumber"  class="infoBlock_input">
         </label>
         <button type="button" ng-click="$ctrl.saveChange()" class="changeBtn">Змінити</button>
     </form>

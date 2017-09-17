@@ -25,8 +25,8 @@
 				self.singUserUp = function () {
 					var globalData = {
 						users: {
-							"userFirstName": self.singUpInfo.firstname,
-							"userSecondName": self.singUpInfo.secondname,
+							"first_name": self.singUpInfo.firstname,
+							"second_name": self.singUpInfo.secondname,
 							"userEmail": self.singUpInfo.email,
 							"userPassword": self.singUpInfo.password
 						},

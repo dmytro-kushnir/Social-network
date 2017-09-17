@@ -68,7 +68,7 @@
                 }
 
                 self.isLoggined = function (targetId, logginedId) {
-                    if (targetId == logginedId)
+                    if (targetId === logginedId)
                         return true;
                     else
                         return false;
@@ -210,14 +210,14 @@
                                 "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                                 "post_text": self.textarea.value,
-                                "post_image": "../src/img/users/user/posts/", //make in server
+                                "post_image": "../src/img/users/user"+self.userId+"/posts/", //make in server
                                 "post_likes": 0
                             }
                             break;
                         case 'uploadBackground':
                             var data = {
                                 "id": self.userId,
-                                "background_url": "../src/img/users/user/backgrounds/" //make in server
+                                "background_url": "../src/img/users/user"+self.userId+"/backgrounds/" //make in server
                             }
                             break;
                     }

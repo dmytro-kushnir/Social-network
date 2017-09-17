@@ -30,8 +30,6 @@
 
                 self.upload = (dataUrl, name) => {
                     if (name) {
-
-
                         Upload.upload({
                             url: 'endPoints/uploadAvatar.php',
                             data: {

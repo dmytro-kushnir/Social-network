@@ -22,6 +22,7 @@
 
                 ////////////////
                 socialService.pageRender(self.userId).then(function (response) {
+                    console.log(response);
                     self.page = response.data.info;
                     // self.page.avatars = "";
                     // self.page.background_url = "";
@@ -130,11 +131,11 @@
                 self.uploadAvatar = function () {
                     var data = {
                         "id_owner": self.userId,
-                        "image_url": "../src/img/users/user/avatars/", //make in server
+                        "image_url": "../src/img/users/user"+self.userId+"/avatars/", //make in server
                         "is_set": 1, //make in server
                         "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
-                        "sender_url": "../src/img/users/user/avatars/",
-                        "reciever_url": "../src/img/users/user/avatars/",
+                        "sender_url": "../src/img/users/user"+self.userId+"/avatars/",
+                        "reciever_url": "../src/img/users/user"+self.userId+"/avatars/",
                         "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                         "likes": 0
                     }
@@ -150,7 +151,6 @@
                     });
                 }
                 self.editPage = function(){
-                    console.log("hey!!!!!!!!!!!");
                     $state.go('cont.changeInfo', {
                         userId: self.userId
                     }, {

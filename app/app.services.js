@@ -45,6 +45,13 @@
         function ($http, $cookies, $rootScope) {
 
             var service = {};
+            // registration
+            service.registration = function (users, data_users, callback) {
+                $http.post('ajax.php', {users: users, data_users: data_users})
+                    .then(function (response) {
+                        callback(response);
+                    });
+            };
 
             // Authenticates throug a rest service
             service.authenticate = function (userEmail, userPassword, callback) {

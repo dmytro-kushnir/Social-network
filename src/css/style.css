@@ -113,7 +113,9 @@ body {
 
 /* Navigation main START*/
 
-
+.userSideBar {
+    /*height: 100vh;*/
+}
 
 .asideNavbar li:hover {
     background-color: gainsboro;
@@ -240,7 +242,10 @@ body {
         right: 10em !important;
         width: auto !important;
     }
-    
+    .carouselWrapperColumn{
+        /*padding-left: 30px !important;*/
+        /*padding-right: 45px !important;*/
+    }
 }
 @media  (min-width: 768px) and (max-width: 992px){
      ul[rn-carousel]>li { 
@@ -248,7 +253,10 @@ body {
         width: auto !important;
         right: 10em !important;
     }
-     
+     .carouselWrapperColumn{
+        /*padding-left: 20px !important;*/
+        /*padding-right: 20px !important;*/
+    }
 }
 
 /*extraSmall*/
@@ -614,6 +622,9 @@ body {
     left: -4px;
 }
 
+.arrowLeftMobile {
+    /*display: none;*/
+}
 
 .navbar-brand,
 .panel-primary {

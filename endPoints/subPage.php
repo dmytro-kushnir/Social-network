@@ -17,11 +17,11 @@ if (isset($data["request"]["chatData"])) {
 switch ($subPage) {
     // MAINPAGE
     case "mainPage":
-        $data_arr = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data WHERE userId = '$id' ");
+        $data_arr = $Db->selectSqlPrepared("SELECT id, userId, first_name,second_name, avatar_url FROM users_data WHERE userId = '$id' ");
         break;
     // USERLIST
     case "userList":
-        $data_arr[0] = $Db->selectSqlPrepared("SELECT id, first_name,second_name, avatar_url FROM users_data");
+        $data_arr[0] = $Db->selectSqlPrepared("SELECT id, userId, first_name,second_name, avatar_url FROM users_data");
         break;
     // USERPOST
     case "uploadPost":
@@ -60,7 +60,7 @@ post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post
         $friends = array();
       // FRIENDS
         foreach ($friendsIdArr as $value) {
-                $buf = $Db->selectSqlPrepared("SELECT id, first_name, second_name, count_friends, avatar_url 
+                $buf = $Db->selectSqlPrepared("SELECT id, userId, first_name, second_name, count_friends, avatar_url 
       FROM users_data WHERE userId= '$value'");
                 $friends[] = $buf[0];
         }

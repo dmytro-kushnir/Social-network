@@ -15,7 +15,7 @@ $id = json_decode(file_get_contents('php://input'), true);
   // FRIENDS 
     if($friendsIdArr[0] != "" || !empty($friendsIdArr[0])){
   foreach($friendsIdArr as $value){
-    $buf = $Db->selectSqlPrepared("SELECT id, first_name, second_name, count_friends, avatar_url 
+    $buf = $Db->selectSqlPrepared("SELECT id, userId, first_name, second_name, count_friends, avatar_url 
       FROM users_data WHERE userId = '$value' LIMIt 5");
     $friends[] = $buf[0];
   }

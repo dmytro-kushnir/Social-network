@@ -30,7 +30,7 @@
                                 data-ng-model="search" 
                                 ng-click="$ctrl.usersListRender()">
                                 <ul class="dropdown-menu dropdownMenuSearch">
-                                    <li ng-repeat="user in $ctrl.users | toArray:false | filter: search | limitTo : 8 : 0" ui-sref="cont.mainPage({userId:user.id})" >
+                                    <li ng-repeat="user in $ctrl.users | toArray:false | filter: search | limitTo : 8 : 0" ui-sref="cont.mainPage({userId:user.userId})" >
                                         <img class="userHeader" style="width: 30px; height:30px;" ng-src="{{user.avatar_url}}" ng-if="user.avatar_url" alt="user"></a>
                                         <a>{{user.first_name}} {{user.second_name}}</a>   
                                     </li>

@@ -22,6 +22,7 @@
 
                 ////////////////
                 socialService.pageRender(self.userId).then(function (response) {
+                    console.log(response);
                     self.page = response.data.info;
                     // self.page.avatars = "";
                     // self.page.background_url = "";
@@ -68,7 +69,7 @@
                 }
 
                 self.isLoggined = function (targetId, logginedId) {
-                    if (targetId == logginedId)
+                    if (targetId === logginedId)
                         return true;
                     else
                         return false;
@@ -130,11 +131,11 @@
                 self.uploadAvatar = function () {
                     var data = {
                         "id_owner": self.userId,
-                        "image_url": "../src/img/users/user/avatars/", //make in server
+                        "image_url": "../src/img/users/user"+self.userId+"/avatars/", //make in server
                         "is_set": 1, //make in server
                         "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
-                        "sender_url": "../src/img/users/user/avatars/",
-                        "reciever_url": "../src/img/users/user/avatars/",
+                        "sender_url": "../src/img/users/user"+self.userId+"/avatars/",
+                        "reciever_url": "../src/img/users/user"+self.userId+"/avatars/",
                         "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                         "likes": 0
                     }
@@ -150,7 +151,6 @@
                     });
                 }
                 self.editPage = function(){
-                    console.log("hey!!!!!!!!!!!");
                     $state.go('cont.changeInfo', {
                         userId: self.userId
                     }, {
@@ -210,14 +210,14 @@
                                 "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                                 "post_text": self.textarea.value,
-                                "post_image": "../src/img/users/user/posts/", //make in server
+                                "post_image": "../src/img/users/user"+self.userId+"/posts/", //make in server
                                 "post_likes": 0
                             }
                             break;
                         case 'uploadBackground':
                             var data = {
                                 "id": self.userId,
-                                "background_url": "../src/img/users/user/backgrounds/" //make in server
+                                "background_url": "../src/img/users/user"+self.userId+"/backgrounds/" //make in server
                             }
                             break;
                     }

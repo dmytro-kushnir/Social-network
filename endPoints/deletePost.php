@@ -5,6 +5,7 @@ $Db = new \Db\Db();
 
 $data = json_decode(file_get_contents('php://input'), true);
 
+
 $insertId = $Db->deleteSql('post', $data);
 
 $result = [

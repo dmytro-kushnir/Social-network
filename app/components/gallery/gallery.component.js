@@ -70,7 +70,7 @@
                     var data = { // prepare data to server send
                         "id_owner": self.userId,
                         "id_image": id,
-                        "image_url": "../src/img/users/user/gallery/", //make in server
+                        "image_url": "../src/img/users/user"+self.userId+"/gallery/", //make in server
                         "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                         "sender_url": self.logginedData.avatar_url,
                         "reciever_url": self.logginedData.avatar_url,

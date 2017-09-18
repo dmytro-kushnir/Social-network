@@ -16,6 +16,7 @@
             function MainCtrl($state, socialService, storageService, AuthService) {
                 ////////////////////
                 var self = this;
+                
                 self.userId = storageService.get("userId");
                 console.log(self.userId);
                 self.page = {};

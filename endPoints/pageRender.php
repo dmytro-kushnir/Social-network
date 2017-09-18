@@ -6,7 +6,7 @@ $Db = new \Db\Db();
 $id = json_decode(file_get_contents('php://input'), true);
 
  // GET ALL GENERAL DATA
-  $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE id = '$id' ");
+  $data_arr = $Db->selectSqlPrepared("SELECT * FROM users_data WHERE userId = '$id' ");
 
 /////////////////////////////////// 
 
@@ -15,8 +15,8 @@ $id = json_decode(file_get_contents('php://input'), true);
   // FRIENDS 
     if($friendsIdArr[0] != "" || !empty($friendsIdArr[0])){
   foreach($friendsIdArr as $value){
-    $buf = $Db->selectSqlPrepared("SELECT id, first_name, second_name, count_friends, avatar_url 
-      FROM users_data WHERE id = '$value' LIMIt 5");
+    $buf = $Db->selectSqlPrepared("SELECT id, userId, first_name, second_name, count_friends, avatar_url 
+      FROM users_data WHERE userId = '$value' LIMIt 5");
     $friends[] = $buf[0];
   }
   $data_arr[0]["friends"] = $friends; // sets friends to data_arr instead of friends string

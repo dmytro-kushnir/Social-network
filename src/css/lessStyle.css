@@ -1,10 +1,10 @@
 @media (max-width: 767px) {
   .detailLogo + img {
-    top: 80px;
-    right: 60px;
+    top: 100px;
+    left: 66px;
   }
   .updateBgText {
-    top: 110px;
+    top: 133px;
     left: 45px;
   }
   .searchBlockHeader {
@@ -25,6 +25,10 @@
     margin: 0 0 0 15px;
     width: 150px;
   }
+  .detailLogo {
+    display: contents;
+  }
+
   .leftChat {
     margin-right: 100px;
   }
@@ -142,7 +146,8 @@
 }
 @media (min-width: 768px) {
   .detailLogo + img {
-    top: 50px;
+    top: 80px;
+    left: 100px;
   }
   .dropdownMenuSearch {
     margin-left: 40px !important;
@@ -206,13 +211,45 @@
   }
 }
 @media (max-width: 460px) {
+  .infoName {
+    margin-top: 20px;
+    margin-left: 5%;
+  }
+  .profilePhoto {
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    width: auto\9;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 5px 5px 0;
+  }
+  .userName {
+    text-align: center;
+    display: block;
+    padding: 5px;
+  }
+  .textareaMainPage {
+    margin: 10px 30px !important;
+  }
+  .user {
+    display: none !important;
+  }
+  .addFriendBtn {
+    margin: 0 30%;
+    width: 190px;
+  }
+  .detailLogo {
+    display: contents;
+  }
   .detailLogo + img {
-    top: 100px;
-    right: 80px;
+    top: 118px;
+    left: 180px;
   }
   .updateBgText {
-    top: 130px;
-    left: 60px;
+    top: 150px;
+    left: 151px;
   }
   .imageContainer {
     text-align: center;
@@ -229,6 +266,10 @@
   }
   .leftChat {
     margin-right: 30px;
+  }
+  .addFriendBtn {
+    margin: 0;
+    width: 190px;
   }
   .infoName > p > label {
     width: auto;
@@ -265,12 +306,14 @@
     height: auto !important;
   }
 }
-@media (max-width: 570px) {
+@media (min-width: 461px) and (max-width: 570px) {
   .detailLogo + img {
-    right: 77px;
+    top: 130px;
+    left: 220px;
   }
   .updateBgText {
-    left: 55px;
+    left: 195px;
+    top: 168px;
   }
   .infoName {
     margin-top: 20px;
@@ -310,6 +353,10 @@
     margin: 0 0 0 15px;
     width: 200px;
   }
+  .detailLogo {
+    display: contents;
+  }
+
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {

@@ -436,7 +436,7 @@ body {
 .updateBgText{
     
       position: absolute;
-       top: 80px;
+       top: 120px;
        left: 70px;
        z-index: 2;
        color: lavender;
@@ -560,6 +560,10 @@ body {
 }
 .posters{
     margin:10px 15px !important; 
+}
+.addFriendBtn{
+    margin: 0 0 0 15px;
+    width: 150px;
 }
 }
 

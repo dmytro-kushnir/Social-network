@@ -29,9 +29,13 @@
     display: contents;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> af5d5e78dfb7ffd05844609bfe6d6cae5f11d085
+=======
+
+>>>>>>> origin/master
   .leftChat {
     margin-right: 100px;
   }
@@ -360,9 +364,13 @@
     display: contents;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> af5d5e78dfb7ffd05844609bfe6d6cae5f11d085
+=======
+
+>>>>>>> origin/master
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {

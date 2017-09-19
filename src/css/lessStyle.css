@@ -28,10 +28,7 @@
   .detailLogo {
     display: contents;
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> af5d5e78dfb7ffd05844609bfe6d6cae5f11d085
   .leftChat {
     margin-right: 100px;
   }
@@ -359,10 +356,6 @@
   .detailLogo {
     display: contents;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> af5d5e78dfb7ffd05844609bfe6d6cae5f11d085
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {

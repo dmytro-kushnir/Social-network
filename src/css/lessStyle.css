@@ -28,6 +28,7 @@
   .detailLogo {
     display: contents;
   }
+
   .leftChat {
     margin-right: 100px;
   }
@@ -355,6 +356,7 @@
   .detailLogo {
     display: contents;
   }
+
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {

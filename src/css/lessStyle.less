@@ -1,6 +1,6 @@
 // Mode: Tablet
 @tablet: ~"(max-width: 767px)";
-@small: ~"(min-width: 461px) and (max-width: 570px)";
+@small: ~"(max-width: 570px)";
 @extraSmall: ~"(max-width: 460px)";
 // Mode: Desktop
 @desktop: ~"(min-width: 768px)";
@@ -9,11 +9,11 @@
 ///////////////////////// 
 @media @tablet {
     .detailLogo+img {
-        top: 100px;
-        left: 66px;
+        top: 80px;
+        right: 60px;
     }
     .updateBgText{
-        top: 133px;
+        top: 110px;
         left: 45px; 
     }
     .searchBlockHeader{
@@ -29,13 +29,6 @@
     }
     .rightChat{
     margin-left: 100px;
-}
-.addFriendBtn{
-    margin: 0 0 0 15px;
-    width: 150px;
-}
-.detailLogo{
-    display: contents;
 }
 .leftChat{
     margin-right: 100px;
@@ -175,8 +168,7 @@
 /////////////////////////  
 @media @desktop {
     .detailLogo+img {
-        top: 80px; 
-        left: 100px;  
+        top: 50px;   
     }
     .dropdownMenuSearch{
         margin-left: 40px !important;
@@ -242,55 +234,14 @@
 }
 ///////////////////////// 
 @media @extraSmall {
-    .infoName {
-        margin-top: 20px;
-        margin-left: 5%;
-
-    }
-    .profilePhoto {
-        width: 200px;
-        height: 200px;
-        max-width: 100%;
-        // height: auto;
-        width: auto\9; //IE 8
-         margin-left:auto;
-   margin-right:auto;
-   display:block;
-   padding: 5px 5px 0;
-    }
-    .userName {
-        // margin-left: 50px;
-        // width: 240px;
-        // max-width: 100%;
-        // height: auto;
-        // margin-left:auto;
-        // margin-left:auto;
-        // margin-right:auto
-        text-align: center;
-        display:block;
-        padding: 5px;
-    }
-    .textareaMainPage{
-        margin: 10px 30px !important;
-    }
-    .user{
-        display: none !important;
-    }
-    .addFriendBtn{
-        margin: 0 30%;
-        width: 190px;
-    }
-    .detailLogo {
-        display: contents;
-    }
     .detailLogo+img {
-        top: 118px;
-        left: 180px;
+        top: 100px;
+        right: 80px;
     }
-    .updateBgText {
-        top: 150px;
-        left: 151px;
-    }
+    .updateBgText{
+           top: 130px;
+           left: 60px; 
+       }
     .imageContainer{
         text-align: center;
     }
@@ -308,15 +259,16 @@
 .leftChat{
     margin-right: 30px;
 }
-.addFriendBtn{
-    margin: 0;
-    width: 190px;
-}
+    .userName {
+        // margin-left: 20px;
+    }
     .infoName>p>label {
         width: auto;
         padding-right: 0px;
     }
-    
+    .otherUserPhotoComment {
+        // margin-top: -5px;
+    }
     .img-responsive {
         max-width: 100%;
         max-height: 100%;
@@ -339,10 +291,7 @@
     .myFriends{
         margin-left: 0px;
     }
-    .addFriendBtn{
-        margin: 0 25%;
-        width: 190px;
-    }
+  
   
     .modalImg{
         width: auto !important;
@@ -354,12 +303,10 @@
 ///////////////////////// 
 @media @small {
     .detailLogo+img {
-        top: 130px;
-        left: 220px;
+        right: 77px;
     }
-    .updateBgText {
-        left: 195px;
-        top: 168px;
+    .updateBgText{
+        left: 55px; 
     }
     .infoName {
         margin-top: 20px;
@@ -375,7 +322,7 @@
          margin-left:auto;
    margin-right:auto;
    display:block;
-   padding: 5px 5px 0;
+   padding: 5px;
     }
     .userName {
         // margin-left: 50px;
@@ -395,26 +342,18 @@
     .user{
         display: none !important;
     }
-    .addFriendBtn{
-        margin: 0 30%;
-        width: 190px;
-    }
 }
 
 ////////
 @media @extraLarge {
-    
+    .infoName {
+        // margin-left: 20%;   
+    }
     
     .infoName>p {
         width: 400px;
     }
-    .addFriendBtn{
-        margin: 0 0 0 15px;
-        width: 200px;
-    }
-    .detailLogo{
-        display: contents;
-    }
+ 
 }
 
 /////
@@ -454,7 +393,9 @@
     // .modalOtherUserPhotoCommentTrigger{
     //   display: block;
     // }
-    
+    .modal-dialog {
+        // margin:0px !important;
+    }
     .modal-body {
         height: 100% !important;
     }
@@ -477,7 +418,10 @@
         justify-content: space-around;
     }
     // MODAL END
-   
+    .infoName>p>label {
+        // width: auto;
+        // padding-right: 40px;
+    }
     .friendsGalleryBlock {
         display: none;
     }
@@ -498,9 +442,5 @@
     .modal {
         overflow-y: auto !important;
        
-    }
-    .addFriendBtn{
-        margin: 0 0 0 15px;
-        width: 200px;
     }
 }

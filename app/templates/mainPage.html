@@ -115,10 +115,10 @@
         <!---->
         <div class="row">
           <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
-            <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered
+            <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" 
               class="carouselWrapper">
-              <li ng-click="$ctrl.openGallery($index)" ng-repeat="gal in $ctrl.page.gallery track by gal.id" ng-class="'id-' + $index">
-                <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{$ctrl.page.gallery.length}}</div>
+              <li ng-click="$ctrl.openGallery($index)" ng-repeat="gal in $ctrl.page.gallery | limitTo : 50 : 0 track by gal.id" ng-class="'id-' + $index">
+                <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ $index+1}}/{{$ctrl.page.gallery.length}}</div>
               </li>
             </ul>
           </div>

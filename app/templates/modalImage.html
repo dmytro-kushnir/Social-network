@@ -1,4 +1,4 @@
-<div  ng-controller="ModalCtrl as modal">
+<div ng-keydown="$ctrl.keyDown($event)" tabindex="0" ng-controller="ModalCtrl as modal">
     
          <div class="modal-body" ng-swipe-right="$ctrl.prevImage()" ng-swipe-left="$ctrl.nextImage()">
               
@@ -13,7 +13,7 @@
                                <a href="http://www.youtube.com/watch?v=LOKyEt36Kjc">Watch</a></embed-video>-->
                              <span class="modalImgCount">{{$ctrl.index + 1 }}/{{$ctrl.images.length}} </span>
                          </a>
-                         <a  ng-click="$ctrl.prevImage()" class="carousel-control left"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                         <a  ng-click="$ctrl.prevImage()"  class="carousel-control left"><i class="glyphicon glyphicon-chevron-left"></i></a>
                          <a  ng-click="$ctrl.nextImage()" class="carousel-control right"><i class="glyphicon glyphicon-chevron-right"></i></a>
                      </div>
                  </div>

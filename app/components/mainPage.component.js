@@ -205,7 +205,7 @@
                         case 'uploadPost':
                             var data = {
                                 "id_owner": self.userId,
-                                "id_post": id,
+                                "id_post": idi,
                                 "sender_url": self.logginedData.avatar_url,
                                 "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),

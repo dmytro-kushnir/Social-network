@@ -2,7 +2,7 @@
 	"use strict";
 	var app = angular.module("sing-up", ["components"]);
 	app.component("singUp", {
-		templateUrl: "/app/templates/autorize.html",
+		templateUrl: "app/templates/autorize.html",
 		controller: ["$state", "$http", "AuthService", "storageService",
 			function singUpController($state, $http, AuthService, storageService) {
 				//$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'; 

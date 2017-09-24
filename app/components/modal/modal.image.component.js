@@ -134,7 +134,7 @@
                 }
                 // key event 
                 self.keyDown = function ($event) {
-                //    console.log($event.keyCode);
+                //      console.log($event.keyCode);
                     switch ($event.keyCode) {
                         case 39: //right
                             nextImage();

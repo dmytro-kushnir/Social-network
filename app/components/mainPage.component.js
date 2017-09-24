@@ -131,11 +131,11 @@
                 self.uploadAvatar = function () {
                     var data = {
                         "id_owner": self.userId,
-                        "image_url": "../src/img/users/user"+self.userId+"/avatars/", //make in server
+                        "image_url": "../src/img/users/user" + self.userId + "/avatars/", //make in server
                         "is_set": 1, //make in server
                         "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
-                        "sender_url": "../src/img/users/user"+self.userId+"/avatars/",
-                        "reciever_url": "../src/img/users/user"+self.userId+"/avatars/",
+                        "sender_url": "../src/img/users/user" + self.userId + "/avatars/",
+                        "reciever_url": "../src/img/users/user" + self.userId + "/avatars/",
                         "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                         "likes": 0
                     }
@@ -150,7 +150,7 @@
                         }
                     });
                 }
-                self.editPage = function(){
+                self.editPage = function () {
                     $state.go('cont.changeInfo', {
                         userId: self.userId
                     }, {
@@ -191,13 +191,42 @@
                         }
                         self.response.image = "";
                     }
-                    if(self.response.updateAvatar !== ""){ // change avatar to current image event
+                    if (self.response.updateAvatar !== "") { // change avatar to current image event
                         self.page.avatar_url = self.response.updateAvatar;
                         console.log(self.response);
                         self.parentCtrl.avatarChange(self.page.avatar_url);
                         self.response.updateAvatar = "";
                     }
                 }
+                self.alreadyLiked = false;
+                self.likePost = function (array_id, id) {
+                    let likes = 0, data;
+                    
+                    if (isNaN(self.page.posts[array_id].post_likes))
+                        self.page.posts[array_id].post_likes = 0;
+                        
+                    likes = parseInt(self.page.posts[array_id].post_likes);
+                    
+                        data = { // prepare data to server send
+                        "id": id,
+                        "id_owner": self.logginedId,
+                        "likes": likes
+                    }
+                    socialService.likePost(data).then(function (response) {
+                        console.log(response);
+                        console.log(Number.isInteger(response.data.info));
+                        if(Number.isInteger(response.data.info)) // if response is number(liking successfull)
+                        {   
+                        self.page.posts[array_id].post_likes = likes + 1;
+                        
+                        }
+                        else{
+                            alert("Ви вже лайкали цей пост");
+                            // self.flag = true;
+                        }
+                    });
+                }
+                self.flag = false;
                 //UPLOAD BACKGROUND or POST (AVATAR moved to modal.avatar component) 
                 self.uploadPic = function (file, id, phpFileName) {
                     var date = new Date();
@@ -205,19 +234,19 @@
                         case 'uploadPost':
                             var data = {
                                 "id_owner": self.userId,
-                                "id_post": idi,
+                                "id_post": id,
                                 "sender_url": self.logginedData.avatar_url,
                                 "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                                 "post_text": self.textarea.value,
-                                "post_image": "../src/img/users/user"+self.userId+"/posts/", //make in server
+                                "post_image": "../src/img/users/user" + self.userId + "/posts/", //make in server
                                 "post_likes": 0
                             }
                             break;
                         case 'uploadBackground':
                             var data = {
                                 "id": self.userId,
-                                "background_url": "../src/img/users/user"+self.userId+"/backgrounds/" //make in server
+                                "background_url": "../src/img/users/user" + self.userId + "/backgrounds/" //make in server
                             }
                             break;
                     }

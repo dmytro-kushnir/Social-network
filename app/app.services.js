@@ -17,6 +17,9 @@
             deletePost: function (request) {
                 return $http.post("endPoints/deletePost.php", request);
             },
+            likePost: function (request) {
+                return $http.post("endPoints/likePost.php", request);
+            },
             deleteImage: function (request) {
                 return $http.post("endPoints/deleteImage.php", request);
             },

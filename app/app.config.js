@@ -4,7 +4,7 @@
     app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function ($stateProvider, $urlRouterProvider, $locationProvider) {
                     $locationProvider.hashPrefix(''); // by default '!'
-                    $locationProvider.html5Mode(true);
+                    // $locationProvider.html5Mode(true);
                 $stateProvider
                     .state("cont", {
                         url: '/cont',

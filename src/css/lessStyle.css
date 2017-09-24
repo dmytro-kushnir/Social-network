@@ -1,4 +1,7 @@
 @media (max-width: 767px) {
+  .submitBtns {
+    display: -webkit-box;
+  }
   .detailLogo + img {
     top: 80px;
     right: 60px;

@@ -40,8 +40,12 @@ $data_arr[0]["avatars"] = $avatars;
 
 // USER POSTS
 $posts = $Db->selectSqlPrepared("SELECT 
-    post.id, post.sender_name, post.sender_url, post.send_date, post.post_text, post.post_image, post.post_likes
+    post.id, post.send_date,post.sender_url, post.sender_name, post.post_text, post.post_image, post.post_likes
       FROM post   WHERE id_owner = '$id' ORDER BY post.id DESC");
+//  $posts = $Db->selectSqlPrepared("SELECT first_name, second_name,  avatar_url 
+  //FROM users_data WHERE userId = '$id'");
+  //$posts = array_merge($posts_1, $posts_2)
+  //;
 $data_arr[0]["posts"] = $posts;
 
 ///////////////////////////////////

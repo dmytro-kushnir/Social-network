@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Сен 17 2017 г., 19:30
+-- Время создания: Сен 24 2017 г., 20:16
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -43,11 +43,11 @@ CREATE TABLE `avatars` (
 --
 
 INSERT INTO `avatars` (`id`, `id_owner`, `is_set`, `image_url`, `sender_name`, `sender_url`, `reciever_url`, `image_date`, `likes`) VALUES
-(1, 1, 1, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '15.12.12 15:38', 1),
-(2, 1, 0, '/src/img/users/user1/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user/avatars/2.jpg', '/src/img/users/user/chat/sender2.jpg', '14.11.11 14:34', 23),
+(1, 1, 1, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '/src/img/users/user1/avatars/2.jpg', '/src/img/users/user1/chat/sender2.jpg', '15.12.12 15:38', 1),
+(2, 1, 0, '/src/img/users/user1/gallery/1.jpg', 'Доктор Стрендж', '/src/img/users/user1/avatars/2.jpg', '/src/img/users/user1/chat/sender2.jpg', '14.11.11 14:34', 23),
 (3, 5, 1, '/src/img/users/user5/avatars/avatar.jpg\n', 'Дженніфер Лоуренс ', '/src/img/users/user5/avatars/avatar.jpg\n', '/src/img/users/user5/avatars/avatar.jpg\n', '14.11.11 14:34', 23),
 (4, 2, 1, '/src/img/users/user2/avatars/avatar.jpg\n', 'Дженніфер Лоуренс ', '/src/img/users/user2/avatars/avatar.jpg\n', '/src/img/users/user2/avatars/avatar.jpg\n', '14.11.11 14:34', 23),
-(45, 1, 0, '../src/img/users/user1/avatars/1jh7aejydlovnzo.jpg', 'Доктор Стрендж', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '../src/img/users/user/avatars/1jh7aejydlovnzo.jpg', '09-04-2017 07:16:13', 0);
+(45, 1, 0, '../src/img/users/user1/avatars/1jh7aejydlovnzo.jpg', 'Доктор Стрендж', '../src/img/users/user1/avatars/1jh7aejydlovnzo.jpg', '../src/img/users/user1/avatars/1jh7aejydlovnzo.jpg', '09-04-2017 07:16:13', 0);
 
 -- --------------------------------------------------------
 
@@ -201,10 +201,10 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `id_owner`, `id_post`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
-(1, 1, 0, '/src/img/users/user5/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)    https://my-hit.org/film/415353', '/src/img/users/user1/posts/post1/post_image.jpg', 12),
-(30, 1, 1, '../src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:38:41', 'wwfes', '../src/img/users/user1/posts/14079532_528450687364315_3352630776540591931_n.jpg', 0),
+(1, 1, 0, '/src/img/users/user5/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)    https://my-hit.org/film/415353', '/src/img/users/user1/posts/post1/post_image.jpg', 14),
+(30, 1, 1, '../src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:38:41', 'wwfes', '../src/img/users/user1/posts/14079532_528450687364315_3352630776540591931_n.jpg', 12),
 (52, 5, 0, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 09:20:56', 'це часом не ти?', '../src/img/users/user5/posts/17.jpg', 0),
-(63, 2, 0, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-26-2017 04:01:05', 'йоу йоу', '../src/img/users/user1/posts/', 0);
+(63, 2, 0, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-26-2017 04:01:05', 'йоу йоу', '../src/img/users/user1/posts/', 1);
 
 -- --------------------------------------------------------
 
@@ -364,9 +364,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userId`, `first_name`, `second_name`, `userEmail`, `userPassword`) VALUES
-(1, 'Doctor', 'Strange', 'regstarrr@ukr.net', '1234'),
+(1, 'Доктор', 'Стрендж', 'regstarrr@ukr.net', '1234'),
 (2, 'Anya', 'Medvid', 'medvidanja94@gmail.com', '123456'),
-(5, 'Dmytro', 'Kushnir', 'dimakush1@gmail_com', '123445');
+(5, 'Dmytro', 'Kushnir', 'dimakush1@gmail_com', '123445'),
+(6, 'fssffds', 'fdsdfs', 'regstadsdasdasdrrr@ukr.net', '1234dsadaa');
 
 -- --------------------------------------------------------
 
@@ -399,8 +400,9 @@ CREATE TABLE `users_data` (
 
 INSERT INTO `users_data` (`id`, `first_name`, `second_name`, `userId`, `birthday`, `city`, `education`, `mobile_number`, `count_friends`, `background_url`, `avatar_url`, `friends`, `avatars`, `gallery`, `posts`, `chat`) VALUES
 (1, 'Доктор', 'Стрендж', '1', '04.03.1982', 'Лондон', 'Кембридж', '0665654652', 5, '../src/img/users/user1/backgrounds/vlho0k5gykuiacy.jpg', '/src/img/users/user1/avatars/2.jpg', '2,5', '0', '', '', ''),
-(2, 'Єва', 'Грін', '2', '03.04.1988', 'Париж', 'Павлівська школа', 'не скажу', 0, '../src/img/users/user2/backgrounds/bg.jpg', '/src/img/users/user2/avatars/avatar.jpg\n', '', '0', '', '', ''),
-(5, 'Дженніфер', 'Лоуренс', '5', '11.03.1991', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '../src/img/users/user5/backgrounds/bg.jpg', '/src/img/users/user5/avatars/avatar.jpg', '', '0', '', '', '');
+(2, 'Єва', 'Грін', '2', '03.04.1988', 'Париж', 'Павлівська школа', 'не скажу!', 0, '../src/img/users/user2/backgrounds/bg.jpg', '/src/img/users/user2/avatars/avatar.jpg\n', '', '0', '', '', ''),
+(5, 'Дженніфер', 'Лоуренс', '5', '11.03.1991', 'Луисвилл', 'Kammerer Middle School ', 'unbelievable', 0, '../src/img/users/user5/backgrounds/bg.jpg', '/src/img/users/user5/avatars/avatar.jpg', '', '0', '', '', ''),
+(6, 'fssffds', 'fdsdfs', '6', '', '', '', '', 0, '/src/img/users/noUser/backgrounds/bg.jpg', '/src/img/users/noUser/avatars/avatar.jpg', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -507,6 +509,13 @@ ALTER TABLE `users_data`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `users_likes`
+--
+ALTER TABLE `users_likes`
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `obj_id` (`obj_id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -514,7 +523,7 @@ ALTER TABLE `users_data`
 -- AUTO_INCREMENT для таблицы `avatars`
 --
 ALTER TABLE `avatars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT для таблицы `chat`
 --
@@ -549,12 +558,12 @@ ALTER TABLE `postgallery`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `users_data`
 --
 ALTER TABLE `users_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

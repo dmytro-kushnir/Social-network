@@ -155,7 +155,7 @@
               <a class='label label-danger' ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.editPost($index, post.id)">змінити</a>
               <a class='label label-primary' ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
             </div>
-            <div ng-hide="$ctrl.editBtnClicked" style="background-color: #f2f2f2;">
+            <div ng-hide="($ctrl.editBtnClicked && $index === $ctrl.edittedId )" style="background-color: #f2f2f2;">
               <p style="font-size: 14px;" ng-model="post.post_text" ng-bind-html="post.post_text | linky">{{post.post_text}}</p>
               <a>
             <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" />
@@ -164,15 +164,15 @@
                 class="modalHeart modalHeartComm pull-right">
                 <span ng-hide="post.post_likes==0" ng-model="$ctrl.page.posts[$index].post_likes">{{post.post_likes}}</span></figure>
             </div>
-            <div class="editPost" ng-hide="!$ctrl.editBtnClicked">
+            <div class="editPost" ng-hide="!($ctrl.editBtnClicked && $index === $ctrl.edittedId)">
               <textarea msd-elastic data-ng-model="$ctrl.postText" class="form-control inputdefault chatInput textaArea"></textarea>
               <div class="editPostDelImage">
-                  <figure class="crossModal crossModalEdit"></figure>
-              <img ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image == undefined" style=" margin-top:15px;max-width:150px; max-height:150px;"
-                alt="edit">
+                <figure class="crossModal crossModalEdit"></figure>
+                <img ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image == undefined" style=" margin-top:15px;max-width:150px; max-height:150px;"
+                  alt="edit">
               </div>
-                <div>
-                <button type="button" class="btn btn-default post pull-right" ng-click="$ctrl.editPostClick($index, post.id);">Змінити
+              <div>
+                <button type="button" class="btn btn-default post pull-right" ng-click="$ctrl.editPostClick($index, post.id); $ctrl.editBtnClicked = false">Змінити
               <button type="button" class="btn btn-default post pull-right"   ng-click="$ctrl.editBtnClicked = false">Відміна
               </div>
             </div>

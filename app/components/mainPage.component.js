@@ -200,9 +200,12 @@
                         self.response.updateAvatar = "";
                     }
                 }
-               
+                
                 self.editPost  = function(array_id, id){
+                    console.log(array_id);
+                    console.log(post_id);
                     self.editBtnClicked = true;
+                    self.edittedId = array_id;
                     console.log(self.page.posts[array_id].post_text);
                     self.postText = self.page.posts[array_id].post_text;
                     console.log(self.postText);   
@@ -222,7 +225,7 @@
                         self.page.posts[array_id].post_text = response.data.info;
                     });
                 }
-                self.alreadyLiked = false;
+
                 self.likePost = function (array_id, id) {
                     let likes = 0, data;
                     
@@ -249,7 +252,7 @@
                         }
                     });
                 }
-              
+            
                 //UPLOAD BACKGROUND or POST (AVATAR moved to modal.avatar component) 
                 self.uploadPic = function (file, id, phpFileName) {
                     var date = new Date();

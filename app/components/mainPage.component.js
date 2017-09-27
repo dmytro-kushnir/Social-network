@@ -10,7 +10,7 @@
         controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', '$uibModal', 'componentService',
             function MainPageCtrl($state, socialService, storageService, Upload, $timeout, $uibModal, componentService) {
 
-                /////////////////
+                /////////VARIABLES START////////
                 var self = this;
                 self.page = {}
                 self.userId = $state.params.userId;
@@ -19,8 +19,10 @@
                 self.imageFlag = true;
                 self.textarea = {};
                 self.carouselIndex = 1;
-
-                ////////////////
+                self.postText = null;
+                self.editBtnClicked = false;
+                ////////VARIABLES END////////
+                ///METHODS START////
                 socialService.pageRender(self.userId).then(function (response) {
                     console.log(response);
                     self.page = response.data.info;
@@ -198,6 +200,28 @@
                         self.response.updateAvatar = "";
                     }
                 }
+               
+                self.editPost  = function(array_id, id){
+                    self.editBtnClicked = true;
+                    console.log(self.page.posts[array_id].post_text);
+                    self.postText = self.page.posts[array_id].post_text;
+                    console.log(self.postText);   
+                }
+                self.editPostClick = function(array_id , id ){
+                    let text, data; 
+                    self.editBtnClicked = false;
+                    text = self.postText;
+
+                    data={
+                        "id":id,
+                        "id_owner":self.logginedId,
+                        "post_text": text
+                    }
+                    socialService.updatePost(data).then(function(response){
+                        console.log(response);
+                        self.page.posts[array_id].post_text = response.data.info;
+                    });
+                }
                 self.alreadyLiked = false;
                 self.likePost = function (array_id, id) {
                     let likes = 0, data;
@@ -222,11 +246,10 @@
                         }
                         else{
                             alert("Ви вже лайкали цей пост");
-                            // self.flag = true;
                         }
                     });
                 }
-                self.flag = false;
+              
                 //UPLOAD BACKGROUND or POST (AVATAR moved to modal.avatar component) 
                 self.uploadPic = function (file, id, phpFileName) {
                     var date = new Date();

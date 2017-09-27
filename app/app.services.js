@@ -20,6 +20,9 @@
             likePost: function (request) {
                 return $http.post("endPoints/likePost.php", request);
             },
+            updatePost: function (request) {
+                return $http.post("endPoints/updatePost.php", request);
+            },
             deleteImage: function (request) {
                 return $http.post("endPoints/deleteImage.php", request);
             },

@@ -11,7 +11,6 @@ $Db = new \Db\Db();
   $userInfo = null;
   $id = null;
 
-
 if (!empty($data)) {
     if (!empty($num)) { 
         $id = (int)$num[0]["userId"]; 

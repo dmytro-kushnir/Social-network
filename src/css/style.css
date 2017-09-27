@@ -541,7 +541,21 @@ body {
 }
 
 /*Comment END*/
-
+.editPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.editPostDelImage{
+    position: relative;
+   
+}
+.crossModalEdit{
+    background-image: url("../img/cancelModalBlack.png") !important;
+    right: -23px !important;
+    top: 15px;
+}
 
 /*POST START*/
 @media(min-width: 768px){

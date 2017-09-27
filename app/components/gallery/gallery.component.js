@@ -13,6 +13,7 @@
                 self.logginedId = storageService.get("userId");
                 self.logginedData = JSON.parse(storageService.get("loginUserData"));
                 /////////////////
+                console.log(angular.element(document.getElementById("hey")));
                 var data = {
                     id: self.userId,
                     pageName: self.stateName
@@ -20,6 +21,9 @@
                 socialService.getSubPage(data).then(function (response) {
                     self.page = response.data.info;
                     console.log("gallery", self.page);
+                    console.log(self.page.gallery[0].image_url.split('.').pop() == 'jpg');
+                    
+                   
                 });
 
                 self.open = function (index) {

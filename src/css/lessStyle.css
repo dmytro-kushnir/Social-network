@@ -22,20 +22,12 @@
     margin-left: 100px;
   }
   .addFriendBtn {
-    margin: 0 0 0 15px;
-    width: 150px;
+    margin-left: 15px;
+    width: 23%;
   }
   .detailLogo {
     display: contents;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> af5d5e78dfb7ffd05844609bfe6d6cae5f11d085
-=======
-
->>>>>>> origin/master
   .leftChat {
     margin-right: 100px;
   }
@@ -152,6 +144,10 @@
   }
 }
 @media (min-width: 768px) {
+  .addFriendBtn {
+    margin-left: 15px;
+    width: 72%;
+  }
   .detailLogo + img {
     top: 80px;
     left: 100px;
@@ -244,19 +240,18 @@
     display: none !important;
   }
   .addFriendBtn {
-    margin: 0 30%;
-    width: 190px;
+    width: 54% !important;
   }
   .detailLogo {
     display: contents;
   }
   .detailLogo + img {
-    top: 118px;
-    left: 180px;
+    top: 118px !important;
+    left: 180px !important;
   }
   .updateBgText {
-    top: 150px;
-    left: 151px;
+    top: 150px !important;
+    left: 151px !important;
   }
   .imageContainer {
     text-align: center;
@@ -275,8 +270,7 @@
     margin-right: 30px;
   }
   .addFriendBtn {
-    margin: 0;
-    width: 190px;
+    width: 98%;
   }
   .infoName > p > label {
     width: auto;
@@ -305,22 +299,21 @@
     margin-left: 0px;
   }
   .addFriendBtn {
-    margin: 0 25%;
-    width: 190px;
+    width: 98%;
   }
   .modalImg {
     width: auto !important;
     height: auto !important;
   }
 }
-@media (min-width: 461px) and (max-width: 570px) {
+@media  (max-width: 570px) {
   .detailLogo + img {
-    top: 130px;
-    left: 220px;
+    top: 130px!important;
+    left: 220px !important;
   }
   .updateBgText {
-    left: 195px;
-    top: 168px;
+    left: 195px !important;
+    top: 168px !important;
   }
   .infoName {
     margin-top: 20px;
@@ -348,8 +341,8 @@
     display: none !important;
   }
   .addFriendBtn {
-    margin: 0 30%;
-    width: 190px;
+    width: 64%;
+    margin: 0;
   }
 }
 @media (min-width: 999px) {
@@ -357,20 +350,12 @@
     width: 400px;
   }
   .addFriendBtn {
-    margin: 0 0 0 15px;
-    width: 200px;
+    margin-left: 15px;
+    width: 59%;
   }
   .detailLogo {
     display: contents;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> af5d5e78dfb7ffd05844609bfe6d6cae5f11d085
-=======
-
->>>>>>> origin/master
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {
@@ -440,7 +425,6 @@
     overflow-y: auto !important;
   }
   .addFriendBtn {
-    margin: 0 0 0 15px;
-    width: 200px;
+    width: 37%;
   }
 }

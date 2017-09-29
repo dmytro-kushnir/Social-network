@@ -40,7 +40,7 @@
           ng-src="{{avatar.image_url || '/src/img/users/noUser/avatars/avatar.jpg' }}" ng-if="avatar.image_url" alt="avatar" class="profilePhoto img-rounded"  >    
         
       </div>
-      <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
+      <img class="musicLogoHover" title="Оновити аватар" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
       src="src/img/bgChange.png" alt="upload" ng-click="$ctrl.uploadAvatar();">
       <p class="updateBgText" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)"  ng-click="$ctrl.uploadAvatar();">Оновити</p>
       </div>
@@ -53,12 +53,14 @@
       </div>
       <img class="musicLogoHover" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
       src="src/img/bgChange.png" alt="upload" ng-click="$ctrl.uploadAvatar();">
-      </div>
+
+    </div>
       
-      <!--start addFriendBtn-->
-      <button type="button" data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" class="btn btn-default addFriendBtn">Додати в друзі</button>
-      
-      <!--end addFriendBtn-->
+    <!--start addFriendBtn-->
+     
+    <button type="button" data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.addFriend($ctrl.userId, $ctrl.logginedId);" class="btn btn-default addFriendBtn">Додати в друзі</button>
+    
+    <!--end addFriendBtn-->  
       
       <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
       <section class="friendsGalleryBlock">

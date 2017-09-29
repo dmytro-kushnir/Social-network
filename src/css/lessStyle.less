@@ -1,6 +1,6 @@
 // Mode: Tablet
 @tablet: ~"(max-width: 767px)";
-@small: ~"(min-width: 461px) and (max-width: 570px)";
+@small: ~" (max-width: 570px)";
 @extraSmall: ~"(max-width: 460px)";
 // Mode: Desktop
 @desktop: ~"(min-width: 768px)";
@@ -31,8 +31,8 @@
     margin-left: 100px;
 }
 .addFriendBtn{
-    margin: 0 0 0 15px;
-    width: 150px;
+    margin-left: 15px;
+    width: 23%;
 }
 .detailLogo{
     display: contents;
@@ -174,6 +174,10 @@
 
 /////////////////////////  
 @media @desktop {
+    .addFriendBtn{
+        margin-left: 15px;
+        width: 72%;
+    }
     .detailLogo+img {
         top: 80px; 
         left: 100px;  
@@ -270,6 +274,7 @@
         display:block;
         padding: 5px;
     }
+
     .textareaMainPage{
         margin: 10px 30px !important;
     }
@@ -277,19 +282,18 @@
         display: none !important;
     }
     .addFriendBtn{
-        margin: 0 30%;
-        width: 190px;
+        width: 54% !important;
     }
     .detailLogo {
         display: contents;
     }
     .detailLogo+img {
-        top: 118px;
-        left: 180px;
+        top: 118px !important;
+        left: 180px !important;
     }
     .updateBgText {
-        top: 150px;
-        left: 151px;
+        top: 150px !important;
+        left: 151px !important;
     }
     .imageContainer{
         text-align: center;
@@ -309,8 +313,8 @@
     margin-right: 30px;
 }
 .addFriendBtn{
-    margin: 0;
-    width: 190px;
+    
+    width: 98%;
 }
     .infoName>p>label {
         width: auto;
@@ -340,8 +344,8 @@
         margin-left: 0px;
     }
     .addFriendBtn{
-        margin: 0 25%;
-        width: 190px;
+        
+        width: 98%;
     }
   
     .modalImg{
@@ -354,12 +358,12 @@
 ///////////////////////// 
 @media @small {
     .detailLogo+img {
-        top: 130px;
-        left: 220px;
+        top: 130px!important;
+        left: 220px !important;
     }
     .updateBgText {
-        left: 195px;
-        top: 168px;
+        left: 195px !important;
+        top: 168px !important;
     }
     .infoName {
         margin-top: 20px;
@@ -396,8 +400,8 @@
         display: none !important;
     }
     .addFriendBtn{
-        margin: 0 30%;
-        width: 190px;
+        width: 64%;
+        margin: 0;
     }
 }
 
@@ -409,8 +413,8 @@
         width: 400px;
     }
     .addFriendBtn{
-        margin: 0 0 0 15px;
-        width: 200px;
+        margin-left: 15px;
+        width: 59%;
     }
     .detailLogo{
         display: contents;
@@ -500,7 +504,7 @@
        
     }
     .addFriendBtn{
-        margin: 0 0 0 15px;
-        width: 200px;
+        
+        width: 37%;
     }
 }

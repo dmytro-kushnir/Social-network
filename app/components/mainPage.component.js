@@ -10,7 +10,7 @@
         controller: ['$state', 'socialService', 'storageService', 'Upload', '$timeout', '$uibModal', 'componentService',
             function MainPageCtrl($state, socialService, storageService, Upload, $timeout, $uibModal, componentService) {
 
-                /////////////////
+                /////////VARIABLES START////////
                 var self = this;
                 self.page = {}
                 self.userId = $state.params.userId;
@@ -19,8 +19,10 @@
                 self.imageFlag = true;
                 self.textarea = {};
                 self.carouselIndex = 1;
-
-                ////////////////
+                self.postText = null;
+                self.editBtnClicked = false;
+                ////////VARIABLES END////////
+                ///METHODS START////
                 socialService.pageRender(self.userId).then(function (response) {
                     console.log(response);
                     self.page = response.data.info;
@@ -144,11 +146,11 @@
                 self.uploadAvatar = function () {
                     var data = {
                         "id_owner": self.userId,
-                        "image_url": "../src/img/users/user"+self.userId+"/avatars/", //make in server
+                        "image_url": "../src/img/users/user" + self.userId + "/avatars/", //make in server
                         "is_set": 1, //make in server
                         "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
-                        "sender_url": "../src/img/users/user"+self.userId+"/avatars/",
-                        "reciever_url": "../src/img/users/user"+self.userId+"/avatars/",
+                        "sender_url": "../src/img/users/user" + self.userId + "/avatars/",
+                        "reciever_url": "../src/img/users/user" + self.userId + "/avatars/",
                         "image_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                         "likes": 0
                     }
@@ -163,7 +165,7 @@
                         }
                     });
                 }
-                self.editPage = function(){
+                self.editPage = function () {
                     $state.go('cont.changeInfo', {
                         userId: self.userId
                     }, {
@@ -204,13 +206,66 @@
                         }
                         self.response.image = "";
                     }
-                    if(self.response.updateAvatar !== ""){ // change avatar to current image event
+                    if (self.response.updateAvatar !== "") { // change avatar to current image event
                         self.page.avatar_url = self.response.updateAvatar;
                         console.log(self.response);
                         self.parentCtrl.avatarChange(self.page.avatar_url);
                         self.response.updateAvatar = "";
                     }
                 }
+                
+                self.editPost  = function(array_id, id){
+                    console.log(array_id);
+                    console.log(post_id);
+                    self.editBtnClicked = true;
+                    self.edittedId = array_id;
+                    console.log(self.page.posts[array_id].post_text);
+                    self.postText = self.page.posts[array_id].post_text;
+                    console.log(self.postText);   
+                }
+                self.editPostClick = function(array_id , id ){
+                    let text, data; 
+                    self.editBtnClicked = false;
+                    text = self.postText;
+
+                    data={
+                        "id":id,
+                        "id_owner":self.logginedId,
+                        "post_text": text
+                    }
+                    socialService.updatePost(data).then(function(response){
+                        console.log(response);
+                        self.page.posts[array_id].post_text = response.data.info;
+                    });
+                }
+
+                self.likePost = function (array_id, id) {
+                    let likes = 0, data;
+                    
+                    if (isNaN(self.page.posts[array_id].post_likes))
+                        self.page.posts[array_id].post_likes = 0;
+                        
+                    likes = parseInt(self.page.posts[array_id].post_likes);
+                    
+                        data = { // prepare data to server send
+                        "id": id,
+                        "id_owner": self.logginedId,
+                        "likes": likes
+                    }
+                    socialService.likePost(data).then(function (response) {
+                        console.log(response);
+                        console.log(Number.isInteger(response.data.info));
+                        if(Number.isInteger(response.data.info)) // if response is number(liking successfull)
+                        {   
+                        self.page.posts[array_id].post_likes = likes + 1;
+                        
+                        }
+                        else{
+                            alert("Ви вже лайкали цей пост");
+                        }
+                    });
+                }
+            
                 //UPLOAD BACKGROUND or POST (AVATAR moved to modal.avatar component) 
                 self.uploadPic = function (file, id, phpFileName) {
                     var date = new Date();
@@ -223,14 +278,14 @@
                                 "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                                 "post_text": self.textarea.value,
-                                "post_image": "../src/img/users/user"+self.userId+"/posts/", //make in server
+                                "post_image": "../src/img/users/user" + self.userId + "/posts/", //make in server
                                 "post_likes": 0
                             }
                             break;
                         case 'uploadBackground':
                             var data = {
                                 "id": self.userId,
-                                "background_url": "../src/img/users/user"+self.userId+"/backgrounds/" //make in server
+                                "background_url": "../src/img/users/user" + self.userId + "/backgrounds/" //make in server
                             }
                             break;
                     }

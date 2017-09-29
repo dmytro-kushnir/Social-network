@@ -15,7 +15,7 @@
         'ngCookies',
         'ngFileUpload', 
         'ngImgCrop',
-        'ngSanitize'
+        'ngSanitize',
     ]);
    
 })();

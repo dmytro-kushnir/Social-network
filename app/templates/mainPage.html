@@ -3,12 +3,11 @@
   <!--Background-->
   <section class="Background row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <figure class="backgroundImage"   ng-style="{'background-image': 'url('+$ctrl.page.background_url || '' +')'}">
+      <figure class="backgroundImage" ng-style="{'background-image': 'url('+$ctrl.page.background_url || '' +')'}">
         <!--editing background and page-->
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-            <div  class="updateBg pull-left" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" 
-            ngf-select="$ctrl.uploadPic(picFile, $ctrl.page.posts.length, 'uploadBackground'); picFile = null"
+            <div class="updateBg pull-left" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ngf-select="$ctrl.uploadPic(picFile, $ctrl.page.posts.length, 'uploadBackground'); picFile = null"
               ng-model="picFile" name="file" accept="image/*" ngf-model-invalid="errorFile">
               <span class="media-left">
                           <figure class="changeBgImage"></figure>
@@ -19,7 +18,7 @@
             </div>
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-            <button class="editProfile btn btn-default  pull-right"  ng-click="$ctrl.editPage();" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
+            <button class="editProfile btn btn-default  pull-right" ng-click="$ctrl.editPage();" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)">Редагувати сторінку</button>
 
             <button class="editProfile btn btn-default  pull-right" data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.chatEnter($ctrl.page.id, $index);">Написати повідомлення</button>
           </div>
@@ -32,8 +31,9 @@
   <section class="row restPage">
     <!--Left part START-->
     <div class="col-lg-5 col-md-5 col-sm-0 col-xs-0 imageContainer">
-      <div  class="detailLogo" ng-repeat="avatar in $ctrl.page.avatars | filter:{is_set:1} as results track by avatar.id">
+      <div class="detailLogo" ng-repeat="avatar in $ctrl.page.avatars | filter:{is_set:1} as results track by avatar.id">
         <div class="galleryLink detailLogo">
+
         <img 
          
           ng-click="$ctrl.openAvatars($ctrl.page.avatars.indexOf(avatar))" 
@@ -62,10 +62,11 @@
     
     <!--end addFriendBtn-->  
       
+
       <!--<i class="userQuote" > Хороший хірург - ще не означає хороший черівник!</i>-->
       <section class="friendsGalleryBlock">
 
-        <h3 class="myFriends" ng-click="$ctrl.mainPageFrGal(page.id, 'friends')">Мої друзі <span>{{$ctrl.page.friends.length}}</span></h3>
+        <h3 class="myFriends" ng-click="$ctrl.mainPageFrGal($ctrl.page.id, 'friends')">Мої друзі <span>{{$ctrl.page.friends.length}}</span></h3>
         <div ui-sref="cont.mainPage({userId:pg.id})" style="cursor:default;" ng-repeat="pg in $ctrl.page.friends | limitTo : 4 : 0">
           <img class="friend" ng-src="{{pg.avatar_url}}" alt="pg.first_name">
           <span class="friendsName">{{pg.first_name}} {{pg.second_name}}</span>
@@ -119,12 +120,11 @@
           </div>
         </article>
         <!---->
-        <div class="row">
+        <div class="row" ng-hide="$ctrl.page.gallery.length == 0">
           <div style="margin-left:0px; " class="carouselWrapperColumn col-sm-12 col-xs-12 col-sm-offset-3 col-xs-offset-2">
-            <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" rn-carousel-buffered
-              class="carouselWrapper">
-              <li ng-click="$ctrl.openGallery($index)" ng-repeat="gal in $ctrl.page.gallery track by gal.id" ng-class="'id-' + $index">
-                <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ gal.id}}/{{$ctrl.page.gallery.length}}</div>
+            <ul rn-carousel rn-carousel-index="$ctrl.carouselIndex" id="myCarousel" rn-carousel-transition="hexagon" class="carouselWrapper">
+              <li ng-click="$ctrl.openGallery($index)" ng-repeat="gal in $ctrl.page.gallery | limitTo : 50 : 0 track by gal.id" ng-class="'id-' + $index">
+                <div ng-style="{'background-image': 'url(' + gal.image_url + ')'}" class="carouselItem">{{ $index+1}}/{{$ctrl.page.gallery.length}}</div>
               </li>
             </ul>
           </div>
@@ -164,16 +164,29 @@
               <img class="otherUserPhoto" ng-src="{{post.sender_url}}" ng-if="post.sender_url" alt="sender" />
               <h4 style="cursor:pointer;">{{post.sender_name}}</h4>
               <h5><span class='glyphicon glyphicon-time'></span>{{post.send_date}}</h5>
-              <a class='label label-danger'>змінити</a>
-              <a class='label label-primary' id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
+              <a class='label label-danger' ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.editPost($index, post.id)">змінити</a>
+              <a class='label label-primary' ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
             </div>
-            <div style="background-color: #f2f2f2;">
-              <p style="font-size: 14px;" ng-bind-html="post.post_text | linky">{{post.post_text}}</p>
+            <div ng-hide="($ctrl.editBtnClicked && $index === $ctrl.edittedId )" style="background-color: #f2f2f2;">
+              <p style="font-size: 14px;" ng-model="post.post_text" ng-bind-html="post.post_text | linky">{{post.post_text}}</p>
               <a>
             <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" />
             </a>
-              <figure style="margin-top:10px; margin-right:20px;" class="modalHeart modalHeartComm pull-right">
-                <span ng-hide="post.post_likes==0">{{post.post_likes}}</span></figure>
+              <figure ng-style="myStyle" ng-class="{'red': self.flag}" ng-click="$ctrl.likePost($index, post.id)" style="margin-top:10px; margin-right:20px;"
+                class="modalHeart modalHeartComm pull-right">
+                <span ng-hide="post.post_likes==0" ng-model="$ctrl.page.posts[$index].post_likes">{{post.post_likes}}</span></figure>
+            </div>
+            <div class="editPost" ng-hide="!($ctrl.editBtnClicked && $index === $ctrl.edittedId)">
+              <textarea msd-elastic data-ng-model="$ctrl.postText" class="form-control inputdefault chatInput textaArea"></textarea>
+              <div class="editPostDelImage">
+                <figure class="crossModal crossModalEdit"></figure>
+                <img ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image == undefined" style=" margin-top:15px;max-width:150px; max-height:150px;"
+                  alt="edit">
+              </div>
+              <div>
+                <button type="button" class="btn btn-default post pull-right" ng-click="$ctrl.editPostClick($index, post.id); $ctrl.editBtnClicked = false">Змінити
+              <button type="button" class="btn btn-default post pull-right"   ng-click="$ctrl.editBtnClicked = false">Відміна
+              </div>
             </div>
           </div>
         </div>

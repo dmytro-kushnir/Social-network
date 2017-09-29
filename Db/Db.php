@@ -32,6 +32,15 @@ class Db extends \PDO {
             $this->error($e->getMessage(), $STH->queryString);
         }
     }
+    public function updateSqlPrepared($sql_pre) {
+        try {
+            $STH = $this->prepare($sql_pre);
+            $STH->setFetchMode(\PDO::FETCH_ASSOC);
+            $STH->execute();
+        } catch (\PDOException $e) {
+            $this->error($e->getMessage(), $STH->queryString);
+        }
+    }
 
     public function addSql($table, $db_array, $ignore = false) {
         if (isset($db_array) and isset($table)) {

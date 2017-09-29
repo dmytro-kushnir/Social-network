@@ -1,6 +1,8 @@
 // Mode: Tablet
 @tablet: ~"(max-width: 767px)";
+
 @small: ~" (max-width: 570px)";
+
 @extraSmall: ~"(max-width: 460px)";
 // Mode: Desktop
 @desktop: ~"(min-width: 768px)";
@@ -8,12 +10,19 @@
 @extraLarge: ~"(min-width: 999px)";
 ///////////////////////// 
 @media @tablet {
+    // .cropArea{
+    //     height: 250px;
+    //     width: 400px;
+    // }
+    .submitBtns{
+        display: -webkit-box;
+    }
     .detailLogo+img {
-        top: 100px;
-        left: 66px;
+        top: 80px;
+        right: 60px;
     }
     .updateBgText{
-        top: 133px;
+        top: 110px;
         left: 45px; 
     }
     .searchBlockHeader{
@@ -30,6 +39,7 @@
     .rightChat{
     margin-left: 100px;
 }
+
 .addFriendBtn{
     margin-left: 15px;
     width: 23%;
@@ -37,6 +47,7 @@
 .detailLogo{
     display: contents;
 }
+
 .leftChat{
     margin-right: 100px;
 }
@@ -179,8 +190,7 @@
         width: 72%;
     }
     .detailLogo+img {
-        top: 80px; 
-        left: 100px;  
+        top: 50px;   
     }
     .dropdownMenuSearch{
         margin-left: 40px !important;
@@ -246,6 +256,7 @@
 }
 ///////////////////////// 
 @media @extraSmall {
+
     .infoName {
         margin-top: 20px;
         margin-left: 5%;
@@ -294,7 +305,12 @@
     .updateBgText {
         top: 150px !important;
         left: 151px !important;
+
     }
+    .updateBgText{
+           top: 130px;
+           left: 60px; 
+       }
     .imageContainer{
         text-align: center;
     }
@@ -312,15 +328,19 @@
 .leftChat{
     margin-right: 30px;
 }
+
 .addFriendBtn{
     
     width: 98%;
 }
+
     .infoName>p>label {
         width: auto;
         padding-right: 0px;
     }
-    
+    .otherUserPhotoComment {
+        // margin-top: -5px;
+    }
     .img-responsive {
         max-width: 100%;
         max-height: 100%;
@@ -343,10 +363,12 @@
     .myFriends{
         margin-left: 0px;
     }
+
     .addFriendBtn{
         
         width: 98%;
     }
+
   
     .modalImg{
         width: auto !important;
@@ -358,12 +380,14 @@
 ///////////////////////// 
 @media @small {
     .detailLogo+img {
+
         top: 130px!important;
         left: 220px !important;
     }
     .updateBgText {
         left: 195px !important;
         top: 168px !important;
+
     }
     .infoName {
         margin-top: 20px;
@@ -379,7 +403,7 @@
          margin-left:auto;
    margin-right:auto;
    display:block;
-   padding: 5px 5px 0;
+   padding: 5px;
     }
     .userName {
         // margin-left: 50px;
@@ -399,19 +423,24 @@
     .user{
         display: none !important;
     }
+
     .addFriendBtn{
         width: 64%;
         margin: 0;
     }
+
 }
 
 ////////
 @media @extraLarge {
-    
+    .infoName {
+        // margin-left: 20%;   
+    }
     
     .infoName>p {
         width: 400px;
     }
+
     .addFriendBtn{
         margin-left: 15px;
         width: 59%;
@@ -419,6 +448,7 @@
     .detailLogo{
         display: contents;
     }
+
 }
 
 /////
@@ -458,7 +488,9 @@
     // .modalOtherUserPhotoCommentTrigger{
     //   display: block;
     // }
-    
+    .modal-dialog {
+        // margin:0px !important;
+    }
     .modal-body {
         height: 100% !important;
     }
@@ -481,7 +513,10 @@
         justify-content: space-around;
     }
     // MODAL END
-   
+    .infoName>p>label {
+        // width: auto;
+        // padding-right: 40px;
+    }
     .friendsGalleryBlock {
         display: none;
     }
@@ -503,8 +538,10 @@
         overflow-y: auto !important;
        
     }
+
     .addFriendBtn{
         
         width: 37%;
     }
 }
+

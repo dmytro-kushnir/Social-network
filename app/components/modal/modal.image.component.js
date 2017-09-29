@@ -8,8 +8,8 @@
             resolve: '<',
             index: '<'
         },
-        controller: ['$state','storageService','socialService' ,'componentService',
-            function OpenModalCtrl($state,storageService, socialService ,componentService) {
+        controller: ['$state', 'storageService', 'socialService', 'componentService',
+            function OpenModalCtrl($state, storageService, socialService, componentService) {
                 ///////////////
                 var self = this;
                 self.userId = $state.params.userId;
@@ -21,35 +21,33 @@
                     self.dbName = self.resolve.dbName;
                     self.images = self.resolve.image;
                     self.index = self.resolve.index;
-                    self.image = self.images[self.index]; 
+                    self.image = self.images[self.index];
                 };
                 ///////////////
-                
+
                 self.isLoggined = function (targetId, logginedId) {
                     if (targetId == logginedId)
                         return true;
                     else
                         return false;
                 }
-          
-                self.updateAvatar = function(id, url){
+
+                self.updateAvatar = function (id, url) {
                     console.log(self.dbName);
-                    if(self.dbName == 'avatars'){
+                    if (self.dbName == 'avatars') {
                         var data = {
                             user_id: self.userId,
                             image_id: id,
                             url: url,
                             pageName: self.dbName
                         }
-                    }
-                    
-                    else if(self.dbName == 'gallery'){
+                    } else if (self.dbName == 'gallery') {
                         var data = {
                             user_id: self.userId,
                             image_id: id,
                             url: url,
                             pageName: self.dbName,
-                            newAvatar:{
+                            newAvatar: {
                                 id_owner: self.userId,
                                 image_url: url, //make in server
                                 is_set: 1, //make in server
@@ -67,33 +65,33 @@
                             pageName: 'uploadAvatar'
                         }
                         socialService.getSubPage(data).then(function (response) {
-                            if(self.dbName == "gallery"){
+                            if (self.dbName == "gallery") {
                                 $state.go('cont.mainPage', {
                                     userId: self.userId
                                 }, {
                                     reload: true
                                 });
                             }
-                         
+
                             componentService.set({
                                 avatar: response
-                            });    
-                        });       
+                            });
+                        });
                     });
-                    
+
                 }
 
 
                 self.deleteImage = function (array_id, id) {
                     var data = { // prepare data to server send
-                        0:{
+                        0: {
                             "id_owner": self.userId,
                             "id": id
                         },
-                        1:{
+                        1: {
                             "dbName": self.dbName,
-                            "array_id":array_id,
-                            "is_set":self.image.is_set
+                            "array_id": array_id,
+                            "is_set": self.image.is_set
                         }
                     }
                     console.log("ARRAY ID", array_id);
@@ -103,11 +101,19 @@
                             image: response.data.info[1]
                         });
                         console.log(response);
-                      
+
                     });
                 }
                 // moving left 
                 self.prevImage = function () {
+                    prevImage();
+                };
+                // moving right
+                self.nextImage = function () {
+                    nextImage();
+                };
+
+                function prevImage() {
                     if (self.index > 0) {
                         self.index -= 1;
                         self.image = self.images[self.index];
@@ -115,9 +121,9 @@
                         self.index = self.images.length - 1;
                         self.image = self.images[self.index];
                     }
-                };
-                // moving right
-                self.nextImage = function () {
+                }
+
+                function nextImage() {
                     if (self.index < self.images.length - 1) {
                         self.index += 1;
                         self.image = self.images[self.index];
@@ -125,8 +131,19 @@
                         self.index = 0;
                         self.image = self.images[self.index];
                     }
-                };
-
+                }
+                // key event 
+                self.keyDown = function ($event) {
+                //      console.log($event.keyCode);
+                    switch ($event.keyCode) {
+                        case 39: //right
+                            nextImage();
+                            break;
+                        case 37: //left
+                            prevImage();
+                            break;
+                    }
+                }
             }
         ]
     });

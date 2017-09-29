@@ -113,7 +113,9 @@ body {
 
 /* Navigation main START*/
 
-
+.userSideBar {
+    /*height: 100vh;*/
+}
 
 .asideNavbar li:hover {
     background-color: gainsboro;
@@ -240,7 +242,10 @@ body {
         right: 10em !important;
         width: auto !important;
     }
-    
+    .carouselWrapperColumn{
+        /*padding-left: 30px !important;*/
+        /*padding-right: 45px !important;*/
+    }
 }
 @media  (min-width: 768px) and (max-width: 992px){
      ul[rn-carousel]>li { 
@@ -248,7 +253,10 @@ body {
         width: auto !important;
         right: 10em !important;
     }
-     
+     .carouselWrapperColumn{
+        /*padding-left: 20px !important;*/
+        /*padding-right: 20px !important;*/
+    }
 }
 
 /*extraSmall*/
@@ -386,7 +394,7 @@ body {
     cursor: pointer;
 }
 .detailLogo {
-    display: contents;
+    display: inline-block;
     position: relative;
     z-index: 1;
 }
@@ -436,7 +444,7 @@ body {
 .updateBgText{
     
       position: absolute;
-       top: 120px;
+       top: 80px;
        left: 70px;
        z-index: 2;
        color: lavender;
@@ -533,7 +541,21 @@ body {
 }
 
 /*Comment END*/
-
+.editPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.editPostDelImage{
+    position: relative;
+   
+}
+.crossModalEdit{
+    background-image: url("../img/cancelModalBlack.png") !important;
+    right: -23px !important;
+    top: 15px;
+}
 
 /*POST START*/
 @media(min-width: 768px){
@@ -560,10 +582,6 @@ body {
 }
 .posters{
     margin:10px 15px !important; 
-}
-.addFriendBtn{
-    margin: 0 0 0 15px;
-    width: 150px;
 }
 }
 
@@ -618,6 +636,9 @@ body {
     left: -4px;
 }
 
+.arrowLeftMobile {
+    /*display: none;*/
+}
 
 .navbar-brand,
 .panel-primary {
@@ -635,3 +656,14 @@ body {
     position: relative;
     top: 7px;
 }
+
+.opacity-zero {
+     
+}
+
+h1 {
+    color: blue;
+  }
+  .red {
+   background: red;
+  }

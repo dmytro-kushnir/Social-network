@@ -132,7 +132,12 @@
 .modalHeart:hover {
   background-image: url("../img/heart_hover.png");
 }
-
+/* .heartMode1{
+  background-image: url("../img/heart.png");
+}
+.heartMode2{
+  background-image: url("../img/heart_hover.png");
+} */
 
 /*LIKE END*/
 

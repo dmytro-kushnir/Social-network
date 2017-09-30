@@ -152,15 +152,15 @@
               <img class="otherUserPhoto" ng-src="{{post.sender_url}}" ng-if="post.sender_url" alt="sender" />
               <h4 style="cursor:pointer;">{{post.sender_name}}</h4>
               <h5><span class='glyphicon glyphicon-time'></span>{{post.send_date}}</h5>
-              <a class='label label-danger' ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.editPost($index, post.id)">змінити</a>
-              <a class='label label-primary' ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
+              <a class='label label-danger' ng-if="$ctrl.isLoggined(post.id_sender, $ctrl.logginedId)" ng-click="$ctrl.editPost($index, post.id)">змінити</a>
+              <a class='label label-primary' ng-if="$ctrl.isLoggined(post.id_sender, $ctrl.logginedId)" id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
             </div>
             <div ng-hide="($ctrl.editBtnClicked && $index === $ctrl.edittedId )" style="background-color: #f2f2f2;">
               <p style="font-size: 14px;" ng-model="post.post_text" ng-bind-html="post.post_text | linky">{{post.post_text}}</p>
               <a>
             <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" />
             </a>
-              <figure ng-style="myStyle" ng-class="{'red': self.flag}" ng-click="$ctrl.likePost($index, post.id)" style="margin-top:10px; margin-right:20px;"
+              <figure ng-style="myStyle"  ng-class="{'heartMode2' : toggle}" ng-click="$ctrl.likePost($index, post.id);toggle = !toggle" style="margin-top:10px; margin-right:20px;"
                 class="modalHeart modalHeartComm pull-right">
                 <span ng-hide="post.post_likes==0" ng-model="$ctrl.page.posts[$index].post_likes">{{post.post_likes}}</span></figure>
             </div>

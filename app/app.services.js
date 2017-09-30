@@ -34,9 +34,6 @@
             },
             editUserData: function(request){
                 return $http.post("endPoints/editUserData.php", request);
-            },
-            addFriend: function(request){
-                return $http.post("endPoints/addFriend.php", request);
             }
         };
     });

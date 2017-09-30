@@ -1,8 +1,6 @@
 // Mode: Tablet
 @tablet: ~"(max-width: 767px)";
-
-@small: ~" (max-width: 570px)";
-
+@small: ~"(max-width: 570px)";
 @extraSmall: ~"(max-width: 460px)";
 // Mode: Desktop
 @desktop: ~"(min-width: 768px)";
@@ -39,15 +37,6 @@
     .rightChat{
     margin-left: 100px;
 }
-
-.addFriendBtn{
-    margin-left: 15px;
-    width: 23%;
-}
-.detailLogo{
-    display: contents;
-}
-
 .leftChat{
     margin-right: 100px;
 }
@@ -185,10 +174,6 @@
 
 /////////////////////////  
 @media @desktop {
-    .addFriendBtn{
-        margin-left: 15px;
-        width: 72%;
-    }
     .detailLogo+img {
         top: 50px;   
     }
@@ -256,56 +241,9 @@
 }
 ///////////////////////// 
 @media @extraSmall {
-
-    .infoName {
-        margin-top: 20px;
-        margin-left: 5%;
-
-    }
-    .profilePhoto {
-        width: 200px;
-        height: 200px;
-        max-width: 100%;
-        // height: auto;
-        width: auto\9; //IE 8
-         margin-left:auto;
-   margin-right:auto;
-   display:block;
-   padding: 5px 5px 0;
-    }
-    .userName {
-        // margin-left: 50px;
-        // width: 240px;
-        // max-width: 100%;
-        // height: auto;
-        // margin-left:auto;
-        // margin-left:auto;
-        // margin-right:auto
-        text-align: center;
-        display:block;
-        padding: 5px;
-    }
-
-    .textareaMainPage{
-        margin: 10px 30px !important;
-    }
-    .user{
-        display: none !important;
-    }
-    .addFriendBtn{
-        width: 54% !important;
-    }
-    .detailLogo {
-        display: contents;
-    }
     .detailLogo+img {
-        top: 118px !important;
-        left: 180px !important;
-    }
-    .updateBgText {
-        top: 150px !important;
-        left: 151px !important;
-
+        top: 100px;
+        right: 80px;
     }
     .updateBgText{
            top: 130px;
@@ -328,12 +266,9 @@
 .leftChat{
     margin-right: 30px;
 }
-
-.addFriendBtn{
-    
-    width: 98%;
-}
-
+    .userName {
+        // margin-left: 20px;
+    }
     .infoName>p>label {
         width: auto;
         padding-right: 0px;
@@ -363,12 +298,7 @@
     .myFriends{
         margin-left: 0px;
     }
-
-    .addFriendBtn{
-        
-        width: 98%;
-    }
-
+  
   
     .modalImg{
         width: auto !important;
@@ -380,14 +310,10 @@
 ///////////////////////// 
 @media @small {
     .detailLogo+img {
-
-        top: 130px!important;
-        left: 220px !important;
+        right: 77px;
     }
-    .updateBgText {
-        left: 195px !important;
-        top: 168px !important;
-
+    .updateBgText{
+        left: 55px; 
     }
     .infoName {
         margin-top: 20px;
@@ -423,12 +349,6 @@
     .user{
         display: none !important;
     }
-
-    .addFriendBtn{
-        width: 64%;
-        margin: 0;
-    }
-
 }
 
 ////////
@@ -440,15 +360,7 @@
     .infoName>p {
         width: 400px;
     }
-
-    .addFriendBtn{
-        margin-left: 15px;
-        width: 59%;
-    }
-    .detailLogo{
-        display: contents;
-    }
-
+ 
 }
 
 /////
@@ -538,10 +450,4 @@
         overflow-y: auto !important;
        
     }
-
-    .addFriendBtn{
-        
-        width: 37%;
-    }
 }
-

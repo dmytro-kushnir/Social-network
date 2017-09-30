@@ -76,20 +76,7 @@
                     else
                         return false;
                 }
-                self.addFriend = function (targetId, logginedId){
 
-                    var globalData = {
-                        'targetId': targetId,
-                        'logginedId': logginedId
-                    }
-                    console.log("target Id", globalData.targetId);
-                    console.log("logginedId", globalData.logginedId);
-
-                    socialService.addFriend(globalData).then(function(res){
-                        console.log(res);
-                    });
-
-                }
                 self.mainPageFrGal = function (id, pageName) {
                     var data = {
                         id: id,

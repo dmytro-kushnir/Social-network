@@ -213,59 +213,59 @@
                         self.response.updateAvatar = "";
                     }
                 }
-                
-                self.editPost  = function(array_id, id){
-                    console.log(array_id);
-                    console.log(post_id);
+
+                self.editPost = function (array_id, id) {
                     self.editBtnClicked = true;
                     self.edittedId = array_id;
                     console.log(self.page.posts[array_id].post_text);
                     self.postText = self.page.posts[array_id].post_text;
-                    console.log(self.postText);   
+                    console.log(self.postText);
                 }
-                self.editPostClick = function(array_id , id ){
-                    let text, data; 
+                self.editPostClick = function (array_id, id) {
+                    let text, data;
                     self.editBtnClicked = false;
                     text = self.postText;
 
-                    data={
-                        "id":id,
-                        "id_owner":self.logginedId,
+                    data = {
+                        "id": id,
+                        "id_owner": self.logginedId,
                         "post_text": text
                     }
-                    socialService.updatePost(data).then(function(response){
+                    socialService.updatePost(data).then(function (response) {
                         console.log(response);
                         self.page.posts[array_id].post_text = response.data.info;
                     });
                 }
 
                 self.likePost = function (array_id, id) {
-                    let likes = 0, data;
-                    
+                    let likes = 0,
+                        data;
+
                     if (isNaN(self.page.posts[array_id].post_likes))
                         self.page.posts[array_id].post_likes = 0;
-                        
+
                     likes = parseInt(self.page.posts[array_id].post_likes);
-                    
-                        data = { // prepare data to server send
+
+                    data = { // prepare data to server send
                         "id": id,
                         "id_owner": self.logginedId,
                         "likes": likes
                     }
                     socialService.likePost(data).then(function (response) {
-                        console.log(response);
-                        console.log(Number.isInteger(response.data.info));
-                        if(Number.isInteger(response.data.info)) // if response is number(liking successfull)
-                        {   
-                        self.page.posts[array_id].post_likes = likes + 1;
-                        
+                        if (response.data.isLiked === true) // like
+                        {
+                            self.page.posts[array_id].post_likes = likes + 1;
+
+                        } else { // unlike
+
+                            self.page.posts[array_id].post_likes = likes - 1;
                         }
-                        else{
-                            alert("Ви вже лайкали цей пост");
-                        }
+
+                     //    alert("Ви вже лайкали цей пост");
+
                     });
                 }
-            
+
                 //UPLOAD BACKGROUND or POST (AVATAR moved to modal.avatar component) 
                 self.uploadPic = function (file, id, phpFileName) {
                     var date = new Date();
@@ -273,6 +273,7 @@
                         case 'uploadPost':
                             var data = {
                                 "id_owner": self.userId,
+                                "id_sender": self.logginedId,
                                 "id_post": id,
                                 "sender_url": self.logginedData.avatar_url,
                                 "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
@@ -336,6 +337,7 @@
                                     pageName: "uploadPost"
                                 }
                                 socialService.getSubPage(data).then(function (response) {
+                                    console.log(response.data.info);
                                     self.page.posts = response.data.info;
                                     self.textarea.value = null;
                                 });

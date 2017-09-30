@@ -24,8 +24,7 @@
   .rightChat {
     margin-left: 100px;
   }
-<<<<<<< HEAD
-=======
+
   .addFriendBtn {
     margin-left: 15px;
     width: 23%;
@@ -33,7 +32,7 @@
   .detailLogo {
     display: contents;
   }
->>>>>>> AnnaBranch
+
   .leftChat {
     margin-right: 100px;
   }
@@ -219,15 +218,7 @@
   }
 }
 @media (max-width: 460px) {
-<<<<<<< HEAD
-  .detailLogo + img {
-    top: 100px;
-    right: 80px;
-  }
-  .updateBgText {
-    top: 130px;
-    left: 60px;
-=======
+
   .infoName {
     margin-top: 20px;
     margin-left: 5%;
@@ -266,7 +257,15 @@
   .updateBgText {
     top: 150px !important;
     left: 151px !important;
->>>>>>> AnnaBranch
+
+  .detailLogo + img {
+    top: 100px;
+    right: 80px;
+  }
+  .updateBgText {
+    top: 130px;
+    left: 60px;
+
   }
   .imageContainer {
     text-align: center;
@@ -284,12 +283,11 @@
   .leftChat {
     margin-right: 30px;
   }
-<<<<<<< HEAD
-=======
+
   .addFriendBtn {
     width: 98%;
   }
->>>>>>> AnnaBranch
+
   .infoName > p > label {
     width: auto;
     padding-right: 0px;
@@ -316,25 +314,17 @@
   .myFriends {
     margin-left: 0px;
   }
-<<<<<<< HEAD
-=======
+
   .addFriendBtn {
     width: 98%;
   }
->>>>>>> AnnaBranch
+
   .modalImg {
     width: auto !important;
     height: auto !important;
   }
 }
-<<<<<<< HEAD
-@media (max-width: 570px) {
-  .detailLogo + img {
-    right: 77px;
-  }
-  .updateBgText {
-    left: 55px;
-=======
+
 @media  (max-width: 570px) {
   .detailLogo + img {
     top: 130px!important;
@@ -343,7 +333,7 @@
   .updateBgText {
     left: 195px !important;
     top: 168px !important;
->>>>>>> AnnaBranch
+
   }
   .infoName {
     margin-top: 20px;
@@ -370,20 +360,18 @@
   .user {
     display: none !important;
   }
-<<<<<<< HEAD
-=======
+
   .addFriendBtn {
     width: 64%;
     margin: 0;
   }
->>>>>>> AnnaBranch
+
 }
 @media (min-width: 999px) {
   .infoName > p {
     width: 400px;
   }
-<<<<<<< HEAD
-=======
+
   .addFriendBtn {
     margin-left: 15px;
     width: 59%;
@@ -391,7 +379,7 @@
   .detailLogo {
     display: contents;
   }
->>>>>>> AnnaBranch
+
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {
@@ -460,10 +448,9 @@
   .modal {
     overflow-y: auto !important;
   }
-<<<<<<< HEAD
-=======
+
   .addFriendBtn {
     width: 37%;
   }
->>>>>>> AnnaBranch
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Сен 27 2017 г., 08:53
+-- Время создания: Сен 30 2017 г., 16:53
 -- Версия сервера: 10.1.21-MariaDB
 -- Версия PHP: 5.6.30
 
@@ -95,7 +95,8 @@ CREATE TABLE `chat` (
 INSERT INTO `chat` (`id`, `id_owner`, `id_sender`, `sender`, `last_msg_url`, `last_msg_text`, `sender_name`, `chat_date`, `reciever_url`) VALUES
 (1, 1, 2, '/src/img/users/user2/avatars/avatar.jpg', '/src/img/users/user2/avatars/avatar.jpg', 'Знаю Я хочу улететь,  Чтобы высоко и вниз не смотреть, И за руку тебя милый мой, Заберу я с собой... Ты оставил мн', 'Єва Грін', '11.04.06 23:22', '/src/img/users/user1/avatars/2.jpg'),
 (2, 1, 5, '/src/img/users/user5/avatars/avatar.jpg', '/src/img/users/user1/avatars/2.jpg', 'Це просто неймовірно', 'Дженніфер Лоуренс', 'вчора', '/src/img/users/user1/avatars/2.jpg'),
-(3, 1, 15, '/src/img/users/user1/avatars/2.jpg', '', '', 'adfds fdsfdds', '09-17-2017 04:33:01', '/src/img/users/noUser/avatars/avatar.jpg');
+(3, 1, 15, '/src/img/users/user1/avatars/2.jpg', '', '', 'adfds fdsfdds', '09-17-2017 04:33:01', '/src/img/users/noUser/avatars/avatar.jpg'),
+(4, 6, 1, '../src/img/users/user6/avatars/ybjjrcjc3p5idbd.jpg', '', '', 'Доктор Стрендж', '09-27-2017 10:05:04', '/src/img/users/user1/avatars/2.jpg');
 
 -- --------------------------------------------------------
 
@@ -188,6 +189,7 @@ INSERT INTO `gallery` (`id`, `id_owner`, `image_url`, `sender_name`, `sender_url
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `id_owner` int(11) NOT NULL,
+  `id_sender` int(11) NOT NULL,
   `id_post` int(11) NOT NULL,
   `sender_url` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
   `sender_name` varchar(100) CHARACTER SET utf32 COLLATE utf32_bin NOT NULL,
@@ -201,12 +203,11 @@ CREATE TABLE `post` (
 -- Дамп данных таблицы `post`
 --
 
-INSERT INTO `post` (`id`, `id_owner`, `id_post`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
-(1, 1, 0, '/src/img/users/user5/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)    https://my-hit.org/film/415353', '/src/img/users/user1/posts/post1/post_image.jpg', 14),
-(30, 1, 1, '../src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:38:41', 'wwfes', '../src/img/users/user1/posts/14079532_528450687364315_3352630776540591931_n.jpg', 13),
-(52, 5, 0, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 09:20:56', 'це часом не ти?', '../src/img/users/user5/posts/17.jpg', 0),
-(63, 2, 0, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-26-2017 04:01:05', 'йоу йоу', '../src/img/users/user1/posts/', 1),
-(65, 6, 0, '../src/img/users/user6/avatars/ybjjrcjc3p5idbd.jpg', 'Святий Ігумен', '09-27-2017 09:41:16', '', '../src/img/users/user6/posts/ABC_1208.jpg', 0);
+INSERT INTO `post` (`id`, `id_owner`, `id_sender`, `id_post`, `sender_url`, `sender_name`, `send_date`, `post_text`, `post_image`, `post_likes`) VALUES
+(1, 1, 5, 0, '/src/img/users/user5/avatars/avatar.jpg', 'Дженніфер Лоуренс', '13.05.17 14:38', 'Я думаю тобі сподобається мій новий фільм ;-)    https://my-hit.org/film/415353', '/src/img/users/user1/posts/post1/post_image.jpg', 15),
+(30, 1, 1, 1, '../src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 04:38:41', 'Дівчина із іншого життя!', '../src/img/users/user1/posts/14079532_528450687364315_3352630776540591931_n.jpg', 15),
+(52, 5, 1, 0, '/src/img/users/user1/avatars/2.jpg', 'Доктор Стрендж', '08-22-2017 09:20:56', 'це часом не ти?', '../src/img/users/user5/posts/17.jpg', 0),
+(67, 6, 6, 0, '../src/img/users/user6/avatars/ybjjrcjc3p5idbd.jpg', 'Святий Ігумен', '09-27-2017 02:14:11', 'hey', '../src/img/users/user6/posts/Capture.JPG', 0);
 
 -- --------------------------------------------------------
 
@@ -363,7 +364,8 @@ CREATE TABLE `post_likes` (
 --
 
 INSERT INTO `post_likes` (`id`, `id_owner`) VALUES
-(30, 1);
+(30, 1),
+(30, 6);
 
 -- --------------------------------------------------------
 
@@ -537,7 +539,7 @@ ALTER TABLE `avatars`
 -- AUTO_INCREMENT для таблицы `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT для таблицы `gallery`
 --
@@ -547,7 +549,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT для таблицы `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 --
 -- AUTO_INCREMENT для таблицы `postavatars`
 --

@@ -5,7 +5,8 @@
 // Mode: Desktop
 @desktop: ~"(min-width: 768px)";
 @medium: ~"(min-width: 768px) and (max-width: 992px)";
-@extraLarge: ~"(min-width: 999px)";
+@extraLarge: ~"(min-width: 999px) and (max-width: 1199px)";
+@extraExtraLarge: ~ "(min-width: 1200px)";
 ///////////////////////// 
 @media @tablet {
     // .cropArea{
@@ -175,7 +176,8 @@
 /////////////////////////  
 @media @desktop {
     .detailLogo+img {
-        top: 50px;   
+        top: 62px;
+        left: 96px;
     }
     .dropdownMenuSearch{
         margin-left: 40px !important;
@@ -273,9 +275,6 @@
         width: auto;
         padding-right: 0px;
     }
-    .otherUserPhotoComment {
-        // margin-top: -5px;
-    }
     .img-responsive {
         max-width: 100%;
         max-height: 100%;
@@ -349,18 +348,36 @@
     .user{
         display: none !important;
     }
+<<<<<<< HEAD
+=======
+
+    .addFriendBtn{
+        width: 42%;
+        margin-left: 29%;
+    }
+
+>>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
 }
 
 ////////
 @media @extraLarge {
-    .infoName {
-        // margin-left: 20%;   
-    }
     
     .infoName>p {
         width: 400px;
     }
+<<<<<<< HEAD
  
+=======
+
+    .addFriendBtn{
+        margin-left: 15px;
+        width: 72%;
+    }
+    .detailLogo{
+        display: contents;
+    }
+
+>>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
 }
 
 /////
@@ -400,9 +417,7 @@
     // .modalOtherUserPhotoCommentTrigger{
     //   display: block;
     // }
-    .modal-dialog {
-        // margin:0px !important;
-    }
+
     .modal-body {
         height: 100% !important;
     }
@@ -425,10 +440,6 @@
         justify-content: space-around;
     }
     // MODAL END
-    .infoName>p>label {
-        // width: auto;
-        // padding-right: 40px;
-    }
     .friendsGalleryBlock {
         display: none;
     }
@@ -450,4 +461,19 @@
         overflow-y: auto !important;
        
     }
+<<<<<<< HEAD
 }
+=======
+
+    .addFriendBtn{
+        
+        width: 37%;
+    }
+}
+@media @extraExtraLarge{
+    .addFriendBtn{
+        width: 59%;
+    }
+}
+
+>>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95

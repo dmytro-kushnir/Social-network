@@ -24,7 +24,6 @@
   .rightChat {
     margin-left: 100px;
   }
-
   .addFriendBtn {
     margin-left: 15px;
     width: 23%;
@@ -32,7 +31,6 @@
   .detailLogo {
     display: contents;
   }
-
   .leftChat {
     margin-right: 100px;
   }
@@ -154,7 +152,8 @@
     width: 72%;
   }
   .detailLogo + img {
-    top: 50px;
+    top: 62px;
+    left: 96px;
   }
   .dropdownMenuSearch {
     margin-left: 40px !important;
@@ -218,7 +217,6 @@
   }
 }
 @media (max-width: 460px) {
-
   .infoName {
     margin-top: 20px;
     margin-left: 5%;
@@ -257,15 +255,10 @@
   .updateBgText {
     top: 150px !important;
     left: 151px !important;
-
-  .detailLogo + img {
-    top: 100px;
-    right: 80px;
   }
   .updateBgText {
     top: 130px;
     left: 60px;
-
   }
   .imageContainer {
     text-align: center;
@@ -283,11 +276,9 @@
   .leftChat {
     margin-right: 30px;
   }
-
   .addFriendBtn {
     width: 98%;
   }
-
   .infoName > p > label {
     width: auto;
     padding-right: 0px;
@@ -314,17 +305,14 @@
   .myFriends {
     margin-left: 0px;
   }
-
   .addFriendBtn {
     width: 98%;
   }
-
   .modalImg {
     width: auto !important;
     height: auto !important;
   }
 }
-
 @media  (max-width: 570px) {
   .detailLogo + img {
     top: 130px!important;
@@ -333,7 +321,6 @@
   .updateBgText {
     left: 195px !important;
     top: 168px !important;
-
   }
   .infoName {
     margin-top: 20px;
@@ -360,26 +347,22 @@
   .user {
     display: none !important;
   }
-
   .addFriendBtn {
-    width: 64%;
-    margin: 0;
+    width: 42%;
+    margin-left: 29%;
   }
-
 }
-@media (min-width: 999px) {
+@media (min-width: 999px) and (max-width: 1199px) {
   .infoName > p {
     width: 400px;
   }
-
   .addFriendBtn {
     margin-left: 15px;
-    width: 59%;
+    width: 72%;
   }
   .detailLogo {
     display: contents;
   }
-
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {
@@ -448,9 +431,12 @@
   .modal {
     overflow-y: auto !important;
   }
-
   .addFriendBtn {
     width: 37%;
   }
-
+}
+@media (min-width: 1200px) {
+  .addFriendBtn {
+    width: 59%;
+  }
 }

@@ -58,7 +58,7 @@
       
     <!--start addFriendBtn-->
      
-    <button type="button" data-ng-if="!$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.addFriend($ctrl.userId, $ctrl.logginedId);" class="btn btn-default addFriendBtn">Додати в друзі</button>
+    <button type="button" data-ng-if="$ctrl.isLoggined($ctrl.userId, $ctrl.logginedId)" ng-click="$ctrl.addFriend($ctrl.userId, $ctrl.logginedId);" class="btn btn-default addFriendBtn">Додати в друзі</button>
     
     <!--end addFriendBtn-->  
       

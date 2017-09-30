@@ -152,7 +152,8 @@
     width: 72%;
   }
   .detailLogo + img {
-    top: 50px;
+    top: 62px;
+    left: 96px;
   }
   .dropdownMenuSearch {
     margin-left: 40px !important;
@@ -347,17 +348,17 @@
     display: none !important;
   }
   .addFriendBtn {
-    width: 64%;
-    margin: 0;
+    width: 42%;
+    margin-left: 29%;
   }
 }
-@media (min-width: 999px) {
+@media (min-width: 999px) and (max-width: 1199px) {
   .infoName > p {
     width: 400px;
   }
   .addFriendBtn {
     margin-left: 15px;
-    width: 59%;
+    width: 72%;
   }
   .detailLogo {
     display: contents;
@@ -432,5 +433,10 @@
   }
   .addFriendBtn {
     width: 37%;
+  }
+}
+@media (min-width: 1200px) {
+  .addFriendBtn {
+    width: 59%;
   }
 }

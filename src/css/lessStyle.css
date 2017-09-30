@@ -24,16 +24,6 @@
   .rightChat {
     margin-left: 100px;
   }
-<<<<<<< HEAD
-=======
-  .addFriendBtn {
-    margin-left: 15px;
-    width: 23%;
-  }
-  .detailLogo {
-    display: contents;
-  }
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
   .leftChat {
     margin-right: 100px;
   }
@@ -216,50 +206,9 @@
   }
 }
 @media (max-width: 460px) {
-<<<<<<< HEAD
   .detailLogo + img {
     top: 100px;
     right: 80px;
-=======
-  .infoName {
-    margin-top: 20px;
-    margin-left: 5%;
-  }
-  .profilePhoto {
-    width: 200px;
-    height: 200px;
-    max-width: 100%;
-    width: auto\9;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding: 5px 5px 0;
-  }
-  .userName {
-    text-align: center;
-    display: block;
-    padding: 5px;
-  }
-  .textareaMainPage {
-    margin: 10px 30px !important;
-  }
-  .user {
-    display: none !important;
-  }
-  .addFriendBtn {
-    width: 54% !important;
-  }
-  .detailLogo {
-    display: contents;
-  }
-  .detailLogo + img {
-    top: 118px !important;
-    left: 180px !important;
-  }
-  .updateBgText {
-    top: 150px !important;
-    left: 151px !important;
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
   }
   .updateBgText {
     top: 130px;
@@ -307,32 +256,17 @@
   .myFriends {
     margin-left: 0px;
   }
-<<<<<<< HEAD
-=======
-  .addFriendBtn {
-    width: 98%;
-  }
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
   .modalImg {
     width: auto !important;
     height: auto !important;
   }
 }
-<<<<<<< HEAD
 @media (max-width: 570px) {
-=======
-@media  (max-width: 570px) {
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
   .detailLogo + img {
     right: 77px;
   }
   .updateBgText {
-<<<<<<< HEAD
     left: 55px;
-=======
-    left: 195px !important;
-    top: 168px !important;
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
   }
   .infoName {
     margin-top: 20px;
@@ -359,20 +293,15 @@
   .user {
     display: none !important;
   }
-<<<<<<< HEAD
-=======
   .addFriendBtn {
     width: 42%;
     margin-left: 29%;
   }
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
 }
 @media (min-width: 999px) and (max-width: 1199px) {
   .infoName > p {
     width: 400px;
   }
-<<<<<<< HEAD
-=======
   .addFriendBtn {
     margin-left: 15px;
     width: 72%;
@@ -380,7 +309,6 @@
   .detailLogo {
     display: contents;
   }
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .modal-dialog {
@@ -449,8 +377,6 @@
   .modal {
     overflow-y: auto !important;
   }
-<<<<<<< HEAD
-=======
   .addFriendBtn {
     width: 37%;
   }
@@ -459,5 +385,4 @@
   .addFriendBtn {
     width: 59%;
   }
->>>>>>> 109a3e26570f96b77a13518dd2f14ab5e4461b95
 }

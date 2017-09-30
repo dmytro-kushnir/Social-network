@@ -24,6 +24,7 @@
   .rightChat {
     margin-left: 100px;
   }
+
   .addFriendBtn {
     margin-left: 15px;
     width: 23%;
@@ -31,6 +32,7 @@
   .detailLogo {
     display: contents;
   }
+
   .leftChat {
     margin-right: 100px;
   }
@@ -255,6 +257,11 @@
     top: 150px !important;
     left: 151px !important;
   }
+  .detailLogo + img {
+    top: 100px;
+    right: 80px;
+
+  }
   .updateBgText {
     top: 130px;
     left: 60px;
@@ -304,22 +311,26 @@
   .myFriends {
     margin-left: 0px;
   }
+
   .addFriendBtn {
     width: 98%;
   }
+
   .modalImg {
     width: auto !important;
     height: auto !important;
   }
 }
-@media  (max-width: 570px) {
+
+@media (max-width: 570px) {
+
   .detailLogo + img {
     top: 130px!important;
     left: 220px !important;
   }
-  .updateBgText {
-    left: 195px !important;
+  .updateBgText {    
     top: 168px !important;
+    left: 55px;
   }
   .infoName {
     margin-top: 20px;
@@ -432,5 +443,11 @@
   }
   .addFriendBtn {
     width: 37%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .addFriendBtn {
+    width: 59%;
   }
 }

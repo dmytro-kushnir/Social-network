@@ -155,6 +155,7 @@
   }
   .detailLogo + img {
     top: 50px;
+    left: 91px; 
   }
   .dropdownMenuSearch {
     margin-left: 40px !important;

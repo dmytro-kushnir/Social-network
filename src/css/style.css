@@ -399,7 +399,8 @@ body {
     position: absolute;
     z-index: 1;
     top: 65px;
-    right: 80px;
+    left: 91px;
+    /* right: 80px; */
 }
 
 /* .detailLogo .profilePhoto {

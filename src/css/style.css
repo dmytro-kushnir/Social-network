@@ -113,7 +113,9 @@ body {
 
 /* Navigation main START*/
 
-
+.userSideBar {
+    /*height: 100vh;*/
+}
 
 .asideNavbar li:hover {
     background-color: gainsboro;
@@ -240,7 +242,10 @@ body {
         right: 10em !important;
         width: auto !important;
     }
-    
+    .carouselWrapperColumn{
+        /*padding-left: 30px !important;*/
+        /*padding-right: 45px !important;*/
+    }
 }
 @media  (min-width: 768px) and (max-width: 992px){
      ul[rn-carousel]>li { 
@@ -248,7 +253,10 @@ body {
         width: auto !important;
         right: 10em !important;
     }
-
+     .carouselWrapperColumn{
+        /*padding-left: 20px !important;*/
+        /*padding-right: 20px !important;*/
+    }
 }
 
 /*extraSmall*/
@@ -386,7 +394,7 @@ body {
     cursor: pointer;
 }
 .detailLogo {
-    /* display: inline-block; */
+    display: inline-block;
     position: relative;
     z-index: 1;
 }
@@ -394,7 +402,6 @@ body {
 
 .detailLogo img {
     display: block;
-    padding: 0;
 }
 /* hover image */
 
@@ -437,7 +444,7 @@ body {
 .updateBgText{
     
       position: absolute;
-       top: 100px;
+       top: 80px;
        left: 70px;
        z-index: 2;
        color: lavender;
@@ -629,7 +636,9 @@ body {
     left: -4px;
 }
 
-
+.arrowLeftMobile {
+    /*display: none;*/
+}
 
 .navbar-brand,
 .panel-primary {
@@ -648,7 +657,9 @@ body {
     top: 7px;
 }
 
-
+.opacity-zero {
+     
+}
 
 h1 {
     color: blue;

@@ -80,7 +80,43 @@
                     });
 
                 }
+                self.likeObj = function () {
+                    let likes = 0,
+                        data,
+                        like_table,
+                        target_table;
 
+                    if (isNaN(self.image.likes))
+                        self.image.likes = 0;
+
+                    likes = parseInt(self.image.likes);
+                    
+                    if(self.dbName == "avatars"){
+                        like_table = "avatar_likes";
+                        target_table ="avatars";
+                    }
+                    else{
+                        like_table = "gallery_likes";
+                        target_table ="gallery";
+                    }
+                    data = { // prepare data to server send
+                        "id": self.image.id,
+                        "id_owner": self.logginedId,
+                        "likes": likes,
+                        "like_table":like_table,
+                        "target_table":target_table
+                    }
+                    socialService.likeObj(data).then(function (response) {
+                        if (response.data.isLiked === true) // like
+                        {
+                            self.image.likes = likes + 1;
+
+                        } else { // unlike
+
+                            self.image.likes = likes - 1;
+                        }
+                    });
+                }
 
                 self.deleteImage = function (array_id, id) {
                     var data = { // prepare data to server send

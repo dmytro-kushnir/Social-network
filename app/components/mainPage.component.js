@@ -237,28 +237,30 @@
                     });
                 }
 
-                self.likePost = function (array_id, id) {
+                self.likeObj = function (array_id, id) {
                     let likes = 0,
                         data;
 
-                    if (isNaN(self.page.posts[array_id].post_likes))
-                        self.page.posts[array_id].post_likes = 0;
+                    if (isNaN(self.page.posts[array_id].likes))
+                        self.page.posts[array_id].likes = 0;
 
-                    likes = parseInt(self.page.posts[array_id].post_likes);
+                    likes = parseInt(self.page.posts[array_id].likes);
 
                     data = { // prepare data to server send
                         "id": id,
                         "id_owner": self.logginedId,
-                        "likes": likes
+                        "likes": likes,
+                        "like_table":"post_likes",
+                        "target_table":"post"
                     }
-                    socialService.likePost(data).then(function (response) {
+                    socialService.likeObj(data).then(function (response) {
                         if (response.data.isLiked === true) // like
                         {
-                            self.page.posts[array_id].post_likes = likes + 1;
+                            self.page.posts[array_id].likes = likes + 1;
 
                         } else { // unlike
 
-                            self.page.posts[array_id].post_likes = likes - 1;
+                            self.page.posts[array_id].likes = likes - 1;
                         }
 
                      //    alert("Ви вже лайкали цей пост");
@@ -280,7 +282,7 @@
                                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                                 "post_text": self.textarea.value,
                                 "post_image": "../src/img/users/user" + self.userId + "/posts/", //make in server
-                                "post_likes": 0
+                                "likes": 0
                             }
                             break;
                         case 'uploadBackground':

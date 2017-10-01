@@ -173,9 +173,9 @@
               <a>
             <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" />
             </a>
-              <figure ng-style="myStyle"  ng-class="{'heartMode2' : toggle}" ng-click="$ctrl.likePost($index, post.id);toggle = !toggle" style="margin-top:10px; margin-right:20px;"
+              <figure ng-style="myStyle"  ng-class="{'heartMode2' : toggle}" ng-click="$ctrl.likeObj($index, post.id);toggle = !toggle" style="margin-top:10px; margin-right:20px;"
                 class="modalHeart modalHeartComm pull-right">
-                <span ng-hide="post.post_likes==0" ng-model="$ctrl.page.posts[$index].post_likes">{{post.post_likes}}</span></figure>
+                <span ng-hide="post.likes==0" ng-model="$ctrl.page.posts[$index].likes">{{post.likes}}</span></figure>
             </div>
             <div class="editPost" ng-hide="!($ctrl.editBtnClicked && $index === $ctrl.edittedId)">
               <textarea msd-elastic data-ng-model="$ctrl.postText" class="form-control inputdefault chatInput textaArea"></textarea>

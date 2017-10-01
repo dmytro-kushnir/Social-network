@@ -27,7 +27,7 @@
                          </article>
                          <article class="modalLike">
                              <div>
-                                 <figure class="modalHeart"></figure>
+                                 <figure class="modalHeart" ng-click="$ctrl.likeObj();"></figure>
                                  <p class="modalLikeText">Мені подобається<span ng-hide="$ctrl.image.likes==0">{{$ctrl.image.likes}}</span></p>
                              </div>
                          </article>
@@ -65,7 +65,7 @@
                          class="sendIcon" style="margin-top:3px;">
                      </div>
                      <div class="leftFotterModal">
-                         <figure class="modalHeart modalHeartFooter modalHeartFooters"><span>{{$ctrl.image.likes}}</span></figure>
+                         <figure ng-click="$ctrl.likeObj();"  class="modalHeart modalHeartFooter modalHeartFooters"><span>{{$ctrl.image.likes}}</span></figure>
                          <figure ng-click="
                         
                          toogleClass('rightBodyModal');

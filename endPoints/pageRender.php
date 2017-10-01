@@ -17,6 +17,7 @@ $id = json_decode(file_get_contents('php://input'), true);
   foreach($friendsIdArr as $value){
     $buf = $Db->selectSqlPrepared("SELECT id, userId, first_name, second_name, count_friends, avatar_url 
       FROM users_data WHERE userId = '$value' LIMIt 5");
+    if($buf[0] != null)
     $friends[] = $buf[0];
   }
   $data_arr[0]["friends"] = $friends; // sets friends to data_arr instead of friends string
@@ -40,7 +41,7 @@ $data_arr[0]["avatars"] = $avatars;
 
 // USER POSTS
 $posts = $Db->selectSqlPrepared("SELECT 
-    post.id, post.id_sender, post.send_date,post.sender_url, post.sender_name, post.post_text, post.post_image, post.post_likes
+    post.id, post.id_sender, post.send_date,post.sender_url, post.sender_name, post.post_text, post.post_image, post.likes
       FROM post   WHERE id_owner = '$id' ORDER BY post.id DESC");
 //  $posts = $Db->selectSqlPrepared("SELECT first_name, second_name,  avatar_url 
   //FROM users_data WHERE userId = '$id'");

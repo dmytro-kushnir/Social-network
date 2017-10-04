@@ -179,9 +179,9 @@
             </div>
             <div class="editPost" ng-hide="!($ctrl.editBtnClicked && $index === $ctrl.edittedId)">
               <textarea msd-elastic data-ng-model="$ctrl.postText" class="form-control inputdefault chatInput textaArea"></textarea>
-              <div class="editPostDelImage">
+              <div class="editPostDelImage" ng-if="post.post_image">
                 <figure class="crossModal crossModalEdit"></figure>
-                <img ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image == undefined" style=" margin-top:15px;max-width:150px; max-height:150px;"
+                <img ng-src="{{post.post_image}}" ng-if="post.post_image"  style=" margin-top:15px;max-width:150px; max-height:150px;"
                   alt="edit">
               </div>
               <div>

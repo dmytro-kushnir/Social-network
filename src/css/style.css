@@ -652,3 +652,7 @@ h1 {
   .red {
    background: red;
   }
+
+  .containerSearch{
+      font-size: 16px !important; 
+  }

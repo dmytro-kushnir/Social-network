@@ -220,6 +220,7 @@
                     console.log(self.page.posts[array_id].post_text);
                     self.postText = self.page.posts[array_id].post_text;
                     console.log(self.postText);
+                    console.log(self.page.posts[array_id].post_image)
                 }
                 self.editPostClick = function (array_id, id) {
                     let text, data;

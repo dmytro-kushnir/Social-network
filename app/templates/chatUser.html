@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="src/css/chatAdditional.css">
-
 <div class="panel panel-primary">
     <div class="panel-heading userChatPanel">
         <a  onclick="history.back()">
@@ -9,10 +8,8 @@
         <figure class="searchIcon searchIconUserChat"></figure>
     </div>
 </div>
-
     <div class="panel-body" >
     <ul class="chat" data-ng-repeat="chat in $ctrl.page.chat[0].messages">
-
         <li class="rightChat clearfix pull-right animated fadeInRight" ng-if="chat.side == 'R'">
             <div class="chat-body bubbleRight ">
                 <p>

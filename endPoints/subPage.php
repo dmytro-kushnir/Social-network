@@ -23,6 +23,17 @@ switch ($subPage) {
     case "userList":
         $data_arr[0] = $Db->selectSqlPrepared("SELECT id, userId, first_name,second_name, avatar_url FROM users_data");
         break;
+    // OBJLikes
+    case "objLikes":
+        $users = $Db->selectSqlPrepared("SELECT id_owner FROM post_likes WHERE id = '$id'");
+        $likeList = array();
+        foreach($users as $value){
+            $buf_id = $value["id_owner"];
+            $buf = $Db->selectSqlPrepared("SELECT id, userId, first_name,second_name, avatar_url FROM users_data WHERE id = '$buf_id'");
+            $likeList[] = $buf[0];
+        }
+        $data_arr[0]["likeList"] = $likeList;
+        break;
     // USERPOST
     case "uploadPost":
         $posts = $Db->selectSqlPrepared("SELECT 

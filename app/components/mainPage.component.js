@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    var app = angular.module("main-page", ["components", "image-modal"]);
+    var app = angular.module("main-page", ["components", "image-modal", "like-modal"]);
     app.component("mainPage", {
         transclude: true,
         templateUrl: "app/templates/mainPage.html",
@@ -237,7 +237,22 @@
                         self.page.posts[array_id].post_text = response.data.info;
                     });
                 }
-
+                self.showLikeList = id => {
+                    let data = {
+                        "id_owner": self.userId,
+                        "id": id,
+                        "pageName": "objLikes"
+                    }
+                    var modalInstance = $uibModal.open({
+                        animation: false,
+                        component: "like-modal",
+                        resolve: {
+                            data: function () {
+                                return data;
+                            }
+                        }
+                    });
+                }
                 self.likeObj = function (array_id, id) {
                     let likes = 0,
                         data;

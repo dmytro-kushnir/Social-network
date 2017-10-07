@@ -166,17 +166,19 @@
               <h4 style="cursor:pointer;">{{post.sender_name}}</h4>
               <h5><span class='glyphicon glyphicon-time'></span>{{post.send_date}}</h5>
               <a class='label label-danger' ng-if="$ctrl.isLoggined(post.id_sender, $ctrl.logginedId)" ng-click="$ctrl.editPost($index, post.id)">змінити</a>
-              <a class='label label-primary' ng-if="$ctrl.isLoggined(post.id_sender, $ctrl.logginedId)" id='remove' ng-click="$ctrl.deletePost($index, post.id)">видалити</a>
+              <a class='label label-primary' ng-if="$ctrl.isLoggined(post.id_sender, $ctrl.logginedId)" id='remove'  ng-click="$ctrl.deletePost($index, post.id);$ctrl.editBtnClicked = false">видалити</a>
             </div>
             <div ng-hide="($ctrl.editBtnClicked && $index === $ctrl.edittedId )" style="background-color: #f2f2f2;">
               <p style="font-size: 14px;" ng-model="post.post_text" ng-bind-html="post.post_text | linky">{{post.post_text}}</p>
               <a>
             <img class="otherUserPhotoComment" ng-src="{{post.post_image}}" ng-if="post.post_image" ng-hide="post.post_image==''" />
             </a>
-              <figure ng-style="myStyle"  ng-class="{'heartMode2' : toggle}" ng-click="$ctrl.likeObj($index, post.id);toggle = !toggle" style="margin-top:10px; margin-right:20px;"
-                class="modalHeart modalHeartComm pull-right">
-                <span ng-hide="post.likes==0" ng-model="$ctrl.page.posts[$index].likes">{{post.likes}}</span></figure>
-            </div>
+            <div class="pull-right postLikes">
+              <figure ng-style="myStyle" ng-class="{'heartMode2' : toggle}" ng-click="$ctrl.likeObj($index, post.id);toggle = !toggle" style="margin-top:10px; margin-right:10px;"
+                class="modalHeart modalHeartComm"></figure>
+                <span ng-hide="post.likes==0" ng-model="$ctrl.page.posts[$index].likes" ng-click="$ctrl.showLikeList(post.id);">{{post.likes }} {{post.likes == 1 ? 'Лайк' : post.likes < 5 ? 'Лайки' : 'Лайків'}}</span>
+              </div>
+              </div>
             <div class="editPost" ng-hide="!($ctrl.editBtnClicked && $index === $ctrl.edittedId)">
               <textarea msd-elastic data-ng-model="$ctrl.postText" class="form-control inputdefault chatInput textaArea"></textarea>
               <div class="editPostDelImage" ng-if="post.post_image">

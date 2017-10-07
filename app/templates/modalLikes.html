@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/src/css/modalLikeAdditional.css">
+<div class="modal-content" >
+    <div class="modal-header" style="padding-bottom:0px !important;">
+        <p class="likeHeaderP">Відмітки "Подобається"</p>
+        <figure class="crossModal likeHeaderCross crossModalEdit pull-right" aria-label="Close" ng-click="$ctrl.close()"></figure>
+    </div>
+    <div class="modal-body" style="min-height:40vh; overflow-y:scroll;">
+        <li class="likeListLi" ng-repeat="user in $ctrl.users | toArray:false | limitTo : 30 : 0" ng-click="$ctrl.close()" ui-sref="cont.mainPage({userId:user.userId})">
+            <img class="likeListLiImg" style="width: 60px; height:60px;" ng-src="{{user.avatar_url}}" ng-if="user.avatar_url" alt="user"></a>
+            <a class="likeListLiA">{{user.first_name}} {{user.second_name}}</a>
+        </li>
+    </div>
+    <div class="modal-footer"></div>
+</div>

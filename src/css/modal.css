@@ -374,3 +374,39 @@ form .progress {
   cursor: pointer;
   font-weight: 600;
 }
+/* Like list  START */
+.likeListLi{
+  list-style-type: none;
+  padding: 15px;
+  box-shadow: 0 4px 4px -4px grey;
+}
+.likeListLi:hover{
+  cursor: pointer;
+  background-color: white; 
+}
+.likeListLiImg{
+  width: 65px;
+  height: 65px;
+  max-height: 65px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.likeListLiA{
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+.likeListLiA:hover{
+  text-decoration: none;
+  color: black;
+}
+.likeHeaderCross{
+  margin-top: 0px;
+  margin-right: 40px;
+}
+.likeHeaderP{
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  font-size: 18px;
+}

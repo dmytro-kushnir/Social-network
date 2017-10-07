@@ -398,9 +398,6 @@ body {
 .detailLogo+img {
     position: absolute;
     z-index: 1;
-    top: 65px;
-    left: 91px;
-    /* right: 80px; */
 }
 
 /* .detailLogo .profilePhoto {
@@ -530,7 +527,15 @@ body {
 .textaArea{
     resize: none;
 }
-
+.postLikes{
+    background-color:#f2f2f2 !important; 
+    margin-top:-20px; 
+    display:flex; 
+    align-items:flex-end;
+}
+.postLikes:hover{
+    cursor: pointer;
+}
 /*Comment END*/
 .editPost{
     display: flex;

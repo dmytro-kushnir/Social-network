@@ -25,7 +25,7 @@ define('DB_UTC', "+2:00");
 
 // define('DB_HOST', 'mysql.hostinger.com.ua');
 // define('DB_PORT', '3306');
-// define('DB_SCHEMA', 'u634702278_soc');
-// define('DB_LOGIN', 'u634702278_dima');
-// define('DB_PASSWORD', 'qwerty'); 
+// define('DB_SCHEMA', 'u579067471_soc');
+// define('DB_LOGIN', 'u579067471_dima');
+// define('DB_PASSWORD', '1234qwerty'); 
 // define('DB_UTC', '+2:00');

@@ -56,7 +56,7 @@
             var service = {};
             // registration
             service.registration = function (users, data_users, callback) {
-                $http.post('ajax.php', {users: users, data_users: data_users})
+                $http.post('endPoints/registration.php', {users: users, data_users: data_users})
                     .then(function (response) {
                         callback(response);
                     });

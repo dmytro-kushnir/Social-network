@@ -1,5 +1,6 @@
 <?php
-    include ('Config/config.php');
+    include ('../Config/config.php');
+    include ('../Db/Db.php');
     $Db = new \Db\Db();
     $data = json_decode(file_get_contents('php://input'), true);
     ///////
@@ -21,15 +22,21 @@
            $data_users["userId"] = $insertId; // update field in users_data id
            $insertUserId = $Db->addSql('users_data', $data_users); // add to users_data
             if($insertId){
-                mkdir("src/img/users/user".$insertId, 0700);
-                mkdir("src/img/users/user".$insertId."/avatars", 0700);
-                mkdir("src/img/users/user".$insertId."/backgrounds", 0700);
-                mkdir("src/img/users/user".$insertId."/chat", 0700);
-                mkdir("src/img/users/user".$insertId."/friends", 0700);
-                mkdir("src/img/users/user".$insertId."/gallery", 0700);
-                mkdir("src/img/users/user".$insertId."/posts", 0700);
+                mkdir("../src/img/users/user".$insertId, 0777, 'R');
+                mkdir("../src/img/users/user".$insertId."/avatars", 0777, 'R');
+                mkdir("../src/img/users/user".$insertId."/backgrounds", 0777, 'R');
+                mkdir("../src/img/users/user".$insertId."/chat", 0777, 'R');
+                mkdir("../src/img/users/user".$insertId."/friends", 0777, 'R');
+                mkdir("../src/img/users/user".$insertId."/gallery", 0777, 'R');
+                mkdir("../src/img/users/user".$insertId."/posts", 0777, 'R');
                 $success = true;
-               $userInfo = "Ви зареєстровані";
+                if (!is_dir("../src/img/users/user".$insertId)) {
+                    //create the directory
+                    $userInfo = "error";
+                }  else{
+                    $userInfo = "Ви зареєстровані";
+                }
+              
             }   
            else{
             $success = false;

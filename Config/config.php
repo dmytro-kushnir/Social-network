@@ -27,5 +27,5 @@ define('DB_UTC', "+2:00");
 // define('DB_PORT', '3306');
 // define('DB_SCHEMA', 'u579067471_soc');
 // define('DB_LOGIN', 'u579067471_dima');
-// define('DB_PASSWORD', '1234qwerty'); 
+// define('DB_PASSWORD', '1234qwerty');
 // define('DB_UTC', '+2:00');

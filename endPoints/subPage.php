@@ -3,18 +3,25 @@ include ('../Config/config.php');
 include ('../Db/Db.php');
 $Db = new \Db\Db();
 
-  $data = json_decode(file_get_contents('php://input'), true);
-  $subPage = $data["request"]["pageName"];
-  $id = $data["request"]["id"];
-if (isset($data["request"]["idChat"])) {
+$data = json_decode(file_get_contents('php://input'), true);
+$subPage = $data["request"]["pageName"];
+$id = $data["request"]["id"];
+
+$id = $Db->decryptText($id);
+
+
+if (isset($data["request"]["idChat"]))
+{
     $idChat = $data["request"]["idChat"];
 }
 $chatData = array();
-if (isset($data["request"]["chatData"])) {
+if (isset($data["request"]["chatData"]))
+{
     $chatData[] = $data["request"]["chatData"];
 }
 
-switch ($subPage) {
+switch ($subPage)
+{
     // MAINPAGE
     case "mainPage":
         $data_arr = $Db->selectSqlPrepared("SELECT id, userId, first_name,second_name, avatar_url FROM users_data WHERE userId = '$id' ");
@@ -55,7 +62,8 @@ post.id, post.id_sender,  post.sender_name, post.sender_url, post.send_date, pos
     avatars.id, avatars.sender_name, avatars.sender_url,avatars.is_set, avatars.image_url, avatars.reciever_url, avatars.image_date, avatars.likes 
       FROM avatars INNER JOIN users_data ON users_data.id=avatars.id_owner WHERE id_owner = '$id'" );
     // AVATAR POSTS
-        foreach ($avatars as $key => $value) { // get avatar posts
+        foreach ($avatars as $key => $value)
+        { // get avatar posts
                   $posts = $Db->selectSqlPrepared("SELECT 
    postavatars.id, postavatars.sender_name, postavatars.sender_url, postavatars.send_date, postavatars.post_text, postavatars.post_image, postavatars.post_likes
       FROM postavatars INNER JOIN users_data ON users_data.id=postavatars.id WHERE id_image = '$value[id]'");
@@ -70,7 +78,8 @@ post.id, post.id_sender,  post.sender_name, post.sender_url, post.send_date, pos
         $friendsIdArr = explode(",", $data_arr[0]["friends"]); // convert friends string to array
         $friends = array();
       // FRIENDS
-        foreach ($friendsIdArr as $value) {
+        foreach ($friendsIdArr as $value)
+        {
                 $buf = $Db->selectSqlPrepared("SELECT id, userId, first_name, second_name, count_friends, avatar_url 
       FROM users_data WHERE userId= '$value'");
                 $friends[] = $buf[0];
@@ -85,7 +94,8 @@ post.id, post.id_sender,  post.sender_name, post.sender_url, post.send_date, pos
       FROM gallery  WHERE id_owner = '$id' ORDER BY gallery.id DESC LIMIT 20");
 
 // GALLERY POSTS
-        foreach ($gallery as $key => $value) { // get gallery posts
+        foreach ($gallery as $key => $value)
+        { // get gallery posts
                   $posts = $Db->selectSqlPrepared("SELECT 
    postgallery.id, postgallery.sender_name, postgallery.sender_url, postgallery.send_date, postgallery.post_text, postgallery.post_image, postgallery.post_likes
       FROM postgallery INNER JOIN users_data ON users_data.id=postgallery.id_owner WHERE id_image = '$value[id]'");
@@ -103,12 +113,16 @@ post.id, post.id_sender,  post.sender_name, post.sender_url, post.send_date, pos
     // CHATUSER
          $chat = $Db->selectSqlPrepared("SELECT chat.id_sender, chat.sender_name, chat.chat_date, chat.reciever_url, chat.sender
       FROM chat WHERE id_sender = '$idChat'");
-        if (empty($chat)) { // нема такого користувача
+        if (empty($chat))
+        { // нема такого користувача
             $insertId = $Db->addSql('chat', $chatData[0]); // добавити його
             $data_arr = $insertId;
-        } else { // такий користувач вже існує
+        }
+        else
+        { // такий користувач вже існує
       // CHATUSER POSTS
-            foreach ($chat as $key => $value) { // get chat posts
+            foreach ($chat as $key => $value)
+            { // get chat posts
                   $posts = $Db->selectSqlPrepared("SELECT 
    postchat.id, postchat.side, postchat.message_data, postchat.message_data, postchat.message_date
       FROM postchat INNER JOIN users_data ON users_data.id=postchat.id_owner WHERE id_chat = '$value[id_sender]'");

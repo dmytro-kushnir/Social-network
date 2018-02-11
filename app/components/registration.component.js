@@ -68,7 +68,6 @@
 						console.log("CALLBACK! ", callback); //-> callback from server 
 						if (callback.data.success == true) {
 							AuthService.setCredentials(callback.data.success);
-							debugger;
 							storageService.save("userId", callback.data.id);
 							$state.go('cont.mainPage', {'userId': callback.data.id});
 						} else {

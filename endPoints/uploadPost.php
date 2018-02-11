@@ -3,35 +3,27 @@ include ('../Config/config.php');
 include ('../Db/Db.php');
 $Db = new \Db\Db();
 
-if($_FILES)
-{ // it's files and text
+if($_FILES){ // it's files and text
   $filename = $_FILES['file']['name'];
   
   $meta = $_POST;
-  $postUderId = $Db->decryptText($meta['dataArr']['id_owner']);
-  if ($filename !== null)
-  {
-      $destination = $meta['dataArr']['post_image']. $postUderId . '/posts/' . $filename;
-  }
-  else
-  {
-      $destination = "";
-  }
+  if($filename !== null)
+  $destination = $meta['dataArr']['post_image'] . $filename;
+  else 
+  $destination = "";
   $data = $meta['dataArr'];
   $data['post_image'] = $destination;
-
   move_uploaded_file( $_FILES['file']['tmp_name'] , $destination );
 }
-else
-{ // it's only text
+  else{ // it's only text
     $data = json_decode(file_get_contents('php://input'), true);
     $data["post_image"] = "";
-}
-$data['id_owner'] = $Db->decryptText($data['id_owner']);
-$data['id_sender'] = $Db->decryptText($data['id_sender']);
-$insertId = $Db->addSql('post', $data); // add post to SQL
+  }
 
-$result = [
+  $insertId = $Db->addSql('post', $data); // add post to SQL
+ 
+
+  $result = [
     'info' => $data,
     'errors' => []
 ];

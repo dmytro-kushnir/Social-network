@@ -23,7 +23,6 @@
                 self.editBtnClicked = false;
                 ////////VARIABLES END////////
                 ///METHODS START////
-
                 socialService.pageRender(self.userId).then(function (response) {
                     console.log(response);
                     self.page = response.data.info;
@@ -298,14 +297,14 @@
                                 "sender_name": self.logginedData.first_name + " " + self.logginedData.second_name,
                                 "send_date": dateFormat(new Date(), 'm-d-Y h:i:s'),
                                 "post_text": self.textarea.value,
-                                "post_image": "../src/img/users/user", //make in server
+                                "post_image": "../src/img/users/user" + self.userId + "/posts/", //make in server
                                 "likes": 0
                             }
                             break;
                         case 'uploadBackground':
                             var data = {
                                 "id": self.userId,
-                                "background_url": "../src/img/users/user" //make in server
+                                "background_url": "../src/img/users/user" + self.userId + "/backgrounds/" //make in server
                             }
                             break;
                     }

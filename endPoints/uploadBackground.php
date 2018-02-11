@@ -7,10 +7,10 @@ function random_string($length) {
   $key = '';
   $keys = array_merge(range(0, 9), range('a', 'z'));
 
-  for ($i = 0; $i < $length; $i++) {
+  for ($i = 0; $i < $length; $i++)
+  {
       $key .= $keys[array_rand($keys)];
   }
-
   return $key;
 }
 
@@ -21,14 +21,15 @@ function random_string($length) {
   $filename = random_string(15) .'.'.$path_parts['extension'];
   
   $meta = $_POST;
-  $destination = $meta['dataArr']['background_url'] . $filename;
+  $bgUderId = $Db->decryptText($meta['dataArr']['id']);
+  $destination = $meta['dataArr']['background_url'] . $bgUderId . "/backgrounds/" . $filename;
   $data = $meta['dataArr'];
   $data['background_url'] = $destination;
   move_uploaded_file( $_FILES['file']['tmp_name'] , $destination );
   
   $dataBg['background_url'] = $data['background_url'];
  
-  $insertId = $Db->updateSql('users_data', $dataBg, "id = " . $data['id']); // UPDATE
+  $insertId = $Db->updateSql('users_data', $dataBg, "id = " . $bgUderId); // UPDATE
   
 
   $result = [

@@ -1,23 +1,23 @@
- <!--header-->
- <div class="wrapper">
+<!--header-->
+<div class="wrapper">
     <header class="header">
         <a ui-sref="cont.autorize"><img src="src/img/log.png" alt="logo" class="header_logo"></a>
-         <form class="header_enter" name="headerEnter">
+        <form class="header_enter" name="headerEnter">
             <div class="partFormHeder">
-            	<div class="emailAndpass">
-            		<label class="email">E-mail:</label>
-            		<input type="email" name="email" class="email_input" ng-model="$ctrl.loginInfo.email" ng-required="true">
-            		<label class="password">Пароль:</label>
-            		<input type="password" name="password" class="password_input" ng-model="$ctrl.loginInfo.password" ng-required="true">
-				    <button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid" ng-click="$ctrl.logIn()">Увійти</button>
-            	</div>
-            	<div class="d33" ng-show="headerEnter.email.$invalid && headerEnter.email.$touched || headerEnter.password.$invalid && headerEnter.password.$touched">Не правильний е-мейл або пароль</div>
+                <div class="emailAndpass">
+                    <label class="email">E-mail:</label>
+                    <input type="email" name="email" class="email_input" ng-model="$ctrl.loginInfo.email" ng-required="true">
+                    <label class="password">Пароль:</label>
+                    <input type="password" name="password" class="password_input" ng-model="$ctrl.loginInfo.password" ng-required="true">
+                    <button type="submit" class="enter_button" ng-disabled="headerEnter.$invalid" ng-click="$ctrl.logIn()">Увійти</button>
+                </div>
+                <div class="d33" ng-show="headerEnter.email.$invalid && headerEnter.email.$touched || headerEnter.password.$invalid && headerEnter.password.$touched">Не правильний е-мейл або пароль</div>
             </div>
         </form>
     </header>
     <!--main-->
     <main class="main">
-         <article class="main_enter">
+        <article class="main_enter">
             <p class="enter_header">Заходь!:)</p>
             <form class="main_login" name="mainLogin">
                 <label class="email">E-mail:</label>
@@ -35,39 +35,39 @@
             <form name="registration">
                 <div class="partOfForm" >
                     <label for="firstname" class="partOfForm_label">Ім’я</label>
-                    <input class="inputsPartOfForm" 
-                    	   name="firstname" 
-                    	   type="text"
-                    	   id="firstname"
-                    	   ng-model="$ctrl.singUpInfo.firstname" 
-                    	   ng-required="true">
+                    <input class="inputsPartOfForm"
+                           name="firstname"
+                           type="text"
+                           id="firstname"
+                           ng-model="$ctrl.singUpInfo.firstname"
+                           ng-required="true">
                     <p class="error" ng-show="registration.firstname.$invalid && registration.firstname.$touched">Поле не може бути пустим!</p>
                     <label for="name" class="partOfForm_label">Прізвище</label>
-                    <input class="inputsPartOfForm" 
-                    	   name="secondname"
-                    	   type="text"
-                    	   id="name"
-                    	   ng-model="$ctrl.singUpInfo.secondname" 
-                    	   ng-required="true">
+                    <input class="inputsPartOfForm"
+                           name="secondname"
+                           type="text"
+                           id="secondName"
+                           ng-model="$ctrl.singUpInfo.secondname"
+                           ng-required="true">
                     <p class="error" ng-show="registration.secondname.$invalid && registration.secondname.$touched">Поле не може бути пустим!</p>
                     <label for="email" class="partOfForm_label">E-mail</label>
-                    <input class="inputsPartOfForm" 
-                    	   name="email"
-                    	   type="email"
-                    	   id="name" 
-                    	   ng-model="$ctrl.singUpInfo.email" 
-                    	   ng-required="true">
+                    <input class="inputsPartOfForm"
+                           name="email"
+                           type="email"
+                           id="email"
+                           ng-model="$ctrl.singUpInfo.email"
+                           ng-required="true">
                     <p class="error" ng-show="registration.email.$invalid && registration.email.$touched">Введіть правильний емейл</p>
                     <label for="password" class="partOfForm_label">Пароль</label>
-                    <input class="inputsPartOfForm" 
-                    	   name="password"
-                    	   type="password" 
-                    	   id="password"
-                    	   ng-model="$ctrl.singUpInfo.password" 
-                    	   ng-minlength="6" 
-                    	   ng-required="true">
+                    <input class="inputsPartOfForm"
+                           name="password"
+                           type="password"
+                           id="password"
+                           ng-model="$ctrl.singUpInfo.password"
+                           ng-minlength="6"
+                           ng-required="true">
                     <p class="error" ng-show="registration.password.$invalid && registration.password.$touched">Пароль має містити мінімум 6 символів</p>
-					<button type="button" ng-click="$ctrl.singUserUp()" class="form_button" ng-disabled="registration.$invalid" >Приєднуйся!</button>
+                    <button type="button" ng-click="$ctrl.singUserUp()" class="form_button" ng-disabled="registration.$invalid" >Приєднуйся!</button>
                 </div>
                 <p>{{$ctrl.userInfo}}</p>
             </form>
@@ -77,4 +77,4 @@
     <footer class="footer">
         <p class="footer_text">Friends © 2017</p>
     </footer>
-    </div>
+</div>
